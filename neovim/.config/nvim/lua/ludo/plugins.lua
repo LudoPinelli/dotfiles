@@ -164,6 +164,26 @@ return packer.startup(function(use)
     }
   }
 
+  -- Git integration
+  use {
+    "lewis6991/gitsigns.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim"
+    },
+  }
+  use {
+    "sindrets/diffview.nvim",
+    require = {
+      "nvim-lua/plenary.nvim"
+    }
+  }
+  use {
+    "TimUntersberger/neogit",
+    requires = {
+      "nvim-lua/plenary.nvim"
+    }
+  }
+
   -- Automatically set up config after cloning packer.nvim
   if PACKER_BOOTSTRAP then
     require("packer").sync()
