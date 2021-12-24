@@ -99,6 +99,7 @@ return packer.startup(function(use)
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
+    requires = "nvim-treesitter/nvim-treesitter-refactor",
     run = ":TSUpdate"
   }
 
