@@ -31,10 +31,10 @@ inoremap("<C-Down>", "<Esc>:m .+1<CR>==gi")
 inoremap("<C-Up>", "<Esc>:m .-2<CR>==gi")
 
 -- Move between windows
-nnoremap("<Up>", "<C-w><Up>")
-nnoremap("<Down>", "<C-w><Down>")
-nnoremap("<Left>", "<C-w><Left>")
-nnoremap("<Right>", "<C-w><Right>")
+nnoremap("<C-k>", "<C-w><Up>")
+nnoremap("<C-j>", "<C-w><Down>")
+nnoremap("<C-h>", "<C-w><Left>")
+nnoremap("<C-l>", "<C-w><Right>")
 
 -- ctrl+s to save
 nnoremap("<C-s>", ":w<CR>")
