@@ -77,3 +77,5 @@ o.wildignore = [[
 *.swp,.lock,.DS_Store,._*
 */tmp/*,*.so,*.swp,*.zip,**/target/**"
 ]]
+
+vim.notify = require("notify")
