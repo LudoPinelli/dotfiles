@@ -9,6 +9,15 @@ lsp_installer.on_server_ready(function(server)
   local opts = {
     on_attach = require("ludo.plugConfig.lsp.handlers").on_attach,
     capabilities = require("ludo.plugConfig.lsp.handlers").capabilities,
+    tools = {
+      autoSetHints = true,
+      hover_with_actions = true,
+      inlay_hints = {
+        show_parameter_hints = false,
+        parameter_hints_prefix = "",
+        other_hints_prefix = "",
+      }
+    }
   }
 
   if server.name == "jsonls" then
@@ -19,11 +28,6 @@ lsp_installer.on_server_ready(function(server)
   if server.name == "sumneko_lua" then
     local sumneko_opts = require("ludo.plugConfig.lsp.settings.sumneko_lua")
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-  end
-
-  if server.name == "rust-analyzer" then
-    local rust_analzer_opts = require("ludo.plugConfig.lsp.settings.rust-analyzer")
-    opts = vim.tbl_deep_extend("force", rust_analzer_opts, opts)
   end
 
   -- This setup() function is exactly the same as lspconfig's setup function

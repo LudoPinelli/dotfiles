@@ -105,6 +105,7 @@ cmp.setup {
         buffer = " - Buffer",
         path = " - Path",
         treesitter = " - Treesitter",
+        crates = " - Crates",
       })[entry.source.name]
       return vim_item
     end,
@@ -117,6 +118,7 @@ cmp.setup {
     { name = "buffer" },
     { name = "path" },
     { name = "treesitter"},
+    { name = "crates" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,

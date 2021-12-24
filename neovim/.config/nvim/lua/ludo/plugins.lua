@@ -83,7 +83,8 @@ return packer.startup(function(use)
     "simrat39/rust-tools.nvim",                   -- Additional tools for Rust
     requires = {
       "nvim-lua/plenary.nvim",
-      "mfussenegger/nvim-dap"
+      "mfussenegger/nvim-dap",
+      "saecki/crates.nvim"
     }
   }
 
