@@ -1,0 +1,4 @@
+[time]
+disabled = false
+format = '[$time]($style) '
+time_format = "%a %d %b 🕙 %kh%M"
