@@ -30,7 +30,7 @@ local setup = {
     -- override the label used to display some keys. It doesn't effect WK in any other way.
     -- For example:
     -- ["<space>"] = "SPC",
-    -- ["<cr>"] = "RET",
+    -- ["<CR>"] = "RET",
     -- ["<tab>"] = "TAB",
   },
   icons = {
@@ -39,8 +39,8 @@ local setup = {
     group = "+", -- symbol prepended to a group
   },
   popup_mappings = {
-    scroll_down = "<c-d>", -- binding to scroll down inside the popup
-    scroll_up = "<c-u>", -- binding to scroll up inside the popup
+    scroll_down = "<C-d>", -- binding to scroll down inside the popup
+    scroll_up = "<C-u>", -- binding to scroll up inside the popup
   },
   window = {
     border = "rounded", -- none, single, double, shadow
@@ -56,10 +56,10 @@ local setup = {
     align = "left", -- align columns left, center or right
   },
   ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
-  hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
+  hidden = { "<Silent>", "<Cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
   show_help = true, -- show help message on the command line when the popup is visible
   triggers = "auto", -- automatically setup triggers
-  -- triggers = {"<leader>"} -- or specify a list manually
+  -- triggers = {"<Leader>"} -- or specify a list manually
   triggers_blacklist = {
     -- list of mode / prefixes that should never be hooked by WhichKey
     -- this is mostly relevant for key maps that start with a native binding
@@ -71,7 +71,7 @@ local setup = {
 
 local opts = {
   mode = "n", -- NORMAL mode
-  prefix = "<leader>",
+  prefix = "<Leader>",
   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
   silent = true, -- use `silent` when creating keymaps
   noremap = true, -- use `noremap` when creating keymaps
@@ -79,95 +79,95 @@ local opts = {
 }
 
 local mappings = {
-  ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
+  ["a"] = { "<Cmd>Alpha<CR>", "Alpha" },
   ["b"] = {
-    "<cmd>lua require('telescope.builtin').buffers()<cr>",
+    "<Cmd>lua require('telescope.builtin').buffers()<CR>",
     "Buffers",
   },
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  ["w"] = { "<cmd>w!<CR>", "Save" },
-  ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["c"] = { "<cmd>BufferClose<CR>", "Close Buffer" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["ff"] = {"<cmd>Telescope find_files<cr>", "Find files" },
-  ["fg"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+  ["e"] = { "<Cmd>NvimTreeToggle<CR>", "Explorer" },
+  ["w"] = { "<Cmd>w!<CR>", "Save" },
+  ["q"] = { "<Cmd>q!<CR>", "Quit" },
+  ["c"] = { "<Cmd>BufferClose<CR>", "Close Buffer" },
+  ["h"] = { "<Cmd>nohlsearch<CR>", "No Highlight" },
+  ["ff"] = {"<Cmd>Telescope find_files<CR>", "Find files" },
+  ["fg"] = { "<Cmd>Telescope live_grep<CR>", "Find Text" },
 
   p = {
     name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
+    c = { "<Cmd>PackerCompile<CR>", "Compile" },
+    i = { "<Cmd>PackerInstall<CR>", "Install" },
+    s = { "<Cmd>PackerSync<CR>", "Sync" },
+    S = { "<Cmd>PackerStatus<CR>", "Status" },
+    u = { "<Cmd>PackerUpdate<CR>", "Update" },
   },
 
   g = {
     name = "Git",
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-    j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-    k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-    l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-    p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-    r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-    R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-    s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+    g = { "<Cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+    j = { "<Cmd>lua require 'gitsigns'.next_hunk()<CR>", "Next Hunk" },
+    k = { "<Cmd>lua require 'gitsigns'.prev_hunk()<CR>", "Prev Hunk" },
+    l = { "<Cmd>lua require 'gitsigns'.blame_line()<CR>", "Blame" },
+    p = { "<Cmd>lua require 'gitsigns'.preview_hunk()<CR>", "Preview Hunk" },
+    r = { "<Cmd>lua require 'gitsigns'.reset_hunk()<CR>", "Reset Hunk" },
+    R = { "<Cmd>lua require 'gitsigns'.reset_buffer()<CR>", "Reset Buffer" },
+    s = { "<Cmd>lua require 'gitsigns'.stage_hunk()<CR>", "Stage Hunk" },
     u = {
-      "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
+      "<Cmd>lua require 'gitsigns'.undo_stage_hunk()<CR>",
       "Undo Stage Hunk",
     },
-    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+    o = { "<Cmd>Telescope git_status<CR>", "Open changed file" },
+    b = { "<Cmd>Telescope git_branches<CR>", "Checkout branch" },
+    c = { "<Cmd>Telescope git_commits<CR>", "Checkout commit" },
     d = {
-      "<cmd>Gitsigns diffthis HEAD<cr>",
+      "<Cmd>Gitsigns diffthis HEAD<CR>",
       "Diff",
     },
   },
 
   l = {
     name = "LSP",
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+    a = { "<Cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
     d = {
-      "<cmd>Telescope lsp_document_diagnostics<cr>",
+      "<Cmd>Telescope lsp_document_diagnostics<CR>",
       "Document Diagnostics",
     },
     w = {
-      "<cmd>Telescope lsp_workspace_diagnostics<cr>",
+      "<Cmd>Telescope lsp_workspace_diagnostics<CR>",
       "Workspace Diagnostics",
     },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
-    i = { "<cmd>LspInfo<cr>", "Info" },
-    I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+    f = { "<Cmd>lua vim.lsp.buf.formatting()<CR>", "Format" },
+    i = { "<Cmd>LspInfo<CR>", "Info" },
+    I = { "<Cmd>LspInstallInfo<CR>", "Installer Info" },
+    l = { "<Cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
+    q = { "<Cmd>Trouble quickfix<CR>", "Quickfix" },
+    r = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+    s = { "<Cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
     S = {
-      "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+      "<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
       "Workspace Symbols",
     },
   },
   s = {
     name = "Search",
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    R = { "<cmd>Telescope registers<cr>", "Registers" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
+    b = { "<Cmd>Telescope git_branches<CR>", "Checkout branch" },
+    c = { "<Cmd>Telescope colorscheme<CR>", "Colorscheme" },
+    h = { "<Cmd>Telescope help_tags<CR>", "Find Help" },
+    M = { "<Cmd>Telescope man_pages<CR>", "Man Pages" },
+    r = { "<Cmd>Telescope oldfiles<CR>", "Open Recent File" },
+    R = { "<Cmd>Telescope registers<CR>", "Registers" },
+    k = { "<Cmd>Telescope keymaps<CR>", "Keymaps" },
+    C = { "<Cmd>Telescope commands<CR>", "Commands" },
   },
 
   t = {
     name = "Terminal",
-    n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-    u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-    t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-    p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-    f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-    h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-    v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+    n = { "<Cmd>lua _NODE_TOGGLE()<CR>", "Node" },
+    u = { "<Cmd>lua _NCDU_TOGGLE()<CR>", "NCDU" },
+    t = { "<Cmd>lua _HTOP_TOGGLE()<CR>", "Htop" },
+    p = { "<Cmd>lua _PYTHON_TOGGLE()<CR>", "Python" },
+    f = { "<Cmd>ToggleTerm direction=float<CR>", "Float" },
+    h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", "Horizontal" },
+    v = { "<Cmd>ToggleTerm size=80 direction=vertical<CR>", "Vertical" },
   },
 }
 

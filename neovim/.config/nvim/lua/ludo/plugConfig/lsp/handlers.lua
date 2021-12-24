@@ -58,19 +58,20 @@ end
 
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+  -- dealt by Trouble :
+  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>q", "<Cmd>lua vim.diagnostic.setloclist()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>df", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", "<Cmd>lua vim.diagnostic.goto_next({ border = 'rounded' })<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", "<Cmd>lua vim.diagnostic.goto_prev({ border = 'rounded' })<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", "<Cmd>lua vim.diagnostic.show_line_diagnostics({ border = 'rounded' })<CR>", opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", "<Cmd>lua vim.diagnostic.goto_next({ border = 'rounded' })<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>q", "<Cmd>lua vim.diagnostic.setloclist()<CR>", opts)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
@@ -78,8 +79,8 @@ M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
-  if client.name == "rust-analizer" then
-    require("completion").on_attacch("rust-analizer")
+  if client.name == "rust-analyzer" then
+    require("completion").on_attacch("rust-analyzer")
   end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)

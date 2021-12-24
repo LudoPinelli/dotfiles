@@ -126,11 +126,21 @@ return packer.startup(function(use)
     end
   }
 
+  -- Pretty lists (quickfix, lsp_references, document_diagnostics, workspace_diagnostics,
+  --               lsp_definitions, lsp_type_definitions, loclist)
+  use {
+    "folke/trouble.nvim",
+    requires = ("kyazdani42/nvim-web-devicons")
+  }
+
   -- Terminal utility
   use "akinsho/nvim-toggleterm.lua"
 
   -- Improve startup time
   use "lewis6991/impatient.nvim"
+
+  -- Stabilize windows on open/close
+  use "luukvbaal/stabilize.nvim"
 
   -- Add indentation guides
   use "lukas-reineke/indent-blankline.nvim"
