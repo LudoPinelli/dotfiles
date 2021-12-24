@@ -15,7 +15,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Reloads neovim whenever this file is saved
+-- Sync plugins on write/save
 vim.cmd [[
   augroup packer_user_config
     autocmd!
@@ -84,8 +84,13 @@ return packer.startup(function(use)
     requires = {
       "nvim-lua/plenary.nvim",
       "mfussenegger/nvim-dap",
-      "saecki/crates.nvim"
     }
+  }
+  use {
+    "saecki/crates.nvim",
+    config = function ()
+      require("crates").setup()
+    end
   }
 
   -- Telescope
@@ -143,7 +148,12 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim"
 
   -- Stabilize windows on open/close
-  use "luukvbaal/stabilize.nvim"
+  use {
+    "luukvbaal/stabilize.nvim",
+    config = function ()
+      require("stabilize").setup()
+    end
+  }
 
   -- Add indentation guides
   use "lukas-reineke/indent-blankline.nvim"
@@ -174,7 +184,7 @@ return packer.startup(function(use)
     "AckslD/nvim-neoclip.lua",
     requires = {
       "nvim-telescope/telescope.nvim"
-    }
+    },
   }
 
   -- Git integration
@@ -183,6 +193,9 @@ return packer.startup(function(use)
     requires = {
       "nvim-lua/plenary.nvim"
     },
+    config = function ()
+      require("gitsigns").setup()
+    end
   }
   use {
     "sindrets/diffview.nvim",
@@ -194,7 +207,10 @@ return packer.startup(function(use)
     "TimUntersberger/neogit",
     requires = {
       "nvim-lua/plenary.nvim"
-    }
+    },
+    config = function ()
+      require("neogit").setup()
+    end
   }
 
   -- Notifications

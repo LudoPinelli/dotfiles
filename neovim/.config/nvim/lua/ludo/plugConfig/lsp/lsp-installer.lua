@@ -9,15 +9,6 @@ lsp_installer.on_server_ready(function(server)
   local opts = {
     on_attach = require("ludo.plugConfig.lsp.handlers").on_attach,
     capabilities = require("ludo.plugConfig.lsp.handlers").capabilities,
-    tools = {
-      autoSetHints = true,
-      hover_with_actions = true,
-      inlay_hints = {
-        show_parameter_hints = false,
-        parameter_hints_prefix = "",
-        other_hints_prefix = "",
-      }
-    }
   }
 
   if server.name == "jsonls" then
