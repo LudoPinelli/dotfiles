@@ -50,11 +50,12 @@ return packer.startup(function(use)
     "hrsh7th/nvim-cmp",
     requires = {                                  -- Completion plugin
       use "hrsh7th/cmp-buffer",                   -- buffer completion
+      use "hrsh7th/cmp-nvim-lsp",                 -- Lsp completion
       use "hrsh7th/cmp-path",                     -- path completion
       use "hrsh7th/cmp-cmdline",                  -- cmdline completion
       use "saadparwaiz1/cmp_luasnip",             -- snippet completion
       use "hrsh7th/cmp-nvim-lua",                 -- neovim lua completion
-      use "hrsh7th/cmp-nvim-lsp"                  -- Lsp completion
+      use "ray-x/cmp-treesitter",                 -- treesitter completion
     }
   }
 
