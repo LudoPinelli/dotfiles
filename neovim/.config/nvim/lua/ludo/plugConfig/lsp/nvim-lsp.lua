@@ -55,7 +55,7 @@ lsp_installer.on_server_ready(function(server)
   }
 
   local server_opts = {
-    ["rust-analyzer"] = function ()
+    ["rust_analyzer"] = function ()
       default_opts.setting = {
         cargo = { loadOutDirsFromCheck = true },
         procMacro = { enable = true },
