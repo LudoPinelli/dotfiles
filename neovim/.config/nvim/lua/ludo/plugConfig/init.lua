@@ -16,4 +16,5 @@ require("ludo.plugConfig.toggleterm")
 require("ludo.plugConfig.treesitter")
 require("ludo.plugConfig.trouble")
 require("ludo.plugConfig.which-key")
+require("ludo.plugConfig.shade")
 

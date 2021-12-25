@@ -219,6 +219,9 @@ return packer.startup(function(use)
   -- Enhanced vim.selct and vim.input
   use "stevearc/dressing.nvim"
 
+  -- Dim inactive windows
+  use "sunjon/shade.nvim"
+
   -- Automatically set up config after cloning packer.nvim
   if PACKER_BOOTSTRAP then
     require("packer").sync()
