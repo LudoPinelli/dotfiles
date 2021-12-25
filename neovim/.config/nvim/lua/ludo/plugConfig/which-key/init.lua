@@ -48,9 +48,9 @@ local setup = {
   },
   layout = {
     height = { min = 4, max = 25 }, -- min and max height of the columns
-    width = { min = 20, max = -0 }, -- min and max width of the columns
+    width = { min = 25, max = -0 }, -- min and max width of the columns
     spacing = 3, -- spacing between columns
-    align = "left", -- align columns left, center or right
+    align = "center", -- align columns left, center or right
   },
   ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
   hidden = { "<Silent>", "<Cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
@@ -74,6 +74,59 @@ local opts = {
   noremap = true, -- use `noremap` when creating keymaps
   nowait = true, -- use `nowait` when creating keymaps
 }
+
+local Terminal = require("toggleterm.terminal").Terminal
+
+local lazygit = Terminal:new({
+  cmd = "lazygit",
+  dir = "git_dir",
+  direction = "float",
+  float_opts = {
+    border = "curved",
+  },
+  close_on_exit = true,
+  -- function to run on opening the terminal
+  on_open = function(term)
+    vim.cmd("startinsert!")
+    vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", {noremap = true, silent = true})
+  end,
+})
+function _lazygit_toggle()
+  lazygit:toggle()
+end
+
+local python = Terminal:new({
+  cmd = "python3",
+  dir = "git_dir",
+  direction = "horizontal",
+  close_on_exit = true,
+  -- function to run on opening the terminal
+  on_open = function(term)
+    vim.cmd("startinsert!")
+    vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", {noremap = true, silent = true})
+  end,
+})
+function _python_toggle()
+  python:toggle()
+end
+
+local htop = Terminal:new({
+  cmd = "htop",
+  -- dir = "git_dir",
+  direction = "float",
+  float_opts = {
+    border = "curved",
+  },
+  close_on_exit = true,
+  -- function to run on opening the terminal
+  on_open = function(term)
+    vim.cmd("startinsert!")
+    vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", {noremap = true, silent = true})
+  end,
+})
+function _htop_toggle()
+  htop:toggle()
+end
 
 local mappings = {
   ["a"] = { "<Cmd>Alpha<CR>", "Alpha" },
@@ -158,13 +211,12 @@ local mappings = {
 
   t = {
     name = "Terminal",
-    n = { "<Cmd>lua _NODE_TOGGLE()<CR>", "Node" },
-    u = { "<Cmd>lua _NCDU_TOGGLE()<CR>", "NCDU" },
-    t = { "<Cmd>lua _HTOP_TOGGLE()<CR>", "Htop" },
-    p = { "<Cmd>lua _PYTHON_TOGGLE()<CR>", "Python" },
-    f = { "<Cmd>ToggleTerm direction=float<CR>", "Float" },
-    h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", "Horizontal" },
-    v = { "<Cmd>ToggleTerm size=80 direction=vertical<CR>", "Vertical" },
+    f = { "<Cmd>ToggleTerm direction=float<CR>", "  Float" },
+    h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", " Horizontal" },
+    v = { "<Cmd>ToggleTerm size=80 direction=vertical<CR>", "  Vertical" },
+    g = { "<Cmd>lua _lazygit_toggle()<CR>", " LazyGit"},
+    p = { "<Cmd>lua _python_toggle()<CR>", " Python"},
+    t = { "<Cmd>lua _htop_toggle()<CR>", "  Htop"},
   },
 }
 
