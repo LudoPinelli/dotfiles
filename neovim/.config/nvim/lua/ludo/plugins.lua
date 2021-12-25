@@ -72,9 +72,9 @@ return packer.startup(function(use)
     "neovim/nvim-lspconfig",
     requires = {
       "williamboman/nvim-lsp-installer",          -- Language server installer
-      "antoinemadec/FixCursorHold.nvim"           -- Fix for lsp doc highlight
     }
   }
+  use "tami5/lspsaga.nvim"
 
   use "windwp/nvim-autopairs"                     -- Autopairs
 

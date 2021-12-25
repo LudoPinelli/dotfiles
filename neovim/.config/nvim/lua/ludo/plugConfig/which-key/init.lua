@@ -1,7 +1,4 @@
-local status_ok, which_key = pcall(require, "which-key")
-if not status_ok then
-  return
-end
+local which_key = require("which-key")
 
 local setup = {
   plugins = {
@@ -128,7 +125,7 @@ local mappings = {
     name = "LSP",
     a = { "<Cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
     d = {
-      "<Cmd>Telescope lsp_document_diagnostics<CR>",
+      "<Cmd>Telescope diagnostics<CR>",
       "Document Diagnostics",
     },
     w = {

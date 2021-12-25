@@ -1,7 +1,4 @@
-local status_ok, neoclip = pcall(require, "neoclip")
-if not status_ok then
-  return
-end
+local neoclip = require("neoclip")
 
 neoclip.setup {
   keys = {

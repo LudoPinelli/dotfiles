@@ -1,9 +1,4 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then
-  return
-end
-
-configs.setup {
+require("nvim-treesitter.configs").setup {
   ensure_installed = {    -- "all", "maintained" or list of languages
     "bash",
     "c",
@@ -26,13 +21,15 @@ configs.setup {
     "vim",
   },
   sync_install = false,
-  ignore_install = { "" },
+  -- ignore_install = { "" },
+
   highlight = {
     enable = true,
-    disable = { "" },
+    -- disable = { "" },
     additional_vim_regex_highlighting = false,
   },
-  indent = { enable = true, disable = { "" } },
+
+  -- indent = { enable = true, disable = { "" } },
   -- incremental_selection = {
     -- enable = true,
     -- keymaps = {
