@@ -59,49 +59,49 @@ end
 
 lsp_installer.on_server_ready(function(server)
 	-- Specify the default options which we'll use to setup all servers
-	local default_opts = {
+	local opts = {
 		on_attach = on_attach,
 	}
 
-	local server_opts = {
-		["rust_analyzer"] = function()
-			default_opts.settings = {
-				tool = {
-					autoSetHints = true,
-					hover_with_actions = true,
-					inlay_hints = {
-						show_parameter_hints = true,
-						parameter_hints_prefix = "",
-						other_hints_prefix = "",
-					},
-					runnable = { use_telescope = true },
-					cargo = { loadOutDirsFromCheck = true },
+	if server.name == "rust_analyzer" then
+		local rustopts = {
+			on_attach = on_attach,
+			tools = {
+				autoSetHints = true,
+				hover_with_actions = true,
+				inlay_hints = {
+					show_parameter_hints = true,
+					parameter_hints_prefix = "",
+					other_hints_prefix = "",
 				},
-			}
-			require("rust-tools").setup(default_opts)
-			server:attach_buffers()
-		end,
-		["sumneko_lua"] = function()
-			default_opts.settings = {
+			},
+			server = vim.tbl_deep_extend("force", server:get_default_options(), opts, {
+				settings = {
+					["rust-analyzer"] = { checkOnSave = { command = "clippy" } },
+				},
+			}),
+		}
+		require("rust-tools").setup(rustopts)
+		server:attach_buffers()
+	elseif server.name == "sumneko_lua" then
+		local luaopts = {
+			on_attach = on_attach,
+			settings = {
 				Lua = {
-					runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
-					completion = { enable = true, callSnippet = "Both" },
 					diagnostics = {
-						enable = true,
 						globals = { "vim", "describe" },
 						fisable = { "lowercase-global" },
 					},
-					workspace = {
-						library = {
-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-						},
+					workspace = {},
+					library = {
+						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+						[vim.fn.expand("config") .. "/lua"] = true,
 					},
 				},
-			}
-		end,
-	}
-
-	local server_options = server_opts[server.name] and server_opts[server.name]() or default_opts
-	server:setup(server_options)
+			},
+		}
+		server:setup(luaopts)
+	else
+		server:setup(opts)
+	end
 end)
