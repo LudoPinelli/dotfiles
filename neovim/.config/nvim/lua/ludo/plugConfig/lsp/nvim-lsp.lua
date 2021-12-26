@@ -1,10 +1,6 @@
 local lsp_installer = require("nvim-lsp-installer")
 
 local on_attach = function(client, bufnr)
-	if client.resolved_capabilities.document_formatting then
-		vim.cmd("autocmd BufWritePre,InsertLeave <buffer> lua vim.lsp.buf.formatting_sync()")
-	end
-
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
 	end
@@ -12,11 +8,13 @@ local on_attach = function(client, bufnr)
 		vim.api.nvim_buf_set_option(bufnr, ...)
 	end
 
-	buf_set_option("omnifunc", "v:lua.vim.lsp_omnifunc")
+	-- Enable completion triggered by <c-x><c-o>
+	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
+	-- Mappings.
 	local opts = { noremap = true, silent = true }
 
-	-- ee `:help vim.lsp.*` for documentation on any of the below functions
+	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	buf_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
@@ -29,11 +27,15 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	buf_set_keymap("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	-- buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+	-- buf_set_keymap("n", "<space>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	buf_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 	buf_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 	buf_set_keymap("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-	buf_set_keymap("n", "<space>fr", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+	buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
+	if client.resolved_capabilities.document_formatting then
+		vim.cmd("autocmd BufWritePre,InsertLeave <buffer> lua vim.lsp.buf.formatting_sync()")
+	end
 end
 
 -- Include the servers you want to have installed by default below
@@ -63,14 +65,21 @@ lsp_installer.on_server_ready(function(server)
 
 	local server_opts = {
 		["rust_analyzer"] = function()
-			default_opts.setting = {
-				on_attach = function(client)
-					client.resolved_capabilities.document_formatting = false
-					client.resolved_capabilities.document_range_formatting = false
-				end,
-				cargo = { loadOutDirsFromCheck = true },
-				procMacro = { enable = true },
+			default_opts.settings = {
+				tool = {
+					autoSetHints = true,
+					hover_with_actions = true,
+					inlay_hints = {
+						show_parameter_hints = true,
+						parameter_hints_prefix = "",
+						other_hints_prefix = "",
+					},
+					runnable = { use_telescope = true },
+					cargo = { loadOutDirsFromCheck = true },
+				},
 			}
+			require("rust-tools").setup(default_opts)
+			server:attach_buffers()
 		end,
 		["sumneko_lua"] = function()
 			default_opts.settings = {
@@ -80,7 +89,7 @@ lsp_installer.on_server_ready(function(server)
 					diagnostics = {
 						enable = true,
 						globals = { "vim", "describe" },
-						disable = { "lowercase-global" },
+						fisable = { "lowercase-global" },
 					},
 					workspace = {
 						library = {
@@ -96,14 +105,3 @@ lsp_installer.on_server_ready(function(server)
 	local server_options = server_opts[server.name] and server_opts[server.name]() or default_opts
 	server:setup(server_options)
 end)
-
-require("rust-tools").setup({
-	tools = {
-		autoSetHints = true,
-		hover_with_actions = true,
-		runnable = {
-			use_telescope = true,
-		},
-	},
-})
-require("rust-tools").ft = { "rust", "rs" }

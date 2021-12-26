@@ -42,7 +42,7 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Packer
 
 	-- Theme
-	use("shaunsingh/nord.nvim") -- Nord theme
+	use("EdenEast/nightfox.nvim") -- Nord theme
 
 	-- Completion
 	use({
@@ -106,7 +106,10 @@ return packer.startup(function(use)
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
-		requires = "nvim-treesitter/nvim-treesitter-refactor",
+		requires = {
+			"nvim-treesitter/nvim-treesitter-refactor",
+			"nvim-treesitter/playground",
+		},
 		run = ":TSUpdate",
 	})
 

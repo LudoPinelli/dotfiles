@@ -21,14 +21,14 @@ vnoremap("<", "<gv")
 vnoremap(">", ">gv")
 
 -- Move line up/down
-xnoremap("<C-Down>", ":move '>+1<CR>gv-gv")
-xnoremap("<C-Up>", ":move '>-2<CR>gv-gv")
+xnoremap("<A-Down>", ":move '>+1<CR>gv-gv")
+xnoremap("<A-Up>", ":move '>-2<CR>gv-gv")
 
-nnoremap("<C-Down>", ":m .+1<CR>==")
-nnoremap("<C-Up>", ":m .-2<CR>==")
+nnoremap("<A-Down>", ":m .+1<CR>==")
+nnoremap("<A-Up>", ":m .-2<CR>==")
 
-inoremap("<C-Down>", "<Esc>:m .+1<CR>==gi")
-inoremap("<C-Up>", "<Esc>:m .-2<CR>==gi")
+inoremap("<A-Down>", "<Esc>:m .+1<CR>==gi")
+inoremap("<A-Up>", "<Esc>:m .-2<CR>==gi")
 
 -- Move between windows
 nnoremap("<C-k>", "<C-w><Up>")

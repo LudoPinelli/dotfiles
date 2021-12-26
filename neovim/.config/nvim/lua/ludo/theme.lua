@@ -1,7 +1,13 @@
-local colorscheme = "nord"
+local nightfox = require("nightfox")
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-  vim.notify("colorscheme " .. colorscheme .. " not found.")
-  return
-end
+nightfox.setup({
+	fox = "nordfox",
+	styles = { functions = "italic" },
+	inverse = { match_paren = true },
+	hlgroups = {
+		-- TSVariable = { fg = "#d2d4d7" },
+		-- TSType = { fg = "#ced187" },
+	},
+})
+
+nightfox.load()
