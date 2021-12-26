@@ -48,7 +48,7 @@ local setup = {
   },
   layout = {
     height = { min = 4, max = 25 }, -- min and max height of the columns
-    width = { min = 25, max = -0 }, -- min and max width of the columns
+    width = { min = 20, max = 50 }, -- min and max width of the columns
     spacing = 3, -- spacing between columns
     align = "center", -- align columns left, center or right
   },
@@ -134,13 +134,13 @@ local mappings = {
     "<Cmd>lua require('telescope.builtin').buffers()<CR>",
     "Buffers",
   },
-  ["e"] = { "<Cmd>NvimTreeToggle<CR>", "Explorer" },
+  ["e"] = { "<Cmd>NvimTreeToggle<CR>", "פּ Explorer" },
   ["w"] = { "<Cmd>w!<CR>", "Save" },
   ["q"] = { "<Cmd>q!<CR>", "Quit" },
-  ["c"] = { "<Cmd>BufferClose<CR>", "Close Buffer" },
+  ["c"] = { "<Cmd>BufferClose<CR>", " Close Buffer" },
   ["h"] = { "<Cmd>nohlsearch<CR>", "No Highlight" },
-  ["ff"] = {"<Cmd>Telescope find_files<CR>", "Find files" },
-  ["fg"] = { "<Cmd>Telescope live_grep<CR>", "Find Text" },
+  ["ff"] = {"<Cmd>Telescope find_files<CR>", "  Find files" },
+  ["fg"] = { "<Cmd>Telescope live_grep<CR>", "  Find Text" },
 
   p = {
     name = "Packer",
@@ -199,21 +199,20 @@ local mappings = {
   },
   s = {
     name = "Search",
-    b = { "<Cmd>Telescope git_branches<CR>", "Checkout branch" },
-    c = { "<Cmd>Telescope colorscheme<CR>", "Colorscheme" },
-    h = { "<Cmd>Telescope help_tags<CR>", "Find Help" },
+    c = { "<Cmd>Telescope colorscheme<CR>", "  Colorscheme" },
+    h = { "<Cmd>Telescope help_tags<CR>", "  Find Help" },
     M = { "<Cmd>Telescope man_pages<CR>", "Man Pages" },
     r = { "<Cmd>Telescope oldfiles<CR>", "Open Recent File" },
     R = { "<Cmd>Telescope registers<CR>", "Registers" },
-    k = { "<Cmd>Telescope keymaps<CR>", "Keymaps" },
+    k = { "<Cmd>Telescope keymaps<CR>", "  Keymaps" },
     C = { "<Cmd>Telescope commands<CR>", "Commands" },
   },
 
   t = {
     name = "Terminal",
-    f = { "<Cmd>ToggleTerm direction=float<CR>", "  Float" },
-    h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", " Horizontal" },
-    v = { "<Cmd>ToggleTerm size=80 direction=vertical<CR>", "  Vertical" },
+    f = { "<Cmd>ToggleTerm direction=float<CR>", "  Float" },
+    h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", " Horizontal" },
+    v = { "<Cmd>ToggleTerm size=80 direction=vertical<CR>", "  Vertical" },
     g = { "<Cmd>lua _lazygit_toggle()<CR>", " LazyGit"},
     p = { "<Cmd>lua _python_toggle()<CR>", " Python"},
     t = { "<Cmd>lua _htop_toggle()<CR>", "  Htop"},
