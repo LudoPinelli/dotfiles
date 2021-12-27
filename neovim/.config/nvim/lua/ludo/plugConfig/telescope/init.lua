@@ -9,6 +9,7 @@ telescope.setup({
 		path_display = { "smart" },
 		dynamic_preview_title = true,
 		winblend = 4,
+		sorting_strategy = "ascending",
 		layout_config = {
 			prompt_position = "top",
 			horizontal = {

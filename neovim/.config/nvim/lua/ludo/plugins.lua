@@ -42,7 +42,8 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Packer
 
 	-- Theme
-	use("shaunsingh/nord.nvim") -- Nord theme
+	-- use("shaunsingh/nord.nvim") -- Nord theme
+	use("EdenEast/nightfox.nvim")
 
 	-- Completion
 	use({

@@ -1,48 +1,48 @@
-require("nvim-treesitter.configs").setup {
-  ensure_installed = {    -- "all", "maintained" or list of languages
-    "bash",
-    "c",
-    "cmake",
-    "comment",
-    "cpp",
-    "css",
-    "html",
-    "javascript",
-    "jsdoc",
-    "json",
-    "json5",
-    "latex",
-    "lua",
-    "make",
-    "python",
-    "regex",
-    "rust",
-    "toml",
-    "vim",
-  },
-  sync_install = false,
-  -- ignore_install = { "" },
+require("nvim-treesitter.configs").setup({
+	ensure_installed = { -- "all", "maintained" or list of languages
+		"bash",
+		"c",
+		"cmake",
+		"comment",
+		"cpp",
+		"css",
+		"html",
+		"javascript",
+		"jsdoc",
+		"json",
+		"json5",
+		"latex",
+		"lua",
+		"make",
+		"python",
+		"regex",
+		"rust",
+		"toml",
+		"vim",
+	},
+	sync_install = false,
+	-- ignore_install = { "" },
 
-  highlight = {
-    enable = true,
-    -- disable = { "" },
-    additional_vim_regex_highlighting = false,
-  },
+	highlight = {
+		enable = true,
+		-- disable = { "" },
+		additional_vim_regex_highlighting = false,
+	},
 
-  -- indent = { enable = true, disable = { "" } },
-  -- incremental_selection = {
-    -- enable = true,
-    -- keymaps = {
-      -- init_selection = "gnn",
-      -- node_incremental = "grn",
-      -- scope_incremental = "grc",
-      -- node_decremental = "grm",
-    -- },
-  -- },
-  refactor = {
-    highlight_definitions = { enable = true },
-  }
-}
+	-- indent = { enable = true, disable = { "" } },
+	-- incremental_selection = {
+	-- enable = true,
+	-- keymaps = {
+	-- init_selection = "gnn",
+	-- node_incremental = "grn",
+	-- scope_incremental = "grc",
+	-- node_decremental = "grm",
+	-- },
+	-- },
+	refactor = {
+		highlight_definitions = { enable = true },
+	},
+})
 
 -- vim.cmd [[ "set foldmethod=expr ]]
 -- vim.cmd [[ "set foldexpr=nvim_treesitter#foldexpr()" ]]

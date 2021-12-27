@@ -75,73 +75,8 @@ local opts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 
-local Terminal = require("toggleterm.terminal").Terminal
-
-local lazygit = Terminal:new({
-	cmd = "lazygit",
-	dir = "git_dir",
-	direction = "float",
-	float_opts = {
-		border = "curved",
-	},
-	close_on_exit = true,
-	-- function to run on opening the terminal
-	on_open = function(term)
-		vim.cmd("startinsert!")
-		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
-	end,
-})
-function lazygit_toggle()
-	lazygit:toggle()
-end
-
-local python = Terminal:new({
-	cmd = "bpython",
-	dir = "git_dir",
-	direction = "horizontal",
-	close_on_exit = true,
-	-- function to run on opening the terminal
-	on_open = function(term)
-		vim.cmd("startinsert!")
-		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
-	end,
-})
-function python_toggle()
-	python:toggle()
-end
-
-local node = Terminal:new({
-	cmd = "node",
-	dir = "git_dir",
-	direction = "horizontal",
-	close_on_exit = true,
-	-- function to run on opening the terminal
-	on_open = function(term)
-		vim.cmd("startinsert!")
-		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
-	end,
-})
-function node_toggle()
-	node:toggle()
-end
-
-local htop = Terminal:new({
-	cmd = "htop",
-	-- dir = "git_dir",
-	direction = "float",
-	float_opts = {
-		border = "curved",
-	},
-	close_on_exit = true,
-	-- function to run on opening the terminal
-	on_open = function(term)
-		vim.cmd("startinsert!")
-		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
-	end,
-})
-function htop_toggle()
-	htop:toggle()
-end
+-- Import custom terminals
+require("ludo.plugConfig.toggleterm")
 
 local mappings = {
 	["a"] = { "<Cmd>Alpha<CR>", "  Landing page" },
@@ -222,6 +157,7 @@ local mappings = {
 		p = { "<Cmd>lua python_toggle()<CR>", " Python" },
 		n = { "<Cmd>lua node_toggle()<CR>", " Node.js" },
 		t = { "<Cmd>lua htop_toggle()<CR>", "  Htop" },
+		w = { "<Cmd>lua cargo_watch_toggle()<CR>", " Cargo Watch" },
 	},
 }
 
