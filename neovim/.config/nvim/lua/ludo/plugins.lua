@@ -102,6 +102,7 @@ return packer.startup(function(use)
 			"kyazdani42/nvim-web-devicons",
 		},
 	})
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
 	-- Treesitter
 	use({

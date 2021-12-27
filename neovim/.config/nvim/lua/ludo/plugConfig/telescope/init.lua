@@ -106,6 +106,8 @@ telescope.setup({
 	},
 })
 
+require("telescope").load_extension("fzf")
+
 -- keymaps
 local Utils = require("ludo.keymaputils")
 local nnoremap = Utils.nnoremap

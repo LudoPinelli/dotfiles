@@ -4,7 +4,9 @@ alias ll='ls -l'
 alias la='ls -la'
 alias lt='ls --tree'
 
-alias rm='rm -v'
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
 
 alias c='clear'
 alias s='cd ..'
@@ -18,6 +20,12 @@ alias lg='lazygit'
 
 # Path
 export PATH=~/.local/bin:~/.cargo/bin:~/.nvm/versions/node/v17.3.0/bin:~/.local/share/nvim/lsp_servers/rust:$PATH
+
+# Ctrl+space to accept autosuggestions
+bindkey '^ ' autosuggest-accept
+
+# Default editor
+export EDITOR=nvim
 
 # Source plugins
 # To install new plugins, add repo to .zsh_plugins.txt then run :
