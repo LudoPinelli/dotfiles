@@ -1,4 +1,4 @@
 vim.g.bufferline = {
-  auto_hide = true,
-  closable = false,
+	auto_hide = true,
+	closable = false,
 }

@@ -1,13 +1,6 @@
-local nightfox = require("nightfox")
+vim.cmd([[colorscheme nord]])
 
-nightfox.setup({
-	fox = "nordfox",
-	styles = { functions = "italic" },
-	inverse = { match_paren = true },
-	hlgroups = {
-		-- TSVariable = { fg = "#d2d4d7" },
-		-- TSType = { fg = "#ced187" },
-	},
-})
-
-nightfox.load()
+vim.g.nord_contrast = true
+vim.g.nord_italic = true
+vim.g.nord_borders = true
+require("nord").set()

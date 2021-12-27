@@ -9,7 +9,7 @@ local tnoremap = Utils.tnoremap
 local nmap = Utils.nmap
 
 -- mapleader
-nnoremap("<Space>", "<Nop>")
+-- nnoremap("<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.localleader = " "
 
@@ -73,9 +73,6 @@ nnoremap("<A-0>", ":BufferLast<CR>")
 nnoremap("<Leader>c", ":BufferClose<CR>")
 -- Buffer pick
 nnoremap("<Leader>b", ":BufferPick<CR>")
-
--- Markdown previewer
-nnoremap("<Leader>g", ":Glow<CR>")
 
 -- Clipboard utility
 nnoremap("<Leader>n", ":Telescope neoclip<CR>")

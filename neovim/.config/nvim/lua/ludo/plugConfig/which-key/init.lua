@@ -68,7 +68,7 @@ local setup = {
 
 local opts = {
 	mode = "n", -- NORMAL mode
-	prefix = "<Leader>",
+	prefix = "<Space>",
 	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
 	silent = true, -- use `silent` when creating keymaps
 	noremap = true, -- use `noremap` when creating keymaps
@@ -91,7 +91,7 @@ local lazygit = Terminal:new({
 		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
 	end,
 })
-function _lazygit_toggle()
+function lazygit_toggle()
 	lazygit:toggle()
 end
 
@@ -106,7 +106,7 @@ local python = Terminal:new({
 		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
 	end,
 })
-function _python_toggle()
+function python_toggle()
 	python:toggle()
 end
 
@@ -121,7 +121,7 @@ local node = Terminal:new({
 		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
 	end,
 })
-function _node_toggle()
+function node_toggle()
 	node:toggle()
 end
 
@@ -139,15 +139,15 @@ local htop = Terminal:new({
 		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
 	end,
 })
-function _htop_toggle()
+function htop_toggle()
 	htop:toggle()
 end
 
 local mappings = {
 	["a"] = { "<Cmd>Alpha<CR>", "  Landing page" },
 	["b"] = { "<Cmd>lua require('telescope.builtin').buffers()<CR>", " Buffers" },
-	["c"] = { "<Cmd>BufferClose<CR>", " Close Buffer" },
-	["e"] = { "<Cmd>NvimTreeToggle<CR>", "פּ Explorer" },
+	["c"] = { ":BufferClose<CR>", " Close Buffer" },
+	["e"] = { ":NvimTreeToggle<CR>", "פּ Explorer" },
 	["ff"] = { "<Cmd>Telescope find_files<CR>", "  Find files" },
 	["fg"] = { "<Cmd>Telescope live_grep<CR>", " Find Text" },
 	["h"] = { "<Cmd>nohlsearch<CR>", "  No Highlight" },
@@ -157,7 +157,7 @@ local mappings = {
 	g = {
 		name = "   Git",
 
-		g = { "<Cmd>lua _lazygit_toggle()<CR>", " LazyGit" },
+		g = { "<Cmd>lua lazygit_toggle()<CR>", " LazyGit" },
 		j = { "<Cmd>lua require 'gitsigns'.next_hunk()<CR>", "Next Hunk" },
 		k = { "<Cmd>lua require 'gitsigns'.prev_hunk()<CR>", "Prev Hunk" },
 		p = { "<Cmd>lua require 'gitsigns'.preview_hunk()<CR>", "Preview Hunk" },
@@ -171,10 +171,7 @@ local mappings = {
 		o = { "<Cmd>Telescope git_status<CR>", "Open changed file" },
 		b = { "<Cmd>Telescope git_branches<CR>", " Checkout branch" },
 		c = { "<Cmd>Telescope git_commits<CR>", "  Checkout commit" },
-		d = {
-			"<Cmd>Gitsigns diffthis HEAD<CR>",
-			"  Diff",
-		},
+		d = { ":DiffviewOpen<CR>", "  Diff" },
 	},
 
 	l = {
@@ -221,10 +218,10 @@ local mappings = {
 		f = { "<Cmd>ToggleTerm direction=float<CR>", " Float" },
 		h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", " Horizontal" },
 		v = { "<Cmd>ToggleTerm size=80 direction=vertical<CR>", " Vertical" },
-		g = { "<Cmd>lua _lazygit_toggle()<CR>", " LazyGit" },
-		p = { "<Cmd>lua _python_toggle()<CR>", " Python" },
-		n = { "<Cmd>lua _node_toggle()<CR>", " Node.js" },
-		t = { "<Cmd>lua _htop_toggle()<CR>", "  Htop" },
+		g = { "<Cmd>lua lazygit_toggle()<CR>", " LazyGit" },
+		p = { "<Cmd>lua python_toggle()<CR>", " Python" },
+		n = { "<Cmd>lua node_toggle()<CR>", " Node.js" },
+		t = { "<Cmd>lua htop_toggle()<CR>", "  Htop" },
 	},
 }
 
