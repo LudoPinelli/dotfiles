@@ -96,7 +96,7 @@ function lazygit_toggle()
 end
 
 local python = Terminal:new({
-	cmd = "python3",
+	cmd = "bpython",
 	dir = "git_dir",
 	direction = "horizontal",
 	close_on_exit = true,

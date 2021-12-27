@@ -105,6 +105,17 @@ telescope.setup({
 	},
 })
 
+-- keymaps
+local Utils = require("ludo.keymaputils")
+local nnoremap = Utils.nnoremap
+
+nnoremap("<Leader>ff", "<Cmd>Telescope find_files<CR>")
+nnoremap("<Leader>fg", "<Cmd>Telescope live_grep<CR>")
+nnoremap("<Leader>fb", "<Cmd>Telescope buffers<CR>")
+nnoremap("<Leader>fh", "<Cmd>Telescope help_tags<CR>")
+nnoremap("<Leader>fd", "<Cmd>Telescope diagnostics<CR>")
+
+-- Custom pickers
 local M = {}
 
 function M.nvim_config()
