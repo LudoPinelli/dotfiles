@@ -90,7 +90,7 @@ lsp_installer.on_server_ready(function(server)
 				Lua = {
 					diagnostics = {
 						globals = { "vim", "describe" },
-						fisable = { "lowercase-global" },
+						disable = { "lowercase-global" },
 					},
 					workspace = {},
 					library = {
