@@ -11,6 +11,8 @@ alias cp='cp -i'
 alias c='clear'
 alias s='cd ..'
 
+alias v='nvim'
+
 alias df='df --human-readable'
 alias du='du --human-readable'
 

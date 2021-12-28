@@ -30,6 +30,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
 	dashboard.button("t", "  Find Text          ", ":Telescope live_grep<CR>"),
 	dashboard.button("c", "  Config Files       ", "<Cmd>lua require'ludo.plugConfig.telescope'.nvim_config()<CR>"),
+	dashboard.button("s", "  Cheat Sheets       ", "<Cmd>lua require'ludo.plugConfig.telescope'.cheat_sheet()<CR>"),
 	dashboard.button("q", "  Quit               ", ":qa<CR>"),
 }
 

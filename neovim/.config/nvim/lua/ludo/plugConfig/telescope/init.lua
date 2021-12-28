@@ -131,4 +131,13 @@ function M.nvim_config()
 	})
 end
 
+function M.cheat_sheet()
+	require("telescope.builtin").find_files({
+		prompt_title = "  Cheat Sheets",
+		prompt_position = "top",
+		cwd = "~/Documents/CheatSheets",
+		search_dirs = { "~/Documents/CheatSheets" },
+	})
+end
+
 return M
