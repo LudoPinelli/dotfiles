@@ -181,7 +181,7 @@ return packer.startup(function(use)
 	use("ellisonleao/glow.nvim")
 
 	-- Surround
-	use("blackCauldron7/surround.nvim")
+	use("tpope/vim-surround")
 
 	-- Clipboard utility
 	use({

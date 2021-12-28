@@ -47,7 +47,7 @@ local setup = {
 		position = "bottom", -- bottom, top
 		margin = { 1, 1, 1, 1 }, -- extra window margin [top, right, bottom, left]
 		padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-		winblend = 10,
+		winblend = 5,
 	},
 	layout = {
 		height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -82,19 +82,19 @@ require("ludo.plugConfig.toggleterm")
 
 local mappings = {
 	["a"] = { "<Cmd>Alpha<CR>", "  Landing page" },
-	["b"] = { "<Cmd>lua require('telescope.builtin').buffers()<CR>", " Buffers" },
-	["c"] = { "<Cmd>BufferClose<CR>", " Close Buffer" },
-	["e"] = { "<Cmd>NvimTreeToggle<CR>", "פּ Explorer" },
-	["ff"] = { "<Cmd>Telescope find_files<CR>", "  Find files" },
-	["fg"] = { "<Cmd>Telescope live_grep<CR>", " Find Text" },
-	["h"] = { "<Cmd>nohlsearch<CR>", "  No Highlight" },
-	["q"] = { "<Cmd>q!<CR>", "  Quit" },
-	["w"] = { "<Cmd>w!<CR>", "  Save" },
+	["b"] = { "<Cmd>lua require('telescope.builtin').buffers()<CR>", "  Buffers" },
+	["c"] = { "<Cmd>BufferClose<CR>", "  Close Buffer" },
+	["e"] = { "<Cmd>NvimTreeToggle<CR>", "פּ  Explorer" },
+	["ff"] = { "<Cmd>Telescope find_files<CR>", "   Find files" },
+	["fg"] = { "<Cmd>Telescope live_grep<CR>", "  Find Text" },
+	["h"] = { "<Cmd>nohlsearch<CR>", "   No Highlight" },
+	["q"] = { "<Cmd>q!<CR>", "   Quit" },
+	["w"] = { "<Cmd>w!<CR>", "   Save" },
 
 	g = {
 		name = "   Git",
 
-		g = { "<Cmd>lua lazygit_toggle()<CR>", " LazyGit" },
+		g = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
 		j = { "<Cmd>lua require 'gitsigns'.next_hunk()<CR>", "Next Hunk" },
 		k = { "<Cmd>lua require 'gitsigns'.prev_hunk()<CR>", "Prev Hunk" },
 		p = { "<Cmd>lua require 'gitsigns'.preview_hunk()<CR>", "Preview Hunk" },
@@ -106,7 +106,7 @@ local mappings = {
 			"Undo Stage Hunk",
 		},
 		o = { "<Cmd>Telescope git_status<CR>", "Open changed file" },
-		b = { "<Cmd>Telescope git_branches<CR>", " Checkout branch" },
+		b = { "<Cmd>Telescope git_branches<CR>", "  Checkout branch" },
 		c = { "<Cmd>Telescope git_commits<CR>", "  Checkout commit" },
 		d = { ":DiffviewOpen<CR>", "  Diff" },
 	},
@@ -141,8 +141,8 @@ local mappings = {
 		name = "   Search",
 		h = { "<Cmd>Telescope help_tags<CR>", "  Help" },
 		f = { "<Cmd>Telescope find_files<CR>", "  Files" },
-		t = { "<Cmd>Telescope live_grep<CR>", " Text" },
-		M = { "<Cmd>Telescope man_pages<CR>", " Man Pages" },
+		t = { "<Cmd>Telescope live_grep<CR>", "  Text" },
+		M = { "<Cmd>Telescope man_pages<CR>", "  Man Pages" },
 		r = { "<Cmd>Telescope oldfiles<CR>", "  Open Recent File" },
 		R = { "<Cmd>Telescope registers<CR>", "  Registers" },
 		k = { "<Cmd>Telescope keymaps<CR>", "  Keymaps" },
@@ -154,21 +154,21 @@ local mappings = {
 
 	t = {
 		name = "   Terminal",
-		f = { "<Cmd>ToggleTerm direction=float<CR>", " Float" },
-		h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", " Horizontal" },
-		v = { "<Cmd>ToggleTerm size=80 direction=vertical<CR>", " Vertical" },
-		s = { "<Cmd>lua lazygit_toggle()<CR>", " LazyGit" },
-		p = { "<Cmd>lua python_toggle()<CR>", " Python" },
-		n = { "<Cmd>lua node_toggle()<CR>", " Node.js" },
-		t = { "<Cmd>lua htop_toggle()<CR>", "  Htop" },
-		w = { "<Cmd>lua cargo_watch_toggle()<CR>", " Cargo Watch" },
+		f = { "<Cmd>ToggleTerm direction=float<CR>", "  Float" },
+		h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", "  Horizontal" },
+		v = { "<Cmd>ToggleTerm size=80 direction=vertical<CR>", "   Vertical" },
+		s = { "<Cmd>lua lazygit_toggle()<CR>", "   LazyGit" },
+		p = { "<Cmd>lua python_toggle()<CR>", "  Python" },
+		n = { "<Cmd>lua node_toggle()<CR>", "  Node.js" },
+		t = { "<Cmd>lua htop_toggle()<CR>", "   Htop" },
+		w = { "<Cmd>lua cargo_watch_toggle()<CR>", "   Cargo Watch" },
 	},
 	x = {
-		name = "   Trouble",
+		name = "   Various lists",
 		d = { "<Cmd>Trouble document_diagnostics<CR>", "Document Diagnostics" },
 		w = { "<Cmd>Trouble workspace_diagnostics<CR>", "Workspace Diagnostics" },
 		v = { "<Cmd>Trouble loclist<CR>", "Loclist" },
-		q = { "<Cmd>Trouble quickfix<CR>", "Quickfix" },
+		q = { "<Cmd>Trouble quickfix<CR>", "Quickfix list" },
 		r = { "<Cmd>Trouble lsp_references<CR>", "Ref. of word under cursor" },
 		t = { "<Cmd>Trouble lsp_type_definitions<CR>", "Type Definition" },
 	},

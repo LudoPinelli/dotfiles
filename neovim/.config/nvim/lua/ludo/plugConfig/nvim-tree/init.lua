@@ -109,10 +109,3 @@ nvim_tree.setup({
 		tree_width = 30,
 	},
 })
-
--- Keymaps
-local Utils = require("ludo.keymaputils")
-local nnoremap = Utils.nnoremap
-
-nnoremap("<Leader>e", ":NvimTreeToggle<CR>")
-nnoremap("<Leader>r", ":NvimTreeRefresh<CR>")
