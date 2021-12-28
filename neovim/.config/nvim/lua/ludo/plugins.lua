@@ -117,9 +117,7 @@ return packer.startup(function(use)
 	-- Explorer
 	use({
 		"kyazdani42/nvim-tree.lua",
-		require = {
-			"kyazdani42/nvim-web-devicons",
-		},
+		require = "kyazdani42/nvim-web-devicons",
 	})
 
 	-- Status line
@@ -208,15 +206,6 @@ return packer.startup(function(use)
 			"nvim-lua/plenary.nvim",
 		},
 	})
-	use({
-		"TimUntersberger/neogit",
-		requires = {
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			require("neogit").setup()
-		end,
-	})
 
 	-- Notifications
 	use("rcarriga/nvim-notify")
@@ -226,6 +215,15 @@ return packer.startup(function(use)
 
 	-- Dim inactive windows
 	use("sunjon/shade.nvim")
+
+	-- Neorg
+	use({
+		"nvim-neorg/neorg",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-neorg/neorg-telescope",
+		},
+	})
 
 	-- Automatically set up config after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
