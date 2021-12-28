@@ -75,6 +75,8 @@ local opts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 
+require("ludo.plugConfig.toggleterm")
+
 local mappings = {
 	["a"] = { "<Cmd>Alpha<CR>", "  Landing page" },
 	["b"] = { "<Cmd>lua require('telescope.builtin').buffers()<CR>", " Buffers" },
@@ -151,11 +153,11 @@ local mappings = {
 		f = { "<Cmd>ToggleTerm direction=float<CR>", " Float" },
 		h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", " Horizontal" },
 		v = { "<Cmd>ToggleTerm size=80 direction=vertical<CR>", " Vertical" },
-		g = { "<Cmd>lua <require('ludo.plugconfig.toggleterm').lazygit_toggle()CR>", " LazyGit" },
-		p = { "<Cmd>lua <require('ludo.plugconfig.toggleterm').python_toggle()CR>", " Python" },
-		n = { "<Cmd>lua <require('ludo.plugconfig.toggleterm').node_toggle()CR>", " Node.js" },
-		t = { "<Cmd>lua <require('ludo.plugconfig.toggleterm').htop_toggle()CR>", "  Htop" },
-		w = { "<Cmd>lua require('ludo.plugconfig.toggleterm').cargo_watch_toggle()<cr>", " Cargo Watch" },
+		s = { "<Cmd>lua lazygit_toggle()<CR>", " LazyGit" },
+		p = { "<Cmd>lua python_toggle()<CR>", " Python" },
+		n = { "<Cmd>lua node_toggle()<CR>", " Node.js" },
+		t = { "<Cmd>lua htop_toggle()<CR>", "  Htop" },
+		w = { "<Cmd>lua cargo_watch_toggle()<CR>", " Cargo Watch" },
 	},
 }
 
