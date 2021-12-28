@@ -125,7 +125,7 @@ function M.nvim_config()
 	require("telescope.builtin").file_browser({
 		prompt_title = " Neovim Configuration",
 		prompt_position = "top",
-		cwd = "~/.dotfiles/neovim/",
+		cwd = "~/.dotfiles/neovim/.config/nvim/",
 		hidden = true,
 		sorting_strategy = "ascending",
 	})
@@ -135,7 +135,7 @@ function M.cheat_sheet()
 	require("telescope.builtin").find_files({
 		prompt_title = "  Cheat Sheets",
 		prompt_position = "top",
-		cwd = "~/Documents/CheatSheets",
+		cwd = "~/Documents/CheatSheets/",
 		search_dirs = { "~/Documents/CheatSheets" },
 	})
 end
