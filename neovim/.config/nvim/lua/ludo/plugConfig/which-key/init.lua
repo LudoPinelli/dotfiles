@@ -1,4 +1,7 @@
-local which_key = require("which-key")
+local status_ok, which_key = pcall(require, "which-key")
+if not status_ok then
+	return
+end
 
 local setup = {
 	plugins = {

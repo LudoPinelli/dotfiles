@@ -1,4 +1,9 @@
-require("lspsaga").setup({
+local status_ok, lspsaga = pcall(require, "lspsaga")
+if not status_ok then
+	return
+end
+
+lspsaga.setup({
 	debug = false,
 	use_saga_diagnostic_sign = true,
 

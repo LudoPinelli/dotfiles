@@ -1,5 +1,11 @@
-local cmp = require("cmp")
-local luasnip = require("luasnip")
+local status_ok, cmp = pcall(require, "cmp")
+if not status_ok then
+	return
+end
+local luasnip_status_ok, luasnip = pcall(require, "luasnip")
+if not luasnip_status_ok then
+	return
+end
 
 -- Load snippets from the vscode like package friendly-snippets
 require("luasnip/loaders/from_vscode").lazy_load()
@@ -105,10 +111,10 @@ cmp.setup({
 	},
 	-- Sources are shown in the same order
 	sources = {
-		{ name = "treesitter" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
+		{ name = "treesitter" },
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "crates" },

@@ -5,7 +5,10 @@
 -- vim.g.nord_borders = true
 -- require("nord").set()
 
-local nightfox = require("nightfox")
+local status_ok, nightfox = pcall(require, "nightfox")
+if not status_ok then
+	return
+end
 
 nightfox.setup({
 	fox = "nordfox",

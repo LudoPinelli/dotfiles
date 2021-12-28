@@ -1,4 +1,8 @@
-local lualine = require("lualine")
+local status_ok, lualine = pcall(require, "lualine")
+if not status_ok then
+	return
+end
+
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
@@ -17,7 +21,7 @@ local diff = {
 	"diff",
 	colored = false,
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
+	cond = hide_in_width,
 }
 
 local filetype = {
@@ -33,14 +37,14 @@ local branch = {
 }
 
 local mode = {
-  "mode",
-  separator = { left = "" }
+	"mode",
+	separator = { left = "" },
 }
 
 local location = {
-  "location",
-  separator = { right = "" },
-  left_padding = 2,
+	"location",
+	separator = { right = "" },
+	left_padding = 2,
 }
 
 lualine.setup({

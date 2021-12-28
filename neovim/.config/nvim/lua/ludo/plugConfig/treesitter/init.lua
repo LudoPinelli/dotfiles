@@ -1,4 +1,9 @@
-require("nvim-treesitter.configs").setup({
+local status_ok, nvim_treessitter_configs = pcall(require, "nvim-treesitter.configs")
+if not status_ok then
+	return
+end
+
+nvim_treessitter_configs.setup({
 	ensure_installed = { -- "all", "maintained" or list of languages
 		"bash",
 		"c",
