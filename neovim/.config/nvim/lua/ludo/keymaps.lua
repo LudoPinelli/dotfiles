@@ -40,6 +40,9 @@ nnoremap("<C-l>", "<C-w><Right>")
 nnoremap("<C-s>", ":w<CR>")
 inoremap("<C-s>", "<Esc>:w<CR>i")
 
+-- return to last insert location
+nnoremap("<Leader>i", "`.")
+
 nnoremap("K", ":lua show_documentation()<Cr>")
 function show_documentation()
 	local filetype = vim.bo.filetype
