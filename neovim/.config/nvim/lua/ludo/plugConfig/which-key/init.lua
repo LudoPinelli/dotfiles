@@ -8,7 +8,7 @@ local setup = {
 		marks = true, -- shows a list of your marks on ' and `
 		registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
 		spelling = {
-			enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+			enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
 			suggestions = 20, -- how many suggestions should be shown in the list?
 		},
 		-- the presets plugin, adds help for a bunch of default keybindings in Neovim
@@ -47,7 +47,7 @@ local setup = {
 		position = "bottom", -- bottom, top
 		margin = { 1, 1, 1, 1 }, -- extra window margin [top, right, bottom, left]
 		padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-		winblend = 0,
+		winblend = 10,
 	},
 	layout = {
 		height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -83,8 +83,8 @@ require("ludo.plugConfig.toggleterm")
 local mappings = {
 	["a"] = { "<Cmd>Alpha<CR>", "  Landing page" },
 	["b"] = { "<Cmd>lua require('telescope.builtin').buffers()<CR>", " Buffers" },
-	["c"] = { ":BufferClose<CR>", " Close Buffer" },
-	["e"] = { ":NvimTreeToggle<CR>", "פּ Explorer" },
+	["c"] = { "<Cmd>BufferClose<CR>", " Close Buffer" },
+	["e"] = { "<Cmd>NvimTreeToggle<CR>", "פּ Explorer" },
 	["ff"] = { "<Cmd>Telescope find_files<CR>", "  Find files" },
 	["fg"] = { "<Cmd>Telescope live_grep<CR>", " Find Text" },
 	["h"] = { "<Cmd>nohlsearch<CR>", "  No Highlight" },
@@ -149,7 +149,7 @@ local mappings = {
 		c = { "<Cmd>Telescope commands<CR>", "  Commands" },
 		H = { "<Cmd>Telescope command_history<CR>", "  Commands History" },
 		m = { "<Cmd>Telescope notify<CR>", "  Messages History" },
-		s = { "<Cmd>lua require('ludo.plugConfig.telescope').cheat_sheet()<CR>", "  Cheat Sheets" },
+		C = { "<Cmd>lua require('ludo.plugConfig.telescope').cheat_sheet()<CR>", "  Cheat Sheets" },
 	},
 
 	t = {
@@ -162,6 +162,15 @@ local mappings = {
 		n = { "<Cmd>lua node_toggle()<CR>", " Node.js" },
 		t = { "<Cmd>lua htop_toggle()<CR>", "  Htop" },
 		w = { "<Cmd>lua cargo_watch_toggle()<CR>", " Cargo Watch" },
+	},
+	x = {
+		name = "   Trouble",
+		d = { "<Cmd>Trouble document_diagnostics<CR>", "Document Diagnostics" },
+		w = { "<Cmd>Trouble workspace_diagnostics<CR>", "Workspace Diagnostics" },
+		v = { "<Cmd>Trouble loclist<CR>", "Loclist" },
+		q = { "<Cmd>Trouble quickfix<CR>", "Quickfix" },
+		r = { "<Cmd>Trouble lsp_references<CR>", "Ref. of word under cursor" },
+		t = { "<Cmd>Trouble lsp_type_definitions<CR>", "Type Definition" },
 	},
 }
 
