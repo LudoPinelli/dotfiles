@@ -46,9 +46,7 @@ local tnoremap = Utils.tnoremap
 tnoremap("<ESC>", "<C-\\><C-n>")
 
 -- custom
-local M = {}
 local Terminal = require("toggleterm.terminal").Terminal
-
 -- Open LazyGit
 local lazygit = Terminal:new({
 	cmd = "lazygit",
@@ -129,5 +127,3 @@ local cargo_watch = Terminal:new({
 function cargo_watch_toggle()
 	cargo_watch:toggle()
 end
-
-return M
