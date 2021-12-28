@@ -116,11 +116,11 @@ local mappings = {
 
 		a = { "<Cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
 		d = {
-			"<Cmd>Telescope diagnostics<CR>",
+			"<Cmd>Trouble document_diagnostics<CR>",
 			"Document Diagnostics",
 		},
 		w = {
-			"<Cmd>Telescope lsp_workspace_diagnostics<CR>",
+			"<Cmd>Trouble workspace_diagnostics<CR>",
 			"Workspace Diagnostics",
 		},
 		f = { "<Cmd>lua vim.lsp.buf.formatting()<CR>", "  Format" },
@@ -134,6 +134,7 @@ local mappings = {
 			"<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
 			"  Workspace Symbols",
 		},
+		R = { "<Cmd>Trouble lsp_references<CR>", "Ref. of word under cursor" },
 	},
 
 	s = {
