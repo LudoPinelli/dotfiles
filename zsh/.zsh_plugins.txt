@@ -5,4 +5,6 @@ zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
 
+rupa/z
+
 jeffreytse/zsh-vi-mode
