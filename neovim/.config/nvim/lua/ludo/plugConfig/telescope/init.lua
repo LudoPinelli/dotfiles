@@ -107,6 +107,7 @@ telescope.setup({
 })
 
 require("telescope").load_extension("fzf")
+require("telescope").load_extension("file_browser")
 
 -- keymaps
 local Utils = require("ludo.keymaputils")
@@ -122,11 +123,12 @@ nnoremap("<Leader>fd", "<Cmd>Telescope diagnostics<CR>")
 local M = {}
 
 function M.nvim_config()
-	require("telescope.builtin").file_browser({
+	require("telescope").extensions.file_browser.file_browser({
 		prompt_title = " Neovim Configuration",
 		prompt_position = "top",
+		path = "~/.dotfiles/neovim/.config/nvim/",
 		cwd = "~/.dotfiles/neovim/.config/nvim/",
-		hidden = true,
+		depth = 4,
 		sorting_strategy = "ascending",
 	})
 end
