@@ -25,6 +25,9 @@ export PATH=~/.local/bin:~/.cargo/bin:~/.nvm/versions/node/v17.3.0/bin:~/.local/
 
 # Ctrl+space to accept autosuggestions
 bindkey '^ ' autosuggest-accept
+# Up/Down to search through history with zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # Default editor
 export EDITOR=nvim

@@ -1,10 +1,8 @@
 robbyrussell/oh-my-zsh path:plugins/colored-man-pages
 robbyrussell/oh-my-zsh path:plugins/command-not-found
-
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
-zsh-users/zsh-syntax-highlighting
-
+zsh-users/zsh-history-substring-search
 rupa/z
-
 jeffreytse/zsh-vi-mode
+zsh-users/zsh-syntax-highlighting
