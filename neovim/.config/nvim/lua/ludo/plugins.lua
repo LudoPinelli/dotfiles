@@ -1,6 +1,6 @@
 local fn = vim.fn
 
--- Automatically install packer
+-- Automatically install packer if it's not already
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
 	PACKER_BOOTSTRAP = fn.system({
@@ -15,7 +15,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	vim.cmd([[packadd packer.nvim]])
 end
 
--- Sync plugins on write/save
+-- Sync plugins on write/save of this file
 vim.cmd([[
   augroup packer_user_config
     autocmd!
@@ -39,74 +39,21 @@ packer.init({
 })
 
 return packer.startup(function(use)
-	use("wbthomason/packer.nvim") -- Packer
+	-- Packer itself
+	use("wbthomason/packer.nvim")
 
-	-- Theme
-	-- use("shaunsingh/nord.nvim") -- Nord theme
-	use("EdenEast/nightfox.nvim")
+	------------------------------------
+	--             CORE               --
+	------------------------------------
 
-	-- Completion
-	use({
-		"hrsh7th/nvim-cmp",
-		requires = { -- Completion plugin
-			use("hrsh7th/cmp-buffer"), -- buffer completion
-			use("hrsh7th/cmp-nvim-lsp"), -- Lsp completion
-			use("hrsh7th/cmp-path"), -- path completion
-			use("hrsh7th/cmp-cmdline"), -- cmdline completion
-			use("saadparwaiz1/cmp_luasnip"), -- snippet completion
-			use("hrsh7th/cmp-nvim-lua"), -- neovim lua completion
-			use("ray-x/cmp-treesitter"), -- treesitter completion
-		},
-	})
-
-	-- Snippets
-	use({
-		"L3MON4D3/luaSnip", -- Snippet engine
-		requires = {
-			"rafamadriz/friendly-snippets", -- Snippets collection
-		},
-	})
-
-	-- LSP
-	use({
-		"neovim/nvim-lspconfig",
-		requires = {
-			"williamboman/nvim-lsp-installer", -- Language server installer
-			"tami5/lspsaga.nvim", -- better UI
-			"jose-elias-alvarez/null-ls.nvim", -- formatter and more
-		},
-	})
-
-	use("windwp/nvim-autopairs") -- Autopairs
-
-	-- Rust specific
-	use({
-		"simrat39/rust-tools.nvim", -- Additional tools for Rust
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"mfussenegger/nvim-dap",
-		},
-	})
-	use({
-		"saecki/crates.nvim",
-		config = function()
-			require("crates").setup()
-		end,
-	})
-
-	-- Telescope
-	use({
+	use({ -- Telescope
 		"nvim-telescope/telescope.nvim",
 		requires = {
-			"nvim-lua/plenary.nvim",
-			"kyazdani42/nvim-web-devicons",
 			"nvim-telescope/telescope-file-browser.nvim",
+			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 		},
 	})
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-
-	-- Treesitter
-	use({
+	use({ -- Treesitter
 		"nvim-treesitter/nvim-treesitter",
 		requires = {
 			"nvim-treesitter/nvim-treesitter-refactor",
@@ -114,135 +61,124 @@ return packer.startup(function(use)
 		},
 		run = ":TSUpdate",
 	})
-
-	-- Explorer
-	use({
-		"kyazdani42/nvim-tree.lua",
-		require = "kyazdani42/nvim-web-devicons",
-	})
-
-	-- Status line
-	use({
-		"nvim-lualine/lualine.nvim",
+	use({ -- LSP
+		"neovim/nvim-lspconfig",
 		requires = {
-			"kyazdani42/nvim-web-devicons",
-			opt = true,
+			"williamboman/nvim-lsp-installer",
+			"tami5/lspsaga.nvim",
+			"jose-elias-alvarez/null-ls.nvim",
+		},
+	})
+	use({ -- Completion
+		"hrsh7th/nvim-cmp",
+		requires = {
+			use("hrsh7th/cmp-buffer"),
+			use("hrsh7th/cmp-nvim-lsp"),
+			use("hrsh7th/cmp-path"),
+			use("hrsh7th/cmp-cmdline"),
+			use("saadparwaiz1/cmp_luasnip"),
+			use("hrsh7th/cmp-nvim-lua"),
+			use("ray-x/cmp-treesitter"),
+		},
+	})
+	use({ -- Snippets
+		"L3MON4D3/luaSnip",
+		requires = {
+			"rafamadriz/friendly-snippets",
 		},
 	})
 
-	-- Commenting
-	use({
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
-	})
+	------------------------------------
+	--            VISUAL              --
+	------------------------------------
 
-	-- Pretty lists (quickfix, lsp_references, document_diagnostics, workspace_diagnostics,
-	--               lsp_definitions, lsp_type_definitions, loclist)
-	use({
-		"folke/trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
-	})
-
-	-- Terminal utility
-	use("akinsho/nvim-toggleterm.lua")
-
-	-- Improve startup time
-	use("lewis6991/impatient.nvim")
-
-	-- Stabilize windows on open/close
-	use({
+	use("EdenEast/nightfox.nvim") -- Theme
+	use("sunjon/shade.nvim") -- Dim inactive windows
+	use("lukas-reineke/indent-blankline.nvim") -- Add indentation guides
+	use("rcarriga/nvim-notify") -- Notifications
+	use("nvim-lualine/lualine.nvim") -- Status line
+	use("goolord/alpha-nvim") -- Dashboard
+	use({ -- Stabilize windows on open/close
 		"luukvbaal/stabilize.nvim",
 		config = function()
 			require("stabilize").setup()
 		end,
 	})
 
-	-- Add indentation guides
-	use("lukas-reineke/indent-blankline.nvim")
+	------------------------------------
+	--         PRODUCTIVITY           --
+	------------------------------------
 
-	-- Dashboard
-	use({
-		"goolord/alpha-nvim",
-		requires = { "BlakeJC94/alpha-nvim-fortune" },
-	})
-
-	-- Tabline
-	use({
-		"romgrk/barbar.nvim",
-		requires = { "kyazdani42/nvim-web-devicons" },
-	})
-
-	-- To see key mappings
-	use("folke/which-key.nvim")
-
-	-- Markdown Previewer
-	use("ellisonleao/glow.nvim")
-
-	-- Surround
-	use("tpope/vim-surround")
-
-	-- Clipboard utility
-	use({
-		"AckslD/nvim-neoclip.lua",
-		requires = {
-			"nvim-telescope/telescope.nvim",
-		},
-	})
-
-	-- Git integration
-	use({
-		"lewis6991/gitsigns.nvim",
-		requires = {
-			"nvim-lua/plenary.nvim",
-		},
+	use("windwp/nvim-autopairs") -- Autopairs
+	use("tpope/vim-surround") -- Surround
+	use("folke/which-key.nvim") -- Key mappings easy access
+	use("romgrk/barbar.nvim") -- Tabline
+	use("sudormrfbin/cheatsheet.nvim") -- Searchable CheetSheat
+	use({ -- Commenting
+		"numToStr/Comment.nvim",
 		config = function()
-			require("gitsigns").setup()
+			require("Comment").setup()
 		end,
 	})
-	use({
-		"sindrets/diffview.nvim",
-		require = {
-			"nvim-lua/plenary.nvim",
-		},
-	})
-
-	-- Notifications
-	use("rcarriga/nvim-notify")
-
-	-- Enhanced vim.selct and vim.input
-	use("stevearc/dressing.nvim")
-
-	-- Dim inactive windows
-	use("sunjon/shade.nvim")
-
-	-- Neorg
-	use({
-		"nvim-neorg/neorg",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-neorg/neorg-telescope",
-		},
-	})
-
-	-- For a better experience when escaping from insert mode
-	use({
+	use({ -- Smooth "jk" experience for escaping from insert mode
 		"max397574/better-escape.nvim",
 		config = function()
 			require("better_escape").setup()
 		end,
 	})
-
-	-- Searchable CheetSheat
-	use({
-		"sudormrfbin/cheatsheet.nvim",
+	use({ -- Neorg
+		"nvim-neorg/neorg",
 		requires = {
-			"nvim-telescope/telescope.nvim",
-			"nvim-lua/popup.nvim",
-			"nvim-lua/plenary.nvim",
+			"nvim-neorg/neorg-telescope",
 		},
 	})
+
+	------------------------------------
+	--             GIT                --
+	------------------------------------
+
+	use("sindrets/diffview.nvim")
+	use({
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end,
+	})
+
+	-----------------------------------
+	--         UTILITIES             --
+	-----------------------------------
+
+	use("AckslD/nvim-neoclip.lua") -- Clipboard utility
+	use("kyazdani42/nvim-tree.lua") -- Explorer
+	use("akinsho/nvim-toggleterm.lua") -- Terminal utility
+	use("lewis6991/impatient.nvim") -- Improve startup time
+	use("ellisonleao/glow.nvim") -- Markdown Previewer
+
+	------------------------------------
+	--         PROGRAMMING            --
+	------------------------------------
+
+	-- Rust
+	use("simrat39/rust-tools.nvim")
+	use("mfussenegger/nvim-dap")
+	use({
+		"saecki/crates.nvim",
+		config = function()
+			require("crates").setup()
+		end,
+	})
+
+	------------------------------------
+	--          REQUIRED              --
+	------------------------------------
+
+	-- By: rust-tools, diffview, gitsigns, neorg, cheetsheat, telescope
+	use("nvim-lua/plenary.nvim")
+	-- By: nvim-tree, barbar, lualine, telescope
+	use("kyazdani42/nvim-web-devicons")
+	-- By: popup
+	use("nvim-lua/popup.nvim")
 
 	-- Automatically set up config after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

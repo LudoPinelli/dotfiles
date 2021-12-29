@@ -101,13 +101,11 @@ local mappings = {
 		r = { "<Cmd>lua require 'gitsigns'.reset_hunk()<CR>", "Reset Hunk" },
 		R = { "<Cmd>lua require 'gitsigns'.reset_buffer()<CR>", "Reset Buffer" },
 		s = { "<Cmd>lua require 'gitsigns'.stage_hunk()<CR>", "Stage Hunk" },
-		u = {
-			"<Cmd>lua require 'gitsigns'.undo_stage_hunk()<CR>",
-			"Undo Stage Hunk",
-		},
+		u = { "<Cmd>lua require 'gitsigns'.undo_stage_hunk()<CR>", "Undo Stage Hunk" },
 		o = { "<Cmd>Telescope git_status<CR>", "Open changed file" },
 		b = { "<Cmd>Telescope git_branches<CR>", "  Checkout branch" },
 		c = { "<Cmd>Telescope git_commits<CR>", "  Checkout commit" },
+		f = { "<Cmd>Telescope git_files<CR>", "Git files" },
 		d = { ":DiffviewOpen<CR>", "  Diff" },
 	},
 
@@ -115,26 +113,19 @@ local mappings = {
 		name = "   LSP",
 
 		a = { "<Cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
-		d = {
-			"<Cmd>Trouble document_diagnostics<CR>",
-			"Document Diagnostics",
-		},
-		w = {
-			"<Cmd>Trouble workspace_diagnostics<CR>",
-			"Workspace Diagnostics",
-		},
+		d = { "<Cmd>lua vim.diagnostic.open_float()<CR>", "Document Diagnostics" },
 		f = { "<Cmd>lua vim.lsp.buf.formatting()<CR>", "  Format" },
 		i = { "<Cmd>LspInfo<CR>", "  Info" },
 		I = { "<Cmd>LspInstallInfo<CR>", "Installer Info" },
 		l = { "<Cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
-		q = { "<Cmd>Trouble quickfix<CR>", "Quickfix" },
+		L = { "<Cmd>lua vim.diagnostic.setloclist()<CR>", "Loclist" },
+		q = { "<Cmd>lua vim.diagnostic.setqflist()<CR>", "Quickfix list" },
 		r = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "凜  Rename" },
-		s = { "<Cmd>Telescope lsp_document_symbols<CR>", "  Document Symbols" },
-		S = {
-			"<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
-			"  Workspace Symbols",
-		},
-		R = { "<Cmd>Trouble lsp_references<CR>", "Ref. of word under cursor" },
+		s = { "<Cmd>lua vim.lsp.buf.document_symbol()<CR>", "  Document Symbols" },
+		S = { "<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "  Workspace Symbols" },
+		R = { "<Cmd>lua vim.lsp.buf.references()<CR>", "Ref. of word under cursor" },
+		g = { "<Cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature" },
+		t = { "<Cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
 	},
 
 	s = {
@@ -162,15 +153,6 @@ local mappings = {
 		n = { "<Cmd>lua node_toggle()<CR>", "  Node.js" },
 		t = { "<Cmd>lua htop_toggle()<CR>", "   Htop" },
 		w = { "<Cmd>lua cargo_watch_toggle()<CR>", "   Cargo Watch" },
-	},
-	x = {
-		name = "   Various lists",
-		d = { "<Cmd>Trouble document_diagnostics<CR>", "Document Diagnostics" },
-		w = { "<Cmd>Trouble workspace_diagnostics<CR>", "Workspace Diagnostics" },
-		v = { "<Cmd>Trouble loclist<CR>", "Loclist" },
-		q = { "<Cmd>Trouble quickfix<CR>", "Quickfix list" },
-		r = { "<Cmd>Trouble lsp_references<CR>", "Ref. of word under cursor" },
-		t = { "<Cmd>Trouble lsp_type_definitions<CR>", "Type Definition" },
 	},
 }
 
