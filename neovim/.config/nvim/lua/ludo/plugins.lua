@@ -125,12 +125,6 @@ return packer.startup(function(use)
 			require("better_escape").setup()
 		end,
 	})
-	use({ -- Neorg
-		"nvim-neorg/neorg",
-		requires = {
-			"nvim-neorg/neorg-telescope",
-		},
-	})
 
 	------------------------------------
 	--             GIT                --
