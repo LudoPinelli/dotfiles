@@ -3,6 +3,24 @@ if not status_ok then
 	return
 end
 
+-- Change diagnostic signs in the gutter
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+vim.diagnostic.config({
+	virtual_text = {
+		prefix = "", -- Could be '●', '▎', 'x'
+		source = "if_many", -- Or "always"
+	},
+	float = {
+		source = "if_many", -- Or "always"
+	},
+	update_in_insert = false,
+})
+
 local on_attach = function(client, bufnr)
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
