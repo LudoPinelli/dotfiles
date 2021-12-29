@@ -17,6 +17,12 @@ local diagnostics = {
 	always_visible = false,
 }
 
+local filename = {
+	"filename",
+	path = 1,
+	shorting_target = 40,
+}
+
 local diff = {
 	"diff",
 	colored = false,
@@ -57,7 +63,7 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { mode },
-		lualine_b = { "filename", branch, diff, diagnostics },
+		lualine_b = { filename, branch, diff, diagnostics },
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = { filetype, "progress" },
