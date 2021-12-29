@@ -159,9 +159,12 @@ return packer.startup(function(use)
 	--         PROGRAMMING            --
 	------------------------------------
 
+	-- Debugging
+	use("mfussenegger/nvim-dap")
+	use("Pocco81/DAPInstall.nvim")
+
 	-- Rust
 	use("simrat39/rust-tools.nvim")
-	use("mfussenegger/nvim-dap")
 	use({
 		"saecki/crates.nvim",
 		config = function()

@@ -56,3 +56,6 @@ function show_documentation()
 		vim.lsp.buf.hover()
 	end
 end
+
+-- command CDC to change working directory to current file
+vim.cmd([[command CDC cd %:p:h]])
