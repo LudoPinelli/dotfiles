@@ -226,6 +226,14 @@ return packer.startup(function(use)
 		},
 	})
 
+	-- For a better experience when escaping from insert mode
+	use({
+		"max397574/better-escape.nvim",
+		config = function()
+			require("better_escape").setup()
+		end,
+	})
+
 	-- Automatically set up config after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
