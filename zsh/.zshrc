@@ -20,6 +20,13 @@ alias upgrade='sudo apt-get update && sudo apt-get upgrade && sudo apt-get clean
 
 alias lg='lazygit'
 alias trash-empty='trash-empty -trash-dir=/home/ludo/.local/share/Trash'
+
+alias gt='git status'
+alias gb='git branch'
+alias gch='git checkout'
+alias gi='git init'
+alias ga='git add'
+
 # Path
 export PATH=~/.local/bin:~/.cargo/bin:~/.nvm/versions/node/v17.3.0/bin:~/.local/share/nvim/lsp_servers/rust:$PATH
 
