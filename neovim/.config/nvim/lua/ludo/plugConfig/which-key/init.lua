@@ -90,6 +90,7 @@ local mappings = {
 	["h"] = { "<Cmd>nohlsearch<CR>", "   No Highlight" },
 	["q"] = { "<Cmd>q!<CR>", "   Quit" },
 	["w"] = { "<Cmd>w!<CR>", "   Save" },
+	["?"] = { "<Cmd>Cheatsheet<CR>", "  Cheat Sheets" },
 
 	g = {
 		name = "   Git",
@@ -119,7 +120,7 @@ local mappings = {
 		I = { "<Cmd>LspInstallInfo<CR>", "Installer Info" },
 		l = { "<Cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
 		L = { "<Cmd>lua vim.diagnostic.setloclist()<CR>", "Loclist" },
-		q = { "<Cmd>lua vim.diagnostic.setqflist()<CR>", "Quickfix list" },
+		q = { "<Cmd>lua vim.diagnostic.setqflist()<CR>", "Send to Quickfix List" },
 		r = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "凜  Rename" },
 		s = { "<Cmd>lua vim.lsp.buf.document_symbol()<CR>", "  Document Symbols" },
 		S = { "<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "  Workspace Symbols" },

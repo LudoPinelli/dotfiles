@@ -27,7 +27,7 @@ dashboard.section.header.val = {
 }
 
 dashboard.section.buttons.val = {
-	-- dashboard.button("n", "  New File           ", ":ene <BAR> startinsert<CR>"),
+	dashboard.button("n", "  New File           ", ":ene <BAR> startinsert<CR>"),
 	dashboard.button("e", "פּ  Explore            ", ":NvimTreeToggle<CR>"),
 	dashboard.button("f", "  Find File          ", ":Telescope find_files<CR>"),
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
@@ -37,7 +37,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("q", "  Quit               ", ":qa<CR>"),
 }
 
-dashboard.section.footer.val = "Ludo"
+dashboard.section.footer.val = "---"
 
 dashboard.opts.opts.noautocmd = true
 
