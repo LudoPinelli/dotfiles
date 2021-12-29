@@ -234,6 +234,16 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- Searchable CheetSheat
+	use({
+		"sudormrfbin/cheatsheet.nvim",
+		requires = {
+			"nvim-telescope/telescope.nvim",
+			"nvim-lua/popup.nvim",
+			"nvim-lua/plenary.nvim",
+		},
+	})
+
 	-- Automatically set up config after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
