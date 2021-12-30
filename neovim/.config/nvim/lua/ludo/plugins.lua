@@ -147,7 +147,18 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-tree.lua") -- Explorer
 	use("akinsho/nvim-toggleterm.lua") -- Terminal utility
 	use("lewis6991/impatient.nvim") -- Improve startup time
+
+	------------------------------------
+	--          MARKDOWN              --
+	------------------------------------
+
 	use("ellisonleao/glow.nvim") -- Markdown Previewer
+	use({ -- Esay conversion of MD with pandoc
+		"jghauser/auto-pandoc.nvim",
+		config = function()
+			require("auto-pandoc")
+		end,
+	})
 
 	------------------------------------
 	--         PROGRAMMING            --
@@ -171,6 +182,7 @@ return packer.startup(function(use)
 	------------------------------------
 
 	-- By: rust-tools, diffview, gitsigns, cheetsheat, telescope
+	-- auto-pandoc
 	use("nvim-lua/plenary.nvim")
 	-- By: nvim-tree, barbar, lualine, telescope
 	use("kyazdani42/nvim-web-devicons")
