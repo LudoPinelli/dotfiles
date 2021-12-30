@@ -92,6 +92,8 @@ local mappings = {
 	["q"] = { "<Cmd>q!<CR>", "   Quit" },
 	["w"] = { "<Cmd>w!<CR>", "   Save" },
 	["?"] = { ":<C-U>Cheatsheet<CR>", "  Cheat Sheets" },
+	["z"] = { "<Cmd>:set spell!<CR>", "Toggle Spellcheck" },
+	["W"] = { "<Cmd>:cd %:p:h<CR>:pwd<CR>", "Set Working Directory" },
 
 	g = {
 		name = "   Git",
@@ -126,7 +128,6 @@ local mappings = {
 		s = { "<Cmd>lua vim.lsp.buf.document_symbol()<CR>", "  Document Symbols" },
 		S = { "<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "  Workspace Symbols" },
 		R = { "<Cmd>lua vim.lsp.buf.references()<CR>", "Ref. of word under cursor" },
-		g = { "<Cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature" },
 		t = { "<Cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
 	},
 

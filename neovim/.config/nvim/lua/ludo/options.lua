@@ -15,11 +15,11 @@ o.signcolumn = "yes" -- Sign Column
 o.formatoptions = o.formatoptions
 	- "a" -- no autoformatting
 	- "t" -- no code formatting, linters are in charge
-	- "c" -- comment respect textwidth
-	- "q" -- allow formatting comments with gq
+	+ "c" -- comment respect textwidth
+	+ "q" -- allow formatting comments with gq
 	- "o" -- o and O don't continue comments
-	- "r" -- but do continue when pressing enter
-	- "n" -- indent past the formatlistpat, not underneath it
+	+ "r" -- but do continue when pressing enter
+	+ "n" -- indent past the formatlistpat, not underneath it
 	- "2" -- don't replace two spaces with one
 o.joinspaces = false
 

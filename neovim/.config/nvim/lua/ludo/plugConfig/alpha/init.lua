@@ -29,7 +29,7 @@ dashboard.section.header.val = {
 require("ludo.plugConfig.telescope.custom_pickers")
 
 dashboard.section.buttons.val = {
-	dashboard.button("n", "  New File           ", ":ene <BAR> startinsert<CR>"),
+	-- dashboard.button("n", "  New File           ", ":ene <BAR> startinsert<CR>"),
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
 	dashboard.button("h", "  Home directory     ", "<Cmd>lua home()<CR>"),
 	dashboard.button("e", "פּ  Explore            ", ":NvimTreeToggle<CR>"),

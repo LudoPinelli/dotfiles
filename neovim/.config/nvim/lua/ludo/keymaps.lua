@@ -43,6 +43,12 @@ inoremap("<C-s>", "<Esc>:w<CR>i")
 -- return to last insert location
 nnoremap("<Leader>i", "`.")
 
+-- Toggle spellcheck
+nnoremap("<Leader>z", ":set spell!<CR>")
+
+-- Set working directory to current
+nnoremap("<Leader>W", "<Cmd>:cd %:p:h<CR>:pwd<CR>")
+
 nnoremap("K", ":lua show_documentation()<Cr>")
 function show_documentation()
 	local filetype = vim.bo.filetype
@@ -56,6 +62,3 @@ function show_documentation()
 		vim.lsp.buf.hover()
 	end
 end
-
--- command CDC to change working directory to current file
-vim.cmd([[command CDC cd %:p:h]])
