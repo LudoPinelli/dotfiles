@@ -48,3 +48,10 @@ nvim_treessitter_configs.setup({
 		highlight_definitions = { enable = true },
 	},
 })
+
+-- vim.cmd("set foldmethod=expr")
+-- vim.cmd("set foldexpr=nvim_treesitter#foldexpr()")
+-- vim.cmd("set nofoldenable")
+-- vim.cmd("set foldlevelstart=99")
+--
+-- vim.opt.fillchars = "fold: "

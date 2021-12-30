@@ -14,7 +14,7 @@ nightfox.setup({
 	fox = "nordfox",
 	styles = {
 		comments = "italic",
-		functions = "italic",
+		-- functions = "italic",
 	},
 	inverse = {
 		match_paren = true,
