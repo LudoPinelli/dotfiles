@@ -169,7 +169,7 @@ return packer.startup(function(use)
 	--          REQUIRED              --
 	------------------------------------
 
-	-- By: rust-tools, diffview, gitsigns, neorg, cheetsheat, telescope
+	-- By: rust-tools, diffview, gitsigns, cheetsheat, telescope
 	use("nvim-lua/plenary.nvim")
 	-- By: nvim-tree, barbar, lualine, telescope
 	use("kyazdani42/nvim-web-devicons")
