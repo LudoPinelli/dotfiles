@@ -49,5 +49,7 @@ nvim_treessitter_configs.setup({
 	},
 })
 
--- vim.cmd [[ "set foldmethod=expr ]]
--- vim.cmd [[ "set foldexpr=nvim_treesitter#foldexpr()" ]]
+-- folding
+-- vim.cmd([[ set foldmethod=expr ]])
+-- vim.cmd([[ set foldexpr=nvim_treesitter#foldexpr()" ]])
+-- vim.cmd([[ set foldlevel=0 ]]) -- no initial folds
