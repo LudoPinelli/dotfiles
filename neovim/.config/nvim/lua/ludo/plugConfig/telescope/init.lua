@@ -93,9 +93,6 @@ telescope.setup({
 	},
 
 	pickers = {
-		find_files = {
-			find_command = { "rg", "--files", "--iglob", "!.git", "--hidden" },
-		},
 		-- Default config for builtin pickers:
 		-- picker_name = {
 		--   picker_config_key = value,
@@ -124,28 +121,3 @@ nnoremap("<Leader>fg", "<Cmd>Telescope live_grep<CR>")
 nnoremap("<Leader>fb", "<Cmd>Telescope buffers<CR>")
 nnoremap("<Leader>fh", "<Cmd>Telescope help_tags<CR>")
 nnoremap("<Leader>fd", "<Cmd>Telescope diagnostics<CR>")
-
--- Custom pickers
-local M = {}
-
-function M.nvim_config()
-	require("telescope").extensions.file_browser.file_browser({
-		prompt_title = " Neovim Configuration",
-		prompt_position = "top",
-		path = "~/.dotfiles/neovim/.config/nvim/",
-		cwd = "~/.dotfiles/neovim/.config/nvim/",
-		depth = 4,
-		sorting_strategy = "ascending",
-	})
-end
-
-function M.cheat_sheet()
-	require("telescope.builtin").find_files({
-		prompt_title = "  Cheat Sheets",
-		prompt_position = "top",
-		cwd = "~/Documents/CheatSheets/",
-		search_dirs = { "~/Documents/CheatSheets" },
-	})
-end
-
-return M

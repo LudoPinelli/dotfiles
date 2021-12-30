@@ -26,14 +26,16 @@ dashboard.section.header.val = {
 	"      :-             :+-      ",
 }
 
+require("ludo.plugConfig.telescope.custom_pickers")
+
 dashboard.section.buttons.val = {
 	dashboard.button("n", "  New File           ", ":ene <BAR> startinsert<CR>"),
+	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
+	dashboard.button("h", "  Home directory     ", "<Cmd>lua home()<CR>"),
 	dashboard.button("e", "פּ  Explore            ", ":NvimTreeToggle<CR>"),
 	dashboard.button("f", "  Find File          ", ":Telescope find_files<CR>"),
-	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
 	dashboard.button("t", "  Find Text          ", ":Telescope live_grep<CR>"),
-	dashboard.button("C", "  Config Files       ", "<Cmd>lua require'ludo.plugConfig.telescope'.nvim_config()<CR>"),
-	-- dashboard.button("S", "  Cheat Sheets       ", "<Cmd>lua require'ludo.plugConfig.telescope'.cheat_sheet()<CR>"),
+	dashboard.button("c", "  Config Files       ", "<Cmd>lua nvim_config()<CR>"),
 	dashboard.button("q", "  Quit               ", ":qa<CR>"),
 }
 

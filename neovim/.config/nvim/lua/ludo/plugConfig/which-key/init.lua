@@ -78,10 +78,11 @@ local opts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 
-require("ludo.plugConfig.toggleterm")
+require("ludo.plugConfig.toggleterm.custom_terms")
+require("ludo.plugConfig.telescope.custom_pickers")
 
 local mappings = {
-	["a"] = { "<Cmd>Alpha<CR>", "  Landing page" },
+	["a"] = { "<Cmd>Alpha<CR>", "䀘  Landing page" },
 	["b"] = { "<Cmd>lua require('telescope.builtin').buffers()<CR>", "  Buffers" },
 	["c"] = { "<Cmd>BufferClose<CR>", "  Close Buffer" },
 	["e"] = { "<Cmd>NvimTreeToggle<CR>", "פּ  Explorer" },
@@ -139,9 +140,10 @@ local mappings = {
 		R = { "<Cmd>Telescope registers<CR>", "  Registers" },
 		k = { "<Cmd>Telescope keymaps<CR>", "  Keymaps" },
 		c = { "<Cmd>Telescope commands<CR>", "  Commands" },
-		H = { "<Cmd>Telescope command_history<CR>", "  Commands History" },
+		i = { "<Cmd>Telescope command_history<CR>", "  Commands History" },
 		m = { "<Cmd>Telescope notify<CR>", "  Messages History" },
-		C = { "<Cmd>lua require('ludo.plugConfig.telescope').cheat_sheet()<CR>", "  Cheat Sheets" },
+		C = { ":<C-U>Cheatsheet<CR>", "  Cheat Sheets" },
+		H = { "<Cmd>lua home()<CR>", "  Home Directory" },
 	},
 
 	t = {
