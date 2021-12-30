@@ -90,7 +90,7 @@ local mappings = {
 	["h"] = { "<Cmd>nohlsearch<CR>", "   No Highlight" },
 	["q"] = { "<Cmd>q!<CR>", "   Quit" },
 	["w"] = { "<Cmd>w!<CR>", "   Save" },
-	["?"] = { "<Cmd>Cheatsheet<CR>", "  Cheat Sheets" },
+	["?"] = { ":<C-U>Cheatsheet<CR>", "  Cheat Sheets" },
 
 	g = {
 		name = "   Git",
@@ -114,7 +114,7 @@ local mappings = {
 		name = "   LSP",
 
 		a = { "<Cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
-		d = { "<Cmd>lua vim.diagnostic.open_float()<CR>", "Document Diagnostics" },
+		d = { "<Cmd>lua vim.diagnostic.open_float()<CR>", "Diagnostics in float window" },
 		f = { "<Cmd>lua vim.lsp.buf.formatting()<CR>", "  Format" },
 		i = { "<Cmd>LspInfo<CR>", "  Info" },
 		I = { "<Cmd>LspInstallInfo<CR>", "Installer Info" },
@@ -149,11 +149,20 @@ local mappings = {
 		f = { "<Cmd>ToggleTerm direction=float<CR>", "  Float" },
 		h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", "  Horizontal" },
 		v = { "<Cmd>ToggleTerm size=80 direction=vertical<CR>", "   Vertical" },
-		s = { "<Cmd>lua lazygit_toggle()<CR>", "   LazyGit" },
+		g = { "<Cmd>lua lazygit_toggle()<CR>", "   LazyGit" },
 		p = { "<Cmd>lua python_toggle()<CR>", "  Python" },
 		n = { "<Cmd>lua node_toggle()<CR>", "  Node.js" },
 		t = { "<Cmd>lua htop_toggle()<CR>", "   Htop" },
 		w = { "<Cmd>lua cargo_watch_toggle()<CR>", "   Cargo Watch" },
+	},
+
+	x = {
+		name = "  Lists",
+		w = { "<Cmd>Trouble workspace_diagnostics<CR>", "Workspace Diagnostics" },
+		d = { "<Cmd>Trouble document_diagnostics<CR>", "Document Diagnostics" },
+		l = { "<Cmd>Trouble loclist<CR>", "Loclist" },
+		q = { "<Cmd>Trouble quickfix<CR>", "Quickfix List" },
+		r = { "<Cmd>Trouble lsp_references<CR>", "Ref. of word under cursor" },
 	},
 }
 

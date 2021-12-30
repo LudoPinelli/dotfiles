@@ -34,22 +34,17 @@ nvim_treessitter_configs.setup({
 		additional_vim_regex_highlighting = false,
 	},
 
-	-- indent = { enable = true, disable = { "" } },
-	-- incremental_selection = {
-	-- enable = true,
-	-- keymaps = {
-	-- init_selection = "gnn",
-	-- node_incremental = "grn",
-	-- scope_incremental = "grc",
-	-- node_decremental = "grm",
-	-- },
-	-- },
+	incremental_selection = {
+		enable = true,
+		keymaps = {
+			init_selection = "gnn",
+			node_incremental = "grn",
+			scope_incremental = "grc",
+			node_decremental = "grm",
+		},
+	},
+
 	refactor = {
 		highlight_definitions = { enable = true },
 	},
 })
-
--- folding
--- vim.cmd([[ set foldmethod=expr ]])
--- vim.cmd([[ set foldexpr=nvim_treesitter#foldexpr()" ]])
--- vim.cmd([[ set foldlevel=0 ]]) -- no initial folds

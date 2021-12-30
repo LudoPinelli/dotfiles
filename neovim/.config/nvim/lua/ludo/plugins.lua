@@ -113,6 +113,7 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim") -- Key mappings easy access
 	use("romgrk/barbar.nvim") -- Tabline
 	use("sudormrfbin/cheatsheet.nvim") -- Searchable CheetSheat
+	use("folke/trouble.nvim") -- Nice lists
 	use({ -- Commenting
 		"numToStr/Comment.nvim",
 		config = function()

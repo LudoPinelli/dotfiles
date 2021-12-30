@@ -1,0 +1,147 @@
+## surround @surround
+Delete surroundings (n/v)                 | ds{char}
+Change surroundings (n/v)                 | cs{char}
+wrapping (n)                              | ys{motion}{char}
+wrapping of line (n)                      | yss{char}
+wrapping (v)                              | v[motion]S{char}
+
+## telescope @fuzzy @fzf
+Close                                     | <C-c>
+Toggle selection                          | <Tab>
+Open file in tab                          | <C-t>
+Open file in split                        | <C-x>
+Open file in vsplit                       | <C-v>
+Scroll up in preview window               | <C-u>
+Scroll down in preview window             | <C-d>
+Send to quickfix list                     | <C-q>
+Send selected items to quickfix list      | <M-q>
+
+## gitsigns @git
+Stage hunk                                | <leader>hs
+Undo stage hunk                           | <leader>hu
+Stage hunk                                | <leader>hs
+Reset hunk                                | <leader>hr
+Preview hunk                              | <leader>hp
+Reset buffer                              | <leader>hR
+Blame current line                        | <leader>hb
+Next hunk                                 | ]c
+Previous hunk                             | ]c
+Hunk t
+
+## barbar @tab
+Next buffer                               | <Tab>
+Previous buffer                           | <S-Tab>
+Pick a buffer                             | <Leader>p
+
+## cmp @completion
+Scroll down docs                          | <C-b>
+Scroll up docs                            | <C-f>
+Invoke completion                         | <C-Space>
+Abort/Close completion                    | <C-e>
+Confirm completion                        | <CR>
+Select next completion item               | <Tab>
+Select previous completion item           | <S-Tab>
+
+## diffview @diff
+Open the diff for the next file           | <Tab>
+Open the diff for the previous file       | <S-Tab>
+Open the file in a new split in prev tab  | <gf>
+Open the file in a new split              | <C-w><C-f>
+Open the file in a new tab                | <C-w><gf>
+Bring focus to the files panel (FP)       | <Leader>e
+Toggle the files panel                    | <Leader>b
+
+FP: bring cursor to next file entry       | j | <Down>
+FP: bring cursor to previous file entry   | k | <Up>
+FP: open diff for selected entry          | <CR>
+FP: select entry                          | o
+FP: stage/unstage selected entry          | -
+FP: stage all                             | S
+FP: unstage all                           | U
+FP: restore entry to state on left        | X
+FP: update stats and entries              | R
+FP: select next entry                     | <Tab>
+FP: select previous entry                 | <S-Tab>
+FP: go to file                            | gf
+FP: go to file in split window            | <C-w><C-f>
+FP: go to file in new tab                 | <C-w>gf
+FP: toggle between list & tree view       | i
+FP: flatten empty subdir in tree view     | f
+FP: bring focus on FP                     | <Leader>e
+FP: toggle FP                             | <Leader>b
+
+FHP: open option panel (OP)               | g!
+FHP: open entry under cursor in diff      | <C-A-d>
+FHP: copy commit hash                     | y
+FHP: open all folds                       | zR
+FHP: close all folds                      | zM
+FHP: next entry                           | j | <Down>
+FHP: previous entry                       | k | <Up>
+FHP: select entry                         | <CR> | o
+FHP: selct next entry                     | <Tab>
+FHP: select previous entry                | <S-Tab>
+FHP: go to file                           | gf
+FHP: go to dile in spilt window           | <C-w><C-f>
+FHP: go to file in new tab                | <C-w>gf
+FHP: bring focus on FP                    | <Leader>e
+FHP: toggle FP                            | <Leader>b
+
+Option Panel: select entry                | <Tab>
+Option Panel: close                       | q
+
+## lsp-config @LSP
+Go to declaration                         | gD
+Go to definition                          | gd
+Open hover floating window                | K
+Go to implementation                      | gi
+Signature help                            | <C-k>
+Go to definition of type under cursor     | <Leader>D
+Rename symbol under cursor                | <Leader>rn
+Code actions                              | <Leader>ca
+References of symbol under cursor         | <Leader>lR
+Open diagnostics in float window          | <Leader>ld
+Open loclist                              | <Leader>q
+Format the current file                   | <Leader>fr
+
+## neoclip @clipboard
+Open neoclip                              | <Leader>n
+
+## nvim-tree @explorer
+Toggle help panel                         | g?
+Open/close explorer                       | <Leader>e
+
+## toggleterm @terminal
+Open/close terminal                       | <C-t>
+Open/close terminal in horizontal window  | <Leader>th
+Open/close terminal in vertical window    | <Leader>tv
+Open/close terminal in floating window    | <Leader>tf
+Open/close LazyGit                        | <Leader>tg | <Leader>gg
+Open/close Htop                           | <Leader>th
+Open/close Python                         | <Leader>tp
+Open/close node.js                        | <Leader>tn
+Open/close cargo watch                    | <Leader>tw 
+
+## trouble @lists
+Open workspace diagnostics                | <Leader>xw
+Open document diagnostics                 | <Leader>xd
+Open loclist                              | <Leader>ql
+Open quickfix list                        | <Leader>xq
+Open references of symbol under cursor    | <Leader>xr
+
+Close the list                            | q
+Cancel preview and come back              | <Esc>
+Refresh the list                          |r
+Jump to diagnostic or open/close fold     | <CR> | <Tab>
+Open selected in horizontal split         | <C-x>
+Open selected in vertical split           | <C-v>
+Open selected in tab                      | <C-t>
+Jump to diagnostic and close the list     | o
+Toggle between workspace and document     | m
+Toggle auto preview                       | P
+Open popup with multiline message         | K
+Preview diagnostic location               | p
+Close all folds                           | zM | zm
+Open all folds                            | zR | zr
+Toggle folds of current file              | zA | za
+Previous item                             | k
+Next item                                 | j
