@@ -39,6 +39,8 @@ packer.init({
 })
 
 return packer.startup(function(use)
+	----------------------------------------- PLUGINS -------------------------------------------
+
 	-- Packer itself
 	use("wbthomason/packer.nvim")
 
@@ -188,6 +190,8 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 	-- By: popup
 	use("nvim-lua/popup.nvim")
+
+	--------------------------------------------------------------
 
 	-- Automatically set up config after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
