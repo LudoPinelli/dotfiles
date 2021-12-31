@@ -10,6 +10,7 @@ opt.title = true -- Display File Info on Title
 opt.showmode = false -- Don't Show MODES
 opt.cursorline = true -- Highlight the actual line
 opt.signcolumn = "yes" -- Sign Column
+vim.cmd("syntax on")
 
 -- formatting
 opt.formatoptions = opt.formatoptions

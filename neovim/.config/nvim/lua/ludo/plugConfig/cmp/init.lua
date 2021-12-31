@@ -144,9 +144,4 @@ cmp.setup({
 			{ name = "buffer" },
 		},
 	}),
-	cmp.setup.cmdline(":", {
-		{ name = "path" },
-	}, {
-		{ name = "cmdline" },
-	}),
 })
