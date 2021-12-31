@@ -50,6 +50,7 @@ cmp.setup({
 			luasnip.lsp_expand(args.body)
 		end,
 	},
+
 	mapping = {
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
@@ -89,7 +90,6 @@ cmp.setup({
 		}),
 	},
 
-	-- Format
 	formatting = {
 		fields = { "abbr", "kind", "menu" },
 		format = function(entry, vim_item)
@@ -104,10 +104,12 @@ cmp.setup({
 				path = " - Path",
 				treesitter = " - Treesitter",
 				crates = " - Crates",
+				spell = " - Spell",
 			})[entry.source.name]
 			return vim_item
 		end,
 	},
+
 	-- Sources are shown in the same order
 	sources = {
 		{ name = "nvim_lsp" },
@@ -117,16 +119,34 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "crates" },
+		{ name = "spell" },
 	},
+
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
+
 	documentation = {
 		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 	},
+
+	completion = {
+		keyword_length = 2,
+	},
+
 	experimental = {
 		ghost_text = true,
-		native_menu = false,
 	},
+
+	cmp.setup.cmdline("/", {
+		sources = {
+			{ name = "buffer" },
+		},
+	}),
+	cmp.setup.cmdline(":", {
+		{ name = "path" },
+	}, {
+		{ name = "cmdline" },
+	}),
 })

@@ -80,6 +80,7 @@ return packer.startup(function(use)
 			use("saadparwaiz1/cmp_luasnip"),
 			use("hrsh7th/cmp-nvim-lua"),
 			use("ray-x/cmp-treesitter"),
+			use("f3fora/cmp-spell"),
 		},
 	})
 	use({ -- Snippets

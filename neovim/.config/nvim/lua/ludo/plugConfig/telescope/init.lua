@@ -97,18 +97,9 @@ telescope.setup({
 		find_files = {
 			hidden = true,
 		},
-		-- picker_name = {
-		--   picker_config_key = value,
-		--   ...
-		-- }
-		-- picker_config_key will be applied every time this is called:
-		-- builtin picker
 	},
 	extensions = {
-		-- Extension conf:
-		-- extension_name = {
-		--   extension_config_key = value,
-		-- }
+		-- Extension conf
 	},
 })
 
