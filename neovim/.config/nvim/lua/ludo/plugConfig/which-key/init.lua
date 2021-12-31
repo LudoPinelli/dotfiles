@@ -8,7 +8,7 @@ local setup = {
 		marks = true, -- shows a list of your marks on ' and `
 		registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
 		spelling = {
-			enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+			enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
 			suggestions = 20, -- how many suggestions should be shown in the list?
 		},
 		-- the presets plugin, adds help for a bunch of default keybindings in Neovim
@@ -43,10 +43,10 @@ local setup = {
 		scroll_up = "<C-u>", -- binding to scroll up inside the popup
 	},
 	window = {
-		border = "rounded", -- none, single, double, shadow
+		border = "single", -- none, single, double, shadow
 		position = "bottom", -- bottom, top
 		margin = { 1, 1, 1, 1 }, -- extra window margin [top, right, bottom, left]
-		padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
+		padding = { 1, 1, 1, 1 }, -- extra window padding [top, right, bottom, left]
 		winblend = 5,
 	},
 	layout = {
@@ -84,16 +84,17 @@ require("ludo.plugConfig.telescope.custom_pickers")
 local mappings = {
 	["a"] = { "<Cmd>Alpha<CR>", "䀘  Landing page" },
 	["b"] = { "<Cmd>lua require('telescope.builtin').buffers()<CR>", "  Buffers" },
-	["c"] = { "<Cmd>BufferClose<CR>", "  Close Buffer" },
-	["e"] = { "<Cmd>NvimTreeToggle<CR>", "פּ  Explorer" },
+	["c"] = { "<Cmd>BufferClose<CR>", "   Close Buffer" },
+	["e"] = { "<Cmd>NvimTreeToggle<CR>", "פּ   Explorer" },
 	["ff"] = { "<Cmd>Telescope find_files<CR>", "   Find files" },
 	["fg"] = { "<Cmd>Telescope live_grep<CR>", "  Find Text" },
 	["h"] = { "<Cmd>nohlsearch<CR>", "   No Highlight" },
 	["q"] = { "<Cmd>q!<CR>", "   Quit" },
 	["w"] = { "<Cmd>w!<CR>", "   Save" },
 	["?"] = { ":<C-U>Cheatsheet<CR>", "  Cheat Sheets" },
-	["z"] = { "<Cmd>:set spell!<CR>", "Toggle Spellcheck" },
-	["W"] = { "<Cmd>:cd %:p:h<CR>:pwd<CR>", "Set Working Directory" },
+	["z"] = { "<Cmd>:set spell!<CR>", "暈   Toggle Spellcheck" },
+	["W"] = { "<Cmd>:cd %:p:h<CR>:pwd<CR>", "   Set Working Directory" },
+	["C"] = { "<Cmd>lua nvim_config()<CR>", "  Config Files" },
 
 	g = {
 		name = "   Git",
@@ -152,15 +153,15 @@ local mappings = {
 		f = { "<Cmd>ToggleTerm direction=float<CR>", "  Float" },
 		h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", "  Horizontal" },
 		v = { "<Cmd>ToggleTerm size=80 direction=vertical<CR>", "   Vertical" },
-		g = { "<Cmd>lua lazygit_toggle()<CR>", "   LazyGit" },
-		p = { "<Cmd>lua python_toggle()<CR>", "  Python" },
+		g = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
+		p = { "<Cmd>lua python_toggle()<CR>", "   Python" },
 		n = { "<Cmd>lua node_toggle()<CR>", "  Node.js" },
 		t = { "<Cmd>lua htop_toggle()<CR>", "   Htop" },
 		w = { "<Cmd>lua cargo_watch_toggle()<CR>", "   Cargo Watch" },
 	},
 
 	x = {
-		name = "  Lists",
+		name = "   Lists",
 		w = { "<Cmd>Trouble workspace_diagnostics<CR>", "Workspace Diagnostics" },
 		d = { "<Cmd>Trouble document_diagnostics<CR>", "Document Diagnostics" },
 		l = { "<Cmd>Trouble loclist<CR>", "Loclist" },
