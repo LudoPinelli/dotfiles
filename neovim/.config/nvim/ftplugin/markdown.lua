@@ -1,22 +1,27 @@
 vim.opt_local.spell = true
 
-vim.api.nvim_exec([[
+vim.api.nvim_exec(
+	[[
 iabbrev >> →
 iabbrev << ←
 iabbrev ^^ ↑
 iabbrev VV ↓
-]])
+]],
+	false
+)
 
 ------------- Keymaps ---------------
 
-local function remap(mode, lhs, rhs)
-	vim.api.nvim_buf_set_keymap("0", mode, lhs, rhs, { noremap = true, silent = true })
-end
-
 -- Wrap selection in link
-remap("v", "_", [[c[<C-r>"]()<Esc>]])
+vim.api.nvim_buf_set_keymap(0, "v", "_", [[c[<C-r>"]()<Esc>]], { noremap = false })
 -- Convert with pandoc
-remap("n", "go", ':silent w<bar>lua require("auto-pandoc").run_pandoc()<cr>')
+vim.api.nvim_buf_set_keymap(
+	0,
+	"n",
+	"go",
+	':silent w<bar>lua require("auto-pandoc").run_pandoc()<cr>',
+	{ noremap = true, silent = true }
+)
 
 -------------- cmp ------------------
 

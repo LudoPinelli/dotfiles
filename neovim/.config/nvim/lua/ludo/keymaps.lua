@@ -47,7 +47,7 @@ nnoremap("<Leader>i", "`.")
 nnoremap("<Leader>z", ":set spell!<CR>")
 
 -- Set working directory to current
-nnoremap("<Leader>W", "<Cmd>:cd %:p:h<CR>:pwd<CR>")
+nnoremap("<Leader>W", "<Cmd>:cd %:p:h<CR><Cmd>pwd<CR>")
 
 nnoremap("K", ":lua show_documentation()<Cr>")
 function show_documentation()
