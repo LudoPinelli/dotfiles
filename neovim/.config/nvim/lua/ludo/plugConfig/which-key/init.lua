@@ -154,6 +154,7 @@ local mappings = {
 		h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", "  Horizontal" },
 		v = { "<Cmd>ToggleTerm size=80 direction=vertical<CR>", "   Vertical" },
 		g = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
+		G = { "<Cmd>lua gitui_toggle()<CR>", "  GitUI" },
 		p = { "<Cmd>lua python_toggle()<CR>", "   Python" },
 		n = { "<Cmd>lua node_toggle()<CR>", "  Node.js" },
 		t = { "<Cmd>lua htop_toggle()<CR>", "   Htop" },
