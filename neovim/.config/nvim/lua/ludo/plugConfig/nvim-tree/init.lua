@@ -10,6 +10,30 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+vim.g.nvim_tree_quit_on_open = 1
+vim.g.nvim_tree_icons = {
+	default = "",
+	symlink = "",
+	git = {
+		unstaged = "✗",
+		staged = "✓",
+		unmerged = "",
+		renamed = "➜",
+		untracked = "★",
+		deleted = "",
+		ignored = "◌",
+	},
+	folder = {
+		arrow_open = "",
+		arrow_closed = "",
+		default = "",
+		open = "",
+		empty = "",
+		empty_open = "",
+		symlink = "",
+		symlink_open = "",
+	},
+}
 nvim_tree.setup({
 	disable_netrw = true,
 	hijack_netrw = true,
@@ -19,7 +43,7 @@ nvim_tree.setup({
 		"dashboard",
 		"alpha",
 	},
-	auto_close = true,
+	-- auto_close = true,
 	open_on_tab = false,
 	hijack_cursor = false,
 	update_cwd = false,
