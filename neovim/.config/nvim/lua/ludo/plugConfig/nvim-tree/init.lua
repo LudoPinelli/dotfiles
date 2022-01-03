@@ -1,25 +1,3 @@
-vim.g.nvim_tree_quit_on_open = 1
-vim.g.nvim_tree_icons = {
-	default = "",
-	symlink = "",
-	git = {
-		unstaged = "",
-		staged = "S",
-		unmerged = "",
-		renamed = "➜",
-		deleted = "",
-		untracked = "U",
-		ignored = "◌",
-	},
-	folder = {
-		default = "",
-		open = "",
-		empty = "",
-		empty_open = "",
-		symlink = "",
-	},
-}
-
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
 	return
@@ -69,7 +47,7 @@ nvim_tree.setup({
 	},
 	filters = {
 		dotfiles = false,
-		custom = { ".git" },
+		custom = { ".git", ".cache" },
 	},
 	git = {
 		enable = true,
@@ -101,6 +79,26 @@ nvim_tree.setup({
 	git_hl = 1,
 	disable_window_picker = 0,
 	root_folder_modifier = ":t",
+	icons = {
+		default = "",
+		symlink = "",
+		git = {
+			unstaged = "",
+			staged = "S",
+			unmerged = "",
+			renamed = "➜",
+			deleted = "",
+			untracked = "U",
+			ignored = "◌",
+		},
+		folder = {
+			default = "",
+			open = "",
+			empty = "",
+			empty_open = "",
+			symlink = "",
+		},
+	},
 	show_icons = {
 		git = 1,
 		folders = 1,
