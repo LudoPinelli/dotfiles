@@ -1,15 +1,16 @@
 # Aliases
-alias ls='lsd'
-alias ll='ls -lF'
-alias la='ls -laF'
-alias lt='ls --tree'
+
+alias ls='exa -lF --git-ignore --group-directories-first --git --icons'
+alias la='exa -laF --group-directories-first --git --icons'
+alias lt='exa -T --level=2 --long --icons'
+alias lta='exa -aT --level=2 --long --icons'
 
 alias rm='rm -I'
 alias mv='mv -i'
 alias cp='cp -i'
 
 alias c='clear'
-alias s='cd ..'
+alias s='z ..'
 
 alias v='nvim'
 
@@ -20,14 +21,12 @@ alias du='du --human-readable'
 alias up='up --clean'
 
 alias lg='lazygit'
+alias gu='gitui'
+
 alias trash-empty='trash-empty -trash-dir=/home/ludo/.local/share/Trash'
 
 alias gt='git status'
 alias gb='git branch'
-alias gch='git checkout'
-alias gi='git init'
-alias ga='git add'
-alias gc='git commit -m'
 
 alias neoc='cd ~/.dotfiles/neovim/.config/nvim/'
 
@@ -47,6 +46,9 @@ export EDITOR=nvim
 # To install new plugins, add repo to .zsh_plugins.txt then run :
 # antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 source ~/.zsh_plugins.sh
+
+# Launch zoxide
+eval "$(zoxide init zsh)"
 
 # Launch Starship
 eval "$(starship init zsh)"
