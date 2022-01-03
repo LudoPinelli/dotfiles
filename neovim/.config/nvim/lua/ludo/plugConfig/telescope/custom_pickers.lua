@@ -5,7 +5,7 @@ function nvim_config()
 		prompt_position = "top",
 		path = "~/.dotfiles/neovim/.config/nvim/",
 		cwd = "~/.dotfiles/neovim/.config/nvim/",
-		depth = 4,
+		depth = 5,
 		sorting_strategy = "ascending",
 	})
 end

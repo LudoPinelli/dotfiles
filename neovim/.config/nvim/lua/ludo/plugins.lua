@@ -101,6 +101,16 @@ return packer.startup(function(use)
 
 	use("EdenEast/nightfox.nvim") -- Theme
 	use("sunjon/shade.nvim") -- Dim inactive windows
+	use({
+		"folke/twilight.nvim",
+		config = function()
+			require("twilight").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
 	use("lukas-reineke/indent-blankline.nvim") -- Add indentation guides
 	use("rcarriga/nvim-notify") -- Notifications
 	use("nvim-lualine/lualine.nvim") -- Status line
