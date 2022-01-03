@@ -122,7 +122,12 @@ return packer.startup(function(use)
 			require("stabilize").setup()
 		end,
 	})
-
+	use({
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	})
 	------------------------------------
 	--         PRODUCTIVITY           --
 	------------------------------------
