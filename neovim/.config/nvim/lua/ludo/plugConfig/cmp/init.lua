@@ -105,6 +105,7 @@ cmp.setup({
 				treesitter = " - Treesitter",
 				crates = " - Crates",
 				spell = " - Spell",
+				tabnine = " - Tabnine",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -120,6 +121,7 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "crates" },
 		{ name = "spell" },
+		{ name = "cmp_tabnine" },
 	},
 
 	confirm_opts = {

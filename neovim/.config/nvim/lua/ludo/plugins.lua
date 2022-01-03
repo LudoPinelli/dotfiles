@@ -89,6 +89,11 @@ return packer.startup(function(use)
 			"rafamadriz/friendly-snippets",
 		},
 	})
+	use({
+		"tzachar/cmp-tabnine",
+		run = "~/install.sh",
+		requires = "hrsh7th/nvim-cmp",
+	})
 
 	------------------------------------
 	--            VISUAL              --
