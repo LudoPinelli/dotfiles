@@ -32,7 +32,7 @@ dashboard.section.buttons.val = {
 	-- dashboard.button("n", "  New File           ", ":ene <BAR> startinsert<CR>"),
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
 	dashboard.button("h", "  Home directory     ", "<Cmd>lua home()<CR>"),
-	dashboard.button("e", "פּ  Explore            ", ":NvimTreeToggle<CR>"),
+	dashboard.button("e", "פּ  Explore            ", "<Cmd>lua require('ludo.plugConfig.barbar.tree').toggle()<CR>"),
 	dashboard.button("f", "  Find File          ", ":Telescope find_files<CR>"),
 	dashboard.button("t", "  Find Text          ", ":Telescope live_grep<CR>"),
 	dashboard.button("c", "  Config Files       ", "<Cmd>lua nvim_config()<CR>"),
