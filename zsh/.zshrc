@@ -16,7 +16,8 @@ alias v='nvim'
 alias df='df --human-readable'
 alias du='du --human-readable'
 
-alias upgrade='sudo apt-get update && sudo apt-get upgrade && sudo apt-get clean'
+# https://gihub.com/EzeeLinux/up-debian_ubuntu_update_toolt
+alias up='up --clean'
 
 alias lg='lazygit'
 alias trash-empty='trash-empty -trash-dir=/home/ludo/.local/share/Trash'

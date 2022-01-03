@@ -81,7 +81,7 @@ FHP: select entry                         | <CR> | o
 FHP: selct next entry                     | <Tab>
 FHP: select previous entry                | <S-Tab>
 FHP: go to file                           | gf
-FHP: go to dile in spilt window           | <C-w><C-f>
+FHP: go to file in split window           | <C-w><C-f>
 FHP: go to file in new tab                | <C-w>gf
 FHP: bring focus on FP                    | <Leader>e
 FHP: toggle FP                            | <Leader>b

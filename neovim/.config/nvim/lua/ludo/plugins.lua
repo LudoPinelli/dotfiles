@@ -100,6 +100,7 @@ return packer.startup(function(use)
 	use("rcarriga/nvim-notify") -- Notifications
 	use("nvim-lualine/lualine.nvim") -- Status line
 	use("goolord/alpha-nvim") -- Dashboard
+	-- use("yamatsum/nvim-cursorline") -- highlight line and current word
 	use({ -- Stabilize windows on open/close
 		"luukvbaal/stabilize.nvim",
 		config = function()
