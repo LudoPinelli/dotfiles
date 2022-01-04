@@ -139,7 +139,6 @@ return packer.startup(function(use)
 	--             GIT                --
 	------------------------------------
 
-	use("tpope/vim-fugitive")
 	use({
 		"lewis6991/gitsigns.nvim",
 		config = function()

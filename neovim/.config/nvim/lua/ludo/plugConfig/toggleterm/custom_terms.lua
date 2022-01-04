@@ -1,23 +1,5 @@
 local Terminal = require("toggleterm.terminal").Terminal
 
--- Open GitUI
-local gitui = Terminal:new({
-	cmd = "gitui",
-	dir = "git_dir",
-	direction = "float",
-	float_opts = {
-		border = "curved",
-	},
-	close_on_exit = true,
-	on_open = function(term)
-		vim.cmd("startinsert!")
-		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
-	end,
-})
-function gitui_toggle()
-	gitui:toggle()
-end
-
 -- Open LazyGit
 local lazygit = Terminal:new({
 	cmd = "lazygit",

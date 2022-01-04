@@ -19,9 +19,7 @@ wk.register({
 		g = {
 			name = "   Git",
 
-			G = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
-			g = { "<Cmd>Git<CR>", "  Git" },
-			P = { "<Cmd>Git push<CR>", "  Git push" },
+			g = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
 			j = { "<Cmd>lua require('gitsigns').next_hunk()<CR>", "Next Hunk" },
 			k = { "<Cmd>lua require('gitsigns').prev_hunk()<CR>", "Prev Hunk" },
 			p = { "<Cmd>lua require('gitsigns').preview_hunk()<CR>", "Preview Hunk" },
@@ -30,11 +28,10 @@ wk.register({
 			s = { "<Cmd>lua require('gitsigns').stage_hunk()<CR>", "Stage Hunk" },
 			u = { "<Cmd>lua require('gitsigns').undo_stage_hunk()<CR>", "Undo Stage Hunk" },
 			l = { "<Cmd>lua require('gitsigns').blame_line{full=true}<CR>", "Blame line" },
-			o = { "<Cmd>Telescope git_status<CR>", "Open changed file" },
-			b = { "<Cmd>Telescope git_branches<CR>", "  Checkout branch" },
-			c = { "<Cmd>Telescope git_commits<CR>", "  Checkout commit" },
+			o = { "<Cmd>Telescope git_status<CR>", "  Open changed file" },
+			b = { "<Cmd>Telescope git_branches<CR>", "  Branches" },
+			c = { "<Cmd>Telescope git_commits<CR>", "  Commits" },
 			f = { "<Cmd>Telescope git_files<CR>", "Git files" },
-			d = { "<Cmd><CR>", "  Diff" },
 		},
 
 		l = {
