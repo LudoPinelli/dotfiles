@@ -95,19 +95,19 @@ return packer.startup(function(use)
 	------------------------------------
 
 	use("EdenEast/nightfox.nvim") -- Theme
+	use("rebelot/kanagawa.nvim")
 	use("sunjon/shade.nvim") -- Dim inactive windows
 	use("lukas-reineke/indent-blankline.nvim") -- Add indentation guides
 	use("rcarriga/nvim-notify") -- Notifications
 	use("nvim-lualine/lualine.nvim") -- Status line
 	use("goolord/alpha-nvim") -- Dashboard
-	-- use("yamatsum/nvim-cursorline") -- highlight line and current word
 	use({ -- Stabilize windows on open/close
 		"luukvbaal/stabilize.nvim",
 		config = function()
 			require("stabilize").setup()
 		end,
 	})
-	use({
+	use({ -- colorize color codes
 		"norcalli/nvim-colorizer.lua",
 		config = function()
 			require("colorizer").setup()
@@ -162,7 +162,7 @@ return packer.startup(function(use)
 	------------------------------------
 
 	use("ellisonleao/glow.nvim") -- Markdown Previewer
-	use({ -- Esay conversion of MD with pandoc
+	use({ -- Easy conversion of MD with pandoc
 		"jghauser/auto-pandoc.nvim",
 		config = function()
 			require("auto-pandoc")

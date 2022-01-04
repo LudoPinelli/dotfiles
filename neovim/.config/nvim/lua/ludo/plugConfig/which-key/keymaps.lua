@@ -4,23 +4,24 @@ require("ludo.plugConfig.telescope.custom_pickers")
 local wk = require("which-key")
 wk.register({
 	["<Leader>"] = {
-		["a"] = { "<Cmd>Alpha<CR>", "䀘  Landing page" },
-		["c"] = { "<Cmd>BufferClose<CR>", "   Close Buffer" },
-		["e"] = { "<Cmd>lua require('ludo.plugConfig.barbar.tree').toggle()<CR>", "פּ   Explorer" },
-		["h"] = { "<Cmd>nohlsearch<CR>", "   No Highlight" },
+		["a"] = { "<Cmd>Alpha<CR>", "䀘 Landing page" },
+		["c"] = { "<Cmd>BufferClose<CR>", "  Close Buffer" },
+		["e"] = { "<Cmd>lua require('ludo.plugConfig.barbar.tree').toggle()<CR>", "פּ  Explorer" },
+		["h"] = { "<Cmd>nohlsearch<CR>", "  No Highlight" },
 		["?"] = { ":<C-U>Cheatsheet<CR>", "  Cheat Sheets" },
-		["z"] = { "<Cmd>set spell!<CR>", "暈   Toggle Spellcheck" },
-		["W"] = { "<Cmd>cd %:p:h<CR>:pwd<CR>", "   Set Working Directory" },
+		["z"] = { "<Cmd>set spell!<CR>", "暈 Toggle Spellcheck" },
+		["W"] = { "<Cmd>cd %:p:h<CR>:pwd<CR>", "  Set Working Directory" },
 		["C"] = { "<Cmd>lua nvim_config()<CR>", "  Config Files" },
-		["n"] = { "<Cmd>Telescope neoclip<CR>", "Clipboard" },
-		["i"] = { "`.", "Back to last insert" },
-		["p"] = { "<Cmd>BufferPick<CR>", "Pick a buffer" },
+		["n"] = { "<Cmd>Telescope neoclip<CR>", "  Clipboard" },
+		["i"] = { "`.", "  Back to last insert" },
+		["p"] = { "<Cmd>BufferPick<CR>", "  Pick a buffer" },
 
 		g = {
 			name = "   Git",
 
-			-- g = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
+			G = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
 			g = { "<Cmd>Git<CR>", "  Git" },
+			P = { "<Cmd>Git push<CR>", "  Git push" },
 			j = { "<Cmd>lua require('gitsigns').next_hunk()<CR>", "Next Hunk" },
 			k = { "<Cmd>lua require('gitsigns').prev_hunk()<CR>", "Prev Hunk" },
 			p = { "<Cmd>lua require('gitsigns').preview_hunk()<CR>", "Preview Hunk" },

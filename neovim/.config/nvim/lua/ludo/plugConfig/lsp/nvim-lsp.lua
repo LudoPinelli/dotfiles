@@ -11,14 +11,18 @@ for type, icon in pairs(signs) do
 end
 
 vim.diagnostic.config({
-	virtual_text = {
-		prefix = "", -- Could be '●', '▎', 'x'
-		source = "if_many", -- Or "always"
-	},
+	virtual_text = false,
+	-- virtual_text = {
+	-- 	prefix = "", -- Could be '●', '▎', 'x'
+	-- 	source = "if_many", -- Or "always"
+	-- },
 	float = {
-		source = "if_many", -- Or "always"
+		source = "always", -- Or "if_many"
 	},
+	underline = true,
+	signs = true,
 	update_in_insert = false,
+	severity_sort = true,
 })
 
 local on_attach = function(client, bufnr)
@@ -75,12 +79,17 @@ for _, name in pairs(servers) do
 	end
 end
 
+local runtime_path = vim.split(package.path, ";")
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
+
 lsp_installer.on_server_ready(function(server)
 	-- Specify the default options which we'll use to setup all servers
 	local opts = {
 		on_attach = on_attach,
 	}
 
+	-- Rust
 	if server.name == "rust_analyzer" then
 		local rustopts = {
 			on_attach = on_attach,
@@ -101,24 +110,51 @@ lsp_installer.on_server_ready(function(server)
 		}
 		require("rust-tools").setup(rustopts)
 		server:attach_buffers()
+
+		-- Lua
 	elseif server.name == "sumneko_lua" then
 		local luaopts = {
 			on_attach = on_attach,
 			settings = {
 				Lua = {
+					runtime = {
+						version = "LuaJIT",
+						path = runtime_path,
+					},
 					diagnostics = {
-						globals = { "vim", "describe" },
+						globals = { "vim" },
 						disable = { "lowercase-global", "different-requires" },
 					},
-					workspace = {},
-					library = {
-						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-						[vim.fn.expand("config") .. "/lua"] = true,
+					workspace = {
+						library = vim.api.nvim_get_runtime_file("", true),
+					},
+					telemetry = {
+						enable = false,
 					},
 				},
 			},
 		}
 		server:setup(luaopts)
+
+		-- Python
+	elseif server.name == "pyright" then
+		local pyopts = {
+			on_attach = on_attach,
+			flags = {
+				allow_incremental_sync = true,
+			},
+			single_file_support = true,
+			settings = {
+				python = {
+					analysis = {
+						autoSearchPaths = true,
+						diagnosticMode = "workspace",
+						useLibraryCodeForTypes = true,
+					},
+				},
+			},
+		}
+		server:setup(pyopts)
 	else
 		server:setup(opts)
 	end

@@ -49,9 +49,7 @@ nvim_treessitter_configs.setup({
 	},
 })
 
--- vim.cmd("set foldmethod=expr")
--- vim.cmd("set foldexpr=nvim_treesitter#foldexpr()")
--- vim.cmd("set nofoldenable")
--- vim.cmd("set foldlevelstart=99")
---
--- vim.opt.fillchars = "fold: "
+-- vim.o.foldmethod = "expr"
+-- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.fillchars:append({ vert = "┃", fold = " " })
+-- vim.opt.fillchars:append({ foldopen = "▾", foldsep = "│", foldclose = "▸" })
