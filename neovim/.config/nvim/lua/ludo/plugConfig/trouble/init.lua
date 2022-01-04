@@ -50,12 +50,3 @@ trouble.setup({
 	},
 	use_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
 })
-
-local Utils = require("ludo.keymaputils")
-local nnoremap = Utils.nnoremap
-
-nnoremap("<Leader>xw", "<Cmd>Trouble workspace_diagnostics<CR>")
-nnoremap("<Leader>xd", "<Cmd>Trouble document_diagnostics<CR>")
-nnoremap("<Leader>xl", "<Cmd>Trouble loclist<CR>")
-nnoremap("<Leader>xq", "<Cmd>Trouble quickfix<CR>")
-nnoremap("<Leader>xr", "<Cmd>Trouble lsp_references<CR>")

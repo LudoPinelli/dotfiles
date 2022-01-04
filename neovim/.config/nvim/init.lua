@@ -5,7 +5,6 @@ end
 impatient.enable_profile()
 
 require("ludo.options")
-require("ludo.keymaps")
 require("ludo.plugins")
 require("ludo.plugConfig")
 require("ludo.theme")

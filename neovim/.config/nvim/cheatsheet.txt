@@ -42,53 +42,6 @@ Confirm completion                        | <CR>
 Select next completion item               | <Tab>
 Select previous completion item           | <S-Tab>
 
-## diffview @diff
-Open the diff for the next file           | <Tab>
-Open the diff for the previous file       | <S-Tab>
-Open the file in a new split in prev tab  | <gf>
-Open the file in a new split              | <C-w><C-f>
-Open the file in a new tab                | <C-w><gf>
-Bring focus to the files panel (FP)       | <Leader>e
-Toggle the files panel                    | <Leader>b
-
-FP: bring cursor to next file entry       | j | <Down>
-FP: bring cursor to previous file entry   | k | <Up>
-FP: open diff for selected entry          | <CR>
-FP: select entry                          | o
-FP: stage/unstage selected entry          | -
-FP: stage all                             | S
-FP: unstage all                           | U
-FP: restore entry to state on left        | X
-FP: update stats and entries              | R
-FP: select next entry                     | <Tab>
-FP: select previous entry                 | <S-Tab>
-FP: go to file                            | gf
-FP: go to file in split window            | <C-w><C-f>
-FP: go to file in new tab                 | <C-w>gf
-FP: toggle between list & tree view       | i
-FP: flatten empty subdir in tree view     | f
-FP: bring focus on FP                     | <Leader>e
-FP: toggle FP                             | <Leader>b
-
-FHP: open option panel (OP)               | g!
-FHP: open entry under cursor in diff      | <C-A-d>
-FHP: copy commit hash                     | y
-FHP: open all folds                       | zR
-FHP: close all folds                      | zM
-FHP: next entry                           | j | <Down>
-FHP: previous entry                       | k | <Up>
-FHP: select entry                         | <CR> | o
-FHP: selct next entry                     | <Tab>
-FHP: select previous entry                | <S-Tab>
-FHP: go to file                           | gf
-FHP: go to file in split window           | <C-w><C-f>
-FHP: go to file in new tab                | <C-w>gf
-FHP: bring focus on FP                    | <Leader>e
-FHP: toggle FP                            | <Leader>b
-
-Option Panel: select entry                | <Tab>
-Option Panel: close                       | q
-
 ## lsp-config @LSP
 Go to declaration                         | gD
 Go to definition                          | gd

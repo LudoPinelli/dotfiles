@@ -105,13 +105,3 @@ telescope.setup({
 
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("file_browser")
-
--- keymaps
-local Utils = require("ludo.keymaputils")
-local nnoremap = Utils.nnoremap
-
-nnoremap("<Leader>ff", "<Cmd>Telescope find_files<CR>")
-nnoremap("<Leader>fg", "<Cmd>Telescope live_grep<CR>")
-nnoremap("<Leader>fb", "<Cmd>Telescope buffers<CR>")
-nnoremap("<Leader>fh", "<Cmd>Telescope help_tags<CR>")
-nnoremap("<Leader>fd", "<Cmd>Telescope diagnostics<CR>")

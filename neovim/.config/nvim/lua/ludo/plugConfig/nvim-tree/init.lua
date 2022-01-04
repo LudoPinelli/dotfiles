@@ -10,7 +10,7 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
-vim.g.nvim_tree_quit_on_open = 1
+-- vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_icons = {
 	default = "",
 	symlink = "",

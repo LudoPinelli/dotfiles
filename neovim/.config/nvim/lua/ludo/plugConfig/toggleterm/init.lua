@@ -41,9 +41,3 @@ toggleterm.setup({
 		},
 	},
 })
-
--- back to normal mode in Terminal
-local Utils = require("ludo.keymaputils")
-local tnoremap = Utils.tnoremap
-
-tnoremap("<ESC>", "<C-\\><C-n>")
