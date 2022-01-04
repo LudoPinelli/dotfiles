@@ -1,6 +1,6 @@
 ------------- Keymaps ---------------
 
-local utils = require("ludo.keymaputils")
+local utils = require("ludo.plugConfig.which-key.keymaputils")
 local nnoremap = utils.nnoremap
 
 nnoremap("<Leader>rr", "<Cmd>:Crun<CR>")

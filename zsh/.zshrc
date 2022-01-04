@@ -31,7 +31,7 @@ alias gb='git branch'
 alias neoc='cd ~/.dotfiles/neovim/.config/nvim/'
 
 # Path
-export PATH=~/.local/bin:~/.cargo/bin:~/.nvm/versions/node/v17.3.0/bin:~/.local/share/nvim/lsp_servers/rust:$PATH
+export PATH=~/.local/bin:~/bin:~/.cargo/bin:~/.nvm/versions/node/v17.3.0/bin:~/.local/share/nvim/lsp_servers/rust:~/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin:$PATH
 
 # Ctrl+space to accept autosuggestions
 bindkey '^ ' autosuggest-accept

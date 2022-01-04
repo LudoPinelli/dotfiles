@@ -15,3 +15,4 @@ require("ludo.plugConfig.toggleterm")
 require("ludo.plugConfig.treesitter")
 require("ludo.plugConfig.trouble")
 require("ludo.plugConfig.which-key")
+vim.g.cheat_default_window_layout = "vertical_split"

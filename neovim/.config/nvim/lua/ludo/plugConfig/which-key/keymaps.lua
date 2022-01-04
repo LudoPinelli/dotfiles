@@ -64,10 +64,10 @@ wk.register({
 			r = { "<Cmd>Telescope oldfiles<CR>", "  Open Recent File" },
 			R = { "<Cmd>Telescope registers<CR>", "  Registers" },
 			k = { "<Cmd>Telescope keymaps<CR>", "  Keymaps" },
-			c = { "<Cmd>Telescope commands<CR>", "  Commands" },
+			C = { "<Cmd>Telescope commands<CR>", "  Commands" },
 			i = { "<Cmd>Telescope command_history<CR>", "  Commands History" },
 			m = { "<Cmd>Telescope notify<CR>", "  Messages History" },
-			C = { ":<C-U>Cheatsheet<CR>", "  Cheat Sheets" },
+			c = { "<Cmd>Cheat<CR>", "  on Cheat.sh" },
 			H = { "<Cmd>lua home()<CR>", "  Home Directory" },
 			b = { "<Cmd>Telescope buffers<CR>", "  Buffers" },
 		},
@@ -114,13 +114,28 @@ vim.g.localleader = " "
 -- jk to normal mode
 inoremap("jk", "<Esc>")
 
+-- copy to the end of the line
+nnoremap("Y", "y$")
+
+-- keep the cursor cenetered
+nnoremap("n", "nzzzv")
+nnoremap("N", "Nzzzv")
+nnoremap("J", "mzJ`z")
+
+-- Undo break points
+inoremap(",", ",<C-g>u")
+inoremap(".", ".<C-g>u")
+inoremap("[", "[<C-g>u")
+inoremap("!", "!<C-g>u")
+inoremap("?", "?<C-g>u")
+
 -- Better Visual mode indent
 vnoremap("<", "<gv")
 vnoremap(">", ">gv")
 
 -- Move line up/down
-xnoremap("<A-Down>", ":move '>+1<CR>gv-gv")
-xnoremap("<A-Up>", ":move '>-2<CR>gv-gv")
+xnoremap("<A-Down>", ":move '>+1<CR>gv=gv")
+xnoremap("<A-Up>", ":move '<-2<CR>gv=gv")
 
 nnoremap("<A-Down>", ":m .+1<CR>==")
 nnoremap("<A-Up>", ":m .-2<CR>==")

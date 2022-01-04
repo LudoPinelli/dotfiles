@@ -121,7 +121,6 @@ return packer.startup(function(use)
 	use("tpope/vim-surround") -- Surround
 	use("folke/which-key.nvim") -- Key mappings easy access
 	use("romgrk/barbar.nvim") -- Tabline
-	use("sudormrfbin/cheatsheet.nvim") -- Searchable CheetSheat
 	use("folke/trouble.nvim") -- Nice lists
 	use({ -- Commenting
 		"numToStr/Comment.nvim",
@@ -156,6 +155,8 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-tree.lua") -- Explorer
 	use("akinsho/nvim-toggleterm.lua") -- Terminal utility
 	use("lewis6991/impatient.nvim") -- Improve startup time
+	use("sudormrfbin/cheatsheet.nvim") -- Searchable CheetSheat
+	use("RishabhRD/nvim-cheat.sh") -- Access to Cheat.sh
 
 	------------------------------------
 	--          MARKDOWN              --
@@ -197,6 +198,8 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 	-- By: popup
 	use("nvim-lua/popup.nvim")
+	-- By: nvim-cheat.sh
+	use("RishabhRD/popfix")
 
 	--------------------------------------------------------------
 
