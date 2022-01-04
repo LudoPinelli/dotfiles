@@ -19,7 +19,8 @@ wk.register({
 		g = {
 			name = "   Git",
 
-			g = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
+			-- g = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
+			g = { "<Cmd>Git<CR>", "  Git" },
 			j = { "<Cmd>lua require('gitsigns').next_hunk()<CR>", "Next Hunk" },
 			k = { "<Cmd>lua require('gitsigns').prev_hunk()<CR>", "Prev Hunk" },
 			p = { "<Cmd>lua require('gitsigns').preview_hunk()<CR>", "Preview Hunk" },
