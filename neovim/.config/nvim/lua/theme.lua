@@ -66,7 +66,7 @@ elseif theme == "catppuccin" then
 			gitsigns = true,
 			telescope = true,
 			nvimtree = {
-				enabled = true,
+				enabled = false,
 				show_root = false,
 			},
 			which_key = true,

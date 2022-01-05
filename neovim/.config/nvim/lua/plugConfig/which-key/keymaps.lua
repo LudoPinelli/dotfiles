@@ -6,7 +6,7 @@ wk.register({
 	["<Leader>"] = {
 		["a"] = { "<Cmd>Alpha<CR>", "䀘 Landing page" },
 		["c"] = { "<Cmd>BufferClose<CR>", "  Close Buffer" },
-		["e"] = { "<Cmd>lua require('plugConfig.barbar.tree').toggle()<CR>", "פּ  Explorer" },
+		["e"] = { "<Cmd>lua require('lir.float').toggle()<CR>", "פּ  Explorer" },
 		["h"] = { "<Cmd>nohlsearch<CR>", "  No Highlight" },
 		["?"] = { ":<C-U>Cheatsheet<CR>", "  Cheat Sheets" },
 		["z"] = { "<Cmd>set spell!<CR>", "暈 Toggle Spellcheck" },
@@ -54,6 +54,7 @@ wk.register({
 
 		s = {
 			name = "   Search",
+
 			b = { "<Cmd>Telescope buffers<CR>", "  Buffers" },
 			c = { "<Cmd>Cheat<CR>", "  on Cheat.sh" },
 			C = { "<Cmd>Telescope commands<CR>", "  Commands" },
@@ -77,6 +78,7 @@ wk.register({
 
 		t = {
 			name = "   Terminal",
+
 			f = { "<Cmd>ToggleTerm direction=float<CR>", "  Float" },
 			g = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
 			h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", "  Horizontal" },
@@ -89,6 +91,7 @@ wk.register({
 
 		x = {
 			name = "   Lists",
+
 			d = { "<Cmd>Trouble document_diagnostics<CR>", "Document Diagnostics" },
 			l = { "<Cmd>Trouble loclist<CR>", "Loclist" },
 			q = { "<Cmd>Trouble quickfix<CR>", "Quickfix List" },

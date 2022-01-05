@@ -59,10 +59,6 @@ Format the current file                   | <Leader>fr
 ## neoclip @clipboard
 Open neoclip                              | <Leader>n
 
-## nvim-tree @explorer
-Toggle help panel                         | g?
-Open/close explorer                       | <Leader>e
-
 ## toggleterm @terminal
 Open/close terminal                       | <C-t>
 Open/close terminal in horizontal window  | <Leader>th

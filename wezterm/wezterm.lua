@@ -1,6 +1,8 @@
 local wezterm = require("wezterm")
 return {
+	-- Windows only
 	default_prog = { "wsl.exe", "--cd", "~" },
+
 	font = wezterm.font("Monofur NF"),
 	-- font = wezterm.font("Iosevka"),
 	font_size = 15,

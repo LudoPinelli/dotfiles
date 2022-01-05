@@ -12,7 +12,7 @@ telescope.setup({
 		selection_caret = " ",
 		path_display = { "smart" },
 		dynamic_preview_title = true,
-		winblend = 5,
+		winblend = 15,
 		sorting_strategy = "ascending",
 		layout_config = {
 			prompt_position = "top",

@@ -154,8 +154,12 @@ return packer.startup(function(use)
 	--         UTILITIES             --
 	-----------------------------------
 
+	-- Explorer
+	use("tamago324/lir.nvim")
+	use("tamago324/lir-bookmark.nvim")
+	use("tamago324/lir-git-status.nvim")
+
 	use("AckslD/nvim-neoclip.lua") -- Clipboard utility
-	use("kyazdani42/nvim-tree.lua") -- Explorer
 	use("akinsho/nvim-toggleterm.lua") -- Terminal utility
 	use("lewis6991/impatient.nvim") -- Improve startup time
 	use("sudormrfbin/cheatsheet.nvim") -- Searchable CheetSheat
@@ -196,9 +200,9 @@ return packer.startup(function(use)
 	------------------------------------
 
 	-- By: rust-tools, gitsigns, cheetsheat, telescope
-	-- auto-pandoc
+	-- auto-pandoc, lir
 	use("nvim-lua/plenary.nvim")
-	-- By: nvim-tree, barbar, lualine, telescope
+	-- By: barbar, lualine, telescope, lir
 	use("kyazdani42/nvim-web-devicons")
 	-- By: popup
 	use("nvim-lua/popup.nvim")
