@@ -94,8 +94,11 @@ return packer.startup(function(use)
 	--            VISUAL              --
 	------------------------------------
 
-	use("EdenEast/nightfox.nvim") -- Theme
+	-- Themes
+	use("EdenEast/nightfox.nvim")
 	use("rebelot/kanagawa.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
+
 	use("sunjon/shade.nvim") -- Dim inactive windows
 	use("lukas-reineke/indent-blankline.nvim") -- Add indentation guides
 	use("rcarriga/nvim-notify") -- Notifications
@@ -119,7 +122,7 @@ return packer.startup(function(use)
 
 	use("windwp/nvim-autopairs") -- Autopairs
 	use("tpope/vim-surround") -- Surround
-	use("folke/which-key.nvim") -- Key mappings easy access
+	use({ "zeertzjq/which-key.nvim", branch = "patch-1" }) -- Key mappings easy access
 	use("romgrk/barbar.nvim") -- Tabline
 	use("folke/trouble.nvim") -- Nice lists
 	use({ -- Commenting
@@ -140,11 +143,12 @@ return packer.startup(function(use)
 	------------------------------------
 
 	use({
-		"lewis6991/gitsigns.nvim",
+		"lewis6991/gitsigns.nvim", -- Add signs in the gutter/allox hunks manipulation
 		config = function()
 			require("gitsigns").setup()
 		end,
 	})
+	use("cljoly/telescope-repo.nvim") -- Allow switching to any repo via telescope
 
 	-----------------------------------
 	--         UTILITIES             --

@@ -1,9 +1,9 @@
 # Aliases
 
-alias ls='exa -lF --git-ignore --group-directories-first --git --icons'
-alias la='exa -laF --group-directories-first --git --icons'
-alias lt='exa -T --level=2 --long --icons'
-alias lta='exa -aT --level=2 --long --icons'
+alias ls='exa -lF --git-ignore --group-directories-first --git'
+alias la='exa -laF --group-directories-first --git'
+alias lt='exa -T --level=3 --long'
+alias lta='exa -aT --level=3 --long'
 
 alias rm='rm -I'
 alias mv='mv -i'
