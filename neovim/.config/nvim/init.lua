@@ -4,6 +4,8 @@ if not status_ok then
 end
 impatient.enable_profile()
 
+vim.g.do_filetype_lua = 1
+vim.g.did_load_filetypes = 0
 require("options")
 require("plugins")
 require("plugConfig")
