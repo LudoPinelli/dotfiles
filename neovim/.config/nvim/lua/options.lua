@@ -61,7 +61,7 @@ opt.mouse = "a" -- Enable mouse mode
 
 -- System
 opt.belloff = "all" -- no bell
-opt.clipboard = "unnamedplus" -- always use clipboard
+-- opt.clipboard = "unnamedplus" -- always use clipboard
 opt.shada = { "!", "'1000", "<50", "s10", "h" } -- what is saved between two sessions
 opt.hidden = true -- Do not save when switching buffers
 opt.backup = false -- Disable Backup

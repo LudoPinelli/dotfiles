@@ -77,7 +77,6 @@ wk.register({
 			name = "   Terminal",
 			f = { "<Cmd>ToggleTerm direction=float<CR>", "  Float" },
 			g = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
-			G = { "<Cmd>lua gitui_toggle()<CR>", "  GitUI" },
 			h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", "  Horizontal" },
 			n = { "<Cmd>lua node_toggle()<CR>", "  Node.js" },
 			p = { "<Cmd>lua python_toggle()<CR>", "   Python" },
