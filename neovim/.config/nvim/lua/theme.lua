@@ -40,7 +40,7 @@ elseif theme == "catppuccin" then
 			functions = "italic",
 			keywords = "italic",
 			strings = "NONE",
-			variables = "italic",
+			variables = "NONE",
 		},
 		integrations = {
 			treesitter = true,
