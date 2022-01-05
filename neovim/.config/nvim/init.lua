@@ -4,7 +4,7 @@ if not status_ok then
 end
 impatient.enable_profile()
 
-require("ludo.options")
-require("ludo.plugins")
-require("ludo.plugConfig")
-require("ludo.theme")
+require("options")
+require("plugins")
+require("plugConfig")
+require("theme")

@@ -1,12 +1,12 @@
-require("ludo.plugConfig.toggleterm.custom_terms")
-require("ludo.plugConfig.telescope.custom_pickers")
+require("plugConfig.toggleterm.custom_terms")
+require("plugConfig.telescope.custom_pickers")
 
 local wk = require("which-key")
 wk.register({
 	["<Leader>"] = {
 		["a"] = { "<Cmd>Alpha<CR>", "䀘 Landing page" },
 		["c"] = { "<Cmd>BufferClose<CR>", "  Close Buffer" },
-		["e"] = { "<Cmd>lua require('ludo.plugConfig.barbar.tree').toggle()<CR>", "פּ  Explorer" },
+		["e"] = { "<Cmd>lua require('plugConfig.barbar.tree').toggle()<CR>", "פּ  Explorer" },
 		["h"] = { "<Cmd>nohlsearch<CR>", "  No Highlight" },
 		["?"] = { ":<C-U>Cheatsheet<CR>", "  Cheat Sheets" },
 		["z"] = { "<Cmd>set spell!<CR>", "暈 Toggle Spellcheck" },
@@ -97,7 +97,7 @@ wk.register({
 	},
 })
 
-local Utils = require("ludo.plugConfig.which-key.keymaputils")
+local Utils = require("plugConfig.which-key.keymaputils")
 
 -- local exprnnoremap = Utils.expnnoremap
 local nnoremap = Utils.nnoremap

@@ -123,7 +123,7 @@ lsp_installer.on_server_ready(function(server)
 					},
 					diagnostics = {
 						globals = { "vim" },
-						disable = { "lowercase-global", "different-requires" },
+						disable = { "lowercase-global" }, --, "different-requires" },
 					},
 					workspace = {
 						library = vim.api.nvim_get_runtime_file("", true),

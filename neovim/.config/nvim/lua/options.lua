@@ -54,7 +54,7 @@ opt.splitright = true -- Force Split Right
 opt.scrolloff = 12 -- Vertical Scroll Offset
 opt.sidescrolloff = 8 -- Horizontal Scroll Offset
 
--- folding defined in ludo.treesitter.lua
+-- folding defined in treesitter.lua
 
 -- Mouse
 opt.mouse = "a" -- Enable mouse mode
