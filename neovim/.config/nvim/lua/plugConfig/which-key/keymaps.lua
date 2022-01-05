@@ -64,13 +64,15 @@ wk.register({
 			k = { "<Cmd>Telescope keymaps<CR>", "  Keymaps" },
 			m = { "<Cmd>Telescope notify<CR>", "  Messages History" },
 			M = { "<Cmd>Telescope man_pages<CR>", "  Man Pages" },
+			o = {
+				[[
+        <Cmd>lua require("telescope").extensions.repo.cached_list{file_ignore_patterns={"/%.cache", "/%.cargo", "/%.local", "/%.nvm", "/ludov"}}<CR>
+        ]],
+				"  Repo",
+			},
 			r = { "<Cmd>Telescope oldfiles<CR>", "  Open Recent File" },
 			R = { "<Cmd>Telescope registers<CR>", "  Registers" },
 			t = { "<Cmd>Telescope live_grep<CR>", "  Text" },
-			o = {
-				[[<Cmd>lua require("telescope").extensions.repo.cached_list{file_ignore_patterns={"/%.cache/", "/%.cargo/", "/%.local", "/%.nvm/", "/ludov/"}}<CR>]],
-				"  Repo",
-			},
 		},
 
 		t = {
