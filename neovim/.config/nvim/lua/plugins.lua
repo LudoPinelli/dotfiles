@@ -99,7 +99,7 @@ return packer.startup(function(use)
 	use("rebelot/kanagawa.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
-	use("sunjon/shade.nvim") -- Dim inactive windows
+	-- use("sunjon/shade.nvim") -- Dim inactive windows
 	use("lukas-reineke/indent-blankline.nvim") -- Add indentation guides
 	use("rcarriga/nvim-notify") -- Notifications
 	use("nvim-lualine/lualine.nvim") -- Status line
