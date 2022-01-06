@@ -48,14 +48,17 @@ return packer.startup(function(use)
 	--             CORE               --
 	------------------------------------
 
-	use({ -- Telescope
+	-- Telescope
+	use({
 		"nvim-telescope/telescope.nvim",
 		requires = {
 			"nvim-telescope/telescope-file-browser.nvim",
 			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 		},
 	})
-	use({ -- Treesitter
+
+	-- Treesitter
+	use({
 		"nvim-treesitter/nvim-treesitter",
 		requires = {
 			"nvim-treesitter/nvim-treesitter-refactor",
@@ -63,14 +66,20 @@ return packer.startup(function(use)
 		},
 		run = ":TSUpdate",
 	})
-	use({ -- LSP
+
+	-- LSP
+	use({
 		"neovim/nvim-lspconfig",
 		requires = {
 			"williamboman/nvim-lsp-installer",
 			"jose-elias-alvarez/null-ls.nvim",
 		},
 	})
-	use({ -- Completion
+	use("ray-x/lsp_signature.nvim")
+	use("kosayoda/nvim-lightbulb")
+
+	-- Completion
+	use({
 		"hrsh7th/nvim-cmp",
 		requires = {
 			use("hrsh7th/cmp-buffer"),
@@ -83,7 +92,9 @@ return packer.startup(function(use)
 			use("f3fora/cmp-spell"),
 		},
 	})
-	use({ -- Snippets
+
+	-- Snippets
+	use({
 		"L3MON4D3/luaSnip",
 		requires = {
 			"rafamadriz/friendly-snippets",

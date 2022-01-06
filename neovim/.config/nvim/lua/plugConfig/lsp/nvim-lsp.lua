@@ -58,6 +58,8 @@ local on_attach = function(client, bufnr)
 	if client.resolved_capabilities.document_formatting then
 		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
 	end
+
+	require("lsp_signature").on_attach()
 end
 
 -- Include the servers you want to have installed by default below

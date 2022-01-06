@@ -39,7 +39,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("q", "  Quit               ", ":qa<CR>"),
 }
 
-dashboard.section.footer.val = "🙙 ⎯ 🙛 "
+dashboard.section.footer.val = "---"
 
 dashboard.opts.opts.noautocmd = true
 
