@@ -17,6 +17,10 @@ if theme == "nightfox" then
 
 	nightfox.load("nordfox")
 
+	require("lualine").setup({
+		options = { theme = "nightfox" },
+	})
+
 	-- kanagawa
 elseif theme == "kanagawa" then
 	local default_colors = require("kanagawa.colors").setup()
@@ -28,6 +32,10 @@ elseif theme == "kanagawa" then
 	require("kanagawa").setup({ overrides = overrides, colors = my_colors })
 	vim.cmd("colorscheme kanagawa")
 
+	require("lualine").setup({
+		options = { theme = "kanagawa" },
+	})
+
 	-- Catppuccin
 elseif theme == "catppuccin" then
 	local catppuccin = require("catppuccin")
@@ -37,7 +45,7 @@ elseif theme == "catppuccin" then
 		term_colors = false,
 		styles = {
 			comments = "italic",
-			functions = "italic",
+			functions = "NONE",
 			keywords = "italic",
 			strings = "NONE",
 			variables = "NONE",
@@ -89,4 +97,8 @@ elseif theme == "catppuccin" then
 		},
 	})
 	vim.cmd("colorscheme catppuccin")
+
+	require("lualine").setup({
+		options = { theme = "catppuccin" },
+	})
 end
