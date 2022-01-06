@@ -196,11 +196,9 @@ map(
 )
 nmap("à", "<Cmd>lua require('hop').hint_char2()<CR>")
 xmap("à", "<Cmd>lua require('hop').hint_char2()<CR>")
-omap("<C-x>", "<Cmd>lua require('hop').hint_char2()<CR>")
 
 nmap("<Leader>L", "<Cmd>lua require'hop'.hint_lines()<CR>")
 xmap("<Leader>LL", "<Cmd>lua require'hop'.hint_lines()<CR>")
-omap("X", "<Cmd>lua require'hop'.hint_lines()<CR>")
 
 -- nnoremap("K", ":lua show_documentation()<Cr>")
 -- function show_documentation()
