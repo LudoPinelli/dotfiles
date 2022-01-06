@@ -13,7 +13,6 @@ local sources = {
 	formatting.shellharden,
 	formatting.taplo,
 	diagnostics.shellcheck,
-	null_ls.builtins.code_actions.gitsigns,
 }
 
 null_ls.setup({

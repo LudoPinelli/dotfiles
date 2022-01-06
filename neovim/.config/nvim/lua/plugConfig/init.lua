@@ -18,6 +18,3 @@ require("plugConfig.lir")
 
 -- Where Cheat.sh give its results
 vim.g.cheat_default_window_layout = "vertical_split"
-
--- nvim-lightbuld config
-vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])

@@ -76,7 +76,6 @@ return packer.startup(function(use)
 		},
 	})
 	use("ray-x/lsp_signature.nvim")
-	use("kosayoda/nvim-lightbulb")
 
 	-- Completion
 	use({
