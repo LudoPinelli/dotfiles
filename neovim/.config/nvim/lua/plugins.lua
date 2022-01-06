@@ -125,6 +125,7 @@ return packer.startup(function(use)
 			require("colorizer").setup()
 		end,
 	})
+
 	------------------------------------
 	--         PRODUCTIVITY           --
 	------------------------------------
@@ -146,6 +147,7 @@ return packer.startup(function(use)
 			require("better_escape").setup()
 		end,
 	})
+	use("phaazon/hop.nvim") -- jump anywhere
 
 	------------------------------------
 	--             GIT                --

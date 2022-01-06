@@ -15,6 +15,13 @@ end
 function M.nmap(lhs, rhs)
 	M.map("n", lhs, rhs)
 end
+function M.xmap(lhs, rhs)
+	M.map("x", lhs, rhs)
+end
+function M.omap(lhs, rhs)
+	M.map("o", lhs, rhs)
+end
+
 function M.nnoremap(lhs, rhs)
 	M.noremap("n", lhs, rhs)
 end

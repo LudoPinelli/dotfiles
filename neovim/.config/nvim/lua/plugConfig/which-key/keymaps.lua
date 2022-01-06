@@ -108,7 +108,10 @@ local vnoremap = Utils.vnoremap
 local xnoremap = Utils.xnoremap
 local inoremap = Utils.inoremap
 -- local tnoremap = Utils.tnoremap
--- local nmap = Utils.nmap
+local map = Utils.map
+local nmap = Utils.nmap
+local xmap = Utils.xmap
+local omap = Utils.omap
 
 -- mapleader
 -- nnoremap("<Space>", "<Nop>")
@@ -163,6 +166,41 @@ nnoremap("<Esc>", "<C-\\><C-n>")
 -- Barbar
 nnoremap("<Tab>", ":BufferNext<CR>")
 nnoremap("<S-Tab>", ":BufferPrevious<CR>")
+
+-- hop
+nmap(
+	"f",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+)
+nmap(
+	"F",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+)
+omap(
+	"f",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>"
+)
+omap(
+	"F",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>"
+)
+map(
+	"",
+	"t",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+)
+map(
+	"",
+	"T",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+)
+nmap("à", "<Cmd>lua require('hop').hint_char2()<CR>")
+xmap("à", "<Cmd>lua require('hop').hint_char2()<CR>")
+omap("<C-x>", "<Cmd>lua require('hop').hint_char2()<CR>")
+
+nmap("<Leader>L", "<Cmd>lua require'hop'.hint_lines()<CR>")
+xmap("<Leader>LL", "<Cmd>lua require'hop'.hint_lines()<CR>")
+omap("X", "<Cmd>lua require'hop'.hint_lines()<CR>")
 
 -- nnoremap("K", ":lua show_documentation()<Cr>")
 -- function show_documentation()
