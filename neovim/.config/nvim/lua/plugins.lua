@@ -111,7 +111,6 @@ return packer.startup(function(use)
 
 	-- use("sunjon/shade.nvim") -- Dim inactive windows
 	use("lukas-reineke/indent-blankline.nvim") -- Add indentation guides
-	use("rcarriga/nvim-notify") -- Notifications
 	use("nvim-lualine/lualine.nvim") -- Status line
 	use("goolord/alpha-nvim") -- Dashboard
 	use({ -- Stabilize windows on open/close
@@ -204,6 +203,9 @@ return packer.startup(function(use)
 			require("crates").setup()
 		end,
 	})
+
+	-- lua Plugins
+	use("MunifTanjim/nui.nvim")
 
 	------------------------------------
 	--          REQUIRED              --

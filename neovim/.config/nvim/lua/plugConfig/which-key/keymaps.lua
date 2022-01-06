@@ -63,7 +63,6 @@ wk.register({
 			H = { "<Cmd>lua home()<CR>", "  Home Directory" },
 			i = { "<Cmd>Telescope command_history<CR>", "  Commands History" },
 			k = { "<Cmd>Telescope keymaps<CR>", "  Keymaps" },
-			m = { "<Cmd>Telescope notify<CR>", "  Messages History" },
 			M = { "<Cmd>Telescope man_pages<CR>", "  Man Pages" },
 			o = {
 				[[

@@ -92,7 +92,7 @@ elseif theme == "catppuccin" then
 			lightspeed = false,
 			ts_rainbow = false,
 			hop = false,
-			notify = true,
+			notify = false,
 			telekasten = false,
 		},
 	})
