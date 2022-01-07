@@ -99,7 +99,5 @@ telescope.setup({
 	},
 })
 
-if jit.os ~= "Windows" then
-	require("telescope").load_extension("fzf")
-end
+require("telescope").load_extension("fzf")
 require("telescope").load_extension("file_browser")

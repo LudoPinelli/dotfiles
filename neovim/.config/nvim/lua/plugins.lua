@@ -55,10 +55,18 @@ return packer.startup(function(use)
 			"nvim-telescope/telescope-file-browser.nvim",
 		},
 	})
-	if jit.os ~= "Windows" then
-		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	if jit.os == "Windows" then
+		use({
+			"nvim-telescope/telescope-fzf-native.nvim",
+			branch = "feature/windows_buid_support",
+			run = "make",
+		})
+	else
+		use({
+			"nvim-telescope/telescope-fzf-native.nvim",
+			run = "make",
+		})
 	end
-
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
