@@ -107,7 +107,7 @@ local nnoremap = Utils.nnoremap
 local vnoremap = Utils.vnoremap
 local xnoremap = Utils.xnoremap
 local inoremap = Utils.inoremap
--- local tnoremap = Utils.tnoremap
+local tnoremap = Utils.tnoremap
 local map = Utils.map
 local nmap = Utils.nmap
 local xmap = Utils.xmap
@@ -160,8 +160,17 @@ nnoremap("<C-l>", "<C-w><Right>")
 nnoremap("<C-s>", ":w<CR>")
 inoremap("<C-s>", "<Esc>:w<CR>i")
 
--- switch to normal mode in terminal
-nnoremap("<Esc>", "<C-\\><C-n>")
+-- Terminal
+function _G.set_terminal_keymap()
+	tnoremap("<Esc>", "<C-\\><C-n>")
+	tnoremap("jk", "<C-\\><C-n>")
+	tnoremap("<C-j>", "<C-\\><C-n><C-w>j")
+	tnoremap("<C-k>", "<C-\\><C-n><C-w>k")
+	tnoremap("<C-h>", "<C-\\><C-n><C-w>h")
+	tnoremap("<C-l>", "<C-\\><C-n><C-w>l")
+end
+
+vim.cmd([[autocmd! TermOpen term://* lua set_terminal_keymap()]])
 
 -- Barbar
 nnoremap("<Tab>", ":BufferNext<CR>")

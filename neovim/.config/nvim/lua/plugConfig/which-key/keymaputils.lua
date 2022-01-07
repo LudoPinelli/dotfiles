@@ -34,14 +34,19 @@ end
 function M.inoremap(lhs, rhs)
 	M.noremap("i", lhs, rhs)
 end
-function M.tnoremap(lhs, rhs)
-	M.noremap("t", lhs, rhs)
-end
 function M.exprinoremap(lhs, rhs)
 	M.exprnoremap("i", lhs, rhs)
 end
 function M.exprnnoremap(lhs, rhs)
 	M.exprnoremap("n", lhs, rhs)
+end
+
+function M.bnoremap(mode, lhs, rhs)
+	vim.api.nvim_buf_set_keymap(0, mode, lhs, rhs, { noremap = true })
+end
+
+function M.tnoremap(lhs, rhs)
+	M.bnoremap("t", lhs, rhs)
 end
 
 return M

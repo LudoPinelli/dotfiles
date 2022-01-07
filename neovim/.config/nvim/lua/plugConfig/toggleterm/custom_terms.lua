@@ -9,9 +9,8 @@ local lazygit = Terminal:new({
 		border = "curved",
 	},
 	close_on_exit = true,
-	on_open = function(term)
+	on_open = function()
 		vim.cmd("startinsert!")
-		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
 	end,
 })
 function lazygit_toggle()
@@ -24,9 +23,8 @@ local python = Terminal:new({
 	dir = vim.fn.expand("%:p"),
 	direction = "horizontal",
 	close_on_exit = true,
-	on_open = function(term)
+	on_open = function()
 		vim.cmd("startinsert!")
-		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
 	end,
 })
 function python_toggle()
@@ -39,9 +37,8 @@ local node = Terminal:new({
 	dir = vim.fn.expand("%:p"),
 	direction = "horizontal",
 	close_on_exit = true,
-	on_open = function(term)
+	on_open = function()
 		vim.cmd("startinsert!")
-		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
 	end,
 })
 function node_toggle()
@@ -57,9 +54,8 @@ local htop = Terminal:new({
 		border = "curved",
 	},
 	close_on_exit = true,
-	on_open = function(term)
+	on_open = function()
 		vim.cmd("startinsert!")
-		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
 	end,
 })
 function htop_toggle()
@@ -72,9 +68,8 @@ local cargo_watch = Terminal:new({
 	dir = "git_dir",
 	direction = "horizontal",
 	close_on_exit = true,
-	on_open = function(term)
+	on_open = function()
 		vim.cmd(":wincmd k")
-		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
 	end,
 })
 function cargo_watch_toggle()
