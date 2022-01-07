@@ -11,8 +11,6 @@ function nvim_config()
 	local path = get_path()
 	require("telescope").extensions.file_browser.file_browser({
 		prompt_title = " Neovim Configuration",
-		initial_mode = "normal",
-		prompt_position = "top",
 		path = path,
 		cwd = path,
 		depth = 1,
@@ -33,7 +31,6 @@ function home()
 	local path = get_home()
 	require("telescope.builtin").find_files({
 		prompt_title = "  Home Directory",
-		prompt_position = "top",
 		cwd = path,
 		hidden = false,
 	})
