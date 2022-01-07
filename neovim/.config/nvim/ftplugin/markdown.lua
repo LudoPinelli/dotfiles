@@ -13,7 +13,9 @@ iabbrev VV ↓
 ------------- Keymaps ---------------
 
 -- Wrap selection in link
-vim.api.nvim_buf_set_keymap(0, "v", "_", [[c[<C-r>"]()<Esc>]], { noremap = false })
+vim.api.nvim_buf_set_keymap(0, "v", ",l", [[c[<C-r>"]()<Esc>]], { noremap = false })
+-- Wrap selection in image
+vim.api.nvim_buf_set_keymap(0, "v", ",i", [[c![<C-r>"](?raw=true)<Esc>hhhhhhhhh]], { noremap = false })
 -- Convert with pandoc
 vim.api.nvim_buf_set_keymap(
 	0,

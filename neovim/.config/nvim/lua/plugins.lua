@@ -67,6 +67,7 @@ return packer.startup(function(use)
 			run = "make",
 		})
 	end
+
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
