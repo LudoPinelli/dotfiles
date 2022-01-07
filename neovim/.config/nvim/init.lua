@@ -4,9 +4,11 @@ if not status_ok then
 end
 impatient.enable_profile()
 
--- disable vimL filetype detection / unable lua filetype detection
-vim.g.did_load_filetypes = 0
-vim.g.do_filetype_lua = 1
+if jit.os ~= "Windows" then
+	-- disable vimL filetype detection / unable lua filetype detection
+	vim.g.did_load_filetypes = 0
+	vim.g.do_filetype_lua = 1
+end
 
 require("options")
 require("plugins")

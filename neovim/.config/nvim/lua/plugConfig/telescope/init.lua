@@ -47,14 +47,12 @@ telescope.setup({
 				["<C-x>"] = actions.select_horizontal,
 				["<C-v>"] = actions.select_vertical,
 
-				["<C-t>"] = trouble.open_with_trouble,
-
 				["<C-u>"] = actions.preview_scrolling_up,
 				["<C-d>"] = actions.preview_scrolling_down,
 
 				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
 				["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-				["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+				["<C-q>"] = trouble.open_with_trouble,
 				["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 				["<C-l>"] = actions.complete_tag,
 				["<C-_>"] = actions.which_key,
@@ -66,11 +64,9 @@ telescope.setup({
 				["<C-x>"] = actions.select_horizontal,
 				["<C-v>"] = actions.select_vertical,
 
-				["<C-t>"] = trouble.open_with_trouble,
-
 				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
 				["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-				["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+				["<C-q>"] = trouble.open_with_trouble,
 				["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 
 				["j"] = actions.move_selection_next,
@@ -103,5 +99,7 @@ telescope.setup({
 	},
 })
 
-require("telescope").load_extension("fzf")
+if jit.os ~= "Windows" then
+	require("telescope").load_extension("fzf")
+end
 require("telescope").load_extension("file_browser")

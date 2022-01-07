@@ -53,9 +53,11 @@ return packer.startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		requires = {
 			"nvim-telescope/telescope-file-browser.nvim",
-			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 		},
 	})
+	if jit.os ~= "Windows" then
+		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	end
 
 	-- Treesitter
 	use({
@@ -159,7 +161,9 @@ return packer.startup(function(use)
 			require("gitsigns").setup()
 		end,
 	})
-	use("cljoly/telescope-repo.nvim") -- Allow switching to any repo via telescope
+	if jit.os ~= "Windows" then
+		use("cljoly/telescope-repo.nvim") -- Allow switching to any repo via telescope
+	end
 
 	-----------------------------------
 	--         UTILITIES             --

@@ -1,4 +1,4 @@
 require("hop").setup({
-	keys = "qsdghklmzxertyuiopwxcvbnfjQSDGHKLMZXERTYUIOPWXCVBNFJ",
+	keys = "qsdghklmzertyuiopwxcvbnfjQSDGHKLMZERTYUIOPWXCVBNFJ",
 	case_insensitive = false,
 })

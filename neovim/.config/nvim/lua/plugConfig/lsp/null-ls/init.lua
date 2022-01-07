@@ -6,17 +6,29 @@ end
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
-local sources = {
-	formatting.stylua,
-	formatting.autopep8,
-	formatting.prettier,
-	formatting.shellharden,
-	formatting.taplo,
-	diagnostics.shellcheck,
-}
+local function sources()
+	if jit.os ~= "Windows" then
+		return {
+			formatting.stylua,
+			formatting.autopep8,
+			formatting.prettier,
+			formatting.shellharden,
+			formatting.taplo,
+			diagnostics.shellcheck,
+		}
+	else
+		return {
+			formatting.stylua,
+			formatting.autopep8,
+			formatting.prettier,
+			formatting.taplo,
+			diagnostics.shellcheck,
+		}
+	end
+end
 
 null_ls.setup({
-	sources = sources,
+	sources = sources(),
 
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
