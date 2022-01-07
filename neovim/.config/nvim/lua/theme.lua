@@ -1,28 +1,7 @@
 local theme = "catppuccin"
 
--- Nightfox
-if theme == "nightfox" then
-	local nightfox = require("nightfox")
-
-	nightfox.setup({
-		fox = "nordfox",
-		styles = {
-			comments = "italic",
-			-- functions = "italic",
-		},
-		inverse = {
-			match_paren = true,
-		},
-	})
-
-	nightfox.load("nordfox")
-
-	require("lualine").setup({
-		options = { theme = "nightfox" },
-	})
-
-	-- kanagawa
-elseif theme == "kanagawa" then
+-- kanagawa
+if theme == "kanagawa" then
 	local default_colors = require("kanagawa.colors").setup()
 	local my_colors = {}
 	local overrides = {
@@ -34,6 +13,16 @@ elseif theme == "kanagawa" then
 
 	require("lualine").setup({
 		options = { theme = "kanagawa" },
+	})
+
+	-- Onenord
+elseif theme == "onenord" then
+	require("onenord").setup({
+		fade_nc = true,
+	})
+
+	require("lualine").setup({
+		options = { theme = "onenord" },
 	})
 
 	-- Catppuccin
