@@ -10,6 +10,7 @@ if jit.os ~= "Windows" then
 	vim.g.do_filetype_lua = 1
 end
 
+require("autocommands")
 require("options")
 require("plugins")
 require("plugConfig")
