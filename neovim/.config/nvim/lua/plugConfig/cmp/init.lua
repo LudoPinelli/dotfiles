@@ -138,10 +138,15 @@ cmp.setup({
 	experimental = {
 		ghost_text = true,
 	},
+})
 
-	cmp.setup.cmdline("/", {
-		sources = {
-			{ name = "buffer" },
-		},
-	}),
+cmp.setup.cmdline(":", {
+	sources = {
+		{ name = "cmdline" },
+	},
+})
+cmp.setup.cmdline("/", {
+	sources = {
+		{ name = "buffer" },
+	},
 })

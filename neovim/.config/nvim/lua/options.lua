@@ -11,7 +11,7 @@ opt.showmode = false -- Don't Show MODES
 opt.cursorline = true -- Highlight the actual line
 opt.signcolumn = "yes" -- Sign Column
 -- vim.cmd("syntax on")
-opt.guifont = "Monofur NF:17"
+opt.guifont = "Monofur NF:15"
 
 -- formatting
 opt.formatoptions = opt.formatoptions
