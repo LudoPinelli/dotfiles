@@ -13,14 +13,14 @@ wk.register({
 		["z"] = { "<Cmd>set spell!<CR>", "暈 Toggle Spellcheck" },
 		["W"] = { "<Cmd>cd %:p:h<CR>:pwd<CR>", "  Set Working Directory" },
 		["C"] = { "<Cmd>lua nvim_config()<CR>", "  Config Files" },
-		["n"] = { "<Cmd>Telescope neoclip<CR>", "  Clipboard" },
+		["n"] = { "<Cmd>Telescope neoclip initial_mode=normal<CR>", "  Clipboard" },
 		["i"] = { "`.", "  Back to last insert" },
 		["p"] = { "<Cmd>BufferPick<CR>", "  Pick a buffer" },
 
 		g = {
 			name = "   Git",
 
-			b = { "<Cmd>Telescope git_branches<CR>", "  Branches" },
+			b = { "<Cmd>Telescope git_branches initial_mode=normal<CR>", "  Branches" },
 			c = { "<Cmd>Telescope git_commits<CR>", "  Commits" },
 			g = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
 			f = { "<Cmd>Telescope git_files<CR>", "Git files" },
@@ -84,13 +84,13 @@ if jit.os ~= "Windows" then
 			s = {
 				name = "   Search",
 
-				b = { "<Cmd>Telescope buffers<CR>", "  Buffers" },
+				b = { "<Cmd>Telescope buffers inital_mode=normal<CR>", "  Buffers" },
 				c = { "<Cmd>Cheat<CR>", "  on Cheat.sh" },
 				C = { "<Cmd>Telescope commands<CR>", "  Commands" },
 				f = { "<Cmd>Telescope find_files<CR>", "  Files" },
 				h = { "<Cmd>Telescope help_tags<CR>", "  Help" },
 				H = { "<Cmd>lua home()<CR>", "  Home Directory" },
-				i = { "<Cmd>Telescope command_history<CR>", "  Commands History" },
+				i = { "<Cmd>Telescope command_history inital_mode=normal<CR>", "  Commands History" },
 				k = { "<Cmd>Telescope keymaps<CR>", "  Keymaps" },
 				M = { "<Cmd>Telescope man_pages<CR>", "  Man Pages" },
 				o = {
@@ -100,7 +100,7 @@ if jit.os ~= "Windows" then
 					"  Repo",
 				},
 				r = { "<Cmd>Telescope oldfiles<CR>", "  Open Recent File" },
-				R = { "<Cmd>Telescope registers<CR>", "  Registers" },
+				R = { "<Cmd>Telescope registers inital_mode=normal<CR>", "  Registers" },
 				t = { "<Cmd>Telescope live_grep<CR>", "  Text" },
 			},
 		},
@@ -111,17 +111,17 @@ else
 			s = {
 				name = "   Search",
 
-				b = { "<Cmd>Telescope buffers<CR>", "  Buffers" },
+				b = { "<Cmd>Telescope buffers inital_mode=normal<CR>", "  Buffers" },
 				c = { "<Cmd>Cheat<CR>", "  on Cheat.sh" },
 				C = { "<Cmd>Telescope commands<CR>", "  Commands" },
 				f = { "<Cmd>Telescope find_files<CR>", "  Files" },
 				h = { "<Cmd>Telescope help_tags<CR>", "  Help" },
 				H = { "<Cmd>lua home()<CR>", "  Home Directory" },
-				i = { "<Cmd>Telescope command_history<CR>", "  Commands History" },
+				i = { "<Cmd>Telescope command_history inital_mode=normal<CR>", "  Commands History" },
 				k = { "<Cmd>Telescope keymaps<CR>", "  Keymaps" },
 				M = { "<Cmd>Telescope man_pages<CR>", "  Man Pages" },
 				r = { "<Cmd>Telescope oldfiles<CR>", "  Open Recent File" },
-				R = { "<Cmd>Telescope registers<CR>", "  Registers" },
+				R = { "<Cmd>Telescope registers inital_mode=normal<CR>", "  Registers" },
 				t = { "<Cmd>Telescope live_grep<CR>", "  Text" },
 			},
 		},
