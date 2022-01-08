@@ -59,6 +59,7 @@ return packer.startup(function(use)
 			run = "make",
 		})
 	end
+	use("LinArcX/telescope-env.nvim")
 
 	-- Treesitter
 	use({
