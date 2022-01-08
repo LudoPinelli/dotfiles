@@ -33,9 +33,9 @@ elseif theme == "catppuccin" then
 		transparent_background = false,
 		term_colors = false,
 		styles = {
-			comments = "italic",
+			comments = "NONE",
 			functions = "NONE",
-			keywords = "italic",
+			keywords = "NONE",
 			strings = "NONE",
 			variables = "NONE",
 		},
