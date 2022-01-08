@@ -178,7 +178,6 @@ return packer.startup(function(use)
 	use("AckslD/nvim-neoclip.lua") -- Clipboard utility
 	use("akinsho/nvim-toggleterm.lua") -- Terminal utility
 	use("lewis6991/impatient.nvim") -- Improve startup time
-	use("sudormrfbin/cheatsheet.nvim") -- Searchable CheetSheat
 	use("RishabhRD/nvim-cheat.sh") -- Access to Cheat.sh
 	use("dstein64/vim-startuptime") -- Startup time info
 
