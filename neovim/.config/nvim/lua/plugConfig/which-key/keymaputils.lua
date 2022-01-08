@@ -34,6 +34,9 @@ end
 function M.inoremap(lhs, rhs)
 	M.noremap("i", lhs, rhs)
 end
+function M.cnoremap(lhs, rhs)
+	M.noremap("c", lhs, rhs)
+end
 function M.exprinoremap(lhs, rhs)
 	M.exprnoremap("i", lhs, rhs)
 end
