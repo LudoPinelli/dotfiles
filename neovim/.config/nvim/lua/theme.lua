@@ -1,4 +1,4 @@
-local theme = "catppuccin"
+local theme = "zenbones"
 
 -- kanagawa
 if theme == "kanagawa" then
@@ -23,6 +23,17 @@ elseif theme == "onenord" then
 
 	require("lualine").setup({
 		options = { theme = "onenord" },
+	})
+
+	-- Zenbones
+elseif theme == "zenbones" then
+	vim.cmd([[set background=dark]])
+	vim.cmd([[colorscheme rosebones]])
+
+	vim.g.rosebones = { darken_noncurrent_window = true }
+
+	require("lualine").setup({
+		options = { theme = "rosebones" },
 	})
 
 	-- Catppuccin
