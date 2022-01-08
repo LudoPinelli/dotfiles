@@ -46,6 +46,12 @@ alias zrc="$EDITOR ~/.zshrc"
 
 alias matrix="cmatrix -a -C magenta"
 
+function igno {
+  # Write .gitignore file for the give language
+  # example: ign Rust
+  gibo dump $1 >> .gitignore
+}
+
 # Ctrl+space to accept autosuggestions
 bindkey "^ " autosuggest-accept
 
