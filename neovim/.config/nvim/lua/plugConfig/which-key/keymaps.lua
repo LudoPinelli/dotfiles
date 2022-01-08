@@ -140,7 +140,6 @@ local nnoremap = Utils.nnoremap
 local vnoremap = Utils.vnoremap
 local xnoremap = Utils.xnoremap
 local inoremap = Utils.inoremap
-local cnoremap = Utils.cnoremap
 -- local tnoremap = Utils.tnoremap
 local map = Utils.map
 local nmap = Utils.nmap
@@ -155,16 +154,16 @@ vim.g.localleader = " "
 -- jk to normal mode
 inoremap("jk", "<Esc>")
 
--- <Ctrl>-j,k,h,l to moce in normal
-inoremap("<C-j>", "<Down>")
-inoremap("<C-k>", "<Up>")
-inoremap("<C-h>", "<Left>")
-inoremap("<C-l>", "<Right>")
-
 -- copy to the end of the line
 nnoremap("Y", "y$")
 
--- keep the cursor cenetered
+-- Move between windows
+nnoremap("<C-j>", "<C-w>j")
+nnoremap("<C-k>", "<C-w>k")
+nnoremap("<C-h>", "<C-w>h")
+nnoremap("<C-l>", "<C-w>l")
+
+-- keep the cursor centered
 nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
 nnoremap("J", "mzJ`z")
@@ -228,8 +227,8 @@ map(
 	"T",
 	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
 )
-nmap("à", "<Cmd>lua require('hop').hint_char2()<CR>")
-xmap("à", "<Cmd>lua require('hop').hint_char2()<CR>")
+nmap("à", "<Cmd>lua require('hop').hint_words()<CR>")
+xmap("à", "<Cmd>lua require('hop').hint_words()<CR>")
 
 nmap("<Leader>L", "<Cmd>lua require'hop'.hint_lines()<CR>")
 xmap("<Leader>LL", "<Cmd>lua require'hop'.hint_lines()<CR>")
