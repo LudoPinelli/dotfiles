@@ -154,6 +154,9 @@ vim.g.localleader = " "
 -- jk to normal mode
 inoremap("jk", "<Esc>")
 
+-- Quit
+nnoremap("<Leader>q", ":q<CR>")
+
 -- Insert a line befor and after
 nnoremap("<Leader>o", "o<Esc>kO<Esc>ji")
 
