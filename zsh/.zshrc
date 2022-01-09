@@ -25,8 +25,10 @@ unsetopt histverify
 
 # Aliases
 
-alias ls="exa -lF --git-ignore --group-directories-first --git"
-alias la="exa -laF --group-directories-first --git"
+alias ls="exa -F --git-ignore --group-directories-first --git"
+alias ll="exa -lF --git-ignore --group-directories-first --git"
+alias la="exa -aF --group-directories-first --git"
+alias lla="exa -laF --group-directories-first --git"
 alias lt="exa -T --level=3 --long"
 alias lta="exa -aT --level=3 --long"
 
