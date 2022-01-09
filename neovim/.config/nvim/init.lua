@@ -12,6 +12,7 @@ end
 
 require("autocommands")
 require("options")
+require("keymaps")
 require("plugins")
 require("plugConfig")
 require("theme")

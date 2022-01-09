@@ -1,6 +1,6 @@
 ------------- Keymaps ---------------
 
-local utils = require("plugConfig.which-key.keymaputils")
+local utils = require("keymaputils")
 local nnoremap = utils.nnoremap
 
 nnoremap("<Leader>rr", "<Cmd>:Crun<CR>")
