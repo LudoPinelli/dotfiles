@@ -22,7 +22,7 @@ wk.register({
 			b = { "<Cmd>Telescope git_branches initial_mode=normal<CR>", "  Branches" },
 			B = { "<Cmd>Telescope git_bcommits initial_mode=normal<CR>", "  Commit log (current buffer)" },
 			c = { "<Cmd>Telescope git_commits initial_mode=normal<CR>", "  Commit log" },
-			g = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
+			g = { "<Cmd>lua gitui_toggle()<CR>", "  GitUi" },
 			f = { "<Cmd>Telescope git_files<CR>", "Git files" },
 			j = { "<Cmd>lua require('gitsigns').next_hunk()<CR>", "Next Hunk" },
 			k = { "<Cmd>lua require('gitsigns').prev_hunk()<CR>", "Prev Hunk" },
@@ -58,7 +58,7 @@ wk.register({
 			name = "   Terminal",
 
 			f = { "<Cmd>ToggleTerm direction=float<CR>", "  Float" },
-			g = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
+			g = { "<Cmd>lua gitui_toggle()<CR>", "  GitUi" },
 			h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", "  Horizontal" },
 			n = { "<Cmd>lua node_toggle()<CR>", "  Node.js" },
 			p = { "<Cmd>lua python_toggle()<CR>", "   Python" },
