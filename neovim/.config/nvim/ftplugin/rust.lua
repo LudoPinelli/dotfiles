@@ -1,12 +1,12 @@
 ------------- Keymaps ---------------
 
-local utils = require("keymaputils")
-local nnoremap = utils.nnoremap
+local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
-nnoremap("<Leader>rr", "<Cmd>:Crun<CR>")
-nnoremap("<Leader>rc", "<Cmd>:Ccheck<CR>")
-nnoremap("<Leader>rb", "<Cmd>:Cbuild<CR>")
-nnoremap("<Leader>rt", "<Cmd>:Ctest<CR>")
+map("<Leader>rr", "<Cmd>:Crun<CR>", opts)
+map("<Leader>rc", "<Cmd>:Ccheck<CR>", opts)
+map("<Leader>rb", "<Cmd>:Cbuild<CR>", opts)
+map("<Leader>rt", "<Cmd>:Ctest<CR>", opts)
 
 -------------- cmp ------------------
 

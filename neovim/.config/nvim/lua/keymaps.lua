@@ -1,9 +1,5 @@
-local Utils = require("keymaputils")
-
-local nnoremap = Utils.nnoremap
-local vnoremap = Utils.vnoremap
-local xnoremap = Utils.xnoremap
-local inoremap = Utils.inoremap
+local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 -- Mapleader
 -- nnoremap("<Space>", "<Nop>")
@@ -11,60 +7,60 @@ vim.g.mapleader = " "
 vim.g.localleader = " "
 
 -- jk to normal mode
-inoremap("jk", "<Esc>")
+map("i", "jk", "<Esc>", opts)
 
 -- Quit
-nnoremap("<C-q>", ":q<CR>")
+map("n", "<C-q>", ":q<CR>", opts)
 
 -- Insert a line befor and after
-nnoremap("<Leader>o", "o<Esc>kO<Esc>ji")
+map("n", "<Leader>o", "o<Esc>kO<Esc>ji", opts)
 
 -- Copy to the end of the line
-nnoremap("Y", "y$")
+map("n", "Y", "y$", opts)
 
 -- Move between windows
-nnoremap("<C-j>", "<C-w>j")
-nnoremap("<C-k>", "<C-w>k")
-nnoremap("<C-h>", "<C-w>h")
-nnoremap("<C-l>", "<C-w>l")
+map("n", "<C-j>", "<C-w>j", opts)
+map("n", "<C-k>", "<C-w>k", opts)
+map("n", "<C-h>", "<C-w>h", opts)
+map("n", "<C-l>", "<C-w>l", opts)
 
 -- Keep the cursor centered
-nnoremap("n", "nzzzv")
-nnoremap("N", "Nzzzv")
-nnoremap("J", "mzJ`z")
+map("n", "n", "nzzzv", opts)
+map("n", "N", "Nzzzv", opts)
+map("n", "J", "mzJ`z", opts)
 
 -- Undo break points
-inoremap(",", ",<C-g>u")
-inoremap(".", ".<C-g>u")
-inoremap("[", "[<C-g>u")
-inoremap("!", "!<C-g>u")
-inoremap("?", "?<C-g>u")
+map("i", ",", ",<C-g>u", opts)
+map("i", ".", ".<C-g>u", opts)
+map("i", "[", "[<C-g>u", opts)
+map("i", "!", "!<C-g>u", opts)
+map("i", "?", "?<C-g>u", opts)
 
 -- Better Visual mode indent
-vnoremap("<", "<gv")
-vnoremap(">", ">gv")
+map("v", "<", "<gv", opts)
+map("v", ">", ">gv", opts)
 
 -- Move line up/down
-xnoremap("<A-Down>", ":move '>+1<CR>gv=gv")
-xnoremap("<A-Up>", ":move '<-2<CR>gv=gv")
+map("x", "<A-Down>", ":move '>+1<CR>gv=gv", opts)
+map("x", "<A-Up>", ":move '<-2<CR>gv=gv", opts)
 
-nnoremap("<A-Down>", ":m .+1<CR>==")
-nnoremap("<A-Up>", ":m .-2<CR>==")
+map("n", "<A-Down>", ":m .+1<CR>==", opts)
+map("n", "<A-Up>", ":m .-2<CR>==", opts)
 
-inoremap("<A-Down>", "<Esc>:m .+1<CR>==gi")
-inoremap("<A-Up>", "<Esc>:m .-2<CR>==gi")
+map("i", "<A-Down>", "<Esc>:m .+1<CR>==gi", opts)
+map("i", "<A-Up>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- ctrl+s to save
-nnoremap("<C-s>", ":w<CR>")
-inoremap("<C-s>", "<Esc>:w<CR>i")
+map("n", "<C-s>", ":w<CR>", opts)
+map("i", "<C-s>", "<Esc>:w<CR>i", opts)
 
 -- terminal
 function _Gset_terminal_keymaps()
-	local opts = { noremap = true }
-	vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "jk", [[<C-\><C-n>]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
+	local opt = { noremap = true, buffer = 0 }
+	map("t", "<esc>", [[<C-\><C-n>]], opt)
+	map("t", "jk", [[<C-\><C-n>]], opt)
+	map("t", "<C-h>", [[<C-\><C-n><C-W>h]], opt)
+	map("t", "<C-j>", [[<C-\><C-n><C-W>j]], opt)
+	map("t", "<C-k>", [[<C-\><C-n><C-W>k]], opt)
+	map("t", "<C-l>", [[<C-\><C-n><C-W>l]], opt)
 end

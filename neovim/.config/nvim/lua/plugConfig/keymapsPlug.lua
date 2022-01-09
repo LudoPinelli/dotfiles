@@ -133,47 +133,49 @@ else
 	})
 end
 
-local Utils = require("keymaputils")
-
-local nnoremap = Utils.nnoremap
-local map = Utils.map
-local nmap = Utils.nmap
-local xmap = Utils.xmap
-local omap = Utils.omap
+local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 -- Barbar
-nnoremap("<Tab>", ":BufferNext<CR>")
-nnoremap("<S-Tab>", ":BufferPrevious<CR>")
+map("n", "<Tab>", ":BufferNext<CR>", opts)
+map("n", "<S-Tab>", ":BufferPrevious<CR>", opts)
 
 -- hop
-nmap(
+map(
+	"n",
 	"f",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
+	{ silent = true }
 )
-nmap(
+map(
+	"n",
 	"F",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
+	{ silent = true }
 )
-omap(
+map(
+	"o",
 	"f",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>"
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
+	{ silent = true }
 )
-omap(
+map(
+	"o",
 	"F",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>"
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
+	{ silent = true }
 )
 map(
 	"",
 	"t",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
+	{ silent = true }
 )
 map(
 	"",
 	"T",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
+	{ silent = true }
 )
-nmap("à", "<Cmd>lua require('hop').hint_words()<CR>")
-xmap("à", "<Cmd>lua require('hop').hint_words()<CR>")
-
-nmap("<Leader>L", "<Cmd>lua require'hop'.hint_lines()<CR>")
-xmap("<Leader>LL", "<Cmd>lua require'hop'.hint_lines()<CR>")
+map({ "n", "x" }, "à", "<Cmd>lua require('hop').hint_words()<CR>", { silent = true })
+map({ "n", "x" }, "<Leader>L", "<Cmd>lua require'hop'.hint_lines()<CR>", { silent = true })

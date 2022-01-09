@@ -65,12 +65,11 @@ require("lir").setup({
 	hide_cursor = true,
 	on_init = function()
 		-- use visual mode
-		vim.api.nvim_buf_set_keymap(
-			0,
+		vim.keymap.set(
 			"x",
 			"J",
 			':<C-u>lua require"lir.mark.actions".toggle_mark("v")<CR>',
-			{ noremap = true, silent = true }
+			{ noremap = true, silent = true, buffer = 0 }
 		)
 
 		-- echo cwd
@@ -82,7 +81,7 @@ require("lir").setup({
 require("nvim-web-devicons").set_icon({
 	lir_folder_icon = {
 		icon = "",
-		color = "#b3e1a3",
+		color = "#96CDF8",
 		name = "LireFolderNode",
 	},
 })

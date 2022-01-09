@@ -12,18 +12,14 @@ iabbrev VV ↓
 
 ------------- Keymaps ---------------
 
+local map = vim.keymap.set
+local opts = { noremap = false, buffer = 0 }
 -- Wrap selection in link
-vim.api.nvim_buf_set_keymap(0, "v", ",l", [[c[<C-r>"]()<Esc>]], { noremap = false })
+map("v", ",l", [[c[<C-r>"]()<Esc>]], opts)
 -- Wrap selection in image
-vim.api.nvim_buf_set_keymap(0, "v", ",i", [[c![<C-r>"](?raw=true)<Esc>hhhhhhhhh]], { noremap = false })
+map("v", ",i", [[c![<C-r>"](?raw=true)<Esc>hhhhhhhhh]], opts)
 -- Convert with pandoc
-vim.api.nvim_buf_set_keymap(
-	0,
-	"n",
-	"go",
-	':silent w<bar>lua require("auto-pandoc").run_pandoc()<cr>',
-	{ noremap = true, silent = true }
-)
+map("n", "go", ':silent w<bar>lua require("auto-pandoc").run_pandoc()<cr>', opts)
 
 -------------- cmp ------------------
 
