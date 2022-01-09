@@ -33,5 +33,6 @@ function home()
 		prompt_title = "  Home Directory",
 		cwd = path,
 		hidden = false,
+		search_dirs = { ".config", ".dotfiles", ".local", "bin", "dev", "Documents" },
 	})
 end
