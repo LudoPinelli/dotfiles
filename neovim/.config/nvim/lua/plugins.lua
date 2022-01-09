@@ -185,6 +185,7 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim") -- Improve startup time
 	use("RishabhRD/nvim-cheat.sh") -- Access to Cheat.sh
 	use("dstein64/vim-startuptime") -- Startup time info
+	use("tami5/sqlite.lua")
 
 	------------------------------------
 	--          MARKDOWN              --
