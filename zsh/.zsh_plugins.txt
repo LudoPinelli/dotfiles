@@ -1,6 +1,7 @@
-robbyrussell/oh-my-zsh path:plugins/colored-man-pages
-robbyrussell/oh-my-zsh path:plugins/command-not-found
+ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+ohmyzsh/ohmyzsh path:plugins/command-not-found
+ohmyzsh/ohmyzsh path:plugins/dirhistory
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
-zsh-users/zsh-history-substring-search
 zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search

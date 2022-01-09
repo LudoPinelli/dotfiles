@@ -61,14 +61,14 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^E" edit-command-line
 
-# Up/Down to search through history with zsh-history-substring-search
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down
-
 # Source plugins
 # To install new plugins, add repo to .zsh_plugins.txt then run :
 # antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 source ~/.zsh_plugins.sh
+
+# Up/Down to search through history with zsh-history-substring-search
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
 
 # Launch zoxide
 eval "$(zoxide init zsh)"
