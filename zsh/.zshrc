@@ -66,10 +66,19 @@ alias zrc="$EDITOR ~/.zshrc"
 
 alias matrix="cmatrix -a -C magenta"
 
+# Functions
 function gi {
   # Write .gitignore file for the give language
   # example: ign Rust
   gibo dump $1 >> .gitignore
+}
+
+function gw {
+  git switch $1
+}
+
+function gd {
+  git branch -d $1
 }
 
 # Ctrl+space to accept autosuggestions
