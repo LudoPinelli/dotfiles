@@ -146,7 +146,7 @@ local nmap = Utils.nmap
 local xmap = Utils.xmap
 local omap = Utils.omap
 
--- mapleader
+-- Mapleader
 -- nnoremap("<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.localleader = " "
@@ -154,7 +154,10 @@ vim.g.localleader = " "
 -- jk to normal mode
 inoremap("jk", "<Esc>")
 
--- copy to the end of the line
+-- Insert a line befor and after
+nnoremap("<Leader>o", "o<Esc>kO<Esc>ji")
+
+-- Copy to the end of the line
 nnoremap("Y", "y$")
 
 -- Move between windows
@@ -163,7 +166,7 @@ nnoremap("<C-k>", "<C-w>k")
 nnoremap("<C-h>", "<C-w>h")
 nnoremap("<C-l>", "<C-w>l")
 
--- keep the cursor centered
+-- Keep the cursor centered
 nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
 nnoremap("J", "mzJ`z")
@@ -211,7 +214,7 @@ nnoremap("<S-Tab>", ":BufferPrevious<CR>")
 -- hop
 nmap(
 	"f",
-	"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
 )
 nmap(
 	"F",
