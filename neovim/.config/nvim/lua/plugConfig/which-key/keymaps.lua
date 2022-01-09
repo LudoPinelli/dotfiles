@@ -193,8 +193,16 @@ inoremap("<A-Up>", "<Esc>:m .-2<CR>==gi")
 nnoremap("<C-s>", ":w<CR>")
 inoremap("<C-s>", "<Esc>:w<CR>i")
 
--- switch to normal mode in terminal
-nnoremap("<Esc>", "<C-\\><C-n>")
+-- terminal
+function _Gset_terminal_keymaps()
+	local opts = { noremap = true }
+	vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "jk", [[<C-\><C-n>]], opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
+end
 
 -- Barbar
 nnoremap("<Tab>", ":BufferNext<CR>")
@@ -203,7 +211,7 @@ nnoremap("<S-Tab>", ":BufferPrevious<CR>")
 -- hop
 nmap(
 	"f",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+	"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
 )
 nmap(
 	"F",
@@ -232,17 +240,3 @@ xmap("à", "<Cmd>lua require('hop').hint_words()<CR>")
 
 nmap("<Leader>L", "<Cmd>lua require'hop'.hint_lines()<CR>")
 xmap("<Leader>LL", "<Cmd>lua require'hop'.hint_lines()<CR>")
-
--- nnoremap("K", ":lua show_documentation()<Cr>")
--- function show_documentation()
--- 	local filetype = vim.bo.filetype
--- 	if vim.tbl_contains({ "vim", "help" }, filetype) then
--- 		vim.cmd("h " .. vim.fn.expand("<cword>"))
--- 	elseif vim.tbl_contains({ "man" }, filetype) then
--- 		vim.cmd("Man " .. vim.fn.expand("<cword>"))
--- 	elseif vim.fn.expand("%:t") == "Cargo.toml" then
--- 		require("crates").show_popup()
--- 	else
--- 		vim.lsp.buf.hover()
--- 	end
--- end
