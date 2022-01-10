@@ -9,6 +9,9 @@ vim.g.localleader = " "
 -- jk to normal mode
 map("i", "jk", "<Esc>", opts)
 
+-- Move right in insert mode
+map("i", "<A-l>", "<Right>", opts)
+
 -- Quit
 map("n", "<C-q>", ":q<CR>", opts)
 
