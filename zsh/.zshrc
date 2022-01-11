@@ -23,9 +23,14 @@ setopt HIST_SAVE_NO_DUPS
 setopt SHARE_HISTORY
 unsetopt histverify
 
+# autocd
+
+setopt autocd
+cdpath=($HOME/.dotfiles $HOME/dev)
+
 # Aliases
 
-alias ls="exa -F -- git-ignore --group-directories-first"
+alias ls="exa -F --git-ignore --group-directories-first"
 alias ll="exa -lhF --git-ignore --group-directories-first --git"
 alias la="exa -ahF --group-directories-first"
 alias lla="exa -lahF --group-directories-first --git"

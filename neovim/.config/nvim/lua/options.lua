@@ -77,6 +77,7 @@ opt.spell = false -- spellcheck
 opt.completeopt = "menuone,noselect" -- Autocompletion
 opt.shortmess:append({ W = true, a = true }) -- what hit-enter prompt to avoid
 opt.undodir = vim.fn.stdpath("cache") .. "/undodir"
+vim.g.loaded_netrwPlugin = true
 
 opt.wildignore = [[
 .git,.hg,.svn

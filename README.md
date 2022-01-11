@@ -130,10 +130,6 @@ Same as Linux (most of them can be installed via _chocolatey_ and/or _scoop_), e
 
 Nothing fancy configuration wise: a couple of functions, some basic aliases, a few carefully chosen plugins (thanks god, no _oh my Zsh_!) managed by [antibody](https://getantibody.github.io/), and that's about it. _(For a list of the plugins, see [.zsh_plugins.txt](./zsh/.zsh_plugins.txt))_
 
-## Plugins
-
--
-
 ## Some Tools
 
 - [exa](https://github.com/ogham/exa): Better, than `ls`, and to me better than [lsd](https://github.com/Peltoche/lsd).
