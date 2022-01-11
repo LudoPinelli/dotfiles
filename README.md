@@ -66,6 +66,7 @@ Beside the help for coding brought by _lspconfig_, _lsp-signature_ and the other
 
 - **Landing page**: [α alpha.nvim](https://github.com/goolord/alpha-nvim) - lightweight, customizable useful landing page to avoid a dull start.
 - **Seeing where I am**: [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Nice indentation lignes. Highly customizable.
+- **Status Bar**: [lualine](https://github.com/nvim-lualine/lualine.nvim) - Fast, easy to customize.
 - **Themes**: A selection of the most well designed, beautiful (to me!), not too high-contrast themes: [Catppuccin](https://github.com/catppuccin/catppuccin), [Kanagawa](https://github.com/rebelot/kanagawa.nvim), [Onenord](https://github.com/rmehri01/onenord.nvim) & [Zenbones](https://github.com/mcchrish/zenbones.nvim).
 
 ![Themes](./imgs/themes.png?raw=true)
