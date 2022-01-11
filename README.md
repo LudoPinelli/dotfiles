@@ -1,16 +1,26 @@
----
-pandoc_:
-  - to: html
-  - highlight-style: pygments
-  - standalone: true
----
-
 # dotfiles
 
 ![Neovim in action](./imgs/title.png?raw=true)
 Just a repo of my dotfiles.
 
 :warning: The _Neovim_ configuration is OS "aware" and works on both Linux and Windows, however I didn't test everything on Windows.
+Table of Cntents
+=================
+
+- [Neovim](#neovim)
+  - [Main Features](#main-features)
+    - [Dealing With Files/Buffers](#dealing-with-filesbuffers)
+    - [Writing/Editing](#writingediting)
+    - [Git](#git)
+    - [Terminal](#terminal)
+    - [Some help at any stage at my fingertips](#some-help-at-any-stage-at-my-fingertips)
+    - [UI Enhancements](#ui-enhancements)
+    - [Plugin Management](#plugin-management)
+    - [Others](#others)
+  - [Performances](#performances)
+  - [Requirements](#requirements)
+    - [Linux](#linux)
+    - [Windows](#windows)
 
 # Neovim
 
