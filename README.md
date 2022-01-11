@@ -22,8 +22,8 @@ Just a repo of my dotfiles.
     - [Linux](#linux)
     - [Windows](#windows)
 - [Zsh](#zsh)
-  - [Some Tools][#some-tools]
-  - [Prompt][#prompt]
+  - [Some Tools](#some-tools)
+  - [Prompt](#prompt)
 
 # Neovim
 
