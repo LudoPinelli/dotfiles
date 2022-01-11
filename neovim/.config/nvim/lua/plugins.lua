@@ -133,6 +133,12 @@ return packer.startup(function(use)
 			require("colorizer").setup()
 		end,
 	})
+	use({
+		"beauwilliams/focus.nvim",
+		config = function()
+			require("focus").setup()
+		end,
+	})
 
 	------------------------------------
 	--         PRODUCTIVITY           --
