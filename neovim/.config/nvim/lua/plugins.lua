@@ -133,7 +133,7 @@ return packer.startup(function(use)
 			require("colorizer").setup()
 		end,
 	})
-	use({
+	use({ -- automatically resize windows
 		"beauwilliams/focus.nvim",
 		config = function()
 			require("focus").setup()

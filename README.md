@@ -21,6 +21,9 @@ Just a repo of my dotfiles.
   - [Requirements](#requirements)
     - [Linux](#linux)
     - [Windows](#windows)
+- [Zsh](#zsh)
+  - [Some Tools][#some-tools]
+  - [Prompt][#prompt]
 
 # Neovim
 
@@ -122,3 +125,22 @@ Same as Linux (most of them can be installed via _chocolatey_ and/or _scoop_), e
 
 - _sh_, _shellharden_, _shellcheck_ Not relevant on Windows
 - _locate/plocate_ Does not exist for Windows which means that the _repo_ extension for _Telescope_ won't be available
+
+# Zsh
+
+Nothing fancy configuration wise: a couple of functions, some basic aliases, a few carefully chosen plugins (thanks god, no _oh my Zsh_!) managed by [antibody](https://getantibody.github.io/), and that's about it. _(For a list of the plugins, see [.zsh_plugins.txt](./zsh/.zsh_plugins.txt))_
+
+## Plugins
+
+-
+
+## Some Tools
+
+- [exa](https://github.com/ogham/exa): Better, than `ls`, and to me better than [lsd](https://github.com/Peltoche/lsd).
+- [zoxide](https://github.com/ajeetdsouza/zoxide): far better than `cd`
+
+## Prompt
+
+- [Starship](https://github.com/starship/starship): "The minimal, blazing-fast, and infinitely customizable prompt for any shell" is just perfect out of the box (I just added date and time because, well, because).
+
+![zsh with exa in action](./imgs/zsh.png?raw=true)
