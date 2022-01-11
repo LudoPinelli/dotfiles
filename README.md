@@ -4,8 +4,8 @@
 Just a repo of my dotfiles.
 
 :warning: The _Neovim_ configuration is OS "aware" and works on both Linux and Windows, however I didn't test everything on Windows.
-Table of Cntents
-=================
+
+# Table of Cntents
 
 - [Neovim](#neovim)
   - [Main Features](#main-features)
