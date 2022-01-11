@@ -28,15 +28,15 @@ elseif theme == "onenord" then
 	-- Zenbones
 elseif theme == "zenbones" then
 	vim.cmd([[set background=dark]])
-	vim.cmd([[colorscheme rosebones]])
+	vim.cmd([[colorscheme neobones]])
 
-	vim.g.rosebones = {
+	vim.g.neobones = {
 		lighen_noncurrent_window = true,
 		italic_comments = false,
 	}
 
 	require("lualine").setup({
-		options = { theme = "rosebones" },
+		options = { theme = "neobones" },
 	})
 
 	-- Catppuccin

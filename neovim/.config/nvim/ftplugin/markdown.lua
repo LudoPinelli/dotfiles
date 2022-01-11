@@ -15,9 +15,9 @@ iabbrev VV ↓
 local map = vim.keymap.set
 local opts = { noremap = false, buffer = 0 }
 -- Wrap selection in link
-map("v", ",l", [[c[<C-r>"]()<Esc>]], opts)
+map("v", ",l", [[c[<C-r>"]()<Esc>h]], opts)
 -- Wrap selection in image
-map("v", ",i", [[c![<C-r>"](?raw=true)<Esc>hhhhhhhhh]], opts)
+map("v", ",i", [[c![<C-r>"](?raw=true)<Esc>9h]], opts)
 -- Convert with pandoc
 map("n", "go", ':silent w<bar>lua require("auto-pandoc").run_pandoc()<cr>', opts)
 
