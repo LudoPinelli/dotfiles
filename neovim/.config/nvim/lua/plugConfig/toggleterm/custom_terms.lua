@@ -1,8 +1,25 @@
 local Terminal = require("toggleterm.terminal").Terminal
 
 -- Open GitUi
-local gitui = Terminal:new({
-	cmd = "gitui",
+-- local gitui = Terminal:new({
+-- 	cmd = "gitui",
+-- 	dir = "git_dir",
+-- 	direction = "float",
+-- 	float_opts = {
+-- 		border = "curved",
+-- 	},
+-- 	close_on_exit = true,
+-- 	on_open = function()
+-- 		vim.cmd("startinsert!")
+-- 	end,
+-- })
+-- function gitui_toggle()
+-- 	gitui:toggle()
+-- end
+
+-- LazyGit
+local lazygit = Terminal:new({
+	cmd = "lazygit",
 	dir = "git_dir",
 	direction = "float",
 	float_opts = {
@@ -13,8 +30,8 @@ local gitui = Terminal:new({
 		vim.cmd("startinsert!")
 	end,
 })
-function gitui_toggle()
-	gitui:toggle()
+function lazygit_toggle()
+	lazygit:toggle()
 end
 
 -- Open python shell (bpython)
