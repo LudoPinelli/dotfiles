@@ -24,6 +24,7 @@ wk.register({
 			c = { "<Cmd>Telescope git_commits initial_mode=normal<CR>", "  Commit log" },
 			-- g = { "<Cmd>lua gitui_toggle()<CR>", "  GitUi" },
 			g = { "<Cmd>lua lazygit_toggle()<CR>", "  lazyGit" },
+			G = { "<Cmd>Neogit<CR>", "  Neogit" },
 			f = { "<Cmd>Telescope git_files<CR>", "Git files" },
 			j = { "<Cmd>lua require('gitsigns').next_hunk()<CR>", "Next Hunk" },
 			k = { "<Cmd>lua require('gitsigns').prev_hunk()<CR>", "Prev Hunk" },
