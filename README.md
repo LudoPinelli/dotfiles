@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">dotfiles</h1>
+<h1 align="center">dotfiles</h1>
 
 ![Neovim in action](./imgs/title.png?raw=true)
 Just a repo of my dotfiles.
