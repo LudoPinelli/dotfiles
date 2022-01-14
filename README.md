@@ -1,4 +1,4 @@
-# dotfiles
+<h1 style="text-align: center;">dotfiles</h1>
 
 ![Neovim in action](./imgs/title.png?raw=true)
 Just a repo of my dotfiles.
@@ -26,8 +26,6 @@ Just a repo of my dotfiles.
   - [Prompt](#prompt)
 
 # Neovim
-
-![Neovim](imgs/landing.png?raw=true)
 
 ## Main Features
 
@@ -67,7 +65,6 @@ Beside the help for coding brought by _lspconfig_, _lsp-signature_ and the other
 
 ### UI Enhancements
 
-- **Landing page**: [α alpha.nvim](https://github.com/goolord/alpha-nvim) - lightweight, customizable useful landing page to avoid a dull start.
 - **Seeing where I am**: [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Nice indentation lignes. Highly customizable.
 - **Status Bar**: [lualine](https://github.com/nvim-lualine/lualine.nvim) - Fast, easy to customize.
 - **Themes**: A selection of the most well designed, beautiful (to me!), not too high-contrast themes: [Catppuccin](https://github.com/catppuccin/catppuccin), [Kanagawa](https://github.com/rebelot/kanagawa.nvim), [Onenord](https://github.com/rmehri01/onenord.nvim) & [Zenbones](https://github.com/mcchrish/zenbones.nvim).
@@ -95,29 +92,40 @@ _Neovim Lua World_ magic!
 
 A lot of them are probably already installed on your system
 
-- _curl_
+- [curl](https://github.com/curl/curl)
 - a c compiler (_cc_, _gcc_, _clang_, _cl_, _zig_)
-- _node_
-- _git_ (obviously)
-- _ripgrep_
-- _fd_
-- _sh_
-- _tar_
-- _gzip_
-- _python3_ & _pip3_
-- _npm_
-- _plocate_ or _locate_
-- _pandoc_
+- [node](https://nodejs.org/en/)
+- [git](https://git-scm.com/) (obviously)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [fd](https://github.com/sharkdp/fd)
+- [tar](https://www.gnu.org/software/tar/)
+- [gzip](https://www.gnu.org/software/gzip/)
+- [python3](https://www.python.org/) & _pip3_
+- [npm](https://www.npmjs.com/)
+- [plocate](https://plocate.sesse.net/) or [locate](https://www.gnu.org/software/findutils/)
+- [pandoc](https://pandoc.org/)
 
 **Note**: this configuration is ready for lua, Rust, Python, shell scripts and javascript (but you can remove/add anything you want).
 null_ls requires the following linter/formatter in order to format the code for those languages:
 
-- _stylua_ (lua)
-- _autopep8_ (Python)
-- _prettier_ (javascript, html, css, and others)
-- _shellharden_ (shell script)
-- _shellcheck_ (shell script)
-- _taplo_ (fichiers toml)
+- [stylua](https://github.com/johnnymorganz/stylua) (lua)
+- [autopep8](https://pypi.org/project/autopep8/) (Python)
+- [prettier](https://github.com/prettier/prettier) (javascript, html, css, and others)
+- [shellharden](https://github.com/anordal/shellharden) (shell script)
+- [shellcheck](https://www.shellcheck.net/) (shell script)
+- [taplo](https://taplo.tamasfe.dev/) (fichiers toml)
+
+> **If you're using WSL**:
+>
+> For _markdown-preview_ to work (and for your daily confort!), you need to configure WSL to open any link in you're default Windows browser.
+>
+> In order to do that:
+>
+> - make sure you have [wslu](https://github.com/wslutilities/wslu) installed (it should already be on any Linux distribution officially supported by WSL like _Ubuntu_)
+> - run `wslview -r` to register _wslview_
+> - add: "`set $BROWSER=wslview`" to your shell configuration file (_.bashrc_, _.zshrc_ ... )
+>
+> Now, _wslview_ will correctly redirect any link to Windows and your default browser will open it.
 
 ### Windows
 
@@ -140,3 +148,7 @@ Nothing fancy configuration wise: a couple of functions, some basic aliases, a f
 - [Starship](https://github.com/starship/starship): "The minimal, blazing-fast, and infinitely customizable prompt for any shell" is just perfect out of the box (I just added date and time because, well, because).
 
 ![zsh with exa in action](./imgs/zsh.png?raw=true)
+
+```
+
+```
