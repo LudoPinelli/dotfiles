@@ -167,7 +167,6 @@ return packer.startup(function(use)
 	--             GIT                --
 	------------------------------------
 
-	use("TimUntersberger/neogit") -- Magit clone
 	use({
 		"lewis6991/gitsigns.nvim", -- Add signs in the gutter/allox hunks manipulation
 		config = function()
@@ -231,7 +230,7 @@ return packer.startup(function(use)
 	------------------------------------
 
 	-- By: rust-tools, gitsigns, telescope
-	-- auto-pandoc, lir, Neogit
+	-- auto-pandoc, lir
 	use("nvim-lua/plenary.nvim")
 	-- By: barbar, lualine, telescope, lir
 	use("kyazdani42/nvim-web-devicons")
