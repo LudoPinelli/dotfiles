@@ -1,6 +1,7 @@
 # Default editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+export BROWSER=wslview
 
 # Path
 export PATH=~/.local/bin:~/bin:$PATH
@@ -24,11 +25,20 @@ setopt SHARE_HISTORY
 unsetopt histverify
 
 # autocd
-
 setopt autocd
 cdpath=($HOME/.dotfiles $HOME/dev)
 
+# Open man pages in nvim
+export MANPAGER="nvim +Man!"
+
 # Aliases
+
+alias -s txt=nvim
+alias -s md=nvim
+alias -s log=nvim
+alias -s lua=nvim
+alias -s js=nvim
+alias -s rs=nvim
 
 alias ls="exa -F --git-ignore --group-directories-first"
 alias ll="exa -lhF --git-ignore --group-directories-first --git"
@@ -49,6 +59,7 @@ alias c="clear"
 alias s="z .."
 
 alias v="nvim"
+alias vdev="nvim --cmd 'set rtp+=.'"
 
 alias df="df --human-readable"
 alias du="du -sh * | sort -hr"

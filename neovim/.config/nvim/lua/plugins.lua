@@ -229,7 +229,7 @@ return packer.startup(function(use)
 	--          REQUIRED              --
 	------------------------------------
 
-	-- By: rust-tools, gitsigns, cheetsheat, telescope
+	-- By: rust-tools, gitsigns, telescope
 	-- auto-pandoc, lir
 	use("nvim-lua/plenary.nvim")
 	-- By: barbar, lualine, telescope, lir

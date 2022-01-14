@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+------------- Keymaps ---------------
+
+local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
+
+map("<Leader>rr", "<Cmd>Crun<CR>", opts)
+map("<Leader>rc", "<Cmd>Ccheck<CR>", opts)
+map("<Leader>rb", "<Cmd>Cbuild<CR>", opts)
+map("<Leader>rt", "<Cmd>Ctest<CR>", opts)
+
+>>>>>>> tests
 -------------- cmp ------------------
 
 local cmp = require("cmp")
