@@ -4,6 +4,5 @@ if not status_ok then
 end
 
 focus.setup({
-	excluded_filetypes = { "toggleterm" },
-	excluded_buftypes = { "help" },
+	excluded_filetypes = { "toggleterm", "term", "diffviewfiles" },
 })
