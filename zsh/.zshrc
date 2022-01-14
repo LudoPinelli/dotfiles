@@ -97,15 +97,6 @@ function gd {
   git branch -d $1
 }
 
-# Ctrl+space to accept autosuggestions
-bindkey "^ " autosuggest-accept
-
-# Command line edition
-bindkey -e
-autoload -z edit-command-line
-zle -N edit-command-line
-bindkey "^E" edit-command-line
-
 # Configure zsh-vi-mode
 function zvm_config() {
   ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
@@ -119,6 +110,9 @@ source ~/.zsh_plugins.sh
 # Up/Down to search through history with zsh-history-substring-search
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
+
+# Ctrl+space to accept autosuggestions
+bindkey "^ " autosuggest-accept
 
 # Launch zoxide
 eval "$(zoxide init zsh)"
