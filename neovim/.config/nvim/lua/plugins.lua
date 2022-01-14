@@ -31,7 +31,7 @@ packer.init({
 })
 
 return packer.startup(function(use)
-	----------------------------------------- PLUGINS -------------------------------------------
+	--------------------------------------- PLUGINS -----------------------------------------
 
 	-- Packer itself
 	use("wbthomason/packer.nvim")

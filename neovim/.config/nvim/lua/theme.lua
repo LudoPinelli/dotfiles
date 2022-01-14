@@ -1,4 +1,4 @@
-local theme = "catppuccin"
+local theme = "kanagawa"
 
 -- kanagawa
 if theme == "kanagawa" then
