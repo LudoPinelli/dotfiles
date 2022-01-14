@@ -106,6 +106,11 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^E" edit-command-line
 
+# Configure zsh-vi-mode
+function zvm_config() {
+  ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+}
+
 # Source plugins
 # To install new plugins, add repo to .zsh_plugins.txt then run :
 # antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
