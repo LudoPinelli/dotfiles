@@ -116,7 +116,6 @@ return packer.startup(function(use)
 		requires = "rktjmp/lush.nvim",
 	})
 
-	-- use("sunjon/shade.nvim") -- Dim inactive windows
 	use("lukas-reineke/indent-blankline.nvim") -- Add indentation guides
 	use("nvim-lualine/lualine.nvim") -- Status line
 	use("goolord/alpha-nvim") -- Dashboard
@@ -132,12 +131,7 @@ return packer.startup(function(use)
 			require("colorizer").setup()
 		end,
 	})
-	use({ -- automatically resize windows
-		"beauwilliams/focus.nvim",
-		config = function()
-			require("focus").setup()
-		end,
-	})
+	use("beauwilliams/focus.nvim") -- automatically resize windows
 
 	------------------------------------
 	--         PRODUCTIVITY           --
