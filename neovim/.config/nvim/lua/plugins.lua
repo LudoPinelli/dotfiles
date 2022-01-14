@@ -78,7 +78,6 @@ return packer.startup(function(use)
 			"jose-elias-alvarez/null-ls.nvim",
 		},
 	})
-	use("ray-x/lsp_signature.nvim")
 
 	-- Completion
 	use({
