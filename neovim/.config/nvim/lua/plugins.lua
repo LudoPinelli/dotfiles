@@ -118,20 +118,12 @@ return packer.startup(function(use)
 
 	use("lukas-reineke/indent-blankline.nvim") -- Add indentation guides
 	use("nvim-lualine/lualine.nvim") -- Status line
-	use("goolord/alpha-nvim") -- Dashboard
-	use({ -- Stabilize windows on open/close
-		"luukvbaal/stabilize.nvim",
-		config = function()
-			require("stabilize").setup()
-		end,
-	})
 	use({ -- colorize color codes
 		"norcalli/nvim-colorizer.lua",
 		config = function()
 			require("colorizer").setup()
 		end,
 	})
-	use("beauwilliams/focus.nvim") -- automatically resize windows
 
 	------------------------------------
 	--         PRODUCTIVITY           --
@@ -190,21 +182,11 @@ return packer.startup(function(use)
 	--          MARKDOWN              --
 	------------------------------------
 
-	use("ellisonleao/glow.nvim") -- Markdown Previewer
-	use({ -- Easy conversion of MD with pandoc
-		"jghauser/auto-pandoc.nvim",
-		config = function()
-			require("auto-pandoc")
-		end,
-	})
+	use("davidgranstrom/nvim-markdown-preview")
 
 	------------------------------------
 	--         PROGRAMMING            --
 	------------------------------------
-
-	-- Debugging
-	use("mfussenegger/nvim-dap")
-	use("Pocco81/DAPInstall.nvim")
 
 	-- Rust
 	use("simrat39/rust-tools.nvim")
@@ -215,15 +197,12 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- lua Plugins
-	use("MunifTanjim/nui.nvim")
-
 	------------------------------------
 	--          REQUIRED              --
 	------------------------------------
 
 	-- By: rust-tools, gitsigns, telescope
-	-- auto-pandoc, lir
+	-- lir
 	use("nvim-lua/plenary.nvim")
 	-- By: barbar, lualine, telescope, lir
 	use("kyazdani42/nvim-web-devicons")

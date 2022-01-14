@@ -5,7 +5,6 @@ local wk = require("which-key")
 
 wk.register({
 	["<Leader>"] = {
-		["a"] = { "<Cmd>Alpha<CR>", "䀘 Landing page" },
 		["c"] = { "<Cmd>BufferClose<CR>", "  Close Buffer" },
 		["e"] = { "<Cmd>lua require('lir.float').toggle()<CR>", "פּ  Explorer" },
 		["h"] = { "<Cmd>nohlsearch<CR>", "  No Highlight" },
@@ -22,7 +21,6 @@ wk.register({
 			b = { "<Cmd>Telescope git_branches initial_mode=normal<CR>", "  Branches" },
 			B = { "<Cmd>Telescope git_bcommits initial_mode=normal<CR>", "  Commit log (current buffer)" },
 			c = { "<Cmd>Telescope git_commits initial_mode=normal<CR>", "  Commit log" },
-			-- g = { "<Cmd>lua gitui_toggle()<CR>", "  GitUi" },
 			g = { "<Cmd>lua lazygit_toggle()<CR>", "  lazyGit" },
 			f = { "<Cmd>Telescope git_files<CR>", "Git files" },
 			j = { "<Cmd>lua require('gitsigns').next_hunk()<CR>", "Next Hunk" },
@@ -59,7 +57,6 @@ wk.register({
 			name = "   Terminal",
 
 			f = { "<Cmd>ToggleTerm direction=float<CR>", "  Float" },
-			-- g = { "<Cmd>lua gitui_toggle()<CR>", "  GitUi" },
 			g = { "<Cmd>lua lazygit_toggle()<CR>", "  LazyGit" },
 			h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", "  Horizontal" },
 			n = { "<Cmd>lua node_toggle()<CR>", "  Node.js" },
