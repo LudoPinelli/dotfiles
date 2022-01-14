@@ -1,0 +1,14 @@
+gui:
+  theme:
+    aciveBorderColor:
+      - white
+      - bold
+    inactiveBorderColor:
+      - white
+    selectedLineBgColor:
+      - blue
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
