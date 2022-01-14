@@ -10,7 +10,6 @@
 
 [delta]
   line-numbers = true
-  side-by-side = true
   navigate = true
 
 [merge]
