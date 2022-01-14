@@ -64,7 +64,12 @@ local on_attach = function(client, bufnr)
 		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
 	end
 
-	require("lsp_signature").on_attach()
+	cfg = {
+		floating_window = false,
+		toggle_key = "<Leader>k",
+	}
+
+	require("lsp_signature").on_attach(cfg, 0)
 end
 
 -- Include the servers you want to have installed by default below
