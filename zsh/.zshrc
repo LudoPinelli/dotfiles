@@ -1,6 +1,7 @@
 # Default editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+export BROWSER=wslview
 
 # Path
 export PATH=~/.local/bin:~/bin:$PATH
@@ -58,6 +59,7 @@ alias c="clear"
 alias s="z .."
 
 alias v="nvim"
+alias vdev="nvim --cmd 'set rtp+=.'"
 
 alias df="df --human-readable"
 alias du="du -sh * | sort -hr"
