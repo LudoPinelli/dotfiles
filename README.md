@@ -148,7 +148,3 @@ Nothing fancy configuration wise: a couple of functions, some basic aliases, a f
 - [Starship](https://github.com/starship/starship): "The minimal, blazing-fast, and infinitely customizable prompt for any shell" is just perfect out of the box (I just added date and time because, well, because).
 
 ![zsh with exa in action](./imgs/zsh.png?raw=true)
-
-```
-
-```
