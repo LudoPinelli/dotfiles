@@ -178,3 +178,7 @@ map(
 )
 map({ "n", "x" }, "à", "<Cmd>lua require('hop').hint_words()<CR>", { silent = true })
 map({ "n", "x" }, "<Leader>L", "<Cmd>lua require'hop'.hint_lines()<CR>", { silent = true })
+
+-- Comment-box
+map({ "n", "v" }, "<Leader>bb", "<Cmd>lua require('comment-box').lbox()<CR>")
+map({ "n", "v" }, "<Leader>bc", "<Cmd>lua require('comment-box').cbox()<CR>")

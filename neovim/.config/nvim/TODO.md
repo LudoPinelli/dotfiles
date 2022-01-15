@@ -1,1 +1,0 @@
-- fix telescope_fzf_native pb in Windows
