@@ -131,7 +131,7 @@ return packer.startup(function(use)
 
 	use("windwp/nvim-autopairs") -- Autopairs
 	use("tpope/vim-surround") -- Surround
-	use({ "zeertzjq/which-key.nvim", branch = "patch-1" }) -- Key mappings easy access
+	use("folke/which-key.nvim") -- Key mappings easy access
 	use("romgrk/barbar.nvim") -- Tabline
 	use("folke/trouble.nvim") -- Nice lists
 	use({ -- Commenting
