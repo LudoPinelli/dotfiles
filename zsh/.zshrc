@@ -2,6 +2,7 @@
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export BROWSER=wslview
+export PAGER=bat
 
 # Path
 export PATH=~/.local/bin:~/bin:$PATH
