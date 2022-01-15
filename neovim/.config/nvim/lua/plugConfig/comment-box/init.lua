@@ -1,6 +1,6 @@
 require("comment-box").setup({
 	width = 50,
-	-- border = {
+	-- borders = {
 	-- 	horizontal = "-",
 	-- 	vertical = "|",
 	-- 	top_left = "+",
@@ -8,5 +8,6 @@ require("comment-box").setup({
 	-- 	bottom_left = "+",
 	-- 	bottom_right = "+",
 	-- },
+	-- line_symbol = "*",
 	outer_blank_lines = true,
 })
