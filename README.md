@@ -142,6 +142,8 @@ Nothing fancy configuration wise: a couple of functions, some basic aliases, a f
 
 - [exa](https://github.com/ogham/exa): Better, than `ls`, and to me better than [lsd](https://github.com/Peltoche/lsd).
 - [zoxide](https://github.com/ajeetdsouza/zoxide): far better than `cd`
+- [rip](https://github.com/nivekuil/rip): easier and safer than `rm`
+- [delta](https://github.com/dandavison/delta): "synthax-highlighting pager for git, diff, and grep output"
 
 ## Prompt
 
