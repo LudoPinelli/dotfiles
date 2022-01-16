@@ -53,42 +53,27 @@ alias mv="mv -iv"
 alias cp="cp -riv"
 alias mkdir="mkdir -vp"
 
-alias tp="trash-put"
-alias tl="trash-list"
-
 alias c="clear"
 alias s="z .."
+
+alias cat="bat"
 
 alias v="nvim"
 alias vdev="nvim --cmd 'set rtp+=.'"
 
+
 alias df="df --human-readable"
-alias du="du -sh * | sort -hr"
+alias du="dust"
 
 # https://gihub.com/EzeeLinux/up-debian_ubuntu_update_toolt
 alias up="up --clean"
 
 alias lg="lazygit"
-alias gu="gitui"
 
-alias trash-empty="trash-empty --trash-dir=/home/ludo/.local/share/Trash"
+alias htop="btm"
 
 alias gt="git status"
 alias gb="git branch"
-
-alias neoc="cd ~/.dotfiles/neovim/.config/nvim/"
-
-alias zsh="echo 'sourcing ~/.zshrc...' && source ~/.zshrc"
-alias zrc="$EDITOR ~/.zshrc"
-
-alias matrix="cmatrix -a -C magenta"
-
-# Functions
-function gi {
-  # Write .gitignore file for the give language
-  # example: ign Rust
-  gibo dump $1 >> .gitignore
-}
 
 function gw {
   git switch $1
@@ -98,15 +83,24 @@ function gd {
   git branch -d $1
 }
 
+alias neoc="z ~/.dotfiles/neovim/.config/nvim/"
+alias windoc="z /mnt/c/Users/ludov/OneDrive/"
+
+alias zsh="echo 'sourcing ~/.zshrc...' && source ~/.zshrc"
+alias zrc="$EDITOR ~/.zshrc"
+
+alias matrix="cmatrix -a -C magenta"
+
+function gi {
+  # Write .gitignore file for the give language
+  # example: ign Rust
+  gibo dump $1 >> .gitignore
+}
+
 # Configure zsh-vi-mode
 function zvm_config() {
   ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 }
-
-# Source plugins
-# To install new plugins, add repo to .zsh_plugins.txt then run :
-# antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
-source ~/.zsh_plugins.sh
 
 # Up/Down to search through history with zsh-history-substring-search
 bindkey "^[[A" history-substring-search-up
@@ -120,3 +114,9 @@ eval "$(zoxide init zsh)"
 
 # Launch Starship
 eval "$(starship init zsh)"
+
+# Source plugins
+# To install new plugins, add repo to .zsh_plugins.txt then run :
+# antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+source ~/.zsh_plugins.sh
+
