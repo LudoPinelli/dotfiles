@@ -102,10 +102,6 @@ function zvm_config() {
   ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 }
 
-# Up/Down to search through history with zsh-history-substring-search
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down
-
 # Ctrl+space to accept autosuggestions
 bindkey "^ " autosuggest-accept
 
@@ -119,4 +115,8 @@ eval "$(starship init zsh)"
 # To install new plugins, add repo to .zsh_plugins.txt then run :
 # antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 source ~/.zsh_plugins.sh
+
+# Up/Down to search through history with zsh-history-substring-search
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
 
