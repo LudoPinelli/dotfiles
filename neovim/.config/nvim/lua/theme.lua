@@ -1,4 +1,4 @@
-local theme = "kanagawa"
+local theme = "catppuccin"
 
 -- kanagawa
 if theme == "kanagawa" then
@@ -13,12 +13,6 @@ if theme == "kanagawa" then
 
 	require("lualine").setup({
 		options = { theme = "kanagawa" },
-	})
-
-	-- Onenord
-elseif theme == "onenord" then
-	require("onenord").setup({
-		fade_nc = true,
 	})
 
 	require("lualine").setup({
@@ -47,8 +41,8 @@ elseif theme == "catppuccin" then
 		transparent_background = false,
 		term_colors = false,
 		styles = {
-			comments = "NONE",
-			functions = "NONE",
+			comments = "italic",
+			functions = "italic",
 			keywords = "NONE",
 			strings = "NONE",
 			variables = "NONE",

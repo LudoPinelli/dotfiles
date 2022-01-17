@@ -112,7 +112,6 @@ return packer.startup(function(use)
 	-- Themes
 	use("rebelot/kanagawa.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("rmehri01/onenord.nvim")
 	use({
 		"mcchrish/zenbones.nvim",
 		requires = "rktjmp/lush.nvim",
@@ -170,7 +169,6 @@ return packer.startup(function(use)
 
 	-- Explorer
 	use("tamago324/lir.nvim")
-	use("tamago324/lir-bookmark.nvim")
 	use("tamago324/lir-git-status.nvim")
 
 	use("AckslD/nvim-neoclip.lua") -- Clipboard utility
@@ -179,7 +177,7 @@ return packer.startup(function(use)
 	use("RishabhRD/nvim-cheat.sh") -- Access to Cheat.sh
 	use("dstein64/vim-startuptime") -- Startup time info
 	use("tami5/sqlite.lua")
-	use("LudoPinelli/comment-box.nvim")
+	-- use("LudoPinelli/comment-box.nvim")
 
 	-- ╭────────────────────────────────────────────────────────────────────╮
 	-- │ MARKDOWN                                                           │

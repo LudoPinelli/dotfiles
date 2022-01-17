@@ -14,7 +14,7 @@ require("plugConfig.toggleterm")
 require("plugConfig.lir")
 require("plugConfig.which-key")
 require("plugConfig.keymapsPlug")
-require("plugConfig.comment-box")
+-- require("plugConfig.comment-box")
 
 -- Where Cheat.sh give its results
 vim.g.cheat_default_window_layout = "vertical_split"

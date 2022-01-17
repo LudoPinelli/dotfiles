@@ -29,8 +29,6 @@ require("lir").setup({
 		["cc"] = clipboard_actions.copy,
 		["cx"] = clipboard_actions.cut,
 		["cp"] = clipboard_actions.paste,
-		["B"] = require("lir.bookmark.actions").list,
-		["ba"] = require("lir.bookmark.actions").add,
 	},
 	float = {
 		winblend = 15,
@@ -88,16 +86,4 @@ require("nvim-web-devicons").set_icon({
 
 require("lir.git_status").setup({
 	show_ignored = false,
-})
-
-local b_actions = require("lir.bookmark.actions")
-require("lir.bookmark").setup({
-	bookmart_path = "~/.lir_bookmark",
-	mappings = {
-		["l"] = b_actions.edit,
-		["es"] = b_actions.split,
-		["ev"] = b_actions.vsplit,
-		["et"] = b_actions.tabedit,
-		["q"] = b_actions.open_lir,
-	},
 })
