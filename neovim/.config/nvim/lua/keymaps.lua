@@ -57,6 +57,9 @@ map("i", "<A-Up>", "<Esc>:m .-2<CR>==gi", opts)
 map("n", "<C-s>", ":w<CR>", opts)
 map("i", "<C-s>", "<Esc>:w<CR>i", opts)
 
+-- help tags
+map("n", "<CR>", "<C-]>", opts)
+
 -- terminal
 function _Gset_terminal_keymaps()
 	local opt = { noremap = true, buffer = 0 }

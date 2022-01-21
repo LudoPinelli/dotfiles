@@ -38,13 +38,13 @@ elseif theme == "catppuccin" then
 	local catppuccin = require("catppuccin")
 
 	catppuccin.setup({
-		transparent_background = false,
+		transparent_background = true,
 		term_colors = false,
 		styles = {
-			comments = "italic",
+			comments = "NONE",
 			functions = "italic",
 			keywords = "NONE",
-			strings = "NONE",
+			strings = "italic",
 			variables = "NONE",
 		},
 		integrations = {
@@ -79,7 +79,7 @@ elseif theme == "catppuccin" then
 				enabled = true,
 				colored_indent_levels = true,
 			},
-			dashboard = true,
+			dashboard = false,
 			neogit = false,
 			vim_sneak = false,
 			fern = false,

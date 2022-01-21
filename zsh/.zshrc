@@ -3,6 +3,8 @@ export VISUAL=nvim
 export EDITOR="$VISUAL"
 export BROWSER=wslview
 export PAGER=bat
+# Open man pages in nvim
+export MANPAGER="nvim +Man!"
 
 # Path
 export PATH=~/.local/bin:~/bin:$PATH
@@ -24,13 +26,6 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
 setopt SHARE_HISTORY
 unsetopt histverify
-
-# autocd
-setopt autocd
-cdpath=($HOME/.dotfiles $HOME/dev)
-
-# Open man pages in nvim
-export MANPAGER="nvim +Man!"
 
 # Aliases
 
@@ -86,7 +81,6 @@ function gd {
 alias neoc="z ~/.dotfiles/neovim/.config/nvim/"
 alias windoc="z /mnt/c/Users/ludov/OneDrive/"
 
-alias zsh="echo 'sourcing ~/.zshrc...' && source ~/.zshrc"
 alias zrc="$EDITOR ~/.zshrc"
 
 alias matrix="cmatrix -a -C magenta"
@@ -95,11 +89,6 @@ function gi {
   # Write .gitignore file for the give language
   # example: ign Rust
   gibo dump $1 >> .gitignore
-}
-
-# Configure zsh-vi-mode
-function zvm_config() {
-  ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 }
 
 # Ctrl+space to accept autosuggestions

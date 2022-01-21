@@ -9,5 +9,5 @@ require("comment-box").setup({
 	-- 	bottom_right = "+",
 	-- },
 	-- line_symbol = "*",
-	outer_blank_lines = true,
+	outer_blank_lines = false,
 })

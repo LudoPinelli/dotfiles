@@ -85,8 +85,7 @@ if jit.os ~= "Windows" then
 				name = "   Search",
 
 				b = { "<Cmd>Telescope buffers initial_mode=normal<CR>", "  Buffers" },
-				c = { "<Cmd>Cheat<CR>", "  on Cheat.sh" },
-				C = { "<Cmd>Telescope commands<CR>", "  Commands" },
+				c = { "<Cmd>Telescope commands<CR>", "  Commands" },
 				f = { "<Cmd>Telescope find_files<CR>", "  Files" },
 				h = { "<Cmd>Telescope help_tags<CR>", "  Help" },
 				H = { "<Cmd>lua home()<CR>", "  Home Directory" },
@@ -114,8 +113,7 @@ else
 				name = "   Search",
 
 				b = { "<Cmd>Telescope buffers initial_mode=normal<CR>", "  Buffers" },
-				c = { "<Cmd>Cheat<CR>", "  on Cheat.sh" },
-				C = { "<Cmd>Telescope commands<CR>", "  Commands" },
+				c = { "<Cmd>Telescope commands<CR>", "  Commands" },
 				f = { "<Cmd>Telescope find_files<CR>", "  Files" },
 				h = { "<Cmd>Telescope help_tags<CR>", "  Help" },
 				H = { "<Cmd>lua home()<CR>", "  Home Directory" },
