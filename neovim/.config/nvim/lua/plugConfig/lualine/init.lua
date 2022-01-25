@@ -25,7 +25,7 @@ local filename = {
 
 local diff = {
 	"diff",
-	colored = false,
+	colored = true,
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
 	cond = hide_in_width,
 }
@@ -45,19 +45,25 @@ local branch = {
 local mode = {
 	"mode",
 	separator = { left = "" },
+	right_padding = 2,
 }
 
 local location = {
 	"location",
 	separator = { right = "" },
-	left_padding = 2,
+	left_padding = 0,
+}
+
+local aerial = {
+	"aerial",
+	sep = " ➜ ",
 }
 
 lualine.setup({
 	options = {
 		icons_enabled = true,
 		-- theme = "auto",
-		component_separators = "|",
+		component_separators = "│",
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 	},
@@ -66,16 +72,16 @@ lualine.setup({
 		lualine_b = { branch },
 		lualine_c = { filename },
 		lualine_x = { diff, diagnostics },
-		lualine_y = { filetype, "progress" },
-		lualine_z = { location },
+		lualine_y = { aerial, filetype },
+		lualine_z = { "progress", location },
 	},
 	inactive_sections = {
-		lualine_a = { "filename" },
+		lualine_a = { filename },
 		lualine_b = {},
 		lualine_c = {},
 		lualine_x = {},
-		lualine_y = {},
-		lualine_z = { "location" },
+		lualine_y = { aerial },
+		lualine_z = { location },
 	},
 	tabline = {},
 	extensions = {},

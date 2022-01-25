@@ -70,6 +70,7 @@ local on_attach = function(client, bufnr)
 	}
 
 	require("lsp_signature").on_attach(cfg, 0)
+	require("aerial").on_attach(client, bufnr)
 end
 
 -- Include the servers you want to have installed by default below

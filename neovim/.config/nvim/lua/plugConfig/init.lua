@@ -3,7 +3,7 @@ require("plugConfig.lsp")
 require("plugConfig.cmp")
 require("plugConfig.telescope")
 require("plugConfig.neoclip")
-require("plugConfig.barbar")
+require("plugConfig.bufferline")
 require("plugConfig.lualine")
 require("plugConfig.trouble")
 require("plugConfig.autopairs")
@@ -14,10 +14,8 @@ require("plugConfig.toggleterm")
 require("plugConfig.lir")
 require("plugConfig.which-key")
 require("plugConfig.keymapsPlug")
+require("plugConfig.aerial")
 require("plugConfig.comment-box")
-
--- Where Cheat.sh give its results
-vim.g.cheat_default_window_layout = "vertical_split"
 
 -- Markdown preview
 vim.g.nvim_markdown_preview_theme = "solarized-dark"

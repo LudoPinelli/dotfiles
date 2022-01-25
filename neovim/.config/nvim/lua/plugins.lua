@@ -1,3 +1,9 @@
+-- ╔════════════════════════════════════════════════════════════════════╗
+-- ║                                                                    ║
+-- ║                        PACKER CONFIGURATION                        ║
+-- ║                                                                    ║
+-- ╚════════════════════════════════════════════════════════════════════╝
+
 local fn = vim.fn
 
 -- Automatically install packer if it's not already
@@ -31,9 +37,9 @@ packer.init({
 })
 
 return packer.startup(function(use)
-	-- ╭────────────────────────────────────────────────────────────────────╮
-	-- │                               PLUGINS                              │
-	-- ╰────────────────────────────────────────────────────────────────────╯
+	-- ╔════════════════════════════════════════════════════════════════════╗
+	-- ║                               PLUGINS                              ║
+	-- ╚════════════════════════════════════════════════════════════════════╝
 
 	-- Packer itself
 	use("wbthomason/packer.nvim")
@@ -134,7 +140,8 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- Autopairs
 	use("tpope/vim-surround") -- Surround
 	use("folke/which-key.nvim") -- Key mappings easy access
-	use("romgrk/barbar.nvim") -- Tabline
+	-- use("romgrk/barbar.nvim") -- Tabline
+	use("akinsho/bufferline.nvim")
 	use("folke/trouble.nvim") -- Nice lists
 	use({ -- Commenting
 		"numToStr/Comment.nvim",
@@ -149,6 +156,7 @@ return packer.startup(function(use)
 		end,
 	})
 	use("phaazon/hop.nvim") -- jump anywhere
+	use("stevearc/aerial.nvim") -- code outline window
 
 	-- ╭────────────────────────────────────────────────────────────────────╮
 	-- │ GIT                                                                │
@@ -187,6 +195,26 @@ return packer.startup(function(use)
 	use("davidgranstrom/nvim-markdown-preview")
 
 	-- ╭────────────────────────────────────────────────────────────────────╮
+	-- │ ORG                                                                │
+	-- ╰────────────────────────────────────────────────────────────────────╯
+
+	use({
+		"nvim-orgmode/orgmode",
+		config = function()
+			require("orgmode").setup({})
+		end,
+	})
+	use({
+		"akinsho/org-bullets.nvim",
+		config = function()
+			require("org-bullets").setup({
+				symbols = { "◉", "○", "◦", "‣" },
+			})
+		end,
+	})
+	use("dhruvasagar/vim-table-mode")
+
+	-- ╭────────────────────────────────────────────────────────────────────╮
 	-- │ PROGRAMMING                                                        │
 	-- ╰────────────────────────────────────────────────────────────────────╯
 
@@ -211,7 +239,7 @@ return packer.startup(function(use)
 	-- By: popup
 	use("nvim-lua/popup.nvim")
 
-	--------------------------------------------------------------
+	--├────────────────────────────────────────────────────────────────────┤
 
 	-- Automatically set up config after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

@@ -17,4 +17,6 @@ require("comment-box").setup({
 	-- },
 	outer_blank_lines = false,
 	inner_blank_lines = false,
+	line_blank_line_above = true,
+	line_blank_line_below = true,
 })

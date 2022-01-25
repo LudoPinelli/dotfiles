@@ -5,7 +5,7 @@ local wk = require("which-key")
 
 wk.register({
 	["<Leader>"] = {
-		["c"] = { "<Cmd>BufferClose<CR>", "  Close Buffer" },
+		["c"] = { "<Cmd>bdelete<CR>", "  Close Buffer" },
 		["e"] = { "<Cmd>lua require('lir.float').toggle()<CR>", "פּ  Explorer" },
 		["h"] = { "<Cmd>nohlsearch<CR>", "  No Highlight" },
 		["z"] = { "<Cmd>set spell!<CR>", "暈 Toggle Spellcheck" },
@@ -48,7 +48,7 @@ wk.register({
 			q = { "<Cmd>lua vim.diagnostic.setqflist()<CR>", "Send to Quickfix List" },
 			r = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "凜  Rename" },
 			R = { "<Cmd>lua vim.lsp.buf.references()<CR>", "Ref. of word under cursor" },
-			s = { "<Cmd>lua vim.lsp.buf.document_symbol()<CR>", "  Document Symbols" },
+			s = { "<Cmd>Telescope aerial<CR>", "  Document Symbols" },
 			S = { "<Cmd>Telescope lsp_dynamic_workspace_symbols initial_mode=normal<CR>", "  Workspace Symbols" },
 			t = { "<Cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
 		},
@@ -134,8 +134,11 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- Barbar
-map("n", "<Tab>", ":BufferNext<CR>", opts)
-map("n", "<S-Tab>", ":BufferPrevious<CR>", opts)
+-- map("n", "<Tab>", ":BufferNext<CR>", opts)
+-- map("n", "<S-Tab>", ":BufferPrevious<CR>", opts)
+-- BufferLine
+map("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
+map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts)
 
 -- hop
 map(
@@ -180,7 +183,7 @@ map({ "n", "x" }, "<Leader>L", "<Cmd>lua require'hop'.hint_lines()<CR>", { silen
 -- Comment-box
 map({ "n", "v" }, "<Leader>bb", "<Cmd>lua require('comment-box').lbox()<CR>")
 map({ "n", "v" }, "<Leader>bc", "<Cmd>lua require('comment-box').cbox()<CR>")
-map("n", "<Leader>bl", "<Cmd>lua require('comment-box').line()<CR>")
+map("n", "<Leader>bl", "<Cmd>lua require('comment-box').line(3)<CR>")
 map("i", "<M-i>", "<Cmd>lua require('comment-box').line(3)<CR>")
 
 -- NeoZoom

@@ -61,12 +61,13 @@ map("i", "<C-s>", "<Esc>:w<CR>i", opts)
 map("n", "<M-f>", "<C-]>", opts)
 
 -- terminal
-function _Gset_terminal_keymaps()
-	local opt = { noremap = true, buffer = 0 }
-	map("t", "<esc>", [[<C-\><C-n>]], opt)
-	map("t", "jk", [[<C-\><C-n>]], opt)
-	map("t", "<C-h>", [[<C-\><C-n><C-W>h]], opt)
-	map("t", "<C-j>", [[<C-\><C-n><C-W>j]], opt)
-	map("t", "<C-k>", [[<C-\><C-n><C-W>k]], opt)
-	map("t", "<C-l>", [[<C-\><C-n><C-W>l]], opt)
+function _G.set_terminal_keymaps()
+	local bmap = vim.api.nvim_buf_set_keymap
+	bmap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
+	bmap(0, "t", "jk", [[<C-\><C-n>]], opts)
+	bmap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
+	bmap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
+	bmap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
+	bmap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
 end
+vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
