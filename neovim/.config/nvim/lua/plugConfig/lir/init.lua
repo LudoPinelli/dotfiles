@@ -21,6 +21,8 @@ require("lir").setup({
 		["Y"] = actions.yank_path,
 		["."] = actions.toggle_show_hidden,
 		["d"] = actions.delete,
+		["B"] = require("lir.bookmark.actions").list,
+		["ba"] = require("lir.bookmark.actions").add,
 
 		["<Space>"] = function()
 			mark_actions.toggle_mark()
@@ -31,7 +33,7 @@ require("lir").setup({
 		["cp"] = clipboard_actions.paste,
 	},
 	float = {
-		winblend = 15,
+		winblend = 30,
 		curdir_window = {
 			enable = false,
 			highlight_dirname = false,
@@ -40,7 +42,7 @@ require("lir").setup({
 		-- You can define a function that returns la table to b passed as the third
 		-- argument of nvim_open_win().
 		win_opts = function()
-			local width = math.floor(vim.o.columns * 0.3)
+			local width = math.floor(vim.o.columns * 0.4)
 			local height = math.floor(vim.o.lines * 0.6)
 			return {
 				border = require("lir.float.helper").make_border_opts({
@@ -86,4 +88,18 @@ require("nvim-web-devicons").set_icon({
 
 require("lir.git_status").setup({
 	show_ignored = false,
+})
+
+local b_actions = require("lir.bookmark.actions")
+require("lir.bookmark").setup({
+	bookmark_path = "~/.lir_bookmark",
+	mappings = {
+		["l"] = b_actions.edit,
+		["<C-s>"] = b_actions.split,
+		["<C-v>"] = b_actions.vsplit,
+		["<C-t>"] = b_actions.tabedit,
+		["<C-e>"] = b_actions.open_lir,
+		["B"] = b_actions.open_lir,
+		["q"] = b_actions.open_lir,
+	},
 })

@@ -43,7 +43,7 @@ alias lla="exa -lahF --group-directories-first --git"
 alias lt="exa -hT --level=2 --long --git"
 alias lta="exa -aT --level=2 --long"
 
-alias rm="rm -i"
+alias rm="rm -if"
 alias mv="mv -iv"
 alias cp="cp -riv"
 alias mkdir="mkdir -vp"
@@ -65,7 +65,7 @@ alias up="up --clean"
 
 alias lg="lazygit"
 
-alias htop="btm"
+alias htop="btop"
 
 alias gt="git status"
 alias gb="git branch"

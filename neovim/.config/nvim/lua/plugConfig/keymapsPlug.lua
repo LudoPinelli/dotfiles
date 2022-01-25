@@ -181,4 +181,13 @@ map({ "n", "x" }, "<Leader>L", "<Cmd>lua require'hop'.hint_lines()<CR>", { silen
 map({ "n", "v" }, "<Leader>bb", "<Cmd>lua require('comment-box').lbox()<CR>")
 map({ "n", "v" }, "<Leader>bc", "<Cmd>lua require('comment-box').cbox()<CR>")
 map("n", "<Leader>bl", "<Cmd>lua require('comment-box').line()<CR>")
-map("i", "<M-i>", "<Cmd>lua require('comment-box').line()<CR>")
+map("i", "<M-i>", "<Cmd>lua require('comment-box').line(3)<CR>")
+
+-- NeoZoom
+vim.keymap.set("n", '<C-W>"', function()
+	vim.cmd("NeoSplit")
+end, { nowait = true, silent = true, noremap = true })
+vim.keymap.set("n", "<C-W>%", function()
+	vim.cmd("NeoVSplit")
+end, { nowait = true, silent = true, noremap = true })
+vim.api.nvim_set_keymap("n", "é", "<cmd>NeoZoomToggle<CR>", { noremap = true, silent = true, nowait = true })

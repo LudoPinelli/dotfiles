@@ -125,6 +125,7 @@ return packer.startup(function(use)
 			require("colorizer").setup()
 		end,
 	})
+	use("nyngwang/NeoZoom.lua")
 
 	-- ╭────────────────────────────────────────────────────────────────────╮
 	-- │ PRODUCTIVITY                                                       │
@@ -170,13 +171,14 @@ return packer.startup(function(use)
 	-- Explorer
 	use("tamago324/lir.nvim")
 	use("tamago324/lir-git-status.nvim")
+	use("tamago324/lir-bookmark.nvim")
 
 	use("AckslD/nvim-neoclip.lua") -- Clipboard utility
 	use("akinsho/nvim-toggleterm.lua") -- Terminal utility
 	use("lewis6991/impatient.nvim") -- Improve startup time
 	use("dstein64/vim-startuptime") -- Startup time info
 	use("tami5/sqlite.lua")
-	-- use("LudoPinelli/comment-box.nvim")
+	use("~/dev/neoplugs/comment-box.nvim")
 
 	-- ╭────────────────────────────────────────────────────────────────────╮
 	-- │ MARKDOWN                                                           │

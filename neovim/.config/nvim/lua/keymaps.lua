@@ -58,7 +58,7 @@ map("n", "<C-s>", ":w<CR>", opts)
 map("i", "<C-s>", "<Esc>:w<CR>i", opts)
 
 -- help tags
-map("n", "<CR>", "<C-]>", opts)
+map("n", "<M-f>", "<C-]>", opts)
 
 -- terminal
 function _Gset_terminal_keymaps()
