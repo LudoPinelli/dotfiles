@@ -40,14 +40,11 @@ wk.register({
 
 			a = { "<Cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
 			d = { "<Cmd>lua vim.diagnostic.open_float()<CR>", "Diagnostics in float window" },
-			D = { "<Cmd>Telescop diagnostics<CR>", "Diagnostics in Telescope" },
+			D = { "<Cmd>Telescope diagnostics<CR>", "Diagnostics in Telescope" },
 			f = { "<Cmd>lua vim.lsp.buf.formatting()<CR>", "  Format" },
 			i = { "<Cmd>LspInfo<CR>", "  Info" },
 			l = { "<Cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
-			L = { "<Cmd>lua vim.diagnostic.setloclist()<CR>", "Location list" },
-			q = { "<Cmd>lua vim.diagnostic.setqflist()<CR>", "Send to Quickfix List" },
 			r = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "凜  Rename" },
-			R = { "<Cmd>lua vim.lsp.buf.references()<CR>", "Ref. of word under cursor" },
 			s = { "<Cmd>Telescope aerial<CR>", "  Document Symbols" },
 			S = { "<Cmd>Telescope lsp_dynamic_workspace_symbols initial_mode=normal<CR>", "  Workspace Symbols" },
 			t = { "<Cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
@@ -103,6 +100,7 @@ if jit.os ~= "Windows" then
 				r = { "<Cmd>Telescope oldfiles<CR>", "  Open Recent File" },
 				R = { "<Cmd>Telescope registers inital_mode=normal<CR>", "  Registers" },
 				t = { "<Cmd>Telescope live_grep<CR>", "  Text" },
+				w = { "<Cmd>Telescope grep_string<CR>", "Ref. of word under cursor" },
 			},
 		},
 	})

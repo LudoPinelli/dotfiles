@@ -132,6 +132,12 @@ return packer.startup(function(use)
 		end,
 	})
 	use("nyngwang/NeoZoom.lua")
+	use({
+		"j-hui/fidget.nvim",
+		config = function()
+			require("fidget").setup()
+		end,
+	})
 
 	-- ╭────────────────────────────────────────────────────────────────────╮
 	-- │ PRODUCTIVITY                                                       │

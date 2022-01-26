@@ -59,6 +59,10 @@ local aerial = {
 	sep = " ➜ ",
 }
 
+local function get_pwd()
+	return vim.cmd([[getcwd()]])
+end
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
@@ -69,7 +73,7 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { mode },
-		lualine_b = { branch },
+		lualine_b = { "getcwd", branch },
 		lualine_c = { filename },
 		lualine_x = { diff, diagnostics },
 		lualine_y = { aerial, filetype },
