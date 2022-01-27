@@ -22,10 +22,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Use a protected call, so no error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-	return
-end
+packer = require("packer")
 
 -- Have packer use a popup window
 packer.init({
@@ -192,7 +189,7 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim") -- Improve startup time
 	use("dstein64/vim-startuptime") -- Startup time info
 	use("tami5/sqlite.lua")
-	use("~/dev/neoplugs/comment-box.nvim")
+	use("~/Dev/neoplugs/comment-box.nvim")
 
 	-- ╭────────────────────────────────────────────────────────────────────╮
 	-- │ MARKDOWN                                                           │

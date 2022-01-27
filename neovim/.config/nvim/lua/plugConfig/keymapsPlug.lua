@@ -58,7 +58,7 @@ wk.register({
 			h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", "  Horizontal" },
 			n = { "<Cmd>lua node_toggle()<CR>", "  Node.js" },
 			p = { "<Cmd>lua python_toggle()<CR>", "   Python" },
-			t = { "<Cmd>lua htop_toggle()<CR>", "   Htop" },
+			t = { "<Cmd>lua btop_toggle()<CR>", "   btop" },
 			v = { "<Cmd>ToggleTerm size=50 direction=vertical<CR>", "   Vertical" },
 			w = { "<Cmd>lua cargo_watch_toggle()<CR>", "   Cargo Watch" },
 		},

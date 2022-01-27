@@ -3,7 +3,7 @@ function get_path()
 	if jit.os == "Windows" then
 		return "$LOCALAPPDATA/nvim/"
 	else
-		return "~/.dotfiles/neovim/.config/nvim/"
+		return "~/.config/nvim/"
 	end
 end
 
