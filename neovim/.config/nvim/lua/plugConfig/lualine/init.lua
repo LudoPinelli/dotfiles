@@ -19,7 +19,7 @@ local diagnostics = {
 
 local filename = {
 	"filename",
-	path = 1,
+	path = 0,
 	shorting_target = 40,
 }
 
@@ -58,10 +58,6 @@ local aerial = {
 	"aerial",
 	sep = " ➜ ",
 }
-
-local function get_pwd()
-	return vim.cmd([[getcwd()]])
-end
 
 lualine.setup({
 	options = {
