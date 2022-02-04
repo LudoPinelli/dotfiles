@@ -16,6 +16,7 @@ require("plugConfig.which-key")
 require("plugConfig.keymapsPlug")
 require("plugConfig.aerial")
 require("plugConfig.comment-box")
+require("plugConfig.rnvimr")
 
 -- Markdown preview
 vim.g.nvim_markdown_preview_theme = "solarized-dark"

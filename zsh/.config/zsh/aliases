@@ -1,0 +1,61 @@
+
+# Aliases
+
+alias -s txt=nvim
+alias -s md=nvim
+alias -s log=nvim
+alias -s lua=nvim
+alias -s js=nvim
+alias -s rs=nvim
+
+alias ls="exa -F --git-ignore --group-directories-first"
+alias ll="exa -lhF --git-ignore --group-directories-first --git"
+alias la="exa -ahF --group-directories-first"
+alias lla="exa -lahF --group-directories-first --git"
+alias lt="exa -hT --level=2 --long --git"
+alias lta="exa -aT --level=2 --long"
+
+alias rm="rm -if"
+alias mv="mv -iv"
+alias cp="cp -riv"
+alias mkdir="mkdir -vp"
+
+alias c="clear"
+alias s="z .."
+
+alias cat="bat"
+
+alias v="nvim"
+alias vdev="nvim --cmd 'set rtp+=.'"
+alias f="ranger"
+alias weather="clear && curl wttr.in"
+
+alias df="df --human-readable"
+
+# https://gihub.com/EzeeLinux/up-debian_ubuntu_update_toolt
+alias up="up --clean"
+
+alias lg="lazygit"
+
+alias gt="git status"
+alias gb="git branch"
+
+function gw {
+  git switch $1
+}
+
+function gd {
+  git branch -d $1
+}
+
+alias neoc="z ~/.config/nvim/"
+
+alias zrc="$EDITOR ~/.config/zsh/.zshrc"
+
+alias matrix="cmatrix -a -C magenta"
+
+function gi {
+  # Write .gitignore file for the give language
+  # example: ign Rust
+  gibo dump $1 >> .gitignore
+}

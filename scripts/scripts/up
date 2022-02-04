@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# set -e
+
+sys_update() {
+  echo "+---------------+"
+  echo "| System update |"
+  echo "+---------------+"
+  echo ""
+  sudo apt update
+  sudo apt full-upgrade -yy
+  sudo apt autoremove -yy
+  sudo apt remove --purge "$(dpkg -l | grep "^rc" | awk '{print $2}')" -yy
+  sudo apt autoclean
+}
+
+rust_update() {
+  echo ""
+  echo "+-------------+"
+  echo "| Rust update |"
+  echo "+-------------+"
+  echo ""
+  rustup update
+}
+
+rust_app_update() {
+  echo ""
+  echo "+--------------------------+"
+  echo "| Rust applications update |"
+  echo "+--------------------------+"
+  echo ""
+  cargo install-update -a
+}
+
+quit() {
+  echo ""
+  echo "+-----------------+"
+  echo "| Update Complete |"
+  echo "+-----------------+"
+  exit
+}
+
+sys_update
+rust_update
+rust_app_update
+quit

@@ -38,7 +38,7 @@ elseif theme == "catppuccin" then
 	local catppuccin = require("catppuccin")
 
 	catppuccin.setup({
-		transparent_background = true,
+		transparent_background = false,
 		term_colors = false,
 		styles = {
 			comments = "NONE",

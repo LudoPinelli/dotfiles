@@ -67,6 +67,7 @@ return packer.startup(function(use)
 			run = "make",
 		})
 	end
+	use("natecraddock/telescope-zf-native.nvim")
 
 	-- Treesitter
 	use({
@@ -186,6 +187,10 @@ return packer.startup(function(use)
 	use("tamago324/lir.nvim")
 	use("tamago324/lir-git-status.nvim")
 	use("tamago324/lir-bookmark.nvim")
+	use({
+		"kevinhwang91/rnvimr",
+		run = "make sync",
+	})
 
 	use("AckslD/nvim-neoclip.lua") -- Clipboard utility
 	use("akinsho/nvim-toggleterm.lua") -- Terminal utility
