@@ -12,21 +12,26 @@ telescope.setup({
 		selection_caret = " ",
 		path_display = { "smart" },
 		dynamic_preview_title = true,
-		winblend = 30,
+		winblend = 0,
 		sorting_strategy = "ascending",
+		layout_strategy = "vertical",
 		layout_config = {
-			prompt_position = "top",
-			horizontal = {
-				width_padding = 0.04,
-				height_padding = 0.1,
-				preview_width = 0.6,
-			},
-			vertical = {
-				width_padding = 0.05,
-				height_padding = 1,
-				preview_height = 0.5,
-			},
+			prompt_position = "bottom",
+			height = 0.95,
 		},
+		-- layout_config = {
+		-- 	prompt_position = "top",
+		-- 	horizontal = {
+		-- 		width_padding = 0.04,
+		-- 		height_padding = 0.1,
+		-- 		preview_width = 0.6,
+		-- 	},
+		-- 	vertical = {
+		-- 		width_padding = 0.05,
+		-- 		height_padding = 1,
+		-- 		preview_height = 0.5,
+		-- 	},
+		-- },
 
 		mappings = {
 			i = {
@@ -99,7 +104,7 @@ telescope.setup({
 	},
 })
 
-require("telescope").load_extension("fzf")
+-- require("telescope").load_extension("fzf")
 require("telescope").load_extension("zf-native")
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("aerial")

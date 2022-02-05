@@ -118,7 +118,10 @@ return packer.startup(function(use)
 
 	-- Themes
 	use("rebelot/kanagawa.nvim")
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({
+		"catppuccin/nvim",
+		as = "catppuccin",
+	})
 	use({
 		"mcchrish/zenbones.nvim",
 		requires = "rktjmp/lush.nvim",
@@ -132,7 +135,6 @@ return packer.startup(function(use)
 			require("colorizer").setup()
 		end,
 	})
-	use("nyngwang/NeoZoom.lua")
 	use({
 		"j-hui/fidget.nvim",
 		config = function()
@@ -187,23 +189,20 @@ return packer.startup(function(use)
 	use("tamago324/lir.nvim")
 	use("tamago324/lir-git-status.nvim")
 	use("tamago324/lir-bookmark.nvim")
-	use({
-		"kevinhwang91/rnvimr",
-		run = "make sync",
-	})
 
 	use("AckslD/nvim-neoclip.lua") -- Clipboard utility
 	use("akinsho/nvim-toggleterm.lua") -- Terminal utility
 	use("lewis6991/impatient.nvim") -- Improve startup time
 	use("dstein64/vim-startuptime") -- Startup time info
 	use("tami5/sqlite.lua")
-	use("~/Dev/neoplugs/comment-box.nvim")
+	use("~/Dev/neoplugs/comment-box.nvim") --comment beautifier
 
 	-- ╭────────────────────────────────────────────────────────────────────╮
 	-- │ MARKDOWN                                                           │
 	-- ╰────────────────────────────────────────────────────────────────────╯
 
 	use("davidgranstrom/nvim-markdown-preview")
+	use({ "ellisonleao/glow.nvim" })
 
 	-- ╭────────────────────────────────────────────────────────────────────╮
 	-- │ ORG                                                                │
@@ -245,9 +244,9 @@ return packer.startup(function(use)
 	-- By: rust-tools, gitsigns, telescope
 	-- lir
 	use("nvim-lua/plenary.nvim")
-	-- By: barbar, lualine, telescope, lir
+	-- By: lualine, telescope, lir
 	use("kyazdani42/nvim-web-devicons")
-	-- By: popup
+	-- By:
 	use("nvim-lua/popup.nvim")
 
 	--├────────────────────────────────────────────────────────────────────┤

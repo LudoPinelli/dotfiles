@@ -11,10 +11,14 @@ function nvim_config()
 	local path = get_path()
 	require("telescope").extensions.file_browser.file_browser({
 		prompt_title = " Neovim Configuration",
+		initial_mode = "normal",
+		sorting_strategy = "ascending",
 		path = path,
 		cwd = path,
-		depth = 1,
-		sorting_strategy = "ascending",
+		grouped = true,
+		hidden = true,
+		respect_gitignore = true,
+		hide_paren_dir = true,
 	})
 end
 

@@ -83,8 +83,8 @@ elseif theme == "catppuccin" then
 			neogit = false,
 			vim_sneak = false,
 			fern = false,
-			barbar = true,
-			bufferline = false,
+			barbar = false,
+			bufferline = true,
 			markdown = true,
 			lightspeed = false,
 			ts_rainbow = false,
@@ -93,7 +93,7 @@ elseif theme == "catppuccin" then
 			telekasten = false,
 		},
 	})
-	vim.cmd("colorscheme catppuccin")
+	vim.cmd([[colorscheme catppuccin]])
 
 	require("lualine").setup({
 		options = { theme = "catppuccin" },

@@ -33,7 +33,7 @@ require("lir").setup({
 		["cp"] = clipboard_actions.paste,
 	},
 	float = {
-		winblend = 30,
+		winblend = 0,
 		curdir_window = {
 			enable = false,
 			highlight_dirname = false,

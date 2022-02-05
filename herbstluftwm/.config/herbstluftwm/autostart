@@ -41,6 +41,7 @@ hc keybind F2 spawn librewolf
 hc keybind F3 spawn kitty -e ranger
 hc keybind F4 spawn dolphin
 hc keybind F5 spawn mpv --shuffle ~/Musique
+hc keybind F12 spawn kitty -e taskwarrior-tui
 
 #         ╭──────────────────────────────────────────────────────────╮
 #         │                         Launchers                        │

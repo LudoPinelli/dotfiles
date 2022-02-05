@@ -1,5 +1,7 @@
 
-# Aliases
+#                                 ╭─────────╮
+#                                 │ Aliases │
+#                                 ╰─────────╯
 
 alias -s txt=nvim
 alias -s md=nvim
@@ -27,7 +29,8 @@ alias cat="bat"
 
 alias v="nvim"
 alias vdev="nvim --cmd 'set rtp+=.'"
-alias f="ranger"
+alias r="ranger"
+alias tt="taskwarrior-tui"
 alias weather="clear && curl wttr.in"
 
 alias df="df --human-readable"
