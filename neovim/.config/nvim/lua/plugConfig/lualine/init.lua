@@ -54,11 +54,6 @@ local location = {
 	left_padding = 0,
 }
 
-local aerial = {
-	"aerial",
-	sep = " ➜ ",
-}
-
 lualine.setup({
 	options = {
 		icons_enabled = true,
@@ -72,7 +67,7 @@ lualine.setup({
 		lualine_b = { "getcwd", branch },
 		lualine_c = { filename },
 		lualine_x = { diff, diagnostics },
-		lualine_y = { aerial, filetype },
+		lualine_y = { filetype },
 		lualine_z = { "progress", location },
 	},
 	inactive_sections = {
@@ -80,7 +75,7 @@ lualine.setup({
 		lualine_b = {},
 		lualine_c = {},
 		lualine_x = {},
-		lualine_y = { aerial },
+		lualine_y = {},
 		lualine_z = { location },
 	},
 	tabline = {},

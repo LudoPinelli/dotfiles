@@ -3,12 +3,12 @@
 #                                 │ Aliases │
 #                                 ╰─────────╯
 
-alias -s txt=nvim
-alias -s md=nvim
-alias -s log=nvim
-alias -s lua=nvim
-alias -s js=nvim
-alias -s rs=nvim
+alias -s {txt,md,MD,log,lua,js,rs,tex,py}=nvim
+
+alias xy="xclip -selection clipboard"
+alias xp="xclip -selection clipboard -o"
+alias py="pwd|xy"
+alias pp="xp"
 
 alias ls="exa -F --git-ignore --group-directories-first"
 alias ll="exa -lhF --git-ignore --group-directories-first --git"
@@ -28,28 +28,19 @@ alias s="z .."
 alias cat="bat"
 
 alias v="nvim"
+alias vt="nvim +terminal"
 alias vdev="nvim --cmd 'set rtp+=.'"
 alias r="ranger"
-alias tt="taskwarrior-tui"
 alias weather="clear && curl wttr.in"
 
 alias df="df --human-readable"
-
-# https://gihub.com/EzeeLinux/up-debian_ubuntu_update_toolt
-alias up="up --clean"
 
 alias lg="lazygit"
 
 alias gt="git status"
 alias gb="git branch"
-
-function gw {
-  git switch $1
-}
-
-function gd {
-  git branch -d $1
-}
+alias gw="git switch"
+alias gb="git branch"
 
 alias neoc="z ~/.config/nvim/"
 

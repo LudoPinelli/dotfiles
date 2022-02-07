@@ -14,7 +14,6 @@ require("plugConfig.toggleterm")
 require("plugConfig.lir")
 require("plugConfig.which-key")
 require("plugConfig.keymapsPlug")
-require("plugConfig.aerial")
 require("plugConfig.comment-box")
 
 -- Markdown preview

@@ -67,7 +67,6 @@ return packer.startup(function(use)
 			run = "make",
 		})
 	end
-	use("natecraddock/telescope-zf-native.nvim")
 
 	-- Treesitter
 	use({
@@ -149,7 +148,6 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- Autopairs
 	use("tpope/vim-surround") -- Surround
 	use("folke/which-key.nvim") -- Key mappings easy access
-	-- use("romgrk/barbar.nvim") -- Tabline
 	use("akinsho/bufferline.nvim")
 	use("folke/trouble.nvim") -- Nice lists
 	use({ -- Commenting
@@ -165,7 +163,6 @@ return packer.startup(function(use)
 		end,
 	})
 	use("phaazon/hop.nvim") -- jump anywhere
-	use("stevearc/aerial.nvim") -- code outline window
 
 	-- ╭────────────────────────────────────────────────────────────────────╮
 	-- │ GIT                                                                │

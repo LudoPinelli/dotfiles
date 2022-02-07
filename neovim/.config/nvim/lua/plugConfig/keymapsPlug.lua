@@ -45,7 +45,7 @@ wk.register({
 			i = { "<Cmd>LspInfo<CR>", "  Info" },
 			l = { "<Cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
 			r = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "凜  Rename" },
-			s = { "<Cmd>Telescope aerial<CR>", "  Document Symbols" },
+			s = { "<Cmd>Telescope symbols<CR>", "  Document Symbols" },
 			S = { "<Cmd>Telescope lsp_dynamic_workspace_symbols initial_mode=normal<CR>", "  Workspace Symbols" },
 			t = { "<Cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
 		},
