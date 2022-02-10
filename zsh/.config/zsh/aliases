@@ -49,7 +49,9 @@ alias zrc="$EDITOR ~/.config/zsh/.zshrc"
 alias matrix="cmatrix -a -C magenta"
 
 function gi {
-  # Write .gitignore file for the give language
+  # Write .gitignore file for the given language
   # example: ign Rust
   gibo dump $1 >> .gitignore
 }
+
+cnc="cargo_cli_setup.sh"

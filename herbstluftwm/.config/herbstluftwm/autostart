@@ -31,7 +31,6 @@ hc keyunbind --all
 Mod=Mod4   # Use the super key as the main modifier
 
 hc keybind $Mod-Shift-x quit
-# hc keybinf $Mod-Shift-q spawn ~/.local/scripts/dmenu/herbst-logout.sh
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-q close
 hc keybind $Mod-t spawn "${TERMINAL:-kitty}"
