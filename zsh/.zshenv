@@ -8,7 +8,7 @@ export PAGER=bat
 export BROWSER='librewolf'
 # Open man pages in nvim
 export MANPAGER="nvim +Man!"
-export TERMINAL="kitty"
+export TERMINAL="alacritty"
 export TERM="xterm-256color"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"

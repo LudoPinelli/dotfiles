@@ -18,7 +18,7 @@ hc emit_hook reload
 # xsetroot -solid '#575268'
 
 picom --experimental-backend -b
-feh -z --image-bg "#1E1E2E" --bg-max ~/Images/wallpapers/Gits/Gits00.jpg
+feh -z --image-bg "#1E1E2E" --bg-max ~/Images/wallpapers/Gits/Gits02.jpg
 kmix &
 ntfd &
 
@@ -33,7 +33,7 @@ Mod=Mod4   # Use the super key as the main modifier
 hc keybind $Mod-Shift-x quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-q close
-hc keybind $Mod-t spawn "${TERMINAL:-kitty}"
+hc keybind $Mod-t spawn "${TERMINAL:-alacritty}"
 hc keybind $Mod-Return spawn ~/scripts/scratchpad
 hc keybind F1 spawn xfce4-appfinder
 hc keybind F2 spawn librewolf

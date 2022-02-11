@@ -233,6 +233,8 @@ return packer.startup(function(use)
 			require("crates").setup()
 		end,
 	})
+	-- Lua reference
+	use("milisims/nvim-luaref")
 
 	-- ╭────────────────────────────────────────────────────────────────────╮
 	-- │ REQUIRED                                                           │
