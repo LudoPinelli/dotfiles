@@ -13,6 +13,7 @@ export KEYTIMEOUT=1
 
 source $ZDOTDIR/aliases
 
+eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 

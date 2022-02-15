@@ -8,7 +8,7 @@ export PAGER=bat
 export BROWSER='librewolf'
 # Open man pages in nvim
 export MANPAGER="nvim +Man!"
-export TERMINAL="alacritty"
+export TERMINAL="kitty"
 export TERM="xterm-256color"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
@@ -20,6 +20,6 @@ export SAVEHIST=10000
 export PATH=~/.local/kitty.app/bin:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=~/scripts:$PATH
-export PATH=~/node_modules/prettier:$PATH
+export PATH=~/node_modules/.bin/:$PATH
 
 export QT_QPA_PLATFORMTHEME=qt5ct

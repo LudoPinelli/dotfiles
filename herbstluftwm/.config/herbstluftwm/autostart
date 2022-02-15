@@ -21,6 +21,7 @@ picom --experimental-backend -b
 feh -z --image-bg "#1E1E2E" --bg-max ~/Images/wallpapers/Gits/Gits02.jpg
 kmix &
 ntfd &
+#redshift & */
 
 # remove all existing keybindings
 hc keyunbind --all
@@ -33,7 +34,7 @@ Mod=Mod4   # Use the super key as the main modifier
 hc keybind $Mod-Shift-x quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-q close
-hc keybind $Mod-t spawn "${TERMINAL:-alacritty}"
+hc keybind $Mod-t spawn "${TERMINAL:-kitty}"
 hc keybind $Mod-Return spawn ~/scripts/scratchpad
 hc keybind F1 spawn xfce4-appfinder
 hc keybind F2 spawn librewolf
@@ -74,8 +75,7 @@ hc keybind $Mod-Shift-l     shift right
 
 # splitting frames
 # create an empty frame at the specified direction
-hc keybind $Mod-u       split   bottom  0.6
-hc keybind $Mod-o       split   right   0.6
+hc keybind $Mod-o       split   auto  0.6
 # let the current frame explode into subframes
 hc keybind $Mod-Control-space split explode
 
@@ -167,7 +167,7 @@ hc attr theme.floating.outer_color black
 hc attr theme.active.inner_color '#1E1E2E'
 hc attr theme.active.outer_color '#C9CBFF'
 hc attr theme.background_color '#FF0000'
-hc set window_gap 10
+hc set window_gap 5
 
 hc set frame_padding 0
 hc set smart_window_surroundings off
@@ -197,7 +197,7 @@ hc unlock
 # hc detect_monitors
 
 # find the panel
-panel=~/.config/herbstluftwm/panel.sh
+panel=~/.config/polybar/panel.sh
 [ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
 for monitor in $(hc list_monitors | cut -d: -f1) ; do
     # start it on each monitor

@@ -42,11 +42,13 @@ alias gb="git branch"
 alias gw="git switch"
 alias gb="git branch"
 
-alias neoc="z ~/.config/nvim/"
+alias neoc="z ~/.dotfiles/neovim/.config/nvim"
 
 alias zrc="$EDITOR ~/.config/zsh/.zshrc"
 
 alias matrix="cmatrix -a -C magenta"
+
+alias joplin="joplin --profile ~/.config/joplin-desktop"
 
 function gi {
   # Write .gitignore file for the given language
