@@ -22,4 +22,4 @@ export PATH=~/.local/bin:$PATH
 export PATH=~/scripts:$PATH
 export PATH=~/node_modules/.bin/:$PATH
 
-export QT_QPA_PLATFORMTHEME=qt5ct
+. "$HOME/.cargo/env"
