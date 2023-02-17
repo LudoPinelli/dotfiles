@@ -1,0 +1,23 @@
+layout {
+    pane split_direction="vertical" {
+        pane {
+            size "20%"
+            plugin location="zellij:strider"
+        }
+        pane {
+            size "80%"
+            pane {
+                size "80%"
+                focus true
+                name "Edit"
+            }
+            pane {
+                size "20%"
+                name "Shell"
+            }
+        }
+    }
+    pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+}

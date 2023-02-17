@@ -32,24 +32,21 @@ Just a repo of my dotfiles.
 ### Dealing With Files/Buffers
 
 - **Finding files**: [Telescope](https://github.com/nvim-telescope/telescope.nvim) - _The_ Swiss army knife to find anything I want. Not only files, but also help, diagnostics, commands, key maps and a lot more, and I can even easily write my own pickers. Very intuitive, highly configurable, a _must have_.
-- **Browsing files**: [Lir](https://github.com/tamago324/lir.nvim) - I used [nvim-Tree](https://github.com/kyazdani42/nvim-tree.lua) for a while, it's a very nice plugin, but a bit overkill for me. _Lir_ has just what I need, no more, no less.
-- **Buffers management**: [Barbar](https://github.com/romgrk/barbar.nvim) - "tabline plugin with re-orderable, auto-sizing, clickable tabs, icons, nice highlighting, sort-by commands and a magic jump-to-buffer mode".
+- **Browsing files**: [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua) 
 
 ### Writing/Editing
 
 - **Dealing with (), [], {} & co**: [nvim-autopairs](https://github.com/windwp/nvim-autopairs)/[surround.vim](https://github.com/tpope/vim-surround) - The former for automatic closing, no need to present the later since nearly every (Neo)vim user has it in his tool set!
 - **Commenting**: [Comment.nvim](https://github.com/numToStr/Comment.nvim) - comment/uncomment line or blocks with a few keystrokes.
 - **Clipboard manager**: [neoclip](https://github.com/AckslD/nvim-neoclip.lua) - Records everything that gets yanked. I don't know you, but I find registers as powerful as they are painful to use :)
-- **LSP/Completion engine**: [cmp-treesitter,](https://github.com/ray-x/cmp-treesitter) [lspconfig](https://github.com/neovim/nvim-lspconfig)/[lsp-installer](https://github.com/williamboman/nvim-lsp-installer/)/[lsp-signature](https://github.com/ray-x/lsp_signature.nvim), [nvim-cmp](https://github.com/hrsh7th/nvim-cmp), [null_ls](https://github.com/jose-elias-alvarez/null-ls.nvim), [Trouble](https://github.com/folke/trouble.nvim)... - Everything needed to autocomplete, have hints and help, diagnostics, code actions, advanced highlighting, add/remove languages and more. Easily accessible and nicely presented.
+- **LSP/Completion engine**: [cmp-treesitter,](https://github.com/ray-x/cmp-treesitter) [lspconfig](https://github.com/neovim/nvim-lspconfig)/[lsp-installer](https://github.com/williamboman/nvim-lsp-installer/), [Mason](https://github.com/williamboman/mason.nvim), [nvim-cmp](https://github.com/hrsh7th/nvim-cmp), [null_ls](https://github.com/jose-elias-alvarez/null-ls.nvim), [Trouble](https://github.com/folke/trouble.nvim)... - Everything needed to autocomplete, have hints and help, diagnostics, code actions, advanced highlighting, add/remove languages and more. Easily accessible and nicely presented.
 - **Snippet engine**: [LuaSnip](https://github.com/L3MON4D3/LuaSnip)/[friendly-snippets](https://github.com/rafamadriz/friendly-snippets) Powerful snippet engine and a huge collection of them.
-- **Jumping around**: [Hop](https://github.com/phaazon/hop.nvim) - To jump to any visible letter, word or line in a couple of keystroke.
-- **Dealing with colors**: [nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua) - To see in real time the color of any color code.
-- **Markdown goodies**: [glow.nvim](https://github.com/ellisonleao/glow.nvim), [auto-pandoc.nvim](https://github.com/jghauser/auto-pandoc.nvim) - The former for a preview directly inside Neovim, the second to quickly convert to any format via _pandoc_.
+- **Jumping around**: [Leap](https://github.com/ggandor/leap.nvim) - To jump to any visible part of the document in a couple of keystrokes.
+- **Markdown goodies**: [markdown-preview](https://github.com/iamcco/markdown-preview.nvim) - For direct preview in the browser with automatic updates.
 
 ### Git
 
 - **Dealing with hunks**: [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) Visual signs of changes in the buffer, operations on hunks: stage/unstage, revert, etc.
-- **Git status of files**: [lir-git-status.nvim](https://github.com/tamago324/lir-git-status.nvim) Visual signs of the status of files in _lir_.
 - **Everything else**: I just bring _GitUi_ or _LazyGit_ in _Neovim_ via _toggleterm_ (see below).
 
 ### Terminal
@@ -61,32 +58,24 @@ Just a repo of my dotfiles.
 Beside the help for coding brought by _lspconfig_, _lsp-signature_ and the others already covered:
 
 - **Key bindings**: With [which-key.nvim](https://github.com/folke/which-key.nvim) nearly every key binding - custom or builtin - is just there.
-- **Cheat sheets**: [nvim-cheat.sh](https://github.com/RishabhRD/nvim-cheat.sh) allow an access to _Cheat.sh_ directly from _Neovim_, essential!
 
 ### UI Enhancements
 
 - **Seeing where I am**: [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Nice indentation lignes. Highly customizable.
 - **Status Bar**: [lualine](https://github.com/nvim-lualine/lualine.nvim) - Fast, easy to customize.
-- **Themes**: A selection of the most well designed, beautiful (to me!), not too high-contrast themes: [Catppuccin](https://github.com/catppuccin/catppuccin), [Kanagawa](https://github.com/rebelot/kanagawa.nvim), [Onenord](https://github.com/rmehri01/onenord.nvim) & [Zenbones](https://github.com/mcchrish/zenbones.nvim).
-
-![Themes](./imgs/themes.png?raw=true)
+- **Themes**: I use Catppuccin, which is well designed, beautiful (to me!) and not too high-contrast: [Catppuccin](https://github.com/catppuccin/catppuccin)
 
 ### Plugin Management
 
-- [packer](https://github.com/wbthomason/packer.nvim) - To rule them all!
+- [lazy](https://github.com/folke/lazy.nvim) - To rule them all!
 
 ### Others
 
-Others plugins operate under the hood to make life easier, see [plugins.lua](./neovim/.config/nvim/lua/plugins.lua) for more informations
-
-## Performances
-
-_Neovim Lua World_ magic!
-![Performances](./imgs/performances.png?raw=true)
+Others plugins operate under the hood to make life easier, see the [plugConfig](./neovim/.config/nvim/lua/plugConfig/) folder for more information
 
 ## Requirements
 
-- Neovim-Nightly (the configuration takes advantage of the latest features like the use of _ftplugin.lua_ and the new `vim.keymap.set()` function).
+- Latest Neovim stable release (0.8.3 at the time this repo is updated).
 
 ### Linux
 
@@ -115,35 +104,22 @@ null_ls requires the following linter/formatter in order to format the code for 
 - [shellcheck](https://www.shellcheck.net/) (shell script)
 - [taplo](https://taplo.tamasfe.dev/) (fichiers toml)
 
-> **If you're using WSL**:
->
-> For _markdown-preview_ to work (and for your daily confort!), you need to configure WSL to open any link in you're default Windows browser.
->
-> In order to do that:
->
-> - make sure you have [wslu](https://github.com/wslutilities/wslu) installed (it should already be on any Linux distribution officially supported by WSL like _Ubuntu_)
-> - run `wslview -r` to register _wslview_
-> - add: "`set $BROWSER=wslview`" to your shell configuration file (_.bashrc_, _.zshrc_ ... )
->
-> Now, _wslview_ will correctly redirect any link to Windows and your default browser will open it.
-
 ### Windows
 
 Same as Linux (most of them can be installed via _chocolatey_ and/or _scoop_), except:
 
 - _sh_, _shellharden_, _shellcheck_ Not relevant on Windows
-- _locate/plocate_ Does not exist for Windows which means that the _repo_ extension for _Telescope_ won't be available
 
 # Zsh
 
-Nothing fancy configuration wise: a couple of functions, some basic aliases, a few carefully chosen plugins (thanks god, no _oh my Zsh_!) managed by [antibody](https://getantibody.github.io/), and that's about it. _(For a list of the plugins, see [.zsh_plugins.txt](./zsh/.zsh_plugins.txt))_
+Nothing fancy configuration wise: a couple of functions, some basic aliases, a few carefully chosen plugins (thanks god, no _oh my Zsh_!) managed by [antidote](https://github.com/mattmc3/antidote), and that's about it. _(For a list of the plugins, see [.zsh_plugins.txt](./zsh/.zsh_plugins.txt))_
 
 ## Some Tools
 
 - [exa](https://github.com/ogham/exa): Better, than `ls`, and to me better than [lsd](https://github.com/Peltoche/lsd).
 - [zoxide](https://github.com/ajeetdsouza/zoxide): far better than `cd`
-- [rip](https://github.com/nivekuil/rip): easier and safer than `rm`
 - [delta](https://github.com/dandavison/delta): "synthax-highlighting pager for git, diff, and grep output"
+- [zellij](https://github.com/zellij-org/zellij): Powerful, simple to use Terminal Multiplexer
 
 ## Prompt
 

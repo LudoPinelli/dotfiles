@@ -10,12 +10,12 @@ alias xp="xclip -selection clipboard -o"
 alias py="pwd|xy"
 alias pp="xp"
 
-alias ls="exa -F --git-ignore --group-directories-first"
-alias ll="exa -lhF --git-ignore --group-directories-first --git"
-alias la="exa -ahF --group-directories-first"
-alias lla="exa -lahF --group-directories-first --git"
-alias lt="exa -hT --level=2 --long --git"
-alias lta="exa -aT --level=2 --long"
+alias ls="exa -F --git-ignore --group-directories-first --icons"
+alias ll="exa -lhF --git-ignore --group-directories-first --git --icons"
+alias la="exa -ahF --group-directories-first --icons"
+alias lla="exa -lahF --group-directories-first --git --icons"
+alias lt="exa -hT --level=3 --long --git --icons"
+alias lta="exa -aT --level=3 --long --icons"
 
 alias rm="rm -if"
 alias mv="mv -iv"
@@ -23,7 +23,7 @@ alias cp="cp -riv"
 alias mkdir="mkdir -vp"
 
 alias c="clear"
-alias s="z .."
+alias s="cd .."
 
 alias cat="bat"
 
@@ -42,13 +42,13 @@ alias gb="git branch"
 alias gw="git switch"
 alias gb="git branch"
 
-alias neoc="z ~/.dotfiles/neovim/.config/nvim"
+alias neoc="cd ~/.dotfiles/neovim/.config/nvim"
 
 alias zrc="$EDITOR ~/.config/zsh/.zshrc"
 
-alias matrix="cmatrix -a -C magenta"
+alias ze="zellij"
 
-alias joplin="joplin --profile ~/.config/joplin-desktop"
+alias py="python3"
 
 function gi {
   # Write .gitignore file for the given language

@@ -1,13 +1,13 @@
 vim.opt_local.spell = true
 
 vim.api.nvim_exec(
-	[[
+  [[
 iabbrev >> →
 iabbrev << ←
 iabbrev ^^ ↑
 iabbrev VV ↓
 ]],
-	false
+  false
 )
 
 ------------- Keymaps ---------------
@@ -18,19 +18,17 @@ local opts = { noremap = false, buffer = 0 }
 map("v", ",l", 'c[<C-r>"]()<Esc>h', opts)
 -- Wrap selection in image
 map("v", ",i", 'c![<C-r>"](?raw=true)<Esc>9h', opts)
--- Convert with pandoc
-map("n", "go", ":silent w<bar>lua require('auto-pandoc').run_pandoc()<cr>", opts)
 
 -------------- cmp ------------------
 
 local cmp = require("cmp")
 cmp.setup.buffer({
-	sources = {
-		{ name = "spell" },
-		{ name = "buffer" },
-		{ name = "path" },
-	},
-	experimental = {
-		ghost_text = false,
-	},
+  sources = {
+    { name = "spell" },
+    { name = "buffer" },
+    { name = "path" },
+  },
+  experimental = {
+    ghost_text = false,
+  },
 })

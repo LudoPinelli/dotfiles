@@ -2,18 +2,18 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- Mapleader
--- nnoremap("<Space>", "<Nop>")
-vim.g.mapleader = " "
-vim.g.localleader = " "
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- jk to normal mode
-map("i", "jk", "<Esc>", opts)
+map('i', 'jk', '<Esc>', opts)
+
+-- Remap for dealing with word wrap
+map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Move right in insert mode
 map("i", "<A-l>", "<Right>", opts)
-
--- Quit
-map("n", "<C-q>", ":q<CR>", opts)
 
 -- Insert a line befor and after
 map("n", "<Leader>o", "o<Esc>kO<Esc>ji", opts)
@@ -53,21 +53,18 @@ map("n", "<A-Up>", ":m .-2<CR>==", opts)
 map("i", "<A-Down>", "<Esc>:m .+1<CR>==gi", opts)
 map("i", "<A-Up>", "<Esc>:m .-2<CR>==gi", opts)
 
--- ctrl+s to save
-map("n", "<C-s>", ":w<CR>", opts)
-map("i", "<C-s>", "<Esc>:w<CR>i", opts)
-
 -- help tags
 map("n", "<M-f>", "<C-]>", opts)
 
 -- terminal
 function _G.set_terminal_keymaps()
-	local bmap = vim.api.nvim_buf_set_keymap
-	bmap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
-	bmap(0, "t", "jk", [[<C-\><C-n>]], opts)
-	bmap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
-	bmap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
-	bmap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
-	bmap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
+  local bmap = vim.api.nvim_buf_set_keymap
+  bmap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
+  bmap(0, "t", "jk", [[<C-\><C-n>]], opts)
+  bmap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
+  bmap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
+  bmap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
+  bmap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
 end
+
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")

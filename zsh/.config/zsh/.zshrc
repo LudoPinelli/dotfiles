@@ -13,7 +13,6 @@ export KEYTIMEOUT=1
 
 source $ZDOTDIR/aliases
 
-eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
@@ -23,7 +22,11 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
-source ~/.config/zsh/.zsh_plugins.sh
+# source antidote (plugin manager)
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+# initialize plugins
+antidote load
+
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
@@ -72,4 +75,4 @@ _zoxide_hook() {
 }
 
 chpwd_functions=(${chpwd_functions[@]} "_zoxide_hook")
-
+eval "$(zellij setup --generate-auto-start zsh)"
