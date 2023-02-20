@@ -120,6 +120,7 @@ Nothing fancy configuration wise: a couple of functions, some basic aliases, a f
 - [zoxide](https://github.com/ajeetdsouza/zoxide): far better than `cd`
 - [delta](https://github.com/dandavison/delta): "synthax-highlighting pager for git, diff, and grep output"
 - [zellij](https://github.com/zellij-org/zellij): Powerful, simple to use Terminal Multiplexer
+- [vivid](http://github.com/sharkdp/vivid): Colorized output of various command line tools
 
 ## Prompt
 
