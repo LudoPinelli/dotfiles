@@ -86,7 +86,7 @@ return {
             node:toggle()
         end
 
-        -- Open Htop
+        -- Open btop
         local btop = Terminal:new({
             cmd = "btop",
             dir = "~/",

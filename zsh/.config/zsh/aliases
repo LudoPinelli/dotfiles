@@ -7,7 +7,7 @@ alias -s {txt,md,MD,log,lua,js,rs,tex,py}=nvim
 
 alias xy="xclip -selection clipboard"
 alias xp="xclip -selection clipboard -o"
-alias py="pwd|xy"
+alias yp="pwd|xy && echo 'Current path copied'"
 alias pp="xp"
 
 alias ls="exa -F --git-ignore --group-directories-first --icons"
@@ -35,12 +35,13 @@ alias weather="clear && curl wttr.in"
 
 alias df="df --human-readable"
 
+alias du="clear && dust"
+
 alias lg="lazygit"
 
 alias gt="git status"
 alias gb="git branch"
 alias gw="git switch"
-alias gb="git branch"
 
 alias neoc="cd ~/.dotfiles/neovim/.config/nvim"
 

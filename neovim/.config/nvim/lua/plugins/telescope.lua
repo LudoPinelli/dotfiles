@@ -1,7 +1,7 @@
 return {
-    { 'nvim-telescope/telescope.nvim',            branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make',   cond = vim.fn.executable 'make' == 1 },
-    "nvim-telescope/telescope-file-browser.nvim",
+    { 'nvim-telescope/telescope.nvim',              branch = '0.1.x',                                                           dependencies = { 'nvim-lua/plenary.nvim' } },
+    { 'nvim-telescope/telescope-fzf-native.nvim',   build = 'make',                                                             cond = vim.fn.executable 'make' == 1 },
+    { "nvim-telescope/telescope-file-browser.nvim", dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' } },
     cmd = "Telescope",
     config = function()
         local actions = require("telescope.actions")
@@ -65,6 +65,8 @@ return {
 
                     n = {
                         ["<Esc>"] = actions.close,
+                        ["q"] = actions.close,
+
                         ["<CR>"] = actions.select_default,
                         ["<C-x>"] = actions.select_horizontal,
                         ["<C-v>"] = actions.select_vertical,
@@ -76,6 +78,7 @@ return {
 
                         ["j"] = actions.move_selection_next,
                         ["k"] = actions.move_selection_previous,
+                        ["l"] = actions.select_default,
                         ["H"] = actions.move_to_top,
                         ["M"] = actions.move_to_middle,
                         ["L"] = actions.move_to_bottom,
@@ -100,7 +103,22 @@ return {
                 },
             },
             extensions = {
-                -- Extension conf
+                file_browser = {
+                    prompt_title = "פּ  Browser",
+                    initial_mode = "normal",
+                    sorting_strategy = "ascending",
+                    grouped = true,
+                    hidden = true,
+                    respect_gitignore = true,
+                    hide_paren_dir = true,
+                    hijack_netrw = true,
+                    mappings = {
+                        ['n'] = {
+                            ['q'] = actions.close,
+                            ['l'] = actions.select_default,
+                        }
+                    }
+                }
             },
             pcall(require('telescope').load_extension, 'fzf'),
             pcall(require('telescope').load_extension, 'file_browser'),

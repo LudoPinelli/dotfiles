@@ -16,4 +16,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local ok, lazy = pcall(require, "lazy")
+if not ok then
+  print("lazy not installed")
+  return
+end
+
 require('lazy').setup('plugins')

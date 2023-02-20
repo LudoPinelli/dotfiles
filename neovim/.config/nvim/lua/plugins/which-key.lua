@@ -114,19 +114,37 @@ return {
             })
         end
 
+        function Explorer()
+            require("telescope").extensions.file_browser.file_browser({
+                prompt_title = "פּ  Explorer",
+                initial_mode = "normal",
+                sorting_strategy = "ascending",
+                grouped = true,
+                hidden = true,
+                respect_gitignore = true,
+                hide_paren_dir = true,
+                mappings = {
+                    n = {
+                        ["q"] = require("telescope.actions").close,
+                    }
+                }
+            })
+        end
+
         local wk = require("which-key")
 
         wk.register({
             ["<Leader>"] = {
                 ["?"] = { "<Cmd>Telescope oldfiles<CR>", "  Open Recent File" },
                 ["c"] = { "<Cmd>bdelete<CR>", "  Close Buffer" },
-                ["e"] = { "<Cmd>Neotree toggle<CR>", "פּ  Explorer" },
+                ["e"] = { "<Cmd>lua Explorer()<CR>", "פּ  Explorer" },
                 ["h"] = { "<Cmd>nohlsearch<CR>", "  No Highlight" },
                 ["z"] = { "<Cmd>set spell!<CR>", "暈 Toggle Spellcheck" },
                 ["W"] = { "<Cmd>cd %:p:h<CR>:pwd<CR>", "  Set Working Directory" },
                 ["C"] = { "<Cmd>lua Nvim_config()<CR>", "  Config Files" },
                 ["n"] = { "<Cmd>Telescope neoclip initial_mode=normal<CR>", "  Clipboard" },
                 ["i"] = { "`.", "  Back to last insert" },
+                ["m"] = { "<Cmd>MindOpenMain<CR>", " Open Mind" },
                 ["p"] = { "<Cmd>BufferLinePick<CR>", "  Pick a buffer" },
             },
         })

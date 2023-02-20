@@ -32,7 +32,7 @@ Just a repo of my dotfiles.
 ### Dealing With Files/Buffers
 
 - **Finding files**: [Telescope](https://github.com/nvim-telescope/telescope.nvim) - _The_ Swiss army knife to find anything I want. Not only files, but also help, diagnostics, commands, key maps and a lot more, and I can even easily write my own pickers. Very intuitive, highly configurable, a _must have_.
-- **Browsing files**: [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua) 
+- **Browsing files**: [telescope-file-browser](https://github.com/nvim-telescope/telescope-file-browser.nvim) 
 
 ### Writing/Editing
 
