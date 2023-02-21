@@ -16,10 +16,18 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local ok, lazy = pcall(require, "lazy")
-if not ok then
-  print("lazy not installed")
-  return
-end
-
-require('lazy').setup('plugins')
+require('lazy').setup({
+  spec = {
+    import = 'plugins',
+  },
+  opts = {
+    dev = {
+      path = "~/dev/neovim",
+      patterns = { "LudoPinelli" },
+      fallback = false,
+    },
+    checker = {
+      enabled = true,
+    }
+  }
+})
