@@ -30,9 +30,6 @@ antidote load
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
-# vivid
-export LS_COLORS="$(vivid generate catppuccin-macchiato)"
-
 # Zoxide
 _z_cd() {
     cd "$@" || return "$?"
