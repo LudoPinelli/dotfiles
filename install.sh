@@ -1,6 +1,8 @@
 #!/bin/bash
 
-sudo install zsh
+sudo add-apt-repository ppa:fish-shell/release-3
+sudo apt update && sudo apt upgrade
+sudo apt install fish
 sudo apt install stow plocate
 
 # PROGRAMMATION
@@ -64,9 +66,6 @@ curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/ke
 echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
 sudo apt update && sudo apt install glow
 
-# Configure zsh
-command -v zsh | sudo tee -a /etc/shells
-sudo chsh -s $(which zsh) $USER
-# antidote (zsh plugin manager)
-git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
-
+# set fish as default shell
+command -v fish | sudo tee -a /etc/shells
+sudo chsh -s $(which fish) $USER
