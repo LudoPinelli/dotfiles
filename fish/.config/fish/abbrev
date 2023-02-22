@@ -43,8 +43,6 @@ abbr -a gw "git switch"
 
 abbr -a neoc "cd ~/.dotfiles/neovim/.config/nvim"
 
-abbr -a zrc "nvim ~/.config/zsh/.zshrc"
-
 abbr -a ze "zellij"
 
 abbr -a py "python3"
