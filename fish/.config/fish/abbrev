@@ -12,8 +12,8 @@ abbr -a ls "exa -F --group-directories-first --icons"
 abbr -a ll "exa -lhF --group-directories-first --git --icons"
 abbr -a la "exa -ahF --group-directories-first --icons"
 abbr -a lla "exa -lahF --group-directories-first --git --icons"
-abbr -a lt "exa -hT --level 3 --long --git --icons"
-abbr -a lta "exa -aT --ignore-glob='.git' --level 3 --long --git --icons"
+abbr -a lt "exa -hT --level=3 --long --git --icons"
+abbr -a lta "exa -aT --ignore-glob='.git' --level=3 --long --git --icons"
 
 abbr -a rm "rm -if"
 abbr -a mv "mv -iv"
@@ -55,4 +55,4 @@ function gi
   gibo dump $argv >> .gitignore
 end
 
-abbr -a cnc "cargo_cli_abbr -aup.sh"
+abbr -a cnc "cargo_cli_setup.sh"

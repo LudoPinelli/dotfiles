@@ -6,4 +6,6 @@ end
 fish_add_path ~/.cargo/bin/
 source ~/.config/fish/abbrev
 
+set fish_greeting
+
 starship init fish | source
