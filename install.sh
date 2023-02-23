@@ -76,3 +76,6 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 # fisher install PatrickF1/fzf.fish
 # fisher install jorgebucaran/autopair.fish
 # fisher install jethrokuan/z
+
+# update bat cache after clone dotfile repo:
+# bat cache --build
