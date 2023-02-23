@@ -40,16 +40,12 @@ cargo install --locked bat
 cargo install exa
 cargo install fd-find
 cargo install ripgrep
-cargo install zoxide --locked
 cargo install --locked zellij
 cargo install git-delta
 cargo install starship --locked
 cargo install du-dust
 cargo install grex
 cargo install procs
-cargo install --locked navi
-cargo install macchina
-cargo install vivid
 cargo install tealdeer
 # configure tealdeer
 tldr --seed-config
