@@ -4,16 +4,23 @@ layout {
             size "20%"
             plugin location="zellij:strider"
         }
+        /* pane { */
+        /*     size "80%" */
+        /*     pane { */
+        /*         size "80%" */
+        /*         focus true */
+        /*         name "Edit" */
+        /*     } */
+        /*     pane { */
+        /*         size "20%" */
+        /*         name "Shell" */
+        /*     } */
+        /* } */
         pane {
             size "80%"
             pane {
-                size "80%"
                 focus true
                 name "Edit"
-            }
-            pane {
-                size "20%"
-                name "Shell"
             }
         }
     }
