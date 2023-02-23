@@ -16,6 +16,7 @@ abbr -a lt "exa -hT --level=3 --long --git --icons"
 abbr -a lta "exa -aT --ignore-glob='.git' --level=3 --long --git --icons"
 
 abbr -a rm "rm -if"
+abbr -a rmd "rm -rfi"
 abbr -a mv "mv -iv"
 abbr -a cp "cp -riv"
 abbr -a mkdir "mkdir -vp"
