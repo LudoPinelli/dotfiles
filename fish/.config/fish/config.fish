@@ -7,6 +7,7 @@ end
 fish_add_path ~/.cargo/bin/
 fish_add_path ~/scripts/
 fish_add_path ~/.local/bin/
+fish_add_path ~/.nvm/versions/node/v19.7.0/bin/
 
 # Abbreviations
 #                                 ╭─────────╮
