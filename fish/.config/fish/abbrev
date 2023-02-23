@@ -48,6 +48,8 @@ abbr -a ze "zellij"
 
 abbr -a py "python3"
 
+abbr -a neo "clear && neofetch"
+
 function gi
   # Write .gitignore file for the given language
   # example: ign Rust

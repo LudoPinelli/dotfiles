@@ -3,7 +3,7 @@
 sudo add-apt-repository ppa:fish-shell/release-3
 sudo apt update && sudo apt upgrade
 sudo apt install fish
-sudo apt install stow plocate
+sudo apt install stow plocate hyperfine
 
 # PROGRAMMATION
 sudo apt install build-essential pkg-config libssl-dev shellcheck
