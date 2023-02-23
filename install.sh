@@ -65,3 +65,11 @@ sudo apt update && sudo apt install glow
 # set fish as default shell
 command -v fish | sudo tee -a /etc/shells
 sudo chsh -s $(which fish) $USER
+
+# install plugin manager for fish
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+# install fish plugins
+# fisher install FabioAntunes/fish-nvm edc/bass
+# fisher install PatrickF1/fzf.fish
+# fisher install jorgebucaran/autopair.fish
+# fisher install jethrokuan/z
