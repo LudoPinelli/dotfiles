@@ -9,7 +9,64 @@ fish_add_path ~/scripts/
 fish_add_path ~/.local/bin/
 
 # Abbreviations
-source ~/.config/fish/abbrev
+#                                 ╭─────────╮
+#                                 │ aliases │
+#                                 ╰─────────╯
+
+abbr -a xy "xclip -selection clipboard"
+abbr -a xp "xclip -selection clipboard -o"
+abbr -a yp "pwd|xy && echo 'Current path copied'"
+abbr -a pp "xp"
+
+abbr -a ls "exa -F --group-directories-first --icons"
+abbr -a ll "exa -lhF --group-directories-first --git --icons"
+abbr -a la "exa -ahF --group-directories-first --icons"
+abbr -a lla "exa -lahF --group-directories-first --git --icons"
+abbr -a lt "exa -hT --level=3 --long --git --icons"
+abbr -a lta "exa -aT --ignore-glob='.git' --level=3 --long --git --icons"
+
+abbr -a rm "rm -if"
+abbr -a rmd "rm -rfi"
+abbr -a mv "mv -iv"
+abbr -a cp "cp -riv"
+abbr -a mkdir "mkdir -vp"
+
+abbr -a c "clear"
+abbr -a s "cd .."
+
+abbr -a cat "bat"
+
+abbr -a v "nvim"
+abbr -a vt "nvim +terminal"
+abbr -a vdev "nvim --cmd 'set rtp+ .'"
+abbr -a r "ranger"
+abbr -a weather "clear && curl wttr.in"
+
+abbr -a df "df --human-readable"
+
+abbr -a du "clear && dust"
+
+abbr -a lg "lazygit"
+
+abbr -a gt "git status"
+abbr -a gb "git branch"
+abbr -a gw "git switch"
+
+abbr -a neoc "cd ~/.dotfiles/neovim/.config/nvim"
+
+abbr -a ze "zellij"
+
+abbr -a py "python3"
+
+abbr -a neo "clear && neofetch"
+
+function gi
+  # Write .gitignore file for the given language
+  # example: ign Rust
+  gibo dump $argv >> .gitignore
+end
+
+abbr -a cnc "cargo_cli_setup.sh"
 
 # Remove greetings
 set fish_greeting 
