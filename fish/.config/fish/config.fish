@@ -6,12 +6,26 @@ end
 # Path
 fish_add_path ~/.cargo/bin/
 fish_add_path ~/scripts/
+fish_add_path ~/.local/bin/
 
 # Abbreviations
 source ~/.config/fish/abbrev
 
 # Remove greetings
 set fish_greeting 
+
+# Environement
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx XDG_DATA_HOME "$XDG_CONFIG_HOME/local/share"
+set -gx XDG_CACHE_HOME "$XDG_CONFIG_HOME/cache"
+
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+set -gx PAGER bat
+set -gx MANPAGER "nvim +Man!"
+
+# set -gx TERMINAL kitty
+set -gx TERM "xterm-256color"
 
 # Vi mode
 function my_vi_bindings

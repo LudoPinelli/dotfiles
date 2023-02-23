@@ -11,6 +11,7 @@
 [delta]
   line-numbers = true
   navigate = true
+  syntax-theme = Catppuccin-macchiato
 
 [merge]
   conflictstyle = diff3
