@@ -1,8 +1,3 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-    eval (zellij setup --generate-auto-start fish | string collect)
-end
-
 # Path
 fish_add_path ~/.cargo/bin/
 fish_add_path ~/scripts/
@@ -10,10 +5,6 @@ fish_add_path ~/.local/bin/
 fish_add_path ~/.nvm/versions/node/v19.7.0/bin/
 
 # Abbreviations
-#                                 ╭─────────╮
-#                                 │ aliases │
-#                                 ╰─────────╯
-
 abbr -a xy "xclip -selection clipboard"
 abbr -a xp "xclip -selection clipboard -o"
 abbr -a yp "pwd|xy && echo 'Current path copied'"
@@ -55,7 +46,7 @@ abbr -a gw "git switch"
 
 abbr -a neoc "cd ~/.dotfiles/neovim/.config/nvim"
 
-abbr -a ze "zellij"
+abbr -a ze "zellij -l compact"
 
 abbr -a py "python3"
 
@@ -86,11 +77,11 @@ set -gx MANPAGER "nvim +Man!"
 set -gx TERM "xterm-256color"
 
 # Vi mode
-function my_vi_bindings
-  fish_vi_key_bindings
-  bind -M insert -m default jk backward-char force-repaint
-end
-set -g fish_key_bindings my_vi_bindings
+# function my_vi_bindings
+#   fish_vi_key_bindings
+#   bind -M insert -m default jk backward-char force-repaint
+# end
+# set -g fish_key_bindings my_vi_bindings
 
 # Start Starship prompt
 starship init fish | source

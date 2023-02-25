@@ -5,8 +5,14 @@ sudo apt update && sudo apt upgrade
 sudo apt install fish
 sudo apt install stow plocate hyperfine
 
+# install WezTerm
+mkdir Installs && cd Installs/
+curl -LO https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Ubuntu22.04.deb
+sudo apt install -y ./wezterm-nightly.Ubuntu22.04.deb
+rm -if wezterm-nightly.Ubuntu22.04.deb
+
 # PROGRAMMATION
-sudo apt install build-essential pkg-config libssl-dev shellcheck
+sudo apt install build-essential pkg-config libssl-dev shellcheck meson ninja-build
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install cargo-update
