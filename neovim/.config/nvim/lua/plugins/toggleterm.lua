@@ -41,9 +41,9 @@ return {
 
         local Terminal = require("toggleterm.terminal").Terminal
 
-        -- LazyGit
-        local lazygit = Terminal:new({
-            cmd = "lazygit",
+        -- gitui
+        local gitui = Terminal:new({
+            cmd = "gitui -t macchiato",
             dir = "git_dir",
             direction = "float",
             float_opts = {
@@ -54,8 +54,8 @@ return {
                 vim.cmd("startinsert!")
             end,
         })
-        function Lazygit_toggle()
-            lazygit:toggle()
+        function Gitui_toggle()
+            gitui:toggle()
         end
 
         -- Open python shell (bpython)
@@ -125,7 +125,7 @@ return {
                     name = "   Terminal",
 
                     f = { "<Cmd>ToggleTerm direction=float<CR>", "  Float" },
-                    g = { "<Cmd>lua Lazygit_toggle()<CR>", "  LazyGit" },
+                    g = { "<Cmd>lua Gitui_toggle()<CR>", "  Gitui" },
                     h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", "  Horizontal" },
                     n = { "<Cmd>lua Node_toggle()<CR>", "  Node.js" },
                     p = { "<Cmd>lua Python_toggle()<CR>", "   Python" },
