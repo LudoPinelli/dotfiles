@@ -74,9 +74,6 @@ set -gx VISUAL nvim
 set -gx PAGER bat
 set -gx MANPAGER "nvim +Man!"
 
-# set -gx TERMINAL kitty
-set -gx TERM "xterm-256color"
-
 # Vi mode
 # function my_vi_bindings
 #   fish_vi_key_bindings
@@ -85,4 +82,8 @@ set -gx TERM "xterm-256color"
 # set -g fish_key_bindings my_vi_bindings
 
 # Start Starship prompt
+function starship_transient_rprompt_func
+  starship module time
+end
 starship init fish | source
+enable_transience
