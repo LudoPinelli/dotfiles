@@ -39,7 +39,7 @@ alias df="df --human-readable"
 
 abbr -a du "clear && dust"
 
-alias gu="gitui -t macchiato.ron"
+alias gu="gitui"
 
 alias gt "git status"
 alias gb "git branch"

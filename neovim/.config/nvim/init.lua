@@ -20,14 +20,12 @@ require('lazy').setup({
   spec = {
     import = 'plugins',
   },
-  opts = {
-    dev = {
-      path = "~/dev/neovim",
-      patterns = { "LudoPinelli" },
-      fallback = false,
-    },
-    checker = {
-      enabled = true,
-    }
+  dev = {
+    path = "~/dev/neovim",
+    patterns = { "LudoPinelli" },
+    fallback = false,
+  },
+  checker = {
+    enabled = false,
   }
 })

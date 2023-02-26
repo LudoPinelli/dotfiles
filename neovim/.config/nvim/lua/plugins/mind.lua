@@ -1,6 +1,11 @@
+-- return {
+--     'phaazon/mind.nvim',
+--     branch = 'v2.2',
+--     dependencies = { 'nvim-lua/plenary.nvim' },
+--     config = true,
+-- }
 return {
-    'phaazon/mind.nvim',
-    branch = 'v2.2',
+    'LudoPinelli/mind.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = true,
 }
