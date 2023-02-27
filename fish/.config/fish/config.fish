@@ -47,7 +47,7 @@ alias gw "git switch"
 
 abbr -a neoc "cd ~/dotfiles/neovim/.config/nvim"
 
-alias ze "zellij -l compact"
+alias ze "zellij"
 
 abbr -a py "python3"
 
