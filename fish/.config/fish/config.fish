@@ -28,7 +28,7 @@ alias s "cd .."
 
 abbr -a cat "bat"
 
-abbr -a v "nvim"
+abbr -a vi "nvim"
 abbr -a vt "nvim +terminal"
 abbr -a vdev "nvim --cmd 'set rtp+ .'"
 abbr -a r "ranger"
@@ -39,7 +39,7 @@ alias df="df --human-readable"
 
 abbr -a du "clear && dust"
 
-alias gu="gitui"
+alias lg="lazygit"
 
 alias gt "git status"
 alias gb "git branch"

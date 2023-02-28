@@ -1,3 +1,0 @@
-return {
-    "aspeddro/gitui.nvim",
-}

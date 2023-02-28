@@ -21,7 +21,7 @@ return {
                     b = { "<Cmd>Telescope git_branches initial_mode=normal<CR>", "  Branches" },
                     B = { "<Cmd>Telescope git_bcommits initial_mode=normal<CR>", "  Commit log (current buffer)" },
                     c = { "<Cmd>Telescope git_commits initial_mode=normal<CR>", "  Commit log" },
-                    g = { "<Cmd>Gitui<CR>", "  Gitui" },
+                    g = { "<Cmd>lua Lazygit_toggle()<CR>", "  Lazygit" },
                     f = { "<Cmd>Telescope git_files<CR>", "Git files" },
                     j = { "<Cmd>lua require('gitsigns').next_hunk()<CR>", "Next Hunk" },
                     k = { "<Cmd>lua require('gitsigns').prev_hunk()<CR>", "Prev Hunk" },
