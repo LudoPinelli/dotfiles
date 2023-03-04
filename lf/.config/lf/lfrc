@@ -3,6 +3,11 @@ set hidden true
 set ignorecase true
 set icons true
 
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
+
 cmd mkdir ${{
         printf "Directory name: "
         read ans
