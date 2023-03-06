@@ -46,6 +46,7 @@ alias lg="lazygit"
 alias gt "git status"
 alias gb "git branch"
 alias gw "git switch"
+alias ga "git add --patch"
 
 abbr -a neoc "cd ~/dotfiles/neovim/.config/nvim"
 
