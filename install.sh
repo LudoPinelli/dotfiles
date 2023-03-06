@@ -32,7 +32,6 @@ nvm install node
 cargo install shellharden
 cargo install stylua
 cargo install taplo-cli --locked
-cargo install gitui
 npm install --save-dev --save-exact prettier
 
 # CLI Apps
@@ -46,6 +45,7 @@ cargo install starship --locked
 cargo install du-dust
 cargo install grex
 cargo install procs
+cargo install zoxide
 cargo install tealdeer
 # configure tealdeer
 tldr --seed-config
@@ -64,6 +64,8 @@ sudo apt update && sudo apt install glow
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+# Image viewer
+sudo apt install imv
 
 # set fish as default shell
 command -v fish | sudo tee -a /etc/shells
