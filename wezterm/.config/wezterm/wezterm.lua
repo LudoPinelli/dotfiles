@@ -7,4 +7,5 @@ return {
   enable_tab_bar = false,
   window_decorations = "NONE",
   window_background_opacity = 0.85,
+  -- default_prog = { "zellij" },
 }
