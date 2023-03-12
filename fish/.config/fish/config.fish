@@ -1,3 +1,16 @@
+# Remove greetings
+set fish_greeting 
+
+# Environement
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx XDG_DATA_HOME "$XDG_CONFIG_HOME/local/share"
+set -gx XDG_CACHE_HOME "$XDG_CONFIG_HOME/cache"
+
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+set -gx PAGER bat
+set -gx MANPAGER "nvim +Man!"
+
 # Path
 fish_add_path ~/.cargo/bin/
 fish_add_path ~/scripts/
@@ -64,19 +77,6 @@ end
 
 abbr -a cnc "cargo_cli_setup.sh"
 
-# Remove greetings
-set fish_greeting 
-
-# Environement
-set -gx XDG_CONFIG_HOME "$HOME/.config"
-set -gx XDG_DATA_HOME "$XDG_CONFIG_HOME/local/share"
-set -gx XDG_CACHE_HOME "$XDG_CONFIG_HOME/cache"
-
-set -gx EDITOR nvim
-set -gx VISUAL nvim
-set -gx PAGER bat
-set -gx MANPAGER "nvim +Man!"
-
 # Vi mode
 # function my_vi_bindings
 #   fish_vi_key_bindings
@@ -89,5 +89,7 @@ function starship_transient_rprompt_func
   starship module time
 end
 starship init fish | source
+
+# Start zoxide
 enable_transience
 zoxide init fish | source
