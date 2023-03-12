@@ -82,6 +82,9 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 # update bat cache after clone dotfile repo:
 # bat cache --build
 
+# install broot
+cargo install --locked broot
+
 # Install lf
 curl -L https://github.com/gokcehan/lf/releases/latest/download/lf-linux-amd64.tar.gz | tar xzC ~/.local/bin
 # Install ctpv
