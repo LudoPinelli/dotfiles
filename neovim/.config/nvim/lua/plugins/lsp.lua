@@ -122,6 +122,7 @@ return {
                     l = { "<Cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
                     r = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "凜  Rename" },
                     s = { "<Cmd>Telescope lsp_dynamic_workspace_symbols initial_mode=normal<CR>", "  Workspace Symbols" },
+                    S = { "<Cmd>SymbolsOutline<CR>", "  Symbols Outline" },
                     t = { "<Cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
                 },
             }

@@ -144,7 +144,7 @@ return {
                 ["C"] = { "<Cmd>lua Nvim_config()<CR>", "  Config Files" },
                 ["n"] = { "<Cmd>Telescope neoclip initial_mode=normal<CR>", "  Clipboard" },
                 ["i"] = { "`.", "  Back to last insert" },
-                ["m"] = { "<Cmd>MindToggleMain<CR>", " Mind" },
+                ["m"] = { "<Cmd>MindToggleMain<CR>", "  Mind" },
                 ["p"] = { "<Cmd>BufferLinePick<CR>", "  Pick a buffer" },
             },
         })
