@@ -15,13 +15,13 @@ return {
             hide_numbers = true, -- hide the number column in toggleterm buffers
             shade_filetypes = {},
             shade_terminals = true,
-            shading_factor = "1", -- the degree by which to darken to terminal colour
+            shading_factor = "1",     -- the degree by which to darken to terminal colour
             start_in_insert = true,
-            insert_mappings = true, -- whether or not the open mapping applies in insert mode
+            insert_mappings = true,   -- whether or not the open mapping applies in insert mode
             persist_size = true,
             direction = "horizontal", -- 'vertical' | 'horizontal' | 'window' | 'float',
-            close_on_exit = true, -- close the terminal window when the process exits
-            shell = vim.o.shell, -- change the default shell
+            close_on_exit = true,     -- close the terminal window when the process exits
+            shell = vim.o.shell,      -- change the default shell
             -- This field is only relevant if direction is set to 'float'
             float_opts = {
                 -- The border key is *almost* the same as 'nvim_win_open'
@@ -103,27 +103,12 @@ return {
             btop:toggle()
         end
 
-        -- Launch cargo watch
-        local cargo_watch = Terminal:new({
-            cmd = "cargo watch -q -c -x 'run -q'",
-            dir = "git_dir",
-            direction = "horizontal",
-            close_on_exit = true,
-            on_open = function()
-                vim.cmd(":wincmd k")
-            end,
-        })
-        function Cargo_watch_toggle()
-            cargo_watch:toggle()
-        end
-
         local wk = require("which-key")
 
         wk.register({
             ["<Leader>"] = {
                 t = {
                     name = "   Terminal",
-
                     f = { "<Cmd>ToggleTerm direction=float<CR>", "  Float" },
                     g = { "<Cmd>lua Lazygit_toggle()<CR>", "  Lazygit" },
                     h = { "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", "  Horizontal" },
@@ -131,7 +116,6 @@ return {
                     p = { "<Cmd>lua Python_toggle()<CR>", "   Python" },
                     t = { "<Cmd>lua Btop_toggle()<CR>", "   btop" },
                     v = { "<Cmd>ToggleTerm size=50 direction=vertical<CR>", "   Vertical" },
-                    w = { "<Cmd>lua Cargo_watch_toggle()<CR>", "   Cargo Watch" },
                 },
             }
         })

@@ -11,6 +11,8 @@ set -gx VISUAL nvim
 set -gx PAGER bat
 set -gx MANPAGER "nvim +Man!"
 
+set -gx CARGO_REGISTRIES_CRATES_IO_PROTOCOL sparse
+
 # Path
 fish_add_path ~/.cargo/bin/
 fish_add_path ~/scripts/
@@ -75,7 +77,10 @@ function gi
   gibo dump $argv >> .gitignore
 end
 
+# Rust
+alias cwatch "cargo watch -q -c -x 'run -q'"
 abbr -a cnc "cargo_cli_setup.sh"
+
 alias zup "zellij --layout ~/.config/zellij/layouts/up.kdl"
 function cb
   cd ~/dev/neovim/comment-box.nvim/

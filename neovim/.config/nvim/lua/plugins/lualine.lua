@@ -64,7 +64,7 @@ return {
                 lualine_a = { mode },
                 lualine_b = { "getcwd", branch },
                 lualine_c = { filename },
-                lualine_x = { diff, diagnostics },
+                lualine_x = { "aerial", diff, diagnostics },
                 lualine_y = { filetype },
                 lualine_z = { "progress", location },
             },

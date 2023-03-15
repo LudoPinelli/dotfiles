@@ -10,6 +10,9 @@ return {
 
         -- Additional lua configuration, makes nvim stuff amazing
         'folke/neodev.nvim',
+
+        -- Rust
+        'simrat39/rust-tools.nvim',
     },
     config = function()
         -- LSP settings.
@@ -67,6 +70,8 @@ return {
             -- gopls = {},
             -- pyright = {},
             rust_analyzer = {},
+            taplo = {},
+            pylsp = {},
             -- tsserver = {},
 
             lua_ls = {
@@ -113,7 +118,6 @@ return {
             ["<Leader>"] = {
                 l = {
                     name = "   LSP",
-
                     a = { "<Cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
                     d = { "<Cmd>lua vim.diagnostic.open_float()<CR>", "Diagnostics in float window" },
                     D = { "<Cmd>Telescope diagnostics<CR>", "Diagnostics in Telescope" },
@@ -122,7 +126,7 @@ return {
                     l = { "<Cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
                     r = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "凜  Rename" },
                     s = { "<Cmd>Telescope lsp_dynamic_workspace_symbols initial_mode=normal<CR>", "  Workspace Symbols" },
-                    S = { "<Cmd>SymbolsOutline<CR>", "  Symbols Outline" },
+                    S = { "<Cmd>AerialToggle!<CR>", "  Aerial" },
                     t = { "<Cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
                 },
             }
