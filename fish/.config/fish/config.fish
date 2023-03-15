@@ -76,6 +76,11 @@ function gi
 end
 
 abbr -a cnc "cargo_cli_setup.sh"
+alias zup "zellij --layout ~/.config/zellij/layouts/up.kdl"
+function cb
+  cd ~/dev/neovim/comment-box.nvim/
+  zellij --layout ~/.config/zellij/layouts/comment-box.kdl
+end
 
 # Vi mode
 # function my_vi_bindings
