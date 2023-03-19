@@ -71,7 +71,7 @@ show_selection_mark: true
 # and set it to false or true if you notice the colors in
 # previewed images are too off.
 #
-# true_colors: false
+true_colors: true
 
 ###############################################################
 # Icons
@@ -79,7 +79,7 @@ show_selection_mark: true
 # (see https://dystroy.org/broot/icons for installation and
 # troubleshooting)
 #
-icon_theme: vscode
+# icon_theme: vscode
 
 ###############################################################
 # Special paths
