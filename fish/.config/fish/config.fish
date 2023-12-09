@@ -45,12 +45,11 @@ alias s "cd .."
 
 abbr -a cat "bat"
 
-abbr -a vi "nvim"
+abbr -a v "nvim"
 abbr -a vt "nvim +terminal"
 abbr -a vdev "nvim --cmd 'set rtp+ .'"
 abbr -a r "ranger"
 abbr -a weather "clear && curl wttr.in"
-abbr -a mind "nvim +MindOpenMain"
 
 alias df="df --human-readable"
 
@@ -65,7 +64,7 @@ alias ga "git add --patch"
 
 abbr -a neoc "cd ~/dotfiles/neovim/.config/nvim"
 
-alias ze "zellij"
+alias zel "zellij"
 
 abbr -a py "python3"
 
@@ -81,11 +80,8 @@ end
 alias cwatch "cargo watch -q -c -x 'run -q'"
 abbr -a cnc "cargo_cli_setup.sh"
 
-alias zup "zellij --layout ~/.config/zellij/layouts/up.kdl"
-function cb
-  cd ~/dev/neovim/comment-box.nvim/
-  zellij --layout ~/.config/zellij/layouts/comment-box.kdl
-end
+alias zup "zellij run -d right -- up"
+alias cb "zellij edit ~/dev/neovim/comment-box.nvim/lua/comment-box/init.lua"
 
 # Vi mode
 # function my_vi_bindings
@@ -103,3 +99,5 @@ starship init fish | source
 # Start zoxide
 enable_transience
 zoxide init fish | source
+
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/ludo/.ghcup/bin $PATH # ghcup-env
