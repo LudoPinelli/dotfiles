@@ -6,22 +6,22 @@ return {
         vim.o.timeoutlen = 300
         require("which-key").setup({
             plugins = {
-                marks = true, -- shows a list of your marks on ' and `
-                registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+                marks = true,         -- shows a list of your marks on ' and `
+                registers = true,     -- shows your registers on " in NORMAL or <C-r> in INSERT mode
                 spelling = {
-                    enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+                    enabled = true,   -- enabling this will show WhichKey when pressing z= to select spelling suggestions
                     suggestions = 20, -- how many suggestions should be shown in the list?
                 },
                 -- the presets plugin, adds help for a bunch of default keybindings in Neovim
                 -- No actual key bindings are created
                 presets = {
-                    operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
-                    motions = false, -- adds help for motions
+                    operators = false,    -- adds help for operators like d, y, ... and registers them for motion / text object completion
+                    motions = false,      -- adds help for motions
                     text_objects = false, -- help for text objects triggered after entering an operator
-                    windows = true, -- default bindings on <c-w>
-                    nav = true, -- misc bindings to work with windows
-                    z = true, -- bindings for folds, spelling and others prefixed with z
-                    g = true, -- bindings for prefixed with g
+                    windows = true,       -- default bindings on <c-w>
+                    nav = true,           -- misc bindings to work with windows
+                    z = true,             -- bindings for folds, spelling and others prefixed with z
+                    g = true,             -- bindings for prefixed with g
                 },
             },
             -- add operators that will trigger motion and text object completion
@@ -41,25 +41,25 @@ return {
             },
             popup_mappings = {
                 scroll_down = "<C-d>", -- binding to scroll down inside the popup
-                scroll_up = "<C-u>", -- binding to scroll up inside the popup
+                scroll_up = "<C-u>",   -- binding to scroll up inside the popup
             },
             window = {
-                border = "single", -- none, single, double, shadow
-                position = "bottom", -- bottom, top
-                margin = { 1, 1, 1, 1 }, -- extra window margin [top, right, bottom, left]
+                border = "single",        -- none, single, double, shadow
+                position = "bottom",      -- bottom, top
+                margin = { 1, 1, 1, 1 },  -- extra window margin [top, right, bottom, left]
                 padding = { 1, 1, 1, 1 }, -- extra window padding [top, right, bottom, left]
                 winblend = 15,
             },
             layout = {
-                height = { min = 4, max = 25 }, -- min and max height of the columns
-                width = { min = 20, max = 50 }, -- min and max width of the columns
-                spacing = 3, -- spacing between columns
-                align = "center", -- align columns left, center or right
+                height = { min = 4, max = 25 },                                           -- min and max height of the columns
+                width = { min = 20, max = 50 },                                           -- min and max width of the columns
+                spacing = 3,                                                              -- spacing between columns
+                align = "center",                                                         -- align columns left, center or right
             },
-            ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
+            ignore_missing = true,                                                        -- enable this to hide mappings for which you didn't specify a label
             hidden = { "<Silent>", "<Cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-            show_help = true, -- show help message on the command line when the popup is visible
-            triggers = "auto", -- automatically setup triggers
+            show_help = true,                                                             -- show help message on the command line when the popup is visible
+            triggers = "auto",                                                            -- automatically setup triggers
             -- triggers = {"<Leader>"} -- or specify a list manually
             triggers_blacklist = {
                 -- list of mode / prefixes that should never be hooked by WhichKey
@@ -136,15 +136,14 @@ return {
         wk.register({
             ["<Leader>"] = {
                 ["?"] = { "<Cmd>Telescope oldfiles<CR>", "  Open Recent File" },
+                ["e"] = { "<Cmd>NvimTreeToggle<CR>", "פּ  Explorer" },
                 ["c"] = { "<Cmd>bdelete<CR>", "  Close Buffer" },
-                ["e"] = { "<Cmd>lua Explorer()<CR>", "פּ  Explorer" },
                 ["h"] = { "<Cmd>nohlsearch<CR>", "  No Highlight" },
                 ["z"] = { "<Cmd>set spell!<CR>", "暈 Toggle Spellcheck" },
                 ["W"] = { "<Cmd>cd %:p:h<CR>:pwd<CR>", "  Set Working Directory" },
                 ["C"] = { "<Cmd>lua Nvim_config()<CR>", "  Config Files" },
                 ["n"] = { "<Cmd>Telescope neoclip initial_mode=normal<CR>", "  Clipboard" },
                 ["i"] = { "`.", "  Back to last insert" },
-                ["m"] = { "<Cmd>MindToggleMain<CR>", "  Mind" },
                 ["p"] = { "<Cmd>BufferLinePick<CR>", "  Pick a buffer" },
             },
         })
@@ -170,10 +169,10 @@ return {
                         w = { "<Cmd>Telescope grep_string<CR>", "Ref. of word under cursor" },
                         ["/"] = { function()
                             require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes')
-                            .get_dropdown {
-                                winblend = 10,
-                                previewer = false,
-                            })
+                                .get_dropdown {
+                                    winblend = 10,
+                                    previewer = false,
+                                })
                         end, "Fuzzily search in current buffer" },
                     },
                 },
@@ -204,9 +203,6 @@ return {
         local map = vim.keymap.set
         local opts = { noremap = true, silent = true }
 
-        -- Barbar
-        -- map("n", "<Tab>", ":BufferNext<CR>", opts)
-        -- map("n", "<S-Tab>", ":BufferPrevious<CR>", opts)
         -- BufferLine
         map("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
         map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts)

@@ -1,5 +1,5 @@
 return {
     'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     config = true,
 }
