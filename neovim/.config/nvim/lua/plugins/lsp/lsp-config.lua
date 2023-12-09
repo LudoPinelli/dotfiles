@@ -1,12 +1,15 @@
 return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
-    dependecies = {
+    dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         { "antosha417/nvim-lsp-file-operations", config = true },
+        { "folke/neodev.nvim",                   opts = {} },
+        { "j-hui/fidget.nvim",                   opts = {} },
     },
 
     config = function()
+        require("neodev").setup({})
         local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -48,14 +51,6 @@ return {
         end
 
         local capabilities = cmp_nvim_lsp.default_capabilities()
-        local servers = { "rust_analyzer", "hls", "pyright" }
-
-        for _, lsp in ipairs(servers) do
-            lspconfig[lsp].setup {
-                capabilities = capabilities,
-                on_attach = on_attach,
-            }
-        end
         lspconfig["lua_ls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
@@ -73,8 +68,7 @@ return {
                     },
                     workspace = {
                         library = {
-                            [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                            [vim.fn.stdpath("config") .. "/lua"] = true,
+                            vim.env.VIMRUNTIME
                         },
                     },
                     hint = {
@@ -83,6 +77,15 @@ return {
                 },
             },
         })
+
+        local servers = { "rust_analyzer", "hls", "pyright" }
+
+        for _, lsp in ipairs(servers) do
+            lspconfig[lsp].setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
+            }
+        end
 
         local wk = require("which-key")
 

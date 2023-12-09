@@ -1,6 +1,10 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
+-- Mapleader
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 -- jk to normal mode
 map('i', 'jk', '<Esc>', opts)
 
