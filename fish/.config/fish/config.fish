@@ -18,6 +18,7 @@ fish_add_path ~/.cargo/bin/
 fish_add_path ~/scripts/
 fish_add_path ~/.local/bin/
 fish_add_path ~/.nvm/versions/node/v19.7.0/bin/
+fish_add_path ~/.local/zig/
 
 # Abbreviations & aliases
 alias xy "xclip -selection clipboard"
@@ -99,5 +100,6 @@ starship init fish | source
 # Start zoxide
 enable_transience
 zoxide init fish | source
+alias cd "z"
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/ludo/.ghcup/bin $PATH # ghcup-env
