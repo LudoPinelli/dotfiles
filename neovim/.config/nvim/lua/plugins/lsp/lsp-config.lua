@@ -6,18 +6,28 @@ return {
         { "antosha417/nvim-lsp-file-operations", config = true },
         { "folke/neodev.nvim",                   opts = {} },
         { "j-hui/fidget.nvim",                   opts = {} },
+        {
+            "SmiteshP/nvim-navbuddy",
+            dependencies = {
+                "SmiteshP/nvim-navic",
+                "MunifTanjim/nui.nvim",
+            },
+            opts = { lsp = { auto_attach = true } }
+        }
     },
 
     config = function()
         require("neodev").setup({})
         local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
+        local navbuddy = require("nvim-navbuddy")
 
         local on_attach = function(_, bufnr)
             local nmap = function(keys, func, desc)
                 if desc then
                     desc = 'LSP: ' .. desc
                 end
+                navbuddy.attach(_, bufnr)
 
                 vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
             end
@@ -78,7 +88,7 @@ return {
             },
         })
 
-        local servers = { "rust_analyzer", "hls", "pyright" }
+        local servers = { "rust_analyzer", "hls", "pyright", "zls" }
 
         for _, lsp in ipairs(servers) do
             lspconfig[lsp].setup {
@@ -100,8 +110,9 @@ return {
                     i = { "<Cmd>LspInfo<CR>", "  Info" },
                     l = { "<Cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
                     r = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "凜  Rename" },
+                    R = { "<Cmd>Cargo run<CR>", "  Cargo run" },
                     s = { "<Cmd>Telescope lsp_dynamic_workspace_symbols initial_mode=normal<CR>", "  Workspace Symbols" },
-                    S = { "<Cmd>AerialToggle!<CR>", "  Aerial" },
+                    S = { "<Cmd>Navbuddy<CR>", "  Symbols Navigator" },
                     t = { "<Cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
                 },
             }
