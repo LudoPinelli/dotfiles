@@ -26,6 +26,7 @@ return {
                     j = { "<Cmd>lua require('gitsigns').next_hunk()<CR>", "Next Hunk" },
                     k = { "<Cmd>lua require('gitsigns').prev_hunk()<CR>", "Prev Hunk" },
                     l = { "<Cmd>lua require('gitsigns').blame_line{full=true}<CR>", "Blame line" },
+                    n = { "<Cmd>Neogit<CR>", "Neogit" },
                     o = { "<Cmd>Telescope git_status<CR>", "  Open changed file" },
                     p = { "<Cmd>lua require('gitsigns').preview_hunk()<CR>", "Preview Hunk" },
                     r = { "<Cmd>lua require('gitsigns').reset_hunk()<CR>", "Reset Hunk" },

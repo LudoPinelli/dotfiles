@@ -61,34 +61,7 @@ return {
         end
 
         local capabilities = cmp_nvim_lsp.default_capabilities()
-        lspconfig["lua_ls"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-            filetypes = { "lua" },
-            settings = {
-                lua = {
-                    runtime = {
-                        version = "LuaJIT",
-                    },
-                    completion = {
-                        callSnippet = "Replace",
-                    },
-                    diagnostics = {
-                        globals = { "vim" },
-                    },
-                    workspace = {
-                        library = {
-                            vim.env.VIMRUNTIME
-                        },
-                    },
-                    hint = {
-                        enable = true,
-                    },
-                },
-            },
-        })
-
-        local servers = { "rust_analyzer", "hls", "pyright", "zls" }
+        local servers = { "rust_analyzer", "hls", "pyright", "zls", "lua_ls" }
 
         for _, lsp in ipairs(servers) do
             lspconfig[lsp].setup {

@@ -15,24 +15,27 @@ return {
                 -- the presets plugin, adds help for a bunch of default keybindings in Neovim
                 -- No actual key bindings are created
                 presets = {
-                    operators = false,    -- adds help for operators like d, y, ... and registers them for motion / text object completion
-                    motions = false,      -- adds help for motions
-                    text_objects = false, -- help for text objects triggered after entering an operator
-                    windows = true,       -- default bindings on <c-w>
-                    nav = true,           -- misc bindings to work with windows
-                    z = true,             -- bindings for folds, spelling and others prefixed with z
-                    g = true,             -- bindings for prefixed with g
+                    operators = true,    -- adds help for operators like d, y, ... and registers them for motion / text object completion
+                    motions = true,      -- adds help for motions
+                    text_objects = true, -- help for text objects triggered after entering an operator
+                    windows = true,      -- default bindings on <c-w>
+                    nav = true,          -- misc bindings to work with windows
+                    z = true,            -- bindings for folds, spelling and others prefixed with z
+                    g = true,            -- bindings for prefixed with g
                 },
             },
             -- add operators that will trigger motion and text object completion
             -- to enable all native operators, set the preset / operators plugin above
-            -- operators = { gc = "Comments" },
+            operators = { gc = "Comments" },
             key_labels = {
                 -- override the label used to display some keys. It doesn't effect WK in any other way.
                 -- For example:
                 -- ["<space>"] = "SPC",
                 -- ["<CR>"] = "RET",
                 -- ["<tab>"] = "TAB",
+            },
+            motions = {
+                count = true,
             },
             icons = {
                 breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
@@ -49,24 +52,42 @@ return {
                 margin = { 1, 1, 1, 1 },  -- extra window margin [top, right, bottom, left]
                 padding = { 1, 1, 1, 1 }, -- extra window padding [top, right, bottom, left]
                 winblend = 15,
+                zindex = 1000,
             },
             layout = {
-                height = { min = 4, max = 25 },                                           -- min and max height of the columns
-                width = { min = 20, max = 50 },                                           -- min and max width of the columns
-                spacing = 3,                                                              -- spacing between columns
-                align = "center",                                                         -- align columns left, center or right
+                height = { min = 4, max = 25 },                                             -- min and max height of the columns
+                width = { min = 20, max = 50 },                                             -- min and max width of the columns
+                spacing = 3,                                                                -- spacing between columns
+                align = "center",                                                           -- align columns left, center or right
             },
-            ignore_missing = true,                                                        -- enable this to hide mappings for which you didn't specify a label
-            hidden = { "<Silent>", "<Cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-            show_help = true,                                                             -- show help message on the command line when the popup is visible
-            triggers = "auto",                                                            -- automatically setup triggers
+            ignore_missing = false,                                                         -- enable this to hide mappings for which you didn't specify a label
+            hidden = { "<Silent>", "<Cmd>", "<Cmd>", "<CR>", "^call", "^lua", "^:", "^ " }, -- hide mapping boilerplate
+            show_help = true,                                                               -- show help message on the command line when the popup is visible
+            how_keys = true,                                                                -- show the currently pressed key and its label as a message in the command line
+            triggers = "auto",                                                              -- automatically setup triggers
             -- triggers = {"<Leader>"} -- or specify a list manually
+            triggers_nowait = {
+                -- marks
+                "`",
+                "'",
+                "g`",
+                "g'",
+                -- registers
+                '"',
+                "<c-r>",
+                -- spelling
+                "z=",
+            },
             triggers_blacklist = {
                 -- list of mode / prefixes that should never be hooked by WhichKey
                 -- this is mostly relevant for key maps that start with a native binding
                 -- most people should not need to change this
                 i = { "j", "k" },
                 v = { "j", "k" },
+            },
+            disable = {
+                buftypes = {},
+                filetypes = {},
             },
         })
 
@@ -200,12 +221,12 @@ return {
             })
         end
 
-        local map = vim.keymap.set
-        local opts = { noremap = true, silent = true }
+        -- local map = vim.keymap.set
+        -- local opts = { noremap = true, silent = true }
 
-        -- BufferLine
-        map("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
-        map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts)
+        -- -- BufferLine
+        -- map("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
+        -- map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts)
 
         -- Comment-box
         -- map({ "n", "v" }, "<Leader>bb", "<Cmd>lua require('comment-box').lbox()<CR>")
