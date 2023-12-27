@@ -1,31 +1,40 @@
 return {
+  {
     "williamboman/mason.nvim",
-    dependencies = {
-        "williamboman/mason-lspconfig.nvim",
-    },
     config = function()
-        local mason = require("mason")
-        local mason_lspconfig = require("mason-lspconfig")
-
-        mason.setup({
-            ui = {
-                icons = {
-                    package_installed = "✓",
-                    package_pending = "➜",
-                    package_uninstalled = "✗",
-                },
-            },
-        })
-
-        mason_lspconfig.setup({
-            ensure_installed = {
-                "taplo",
-                "lua_ls",
-                "pyright",
-                "rust_analyzer",
-                "hls",
-            },
-            automatic_installation = true,
-        })
+      require("mason").setup({
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗",
+          },
+        },
+      })
     end,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup()
+    end,
+  },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    config = function()
+      require("mason-tool-installer").setup({
+        ensure_installed = {
+          "rust-analyzer",
+          "lua-language-server",
+          "stylua",
+          "python-lsp-server",
+          "zls",
+          "glow",
+          "prettier",
+          "shellcheck",
+          "shellharden",
+        },
+      })
+    end,
+  },
 }

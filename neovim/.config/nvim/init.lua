@@ -1,7 +1,6 @@
-require('options')
-require('autocommands')
-require('keymaps')
-require('autoformat')
+require("options")
+require("neovide")
+require("autocommands")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -16,17 +15,25 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup({
-    { import = 'plugins' },
-    { import = "plugins.lsp" }
+-- Mapleader
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+require("lazy").setup({
+  { import = "plugins.ui" },
+  { import = "plugins.edition" },
+  { import = "plugins.lsp" },
+  { import = "plugins.programming" },
+  { import = "plugins.git" },
+  { import = "plugins.ai" },
+  { import = "plugins.keymaps" },
+}, {
+  dev = {
+    path = "~/dev/neovim",
+    patterns = { "LudoPinelli" },
+    fallback = false,
   },
-  {
-    dev = {
-      path = "~/dev/neovim",
-      patterns = { "LudoPinelli" },
-      fallback = false,
-    },
-    checker = {
-      enabled = false,
-    },
-  })
+  checker = {
+    enabled = false,
+  },
+})

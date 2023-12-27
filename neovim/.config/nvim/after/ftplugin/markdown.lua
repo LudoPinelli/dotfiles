@@ -1,19 +1,9 @@
 vim.opt_local.spell = true
 
-vim.api.nvim_exec(
-  [[
-iabbrev >> →
-iabbrev << ←
-iabbrev ^^ ↑
-iabbrev VV ↓
-]],
-  false
-)
-
 ------------- Keymaps ---------------
 
 local map = vim.keymap.set
-local opts = { noremap = false, buffer = 0 }
+local opts = { noremap = false, buffer = true }
 -- Wrap selection in link
 map("v", ",l", 'c[<C-r>"]()<Esc>h', opts)
 -- Wrap selection in image

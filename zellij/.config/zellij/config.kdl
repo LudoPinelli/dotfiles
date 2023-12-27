@@ -110,7 +110,7 @@ keybinds {
         bind "d" { Quit; }
     }
     tmux {
-        bind "[" { SwitchToMode "Scroll"; }
+        bind "]" { SwitchToMode "Scroll"; }
         bind "Ctrl b" { Write 2; SwitchToMode "Normal"; }
         bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
@@ -199,7 +199,7 @@ default_shell "fish"
 //   - true (default)
 //   - false
 //
-pane_frames true
+pane_frames false
 
 // Define color themes for Zellij
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes

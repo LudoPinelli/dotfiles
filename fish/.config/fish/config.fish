@@ -63,7 +63,7 @@ alias gb "git branch"
 alias gw "git switch"
 alias ga "git add --patch"
 
-abbr -a neoc "cd ~/dotfiles/neovim/.config/nvim"
+abbr -a neoc "cd ~/dotfiles/neovim/.config/nvim && nvim"
 
 alias zel "zellij"
 
