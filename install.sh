@@ -36,14 +36,13 @@ npm install --save-dev --save-exact prettier
 
 # CLI Apps
 cargo install --locked bat
-cargo install exa
+cargo install eza
 cargo install fd-find
 cargo install ripgrep
 cargo install --locked zellij
 cargo install git-delta
 cargo install starship --locked
 cargo install du-dust
-cargo install grex
 cargo install procs
 cargo install zoxide
 cargo install tealdeer

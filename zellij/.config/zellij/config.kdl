@@ -180,14 +180,14 @@ plugins {
 //   - detach (Default)
 //   - quit
 //
-// on_force_close "quit"
+on_force_close "quit"
 
 //  Send a request for a simplified ui (without arrow fonts) to plugins
 //  Options:
 //    - true
 //    - false (Default)
 //
-// simplified_ui true
+simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -257,7 +257,7 @@ theme "catppuccin-macchiato"
 //   - true (default)
 //   - false
 //
-// mouse_mode false
+mouse_mode false
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
@@ -314,5 +314,8 @@ scrollback_editor "/usr/bin/nvim"
 ui {
     pane_frames {
         rounded_corners true
+        hide_session_name true
     }
 }
+
+session_serialization false

@@ -26,14 +26,14 @@ alias xp "xclip -selection clipboard -o"
 abbr -a yp "pwd|xy" # copy current path
 abbr -a pp "xp"
 
-alias ls "exa -F --group-directories-first --icons"
-alias ll "exa -lhF --group-directories-first --git --icons"
-alias la "exa -ahF --group-directories-first --icons"
-alias lla "exa -lahF --group-directories-first --git --icons"
-alias lt "exa -hT --level=3 --icons"
-alias lta "exa -aT --ignore-glob='.git' --level=3 --icons"
-alias llt "exa -hT --level=3 --long --git --icons"
-alias llta "exa -aT --ignore-glob='.git' --level=3 --long --git --icons"
+alias ls "eza -F --group-directories-first --icons=auto"
+alias ll "eza -lhF --group-directories-first --git --icons=auto"
+alias la "eza -ahF --group-directories-first --icons=auto"
+alias lla "eza -lahF --group-directories-first --git --icons=auto"
+alias lt "eza -hT --level=3 --icons=auto"
+alias lta "eza -aT --ignore-glob='.git' --level=3 --icons=auto"
+alias llt "eza -hT --level=3 --long --git --icons=auto"
+alias llta "eza -alT --ignore-glob='.git' --level=3 --git --icons"
 
 alias rm "rm -if"
 alias rmd "rm -rfi"
@@ -49,7 +49,6 @@ abbr -a cat "bat"
 abbr -a v "nvim"
 abbr -a vt "nvim +terminal"
 abbr -a vdev "nvim --cmd 'set rtp+ .'"
-abbr -a r "ranger"
 abbr -a weather "clear && curl wttr.in"
 
 alias df="df --human-readable"
@@ -85,11 +84,11 @@ alias zup "zellij run -d right -- up"
 alias cb "zellij edit ~/dev/neovim/comment-box.nvim/lua/comment-box/init.lua"
 
 # Vi mode
-# function my_vi_bindings
-#   fish_vi_key_bindings
-#   bind -M insert -m default jk backward-char force-repaint
-# end
-# set -g fish_key_bindings my_vi_bindings
+function my_vi_bindings
+  fish_vi_key_bindings
+  bind -M insert -m default jk backward-char force-repaint
+end
+set -g fish_key_bindings my_vi_bindings
 
 # Start Starship prompt
 function starship_transient_rprompt_func

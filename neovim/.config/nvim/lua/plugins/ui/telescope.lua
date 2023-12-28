@@ -19,7 +19,6 @@ return {
   cmd = "Telescope",
   config = function()
     local actions = require("telescope.actions")
-    local trouble = require("trouble.providers.telescope")
     require("telescope").setup({
       defaults = {
         prompt_prefix = " ",
@@ -33,68 +32,7 @@ return {
           prompt_position = "bottom",
           height = 0.95,
         },
-        mappings = {
-          i = {
-            ["<Esc>"] = actions.close,
-            ["<C-c>"] = actions.close,
-
-            ["<C-n>"] = actions.cycle_history_next,
-            ["<C-p>"] = actions.cycle_history_prev,
-
-            ["<C-j>"] = actions.move_selection_next,
-            ["<C-k>"] = actions.move_selection_previous,
-
-            ["<Down>"] = actions.move_selection_next,
-            ["<Up>"] = actions.move_selection_previous,
-
-            ["<CR>"] = actions.select_default,
-            ["<C-x>"] = actions.select_horizontal,
-            ["<C-v>"] = actions.select_vertical,
-
-            ["<C-u>"] = actions.preview_scrolling_up,
-            ["<C-d>"] = actions.preview_scrolling_down,
-
-            ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-            ["<S-Tab>"] = actions.toggle_selection
-              + actions.move_selection_better,
-            ["<C-q>"] = trouble.open_with_trouble,
-            ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-            ["<C-l>"] = actions.complete_tag,
-            ["<C-_>"] = actions.which_key,
-          },
-
-          n = {
-            ["C-c"] = actions.close,
-            ["<Esc>"] = actions.close,
-
-            ["<CR>"] = actions.select_default,
-            ["<C-x>"] = actions.select_horizontal,
-            ["<C-v>"] = actions.select_vertical,
-
-            ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-            ["<S-Tab>"] = actions.toggle_selection
-              + actions.move_selection_better,
-            ["<C-q>"] = trouble.open_with_trouble,
-            ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-
-            ["j"] = actions.move_selection_next,
-            ["k"] = actions.move_selection_previous,
-            ["l"] = actions.select_default,
-            ["H"] = actions.move_to_top,
-            ["M"] = actions.move_to_middle,
-            ["L"] = actions.move_to_bottom,
-
-            ["<Down"] = actions.move_selection_next,
-            ["<Up>"] = actions.move_selection_previous,
-            ["gg"] = actions.move_to_top,
-            ["G"] = actions.move_to_bottom,
-
-            ["<C-u>"] = actions.preview_scrolling_up,
-            ["<C-d>"] = actions.preview_scrolling_down,
-
-            ["?"] = actions.which_key,
-          },
-        },
+        mappings = {},
       },
       file_ignore_patterns = {
         "lazy-lock.json",
