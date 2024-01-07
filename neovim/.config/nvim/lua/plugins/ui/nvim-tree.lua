@@ -10,6 +10,7 @@ return {
     vim.g.loaded_netrwPlugin = 1
 
     require("nvim-tree").setup({
+      hijack_cursor = true,
       view = {
         width = 35,
       },
@@ -34,6 +35,7 @@ return {
           error = "",
         },
       },
+      select_prompts = true,
     })
   end,
 }

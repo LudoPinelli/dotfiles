@@ -1,19 +1,30 @@
 vim.opt_local.spell = true
 
-------------- Keymaps ---------------
+-- ── Keymaps ───────────────────────────────────────────────────────────
+
+local wk = require("which-key")
+
+wk.register({
+  ["<Leader>"] = {
+    M = {
+      name = "   Markdown",
+      p = { "<Cmd>MarkdownPreviewToggle<CR>", "Markdown preview" },
+    },
+  },
+})
 
 local map = vim.keymap.set
-local opts = { noremap = false, buffer = true }
--- Wrap selection in link
-map("v", ",l", 'c[<C-r>"]()<Esc>h', opts)
--- Wrap selection in image
-map("v", ",i", 'c![<C-r>"](?raw=true)<Esc>9h', opts)
+local opts = { noremap = true, silent = true }
 
--------------- cmp ------------------
+map("v", "L", 'c[<C-r>"]()<Esc>h', opts)
+map("v", "I", 'c![<C-r>"](?raw=true)<Esc>9h', opts)
+
+-- ── cmp ───────────────────────────────────────────────────────────────
 
 local cmp = require("cmp")
 cmp.setup.buffer({
   sources = {
+    { name = "nvim_lsp" },
     { name = "spell" },
     { name = "buffer" },
     { name = "path" },

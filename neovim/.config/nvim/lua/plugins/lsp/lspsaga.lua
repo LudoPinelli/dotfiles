@@ -1,8 +1,8 @@
 return {
   "nvimdev/lspsaga.nvim",
-  dependencies = {
-    "simrat39/rust-tools.nvim",
-  },
+  -- dependencies = {
+  --   "simrat39/rust-tools.nvim",
+  -- },
   config = function()
     require("neodev").setup()
 

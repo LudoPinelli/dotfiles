@@ -1,4 +1,9 @@
 return {
-  dir = "~/dev/neovim/comment-box.nvim",
-  -- dir = "LudoPinelli/comment-box-0.1.nvim",
+  "LudoPinelli/comment-box.nvim",
+  dev = true,
+  config = function()
+    require("comment-box").setup({
+      comment_style = "line",
+    })
+  end,
 }

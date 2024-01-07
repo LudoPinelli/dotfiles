@@ -7,7 +7,7 @@ wk.register({
     ["E"] = { "<Cmd>NvimTreeToggle<CR>", "פּ  Tree Explorer" },
     ["h"] = { "<Cmd>nohlsearch<CR>", "  No Highlight" },
     ["i"] = { "`.", "  Back to last insert" },
-    ["m"] = { "<Cmd>Noice<CR>", "  Messages" },
+    ["m"] = { "<Cmd>messages<CR>", "  Messages" },
     ["W"] = { "<Cmd>cd %:p:h<CR>:pwd<CR>", "  Set Working Directory" },
     ["n"] = {
       "<Cmd>Telescope neoclip initial_mode=normal<CR>",

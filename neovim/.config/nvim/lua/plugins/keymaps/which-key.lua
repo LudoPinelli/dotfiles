@@ -50,6 +50,7 @@ return {
         align = "center",
       },
       ignore_missing = false,
+      ---@diagnostic disable-next-line: assign-type-mismatch
       hidden = {
         "<Silent>",
         "<Cmd>",
@@ -175,5 +176,7 @@ return {
     require("plugins.keymaps.spec.toggleterm")
     require("plugins.keymaps.spec.git")
     require("plugins.keymaps.spec.lsp")
+    require("plugins.keymaps.spec.box")
+    -- require("plugins.keymaps.spec.ai")
   end,
 }

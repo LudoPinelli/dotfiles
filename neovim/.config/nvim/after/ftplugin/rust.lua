@@ -1,14 +1,25 @@
-------------- Keymaps ---------------
+-- ── Keymaps ───────────────────────────────────────────────────────────
 
-local map = vim.keymap.set
-local opts = { noremap = true, silent = true, buffer = true }
+local wk = require("which-key")
 
-map("n", "<Leader>rr", "<Cmd>Crun<CR>", opts)
-map("n", "<Leader>rc", "<Cmd>Ccheck<CR>", opts)
-map("n", "<Leader>rb", "<Cmd>Cbuild<CR>", opts)
-map("n", "<Leader>rt", "<Cmd>Ctest<CR>", opts)
+wk.register({
+  ["<Leader>"] = {
+    r = {
+      name = "   Rust",
 
--------------- cmp ------------------
+      a = { "<Cmd>RustLsp hover actions<CR>", "Hover Actions" },
+      b = { "<Cmd>Cbuild<CR>", "Cargo Build" },
+      c = { "<Cmd>Ccheck<CR>", "Cargo Check" },
+      d = { "<Cmd>RustLsp debuggables<CR>", "Debugging" },
+      g = { "<Cmd>RustLsp crateGraph<CR>", "Crate Graph" },
+      j = { "<Cmd>RustLsp joinlines<CR>", "Join Lines" },
+      t = { "<Cmd>Ctest<CR>", "Cargo Test" },
+      r = { "<Cmd>Crun<CR>", "Cargo Run" },
+    },
+  },
+})
+
+-- ── cmp ───────────────────────────────────────────────────────────────
 
 local cmp = require("cmp")
 cmp.setup.buffer({

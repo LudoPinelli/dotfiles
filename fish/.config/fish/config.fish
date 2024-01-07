@@ -62,13 +62,16 @@ alias gb "git branch"
 alias gw "git switch"
 alias ga "git add --patch"
 
-abbr -a neoc "cd ~/dotfiles/neovim/.config/nvim && nvim"
+abbr -a dot "cd ~/dotfiles"
+abbr -a neoc "cd ~/dotfiles/neovim/.config/nvim"
 
 alias zel "zellij"
 
 abbr -a py "python3"
 
 abbr -a neo "clear && neofetch"
+
+abbr -a music "mpv --no-video --shuffle ~/Musique/"
 
 function gi
   # Write .gitignore file for the given language

@@ -21,6 +21,7 @@ if jit.os ~= "Windows" then
         },
         k = { "<Cmd>Telescope keymaps<CR>", "  Keymaps" },
         l = { "<Cmd>Telescope resume<CR>", "  Resume last search" },
+        m = { "<Cmd>Telescope marks<CR>", "  Marks" },
         M = { "<Cmd>Telescope man_pages<CR>", "  Man Pages" },
         p = { "<Cmd>Telescope pickers<CR>", "ﭣ  Previous pickers used" },
         r = {

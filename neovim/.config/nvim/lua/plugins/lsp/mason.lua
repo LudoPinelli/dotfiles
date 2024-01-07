@@ -24,15 +24,16 @@ return {
     config = function()
       require("mason-tool-installer").setup({
         ensure_installed = {
-          "rust-analyzer",
-          "lua-language-server",
-          "stylua",
-          "python-lsp-server",
-          "zls",
           "glow",
+          "lua-language-server",
+          "marksman",
           "prettier",
+          "python-lsp-server",
+          "rust-analyzer",
           "shellcheck",
           "shellharden",
+          "stylua",
+          "zls",
         },
       })
     end,

@@ -6,15 +6,9 @@ wk.register({
       name = "   Buffers",
 
       d = { "<Cmd>bdelete<CR>", "󰅖  Delete buffer" },
-      n = {
-        "<Cmd>bnext<CR>",
-        "󰮰  Next buffer",
-      },
+      n = { "<Cmd>bnext<CR>", "󰮰  Next buffer" },
       p = { "<Cmd>bprev<CR>", "󰮳  Previous buffer" },
-      o = {
-        "<Cmd>BufferLinePick<CR>",
-        "󱔘  Choose a buffer",
-      },
+      o = { "<Cmd>BufferLinePick<CR>", "󱔘  Choose a buffer" },
     },
   },
 })

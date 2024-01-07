@@ -92,7 +92,7 @@ opt.updatetime = 250 -- Decrease update time
 opt.inccommand = "split" -- Incremental live completion
 opt.fileencoding = "utf-8" -- Set File Encoding
 opt.spelllang = { "en", "fr" }
-opt.spell = false -- spellcheck
+opt.spell = true -- spellcheck
 opt.completeopt = "menuone,noselect" -- Autocompletion
 opt.shortmess:append({ W = true, a = true }) -- what hit-enter prompt to avoid
 
