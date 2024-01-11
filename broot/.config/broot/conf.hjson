@@ -23,7 +23,7 @@
 # if you don't want the hidden files you can launch `br -H`)
 # A popular flag is the `g` one which displays git related info.
 #
-default_flags: gh
+default_flags: ghip
 
 ###############################################################
 # Date/Time format
@@ -142,6 +142,11 @@ special_paths: {
 # }
 
 ###############################################################
+# Syntax Theme
+#
+syntax_theme: MochaDark
+
+###############################################################
 # Max file size for content search
 #
 # Bigger files are ignored when searching their content. You
@@ -178,7 +183,7 @@ imports: [
             dark
             unknown
         ]
-        file: dark-blue-skin.hjson
+        file: catpuccin-mocha.hjson
     }
 
     # This skin is imported when your terminal is light
@@ -187,3 +192,5 @@ imports: [
         file: white-skin.hjson
     }
 ]
+
+show_matching_characters_on_path_searches: false

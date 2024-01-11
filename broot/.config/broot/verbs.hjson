@@ -80,15 +80,15 @@ verbs: [
     # Here's an example of a shortcut bringing you to your home directory
     {
         invocation: home
-        key: alt-h
+        key: ctrl-h
         execution: ":focus ~"
     }
 
-    {
-        invocation: back
-        key: ctrl-h
-        execution: ":back"
-    }
+    #{
+    #    invocation: back
+    #    key: ctrl-h
+    #    execution: ":back"
+    #}
 
     # A popular set of shortcuts for going up and down:
     #
