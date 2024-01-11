@@ -18,6 +18,9 @@ return {
             vim.env.VIMRUNTIME,
           },
         },
+        hint = {
+          enable = true,
+        },
       },
     })
 

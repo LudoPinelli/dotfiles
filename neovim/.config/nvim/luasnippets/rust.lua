@@ -1,5 +1,6 @@
 local ls = require("luasnip")
 
+---@diagnostic disable-next-line: unused-local
 local s, t, i = ls.s, ls.text_node, ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
 local rep = require("luasnip.extras").rep

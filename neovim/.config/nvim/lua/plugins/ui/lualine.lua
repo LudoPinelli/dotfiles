@@ -1,5 +1,5 @@
 return {
-  "nvim-lualine/lualine.nvim", -- Fancier statusline
+  "nvim-lualine/lualine.nvim",
   config = function()
     local hide_in_width = function()
       return vim.fn.winwidth(0) > 80
@@ -55,7 +55,8 @@ return {
     require("lualine").setup({
       options = {
         icons_enabled = true,
-        -- theme = "catppuccin",
+        theme = "catppuccin",
+        -- theme = "kanagawa",
         component_separators = "│",
         section_separators = { left = "", right = "" },
         disabled_filetypes = { "Neotree", "Outline" },

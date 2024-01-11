@@ -3,8 +3,8 @@ local wk = require("which-key")
 wk.register({
   ["<Leader>"] = {
     ["?"] = { "<Cmd>Telescope oldfiles<CR>", "  Open Recent File" },
-    ["e"] = { "<Cmd>lua Explorer()<CR>", "פּ  Telescope Explorer" },
-    ["E"] = { "<Cmd>NvimTreeToggle<CR>", "פּ  Tree Explorer" },
+    ["E"] = { "<Cmd>lua Explorer()<CR>", "פּ  Telescope Explorer" },
+    ["e"] = { "<Cmd>lua MiniFiles.open()<CR>", "פּ  Explorer" },
     ["h"] = { "<Cmd>nohlsearch<CR>", "  No Highlight" },
     ["i"] = { "`.", "  Back to last insert" },
     ["m"] = { "<Cmd>messages<CR>", "  Messages" },
