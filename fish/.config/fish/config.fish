@@ -1,7 +1,7 @@
 # Remove greetings
 set fish_greeting 
 
-# Environement
+# Environnement
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_DATA_HOME "$XDG_CONFIG_HOME/local/share"
 set -gx XDG_CACHE_HOME "$XDG_CONFIG_HOME/cache"
@@ -48,14 +48,15 @@ abbr -a cat "bat"
 
 abbr -a v "nvim"
 abbr -a vt "nvim +terminal"
-abbr -a vdev "nvim --cmd 'set rtp+ .'"
+
 abbr -a weather "clear && curl wttr.in"
 
-alias df="df --human-readable"
+alias df "df --human-readable"
 
 abbr -a du "clear && dust"
 
-alias lg="lazygit"
+alias gu "gitui -t mocha.ron"
+alias lg "lazygit"
 
 alias gt "git status"
 alias gb "git branch"

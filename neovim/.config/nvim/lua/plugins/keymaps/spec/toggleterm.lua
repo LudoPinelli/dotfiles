@@ -1,4 +1,19 @@
+---@diagnostic disable: assign-type-mismatch
 local Terminal = require("toggleterm.terminal").Terminal
+
+-- Open bacon
+local bacon = Terminal:new({
+  cmd = "bacon -j run",
+  dir = "git_dir",
+  direction = "vertical",
+  close_on_exit = true,
+  on_open = function()
+    vim.cmd(":wincmd h")
+  end,
+})
+function Bacon_toggle()
+  bacon:toggle()
+end
 
 -- lazygit
 local lazygit = Terminal:new({
@@ -15,6 +30,23 @@ local lazygit = Terminal:new({
 })
 function Lazygit_toggle()
   lazygit:toggle()
+end
+
+-- lazygit
+local gitui = Terminal:new({
+  cmd = "gitui",
+  dir = "git_dir",
+  direction = "float",
+  float_opts = {
+    border = "curved",
+  },
+  close_on_exit = true,
+  on_open = function()
+    vim.cmd("startinsert!")
+  end,
+})
+function Gitui_toggle()
+  gitui:toggle()
 end
 
 -- Open python shell (bpython)
@@ -61,6 +93,7 @@ local btop = Terminal:new({
 function Btop_toggle()
   btop:toggle()
 end
+
 local wk = require("which-key")
 
 wk.register({

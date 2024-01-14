@@ -1,12 +1,30 @@
 local wezterm = require("wezterm")
+local config = {}
 
-return {
-	-- font = wezterm.font "Liga SFMono Nerd Font",
-	font = wezterm.font("Jet Brains Mono Nerd Font Mono"),
-	font_size = 12.0,
-	color_scheme = "Catppuccin Macchiato",
-	enable_tab_bar = false,
-	window_decorations = "NONE",
-	window_background_opacity = 0.85,
-	-- default_prog = { "zellij" },
+if wezterm.config_builder then
+	config = wezterm.config_builder()
+end
+
+config.font = wezterm.font("JetBrains Mono")
+config.font_size = 12.0
+
+config.color_scheme = "Catppuccin Mocha"
+
+config.enable_tab_bar = false
+config.window_decorations = "NONE"
+config.window_background_opacity = 0.85
+
+config.keys = {
+	{
+		key = "Enter",
+		mods = "ALT",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+	{
+		key = "h",
+		mods = "SUPER",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
 }
+
+return config

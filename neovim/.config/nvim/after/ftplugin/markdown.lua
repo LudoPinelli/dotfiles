@@ -9,6 +9,7 @@ wk.register({
     M = {
       name = "   Markdown",
       p = { "<Cmd>MarkdownPreviewToggle<CR>", "Markdown preview" },
+      g = { "<Cmd>Glow<CR>", "Show in Glow" },
     },
   },
 })

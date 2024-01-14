@@ -178,6 +178,6 @@ return {
     require("plugins.keymaps.spec.lsp")
     require("plugins.keymaps.spec.box")
     require("plugins.keymaps.spec.debugging")
-    -- require("plugins.keymaps.spec.ai")
+    require("plugins.keymaps.spec.ai")
   end,
 }

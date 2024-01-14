@@ -81,17 +81,26 @@ verbs: [
     {
         invocation: home
         key: ctrl-h
+        execution: ":panel_left_no_open"
+    }
+    {
+        invocation: home
+        key: ctrl-l
+        execution: ":panel_right"
+    }
+
+    {
+        invocation: home
+        key: alt-.
+        execution: ":toggle_hidden"
+    }
+
+    {
+        invocation: home
+        key: alt-h
         execution: ":focus ~"
     }
 
-    #{
-    #    invocation: back
-    #    key: ctrl-h
-    #    execution: ":back"
-    #}
-
-    # A popular set of shortcuts for going up and down:
-    #
     {
         key: ctrl-k
         execution: ":line_up"

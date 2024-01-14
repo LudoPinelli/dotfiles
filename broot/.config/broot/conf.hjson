@@ -23,7 +23,7 @@
 # if you don't want the hidden files you can launch `br -H`)
 # A popular flag is the `g` one which displays git related info.
 #
-default_flags: ghip
+default_flags: sghip
 
 ###############################################################
 # Date/Time format
@@ -52,16 +52,16 @@ show_selection_mark: true
 # array. You should keep the name column at the end as it has a
 # variable length.
 #
-# cols_order: [
-#     mark
-#     git
-#     size
-#     permission
-#     date
-#     count
-#     branch
-#     name
-# ]
+cols_order: [
+    mark
+    permission
+    size
+    date
+    count
+    git
+    branch
+    name
+]
 
 ###############################################################
 # True Colors
@@ -87,7 +87,7 @@ show_selection_mark: true
 # this section as per the examples)
 #
 special_paths: {
-    "/media" : "no-enter" // comment it if desired
+    "/Musique" : "no-enter" // comment it if desired
     # "/media/slow-backup-disk"    : no-enter
     # "/home/dys/useless"    : hide
     # "/home/dys/my-link-I-want-to-explore"    : enter
@@ -144,7 +144,7 @@ special_paths: {
 ###############################################################
 # Syntax Theme
 #
-syntax_theme: MochaDark
+syntax_theme: OceanDark
 
 ###############################################################
 # Max file size for content search

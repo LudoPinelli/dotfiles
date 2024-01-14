@@ -1,4 +1,9 @@
+--          ╭─────────────────────────────────────────────────────────╮
+--          │                      Rust ftplugin                      │
+--          ╰─────────────────────────────────────────────────────────╯
+
 -- ── Keymaps ───────────────────────────────────────────────────────────
+require("plugins.keymaps.spec.toggleterm")
 local wk = require("which-key")
 
 wk.register({
@@ -8,6 +13,7 @@ wk.register({
 
       a = { "<Cmd>RustLsp hover actions<CR>", "Hover Actions" },
       b = { "<Cmd>Cbuild<CR>", "Cargo Build" },
+      B = { "<Cmd>lua Bacon_toggle()<CR>", "Bacon" },
       c = { "<Cmd>Ccheck<CR>", "Cargo Check" },
       d = { "<Cmd>RustLsp debuggables<CR>", "Debugging" },
       g = { "<Cmd>RustLsp crateGraph<CR>", "Crate Graph" },
@@ -21,7 +27,6 @@ wk.register({
         end,
         "Toggle Inlay Hints",
       },
-      j = { "<Cmd>RustLsp joinlines<CR>", "Join Lines" },
       t = { "<Cmd>Ctest<CR>", "Cargo Test" },
       r = { "<Cmd>Crun<CR>", "Cargo Run" },
     },
@@ -29,7 +34,6 @@ wk.register({
 })
 
 -- ── cmp ───────────────────────────────────────────────────────────────
-
 local cmp = require("cmp")
 cmp.setup.buffer({
   sources = {
