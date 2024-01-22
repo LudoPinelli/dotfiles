@@ -1,6 +1,6 @@
 require("which-key").register({
   ["<Leader>"] = {
-    o = {
+    a = {
       name = " 󱇯  AI",
     },
   },

@@ -21,6 +21,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
             "  Go to definition",
             opts,
           },
+          h = {
+            function()
+              if vim.lsp.inlay_hint.is_enabled() then
+                vim.lsp.inlay_hint.enable(0, false)
+              else
+                vim.lsp.inlay_hint.enable(0, true)
+              end
+            end,
+            "Toggle Inlay Hints",
+          },
           i = { "<Cmd>LspInfo<CR>", "  Info" },
           o = { "<Cmd>Outline<CR>", "炙 Outline" },
           r = { "<Cmd>Lspsaga rename<CR>", "󰑕  Rename", opts },

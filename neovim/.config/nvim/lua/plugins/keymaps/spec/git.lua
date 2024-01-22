@@ -22,7 +22,7 @@ wk.register({
         "  Open Diff view",
       },
       D = { "<Cmd>DiffviewClose<CR>", "   Close Diff view" },
-      g = { "<Cmd>lua Lazygit_toggle()<CR>", "  Lazygit" },
+      g = { "<Cmd>lua Gitui_toggle()<CR>", "  Gitui" },
       f = { "<Cmd>Telescope git_files<CR>", "Git files" },
       h = {
         "<Cmd>Gitsigns toggle_linehl<CR>",

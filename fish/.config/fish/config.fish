@@ -13,11 +13,13 @@ set -gx MANPAGER "nvim +Man!"
 
 set -gx CARGO_REGISTRIES_CRATES_IO_PROTOCOL sparse
 
+set VIRTUAL_ENV "$XDG_CONFIG_HOME/dev/python/ai"
+
 # Path
 fish_add_path ~/.cargo/bin/
 fish_add_path ~/scripts/
 fish_add_path ~/.local/bin/
-fish_add_path ~/.nvm/versions/node/v19.7.0/bin/
+# fish_add_path ~/.nvm/versions/node/v19.7.0/bin/
 fish_add_path ~/.local/zig/
 
 # Abbreviations & aliases
@@ -47,7 +49,6 @@ alias s "cd .."
 abbr -a cat "bat"
 
 abbr -a v "nvim"
-abbr -a vt "nvim +terminal"
 
 abbr -a weather "clear && curl wttr.in"
 
@@ -61,6 +62,7 @@ alias lg "lazygit"
 alias gt "git status"
 alias gb "git branch"
 alias gw "git switch"
+alias gco "git checkout"
 alias ga "git add --patch"
 
 abbr -a dot "cd ~/dotfiles"
@@ -73,6 +75,13 @@ abbr -a py "python3"
 abbr -a neo "clear && neofetch"
 
 abbr -a music "mpv --no-video --shuffle ~/Musique/"
+
+abbr -a yta "ytfzf -t"
+
+function ytd # download yt video with link in clipboard
+  cd ~/Musique
+  yt-dlp (eval xclip -selection clipboard -o)
+end
 
 function gi
   # Write .gitignore file for the given language

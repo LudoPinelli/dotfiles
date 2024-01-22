@@ -3,11 +3,18 @@ local wk = require("which-key")
 wk.register({
   ["<Leader>"] = {
     b = {
-      name = " ﬘  Buffers",
-      n = { "<Cmd>bnext<CR>", "󰮰  Next" },
+      name = " ﬘  Buffers & Tabs",
+      n = { "<Cmd>bnext<CR>", "󰮰  Buffer Next" },
+      N = { "<Cmd>tabn<CR>", "󰝜  Tab Next" },
       p = { "<Cmd>bprevious<CR>", "󰮲  Previous" },
-      d = { "<Cmd>bdelete<CR>", "  Delete" },
-      o = { "<Cmd>BufferLinePick<CR>", "  Choose" },
+      P = { "<Cmd>tabp<CR>", "󰭋  Tab Previous" },
+      d = { "<Cmd>bdelete<CR>", "  Buffer Delete" },
+      D = { "<Cmd>tabclose<CR>", "󰭌  Tab Close" },
+      s = {
+        "<Cmd>Telescope buffers initial_mode=normal<CR>",
+        "  Search Buffers",
+      },
+      T = { "<Cmd>$tabnew<CR>", "  Tab New" },
     },
   },
 })

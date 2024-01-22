@@ -23,7 +23,7 @@
 # if you don't want the hidden files you can launch `br -H`)
 # A popular flag is the `g` one which displays git related info.
 #
-default_flags: sghip
+default_flags: spghi
 
 ###############################################################
 # Date/Time format
@@ -71,7 +71,7 @@ cols_order: [
 # and set it to false or true if you notice the colors in
 # previewed images are too off.
 #
-# true_colors: true
+true_colors: true
 
 ###############################################################
 # Icons

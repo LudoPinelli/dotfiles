@@ -15,7 +15,7 @@ function Bacon_toggle()
   bacon:toggle()
 end
 
--- lazygit
+-- Open lazygit
 local lazygit = Terminal:new({
   cmd = "lazygit",
   dir = "git_dir",
@@ -32,7 +32,7 @@ function Lazygit_toggle()
   lazygit:toggle()
 end
 
--- lazygit
+-- Open gitui
 local gitui = Terminal:new({
   cmd = "gitui",
   dir = "git_dir",

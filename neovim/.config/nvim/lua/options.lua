@@ -17,6 +17,7 @@ opt.laststatus = 3 -- Global statusline
 -- vim.cmd("syntax on")
 opt.virtualedit = "block" -- act as real block in visual mode
 opt.inccommand = "split" -- open previews in new window
+opt.conceallevel = 1
 
 --                                ╭────────────╮
 --                                │ formatting │
