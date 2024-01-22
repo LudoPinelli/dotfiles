@@ -18,6 +18,19 @@ return {
         loops = {},
         functions = { "bold" },
       },
+      integrations = {
+        cmp = true,
+        gitsigns = true,
+        treesitter = true,
+        notify = true,
+        noice = true,
+        mason = true,
+        dap_ui = true,
+        lsp_saga = true,
+        markdown = true,
+        telescope = true,
+        which_key = true,
+      },
     })
 
     vim.cmd.colorscheme("catppuccin")

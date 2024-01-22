@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 return {
   "saecki/crates.nvim",
   event = { "BufRead Cargo.toml" },

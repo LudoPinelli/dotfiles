@@ -14,12 +14,6 @@ map("i", "<A-l>", "<Right>", opts)
 -- Copy to the end of the line
 map("n", "Y", "y$", opts)
 
--- Move between windows
-map("n", "<C-j>", "<C-w>j", opts)
-map("n", "<C-k>", "<C-w>k", opts)
-map("n", "<C-h>", "<C-w>h", opts)
-map("n", "<C-l>", "<C-w>l", opts)
-
 -- Keep the cursor centered
 map("n", "n", "nzzzv", opts)
 map("n", "N", "Nzzzv", opts)

@@ -16,7 +16,7 @@ return {
       dynamic_preview_title = true,
       winblend = 0,
       sorting_strategy = "ascending",
-      layout_strategy = "horizontal",
+      layout_strategy = "vertical",
       layout_config = {
         prompt_position = "bottom",
         height = 0.95,
@@ -32,9 +32,11 @@ return {
       "lazy-lock.json",
     },
     pickers = {
-      -- Default config for builtin pickers:
       find_files = {
         hidden = true,
+      },
+      oldfiles = {
+        initial_mode = "normal",
       },
     },
     extensions = {

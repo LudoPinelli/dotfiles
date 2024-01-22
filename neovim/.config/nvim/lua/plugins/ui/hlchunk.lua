@@ -57,6 +57,7 @@ return {
         cmp_menu = true,
         ["null-ls-info"] = true,
         glowpreview = true,
+        minifiles = true,
       },
     })
   end,
