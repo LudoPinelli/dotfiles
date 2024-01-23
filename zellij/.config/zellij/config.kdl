@@ -318,4 +318,4 @@ ui {
     }
 }
 
-session_serialization false
+session_serialization true

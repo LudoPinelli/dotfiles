@@ -22,7 +22,6 @@ return {
         cmp = true,
         gitsigns = true,
         treesitter = true,
-        notify = true,
         noice = true,
         mason = true,
         dap_ui = true,

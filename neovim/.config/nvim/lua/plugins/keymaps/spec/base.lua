@@ -9,6 +9,8 @@ wk.register({
     ["i"] = { "`.", "  Back to last insert" },
     ["m"] = { "<Cmd>messages<CR>", "  Messages" },
     ["q"] = { "<Cmd>qa<CR>", "  Quit" },
+    ["S"] = { "<Cmd>mksession<CR>", "  Save Session" },
+    ["w"] = { "<Cmd>write<CR>", "  Write" },
     ["W"] = { "<Cmd>cd %:p:h<CR>:pwd<CR>", "  Set Working Directory" },
     ["n"] = {
       "<Cmd>Telescope neoclip initial_mode=normal<CR>",

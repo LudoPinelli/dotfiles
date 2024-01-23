@@ -122,16 +122,8 @@ return {
     -- ▲
     -- █ Find files in home directory
     -- ▼
-    function Get_home()
-      if jit.os == "Windows" then
-        return "$USERPROFILE/OneDrive/Documents/"
-      else
-        return "~/"
-      end
-    end
-
     function Home()
-      local path = Get_home()
+      local path = "~/"
       require("telescope.builtin").find_files({
         prompt_title = "  Home Directory",
         cwd = path,
