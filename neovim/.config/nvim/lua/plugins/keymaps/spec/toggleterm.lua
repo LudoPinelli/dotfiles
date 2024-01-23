@@ -32,23 +32,6 @@ function Lazygit_toggle()
   lazygit:toggle()
 end
 
--- Open gitui
-local gitui = Terminal:new({
-  cmd = "gitui",
-  dir = "git_dir",
-  direction = "float",
-  float_opts = {
-    border = "curved",
-  },
-  close_on_exit = true,
-  on_open = function()
-    vim.cmd("startinsert!")
-  end,
-})
-function Gitui_toggle()
-  gitui:toggle()
-end
-
 -- Open python shell (bpython)
 local python = Terminal:new({
   cmd = "bpython",
