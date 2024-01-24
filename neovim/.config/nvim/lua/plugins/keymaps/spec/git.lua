@@ -18,10 +18,9 @@ wk.register({
         "  Commit log",
       },
       d = {
-        "<Cmd>DiffviewOpen<CR>",
+        "<Cmd>Gitsigns diffthis<CR>",
         "  Open Diff view",
       },
-      D = { "<Cmd>DiffviewClose<CR>", "   Close Diff view" },
       g = { "<Cmd>lua Lazygit_toggle()<CR>", "  Lazygit" },
       f = { "<Cmd>Telescope git_files<CR>", "Git files" },
       h = {

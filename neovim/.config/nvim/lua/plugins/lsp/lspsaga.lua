@@ -1,11 +1,9 @@
 return {
   "nvimdev/lspsaga.nvim",
-  -- dependencies = {
-  --   "simrat39/rust-tools.nvim",
-  -- },
+  dependencies = {
+    "neovim/nvim-lspconfig",
+  },
   config = function()
-    require("neodev").setup()
-
     require("lspsaga").setup({
       ui = {
         border = "rounded",

@@ -21,6 +21,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
             "  Go to definition",
             opts,
           },
+          g = {
+            "<Cmd>lua require('neogen').generate()<CR>",
+            "  Generate doc",
+          },
           h = {
             function()
               if vim.lsp.inlay_hint.is_enabled() then
