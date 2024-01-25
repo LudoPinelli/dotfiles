@@ -1,5 +1,0 @@
-layout {
-        pane { 
-        edit "./lua/comment-box/init.lua"
-        }
-}
