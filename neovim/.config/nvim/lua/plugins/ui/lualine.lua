@@ -55,7 +55,7 @@ return {
     require("lualine").setup({
       options = {
         icons_enabled = true,
-        theme = "catppuccin",
+        -- theme = "catppuccin",
         -- theme = "kanagawa",
         component_separators = "│",
         section_separators = { left = "", right = "" },
@@ -66,7 +66,7 @@ return {
         lualine_b = { "getcwd", branch },
         lualine_c = { filename, diagnostics },
         lualine_x = { diff },
-        lualine_y = { filetype, "os.date('%H:%M')" },
+        lualine_y = { filetype },
         lualine_z = { "progress", location },
       },
       inactive_sections = {

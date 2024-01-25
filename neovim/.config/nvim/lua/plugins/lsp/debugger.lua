@@ -9,31 +9,6 @@ return {
     local dap = require("dap")
     local dapui = require("dapui")
 
-    -- dap.adapters.codelldb = {
-    --   type = "server",
-    --   port = "${port}",
-    --   executable = {
-    --     command = "/home/ludo/.local/bin/codelldb/extension/adapter/codelldb",
-    --     args = { "--port", "${port}" },
-    --   },
-    -- }
-    -- dap.configurations.rust = {
-    --   {
-    --     name = "Launch file",
-    --     type = "codelldb",
-    --     request = "launch",
-    --     program = function()
-    --       return vim.fn.input(
-    --         "Path to executable: ",
-    --         vim.fn.getcwd() .. "/target/debug/",
-    --         "file"
-    --       )
-    --     end,
-    --     cwd = "${workspaceFolder}",
-    --     stopOnEntry = false,
-    --   },
-    -- }
-
     dap.listeners.before.attach.dapui_config = function()
       dapui.open()
     end

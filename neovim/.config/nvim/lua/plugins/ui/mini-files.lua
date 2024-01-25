@@ -14,6 +14,10 @@ return {
         show_help = "?",
         reset = "",
       },
+      windows = {
+        preview = true,
+        width_preview = 80,
+      },
     })
 
     vim.api.nvim_create_autocmd("User", {

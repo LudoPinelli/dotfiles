@@ -5,8 +5,8 @@ local opt = vim.opt
 --                                  ╰────────╯
 opt.showtabline = 2 -- Always Show Tabline
 opt.pumheight = 10 -- Pop up Menu Height
-opt.number = true -- Display Line Number
-opt.relativenumber = true -- Make line numbers relative
+-- opt.number = true -- Display Line Number
+-- opt.relativenumber = true -- Make line numbers relative
 opt.termguicolors = true -- Set Terminal Colors
 opt.title = true -- Display File Info on Title
 opt.showmode = false -- Don't Show MODES
