@@ -1,4 +1,7 @@
 layout {
+
+    pane
+
     pane size=1 borderless=true {
         plugin location="file:/home/ludo/.config/zellij/plugins/zjstatus.wasm" {
             format_left  "{mode} #[fg=#89B4FA,bold]{session} {tabs}"
@@ -10,28 +13,22 @@ layout {
             border_format   "#[fg=#6C7086]{char}"
             border_position "top"
 
-            hide_frame_for_single_pane "true"
+            // hide_frame_for_single_pane "true"
 
-            mode_normal  "#[fg=blue] {name} "
-            mode_locked  "#[fg=blue] {name} "
-            mode_resize  "#[fg=blue] {name} "
-            mode_pane  "#[fg=blue] {name} "
-            mode_tab  "#[fg=blue] {name} "
-            mode_rename_tab  "#[fg=blue] {name}"
-            mode_rename_pane  "#[fg=blue] {name}"
+            mode_normal  "#[fg=#1e1e2e,bg=#89B4FA] {name} "
+            mode_locked  "#[fg=#1e1e2e,bg=#f38ba8] {name} "
+            mode_resize  "#[fg=#1e1e2e,bg=#cba6f7] {name} "
+            mode_pane  "#[fg=#1e1e2e,bg=#fab387] {name} "
+            mode_tab  "#[fg=#1e1e2e,bg=#fab387] {name} "
+            mode_rename_tab  "#[fg=#1e1e2e,bg=#a6e3a1] {name}"
+            mode_rename_pane  "#[fg=#1e1e2e,bg=#a6e3a1] {name}"
 
-            tab_normal   "#[fg=#6C7086] {name} "
-            tab_active   "#[fg=#9399B2,bold,italic] {name} "
+            tab_normal   "#[fg=#585b70] {name} "
+            tab_active   "#[fg=#94e2d5,bold,italic] {name} "
 
             datetime        "#[fg=#6C7086,bold] {format} "
             datetime_format "%A, %d %b %Y %H:%M"
             datetime_timezone "Europe/Berlin"
         }
-    }
-
-    pane
-
-    pane size=2 borderless=true {
-        plugin location="zellij:status-bar"
     }
 }

@@ -45,6 +45,7 @@ alias mkdir "mkdir -vp"
 
 abbr -a c "clear"
 alias s "cd .."
+abbr -a :q "exit"
 
 abbr -a cat "bat"
 
@@ -93,8 +94,10 @@ end
 alias cwatch "cargo watch -q -c -x 'run -q'"
 abbr -a cnc "cargo_cli_setup.sh"
 
+alias zs "zellij -s ludo"
+alias zka "zellij kill-all-sessions"
+alias zda "zellij delete-all-sessions"
 alias zup "zellij run -d right -- up"
-alias cb "zellij edit ~/dev/neovim/comment-box.nvim/lua/comment-box/init.lua"
 
 # Vi mode
 function my_vi_bindings
