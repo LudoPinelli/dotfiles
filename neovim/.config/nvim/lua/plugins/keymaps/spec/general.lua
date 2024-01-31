@@ -1,3 +1,4 @@
+---@diagnostic disable: param-type-mismatch
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
@@ -55,3 +56,37 @@ function _G.set_terminal_keymaps()
 end
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
+
+local keymap = {
+  ["<Leader>;"] = function()
+    local lnum = vim.fn.line(".")
+    local line = vim.fn.getline(lnum)
+    if string.sub(line, -1) ~= ";" then
+      vim.cmd("call setline('.', getline('.') . ';')")
+    else
+      vim.cmd("call setline('.', substitute(getline('.'), ';$', '', ''))")
+    end
+  end,
+  ["<Leader>,"] = function()
+    local lnum = vim.fn.line(".")
+    local line = vim.fn.getline(lnum)
+    if string.sub(line, -1) ~= "," then
+      vim.cmd("call setline('.', getline('.') . ',')")
+    else
+      vim.cmd("call setline('.', substitute(getline('.'), ',$', '', ''))")
+    end
+  end,
+}
+
+map(
+  "n",
+  "<Leader>;",
+  keymap["<Leader>;"],
+  { desc = "Add/Remove Semicolon at the end", noremap = true }
+)
+map(
+  "n",
+  "<Leader>,",
+  keymap["<Leader>,"],
+  { desc = "Add/Remove Comma at the end", noremap = true }
+)

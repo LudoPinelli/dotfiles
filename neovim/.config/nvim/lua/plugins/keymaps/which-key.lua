@@ -172,5 +172,6 @@ return {
     require("plugins.keymaps.spec.debugging")
     require("plugins.keymaps.spec.ai")
     require("plugins.keymaps.spec.obsidian")
+    require("plugins.keymaps.spec.projects")
   end,
 }

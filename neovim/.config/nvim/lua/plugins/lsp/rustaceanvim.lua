@@ -3,7 +3,7 @@ return {
   dependencies = {
     "mfussenegger/nvim-dap",
   },
-  version = "^3",
+  version = "^4",
   ft = { "rust" },
   config = function()
     vim.g.rustaceanvim = {

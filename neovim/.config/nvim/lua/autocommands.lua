@@ -1,29 +1,32 @@
+vim.api.nvim_create_augroup("custom", { clear = true })
+
 -- Highlight on Yank
-local highlight_group =
-  vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight on yank",
+  group = "custom",
+  pattern = "*",
   callback = function()
     vim.highlight.on_yank()
   end,
-  group = highlight_group,
-  pattern = "*",
 })
---
+
+-- Start terminal in insert mode
+vim.api.nvim_create_autocmd("TermOpen", {
+  desc = "Start terminal in insert mode",
+  group = "custom",
+  pattern = "*",
+  command = "startinsert | set winfixheight",
+})
+
+-- Jump to last edit position on opening file
+vim.api.nvim_create_autocmd("BufReadPost", {
+  desc = "Jump to last edit position on opening file",
+  group = "custom",
+  pattern = "*",
+  command = 'silent! normal! g`"zv',
+})
+
 -- Leave paste mode when leaving insert mode
 vim.cmd([[
   autocmd InsertLeave * set nopaste
-]])
-
--- Jump to last edit position on opening file
--- https://stackoverflow.com/questions/31449496/vim-ignore-specifc-file-in-autocommand
-vim.cmd([[
-  au BufReadPost * if expand('%:p') !~# '\m/\.git/' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-]])
-
--- Remember cursor position
-vim.cmd([[
-  augroup vimrc-remember-cursor-position
-    autocmd!
-    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-  augroup end
 ]])

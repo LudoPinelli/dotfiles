@@ -33,7 +33,6 @@ return {
           "shellcheck",
           "shellharden",
           "stylua",
-          "zls",
         },
       })
     end,

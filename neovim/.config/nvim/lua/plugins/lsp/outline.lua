@@ -6,7 +6,7 @@ return {
         auto_close = true,
       },
       outline_items = {
-        show_symbol_lineno = true,
+        show_symbol_lineno = false,
       },
     })
   end,

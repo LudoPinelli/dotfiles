@@ -5,14 +5,14 @@ local opt = vim.opt
 --                                  ╰────────╯
 opt.showtabline = 2 -- Always Show Tabline
 opt.pumheight = 10 -- Pop up Menu Height
--- opt.number = true -- Display Line Number
+opt.number = true -- Display Line Number
 -- opt.relativenumber = true -- Make line numbers relative
 opt.termguicolors = true -- Set Terminal Colors
 opt.title = true -- Display File Info on Title
 opt.showmode = false -- Don't Show MODES
 opt.cursorline = true -- Highlight the actual line
 opt.signcolumn = "yes" -- Sign Column
-opt.laststatus = 3 -- Global statusline
+opt.laststatus = 0 -- Global statusline
 -- opt.colorcolumn = "80"
 -- vim.cmd("syntax on")
 opt.virtualedit = "block" -- act as real block in visual mode

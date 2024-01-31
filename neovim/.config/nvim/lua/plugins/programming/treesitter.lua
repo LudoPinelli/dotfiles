@@ -27,11 +27,10 @@ return {
         "toml",
         "vim",
         "vimdoc",
-        "zig",
       },
       ignore_install = {},
       sync_install = false,
-      auto_install = true,
+      auto_install = false,
 
       highlight = {
         enable = true,
@@ -61,5 +60,6 @@ return {
     opt.foldmethod = "expr"
     opt.foldexpr = "nvim_treesitter#foldexpr()"
     opt.foldenable = false
+    vim.wo.foldtext = ""
   end,
 }
