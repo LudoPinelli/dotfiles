@@ -69,8 +69,6 @@ alias ga "git add --patch"
 abbr -a dot "cd ~/dotfiles"
 abbr -a neoc "cd ~/dotfiles/neovim/.config/nvim"
 
-alias zel "zellij"
-
 abbr -a py "python3"
 
 abbr -a neo "clear && neofetch"
