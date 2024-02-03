@@ -5,8 +5,16 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+-- config.bold_brightens_ansi_colors = "No"
 config.font = wezterm.font("JetBrains Mono")
-config.font_size = 12.0
+config.font_size = 13.0
+
+config.window_padding = {
+	left = 10,
+	right = 10,
+	top = 10,
+	bottom = 10,
+}
 
 config.color_scheme = "Catppuccin Mocha"
 
