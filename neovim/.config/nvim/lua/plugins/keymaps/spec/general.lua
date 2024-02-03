@@ -88,5 +88,5 @@ map(
   "n",
   "<Leader>,",
   keymap["<Leader>,"],
-  { desc = "Add/Remove Comma at the end", noremap = true }
+  { desc = "add/remove comma at the end", noremap = true }
 )

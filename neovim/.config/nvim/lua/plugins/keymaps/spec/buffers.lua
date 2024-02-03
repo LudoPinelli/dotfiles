@@ -1,4 +1,3 @@
----@diagnostic disable: need-check-nil
 local wk = require("which-key")
 
 wk.register({

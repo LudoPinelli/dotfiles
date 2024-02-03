@@ -173,5 +173,6 @@ return {
     require("plugins.keymaps.spec.ai")
     require("plugins.keymaps.spec.obsidian")
     require("plugins.keymaps.spec.projects")
+    require("plugins.keymaps.spec.mind")
   end,
 }

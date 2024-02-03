@@ -12,9 +12,7 @@ opt.title = true -- Display File Info on Title
 opt.showmode = false -- Don't Show MODES
 opt.cursorline = true -- Highlight the actual line
 opt.signcolumn = "yes" -- Sign Column
-opt.laststatus = 0 -- Global statusline
--- opt.colorcolumn = "80"
--- vim.cmd("syntax on")
+opt.laststatus = 3 -- Global statusline
 opt.virtualedit = "block" -- act as real block in visual mode
 opt.inccommand = "split" -- open previews in new window
 opt.conceallevel = 1
