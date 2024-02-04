@@ -1,7 +1,4 @@
 layout {
-
-    pane
-
     pane size=1 borderless=true {
         plugin location="file:/home/ludo/.config/zellij/plugins/zjstatus.wasm" {
             format_left  "{mode} #[fg=#89B4FA,bold]{session} {tabs}"
@@ -31,4 +28,5 @@ layout {
             datetime_timezone "Europe/Berlin"
         }
     }
+    pane
 }
