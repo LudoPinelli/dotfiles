@@ -27,9 +27,9 @@ return {
               vim.env.VIMRUNTIME,
             },
           },
-          diagnostics = {
-            globals = { "vim" },
-          },
+          -- diagnostics = {
+          --   globals = { "vim" },
+          -- },
         },
       },
     })
