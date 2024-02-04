@@ -92,10 +92,16 @@ end
 alias cwatch "cargo watch -q -c -x 'run -q'"
 abbr -a cnc "cargo_cli_setup.sh"
 
+# Zellij
 alias zs "zellij -s ludo"
 alias zka "zellij kill-all-sessions"
 alias zda "zellij delete-all-sessions"
 alias zup "zellij run -d right -- up"
+
+# ollama
+abbr -a llamastart "sudo systemctl start ollama"
+abbr -a llamastop "sudo systemctl stop ollama.service"
+abbr -a chat "cd ~/Installs/chatbot-ollama && npm run dev"
 
 # Vi mode
 function my_vi_bindings
