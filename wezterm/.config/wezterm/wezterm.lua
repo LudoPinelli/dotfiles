@@ -7,7 +7,7 @@ end
 
 -- config.bold_brightens_ansi_colors = "No"
 config.font = wezterm.font("JetBrains Mono")
-config.font_size = 13.0
+config.font_size = 13.5
 
 config.window_padding = {
 	left = 10,
@@ -16,7 +16,9 @@ config.window_padding = {
 	bottom = 10,
 }
 
-config.color_scheme = "Catppuccin Mocha"
+-- Colorscheme
+config.color_scheme = "nightfox"
+-- config.color_scheme = "Catppuccin Mocha"
 
 config.enable_tab_bar = false
 config.window_decorations = "NONE"
