@@ -4,7 +4,8 @@ return {
   config = function()
     require("mini.starter").setup({
       footer = function()
-        return os.date("__ %A %d %B - %Hh%M __")
+        local fortune = table.concat(require("fortune").get_fortune(), "\n")
+        return fortune
       end,
     })
   end,

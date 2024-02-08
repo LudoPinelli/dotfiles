@@ -2,7 +2,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require("catppuccin").setup({
@@ -33,7 +33,11 @@ return {
         },
       })
 
-      vim.cmd.colorscheme("catppuccin")
+      require("lualine").setup({
+        options = {
+          theme = "catppuccin",
+        },
+      })
     end,
   },
   {
@@ -57,6 +61,14 @@ return {
       vim.cmd("colorscheme kanagawa-wave")
       -- vim.cmd("colorscheme kanagawa-dragon")
       -- vim.cmd("colorscheme kanagawa-lotus")
+
+      require("lualine").setup({
+        options = {
+          theme = "kanagawa-wave",
+          -- theme = "kanagawa-dragon",
+          -- theme = "kanagawa-lotus",
+        },
+      })
     end,
     override = function(colors)
       local theme = colors.theme
@@ -74,5 +86,21 @@ return {
       }
     end,
   },
-  { "EdenEast/nightfox.nvim" },
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("nightfox").setup({
+        options = {
+          styles = {
+            comments = "italic",
+            functions = "bold",
+          },
+          dim_inactive = true,
+        },
+      })
+      vim.cmd.colorscheme("nightfox")
+    end,
+  },
 }

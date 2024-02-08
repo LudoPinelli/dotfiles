@@ -18,7 +18,7 @@ return {
     local filename = {
       "filename",
       newfile_status = true,
-      path = 0,
+      path = 1,
       shorting_target = 40,
       symbols = {
         modified = "  ",
@@ -59,19 +59,23 @@ return {
       left_padding = 0,
     }
 
+    local noice_mode = {
+      require("noice").api.status.mode.get,
+      cond = require("noice").api.status.mode.has,
+      color = { fg = "#ff9e64" },
+    }
+
     require("lualine").setup({
       options = {
         icons_enabled = true,
-        -- theme = "catppuccin",
-        -- theme = "kanagawa",
         component_separators = "│",
         section_separators = { left = "", right = "" },
         disabled_filetypes = { "Neotree", "Outline" },
       },
       sections = {
         lualine_a = { mode },
-        lualine_b = { "getcwd", branch },
-        lualine_c = { filename, diagnostics },
+        lualine_b = { branch },
+        lualine_c = { filename, diagnostics, noice_mode },
         lualine_x = { diff },
         lualine_y = { filetype },
         lualine_z = { "progress", location },

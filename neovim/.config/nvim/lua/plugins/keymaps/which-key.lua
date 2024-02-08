@@ -174,5 +174,6 @@ return {
     require("plugins.keymaps.spec.obsidian")
     require("plugins.keymaps.spec.projects")
     require("plugins.keymaps.spec.mind")
+    require("plugins.keymaps.spec.messages")
   end,
 }
