@@ -224,26 +224,25 @@ themes {
 //         black 0 0 0
 //         white 255 255 255
 //     }
-
-     catppuccin-macchiato {
-           bg "#5b6078" // Surface2
-           fg "#cad3f5"
-           red "#ed8796"
-           green "#a6da95"
-           blue "#8aadf4"
-           yellow "#eed49f"
-           magenta "#f5bde6" // Pink
-           orange "#f5a97f" // Peach
-           cyan "#91d7e3" // Sky
-           black "#1e2030" // Mantle
-           white "#cad3f5"
-     }
+    nightfox {
+        bg "#192330"
+        fg "#cdcecf"
+        red "#c94f6d"
+        green "#81b29a"
+        blue "#719cd6"
+        yellow "#dbc074"
+        magenta "#9d79d6"
+        orange "#f4a261"
+        cyan "#63cdcf"
+        black "#29394f"
+        white "#aeafb0"
+    }
 }
  
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "catppuccin-macchiato"
+theme "nightfox"
 
 // The name of the default layout to load on startup
 // Default: "default"

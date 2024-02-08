@@ -13,8 +13,6 @@ set -gx MANPAGER "nvim +Man!"
 
 set -gx CARGO_REGISTRIES_CRATES_IO_PROTOCOL sparse
 
-set VIRTUAL_ENV "$XDG_CONFIG_HOME/dev/python/ai"
-
 # Path
 fish_add_path ~/.cargo/bin/
 fish_add_path ~/scripts/
@@ -57,24 +55,28 @@ alias df "df --human-readable"
 
 abbr -a du "clear && dust"
 
-alias gu "gitui -t mocha.ron"
+# Git
 alias lg "lazygit"
-
 alias gt "git status"
 alias gb "git branch"
 alias gw "git switch"
 alias gco "git checkout"
 alias ga "git add --patch"
 
+# Go to common directories
 abbr -a dot "cd ~/dotfiles"
 abbr -a neoc "cd ~/dotfiles/neovim/.config/nvim"
 
+# Python
 abbr -a py "python3"
 
+# Neofetch
 abbr -a neo "clear && neofetch"
 
+# Play shuffled music
 abbr -a music "mpv --no-video --shuffle ~/Musique/"
 
+# Search on youtube
 abbr -a yta "ytfzf -t"
 
 function ytd # download yt video with link in clipboard
@@ -82,9 +84,9 @@ function ytd # download yt video with link in clipboard
   yt-dlp (eval xclip -selection clipboard -o)
 end
 
+# Write .gitignore file for the given language
+# example: ign Rust
 function gi
-  # Write .gitignore file for the given language
-  # example: ign Rust
   gibo dump $argv >> .gitignore
 end
 
@@ -93,10 +95,9 @@ alias cwatch "cargo watch -q -c -x 'run -q'"
 abbr -a cnc "cargo_cli_setup.sh"
 
 # Zellij
-alias zs "zellij -s ludo"
+alias zs "zellij -s"
 alias zka "zellij kill-all-sessions"
 alias zda "zellij delete-all-sessions"
-alias zup "zellij run -d right -- up"
 
 # ollama
 abbr -a llamastart "sudo systemctl start ollama"

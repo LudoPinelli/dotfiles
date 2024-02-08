@@ -1,29 +1,27 @@
 layout {
     pane size=1 borderless=true {
         plugin location="file:/home/ludo/.config/zellij/plugins/zjstatus.wasm" {
-            format_left  "{mode} #[fg=#89B4FA,bold]{session} {tabs}"
+            format_left  "{mode} #[fg=#719cd6,bold]{session} {tabs}"
             format_right "{command_git_branch} {datetime}"
             format_space ""
 
             border_enabled  "false"
-            border_char     "─"
-            border_format   "#[fg=#6C7086]{char}"
-            border_position "top"
+            border_char     "_"
+            border_format   "#[fg=#aeafb0]{char}"
+            border_position "bottom"
 
-            // hide_frame_for_single_pane "true"
-
-            mode_normal  "#[fg=#1e1e2e,bg=#89B4FA] {name} "
-            mode_locked  "#[fg=#1e1e2e,bg=#f38ba8] {name} "
-            mode_resize  "#[fg=#1e1e2e,bg=#cba6f7] {name} "
-            mode_pane  "#[fg=#1e1e2e,bg=#fab387] {name} "
-            mode_tab  "#[fg=#1e1e2e,bg=#fab387] {name} "
-            mode_rename_tab  "#[fg=#1e1e2e,bg=#a6e3a1] {name}"
-            mode_rename_pane  "#[fg=#1e1e2e,bg=#a6e3a1] {name}"
+            mode_normal  "#[fg=#192330,bg=#719cd6] {name} "
+            mode_locked  "#[fg=#192330,bg=#c94f6d] {name} "
+            mode_resize  "#[fg=#192330,bg=#81b29a] {name} "
+            mode_pane  "#[fg=#192330,bg=#dbc074] {name} "
+            mode_tab  "#[fg=#192330,bg=#dbc074] {name} "
+            mode_rename_tab  "#[fg=#192330,bg=#f4a261] {name}"
+            mode_rename_pane  "#[fg=#192330,bg=#f4a261] {name}"
 
             tab_normal   "#[fg=#585b70] {name} "
-            tab_active   "#[fg=#94e2d5,bold,italic] {name} "
+            tab_active   "#[fg=#cdcecf,bold,italic] {name} "
 
-            datetime        "#[fg=#6C7086,bold] {format} "
+            datetime        "#[fg=#63cdcf,bold] {format} "
             datetime_format "%A, %d %b %Y %H:%M"
             datetime_timezone "Europe/Berlin"
         }
