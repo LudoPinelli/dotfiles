@@ -83,12 +83,3 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 # install broot
 cargo install --locked broot
-
-# Install lf
-curl -L https://github.com/gokcehan/lf/releases/latest/download/lf-linux-amd64.tar.gz | tar xzC ~/.local/bin
-# Install ctpv
-git clone https://github.com/NikitaIvanovV/ctpv
-cd ctpv
-sudo make install
-cd ..
-sudo rm -rf ctpv
