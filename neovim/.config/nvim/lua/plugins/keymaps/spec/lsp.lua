@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
             end,
             "Toggle Inlay Hints",
           },
-          i = { "<Cmd>LspInfo<CR>", "  Info" },
+          i = { "<Cmd>TodoTrouble<CR>", "  TODO/FIX etc." },
           o = { "<Cmd>Outline<CR>", "炙 Outline" },
           r = { "<Cmd>Lspsaga rename<CR>", "󰑕  Rename", opts },
           s = {

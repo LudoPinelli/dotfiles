@@ -8,14 +8,15 @@ return {
       ui = {
         border = "rounded",
         code_action = "",
+        lines = { "╰", "├", "│", "─", "╭" },
       },
-      lines = { "╰", "├", "│", "─", "╭" },
       outline = {
         win_width = 40,
         close_after_jump = true,
         layout = "normal",
       },
-      breadcrumb = {
+      symbol_in_winbar = {
+        -- show = false,
         folder_level = 0,
         color_mode = false,
       },
