@@ -9,10 +9,6 @@ wk.register({
     ["i"] = { "`.", "  Back to last insert" },
     ["q"] = { "<Cmd>qa<CR>", "  Quit" },
     ["W"] = { "<Cmd>cd %:p:h<CR>:pwd<CR>", "  Set Working Directory" },
-    ["n"] = {
-      "<Cmd>Telescope neoclip initial_mode=normal<CR>",
-      "  Clipboard",
-    },
     ["z"] = { "<Cmd>set spell!<CR>", "󰓆 Toggle Spellcheck" },
   },
 })
