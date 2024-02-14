@@ -70,7 +70,8 @@ return {
         icons_enabled = true,
         component_separators = "│",
         section_separators = { left = "", right = "" },
-        disabled_filetypes = { "Neotree", "Outline" },
+        disabled_filetypes = { "Outline" },
+        theme = "auto",
       },
       sections = {
         lualine_a = { mode },
