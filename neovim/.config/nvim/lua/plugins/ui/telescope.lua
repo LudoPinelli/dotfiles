@@ -14,7 +14,7 @@ return {
       selection_caret = " ",
       path_display = { "smart" },
       dynamic_preview_title = true,
-      winblend = 20,
+      winblend = 10,
       sorting_strategy = "ascending",
       layout_strategy = "vertical",
       layout_config = {

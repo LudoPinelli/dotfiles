@@ -8,7 +8,8 @@ wk.register({
     ["h"] = { "<Cmd>nohlsearch<CR>", "  No Highlight" },
     ["i"] = { "`.", "  Back to last insert" },
     ["q"] = { "<Cmd>qa<CR>", "  Quit" },
+    ["u"] = { "<Cmd>UndotreeToggle<CR>", "  Undo Tree" },
     ["W"] = { "<Cmd>cd %:p:h<CR>:pwd<CR>", "  Set Working Directory" },
-    ["z"] = { "<Cmd>set spell!<CR>", "󰓆 Toggle Spellcheck" },
+    ["z"] = { "<Cmd>set spell!<CR>", "󰓆  Toggle Spellcheck" },
   },
 })

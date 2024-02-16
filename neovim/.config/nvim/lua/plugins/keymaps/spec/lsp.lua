@@ -39,7 +39,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
           o = { "<Cmd>Outline<CR>", "炙 Outline" },
           r = { "<Cmd>Lspsaga rename<CR>", "󰑕  Rename", opts },
           s = {
-            "<Cmd>Lspsaga finder<CR>",
+            "<Cmd>TroubleToggle lsp_references<CR>",
+            -- "<Cmd>Lspsaga finder<CR>",
             "  Symbols",
             opts,
           },
