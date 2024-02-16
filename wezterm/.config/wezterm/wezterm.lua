@@ -6,8 +6,9 @@ if wezterm.config_builder then
 end
 
 -- config.bold_brightens_ansi_colors = "No"
-config.font = wezterm.font("JetBrains Mono")
-config.font_size = 13.5
+-- config.font = wezterm.font("JetBrains Mono")
+config.font = wezterm.font("CommitMono")
+config.font_size = 13
 
 config.window_padding = {
 	left = 10,
