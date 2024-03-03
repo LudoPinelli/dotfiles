@@ -1,7 +1,9 @@
 # Remove greetings
 set fish_greeting 
 
-# Environnement
+#                              ╭───────────────╮
+#                              │ Environnement │
+#                              ╰───────────────╯
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_DATA_HOME "$XDG_CONFIG_HOME/local/share"
 set -gx XDG_CACHE_HOME "$XDG_CONFIG_HOME/cache"
@@ -13,19 +15,20 @@ set -gx MANPAGER "nvim +Man!"
 
 set -gx CARGO_REGISTRIES_CRATES_IO_PROTOCOL sparse
 
-# Path
+#                                  ╭──────╮
+#                                  │ Path │
+#                                  ╰──────╯
 fish_add_path ~/.cargo/bin/
 fish_add_path ~/scripts/
 fish_add_path ~/.local/bin/
 # fish_add_path ~/.nvm/versions/node/v19.7.0/bin/
 fish_add_path ~/.local/zig/
 
-# Abbreviations & aliases
-alias xy "xclip -selection clipboard"
-alias xp "xclip -selection clipboard -o"
-abbr -a yp "pwd|xy" # copy current path
-abbr -a pp "xp"
+#                         ╭─────────────────────────╮
+#                         │ Abbreviations & aliases │
+#                         ╰─────────────────────────╯
 
+# ──── eza ─────────────────────────────────────────────────────────────────────
 alias ls "eza -F --group-directories-first --icons=auto"
 alias ll "eza -lhF --group-directories-first --git --icons=auto"
 alias la "eza -ahF --group-directories-first --icons=auto"
@@ -35,27 +38,24 @@ alias lta "eza -aT --ignore-glob='.git' --level=3 --icons=auto"
 alias llt "eza -hT --level=3 --long --git --icons=auto"
 alias llta "eza -alT --ignore-glob='.git' --level=3 --git --icons"
 
+# ──── Basic commands ──────────────────────────────────────────────────────────
 alias rm "rm -if"
 alias rmd "rm -rfi"
 alias mv "mv -iv"
 alias cp "cp -riv"
 alias mkdir "mkdir -vp"
-
 abbr -a c "clear"
 alias s "cd .."
 abbr -a :q "exit"
 
+# ──── Common tools ────────────────────────────────────────────────────────────
 abbr -a cat "bat"
-
 abbr -a v "nvim"
-
 abbr -a weather "clear && curl wttr.in"
-
 alias df "df --human-readable"
-
 abbr -a du "clear && dust"
 
-# Git
+# ──── Git ─────────────────────────────────────────────────────────────────────
 alias lg "lazygit"
 alias gt "git status"
 alias gb "git branch"
@@ -63,19 +63,32 @@ alias gw "git switch"
 alias gco "git checkout"
 alias ga "git add --patch"
 
-# Go to common directories
+# Write .gitignore file for the given language
+# example: ign Rust
+function gi
+  gibo dump $argv >> .gitignore
+end
+
+# ──── xclip ───────────────────────────────────────────────────────────────────
+alias xy "xclip -selection clipboard"
+alias xp "xclip -selection clipboard -o"
+abbr -a yp "pwd|xy" # copy current path
+abbr -a pp "xp"
+
+# ──── Go to common directories ────────────────────────────────────────────────
 abbr -a dot "cd ~/dotfiles"
 abbr -a neoc "cd ~/dotfiles/neovim/.config/nvim"
 
-# Python
+# ──── Python ──────────────────────────────────────────────────────────────────
 abbr -a py "python3"
 
-# Neofetch
+# ──── Neofetch ────────────────────────────────────────────────────────────────
 abbr -a neo "clear && neofetch"
 
-# Play shuffled music
+# ──── Play shuffled music ─────────────────────────────────────────────────────
 abbr -a music "mpv --no-video --shuffle ~/Musique/"
 
+# ──── Youtube ─────────────────────────────────────────────────────────────────
 # Search on youtube
 abbr -a yta "ytfzf -t"
 
@@ -84,40 +97,38 @@ function ytd # download yt video with link in clipboard
   yt-dlp (eval xclip -selection clipboard -o)
 end
 
-# Write .gitignore file for the given language
-# example: ign Rust
-function gi
-  gibo dump $argv >> .gitignore
-end
-
-# Rust
+# ──── Rust ────────────────────────────────────────────────────────────────────
 alias cwatch "cargo watch -q -c -x 'run -q'"
 abbr -a cnc "cargo_cli_setup.sh"
 
-# Zellij
+# ──── Zellij ──────────────────────────────────────────────────────────────────
 alias zs "zellij -s"
 alias zka "zellij kill-all-sessions"
 alias zda "zellij delete-all-sessions"
 
-# ollama
+# ──── ollama ──────────────────────────────────────────────────────────────────
 abbr -a llamastart "sudo systemctl start ollama"
 abbr -a llamastop "sudo systemctl stop ollama.service"
 abbr -a chat "cd ~/Installs/chatbot-ollama && npm run dev"
 
-# Vi mode
+#                            ╭──────────────────╮
+#                            │ Additional stuff │
+#                            ╰──────────────────╯
+
+# ──── Vi mode ─────────────────────────────────────────────────────────────────
 function my_vi_bindings
   fish_vi_key_bindings
   bind -M insert -m default jk backward-char force-repaint
 end
 set -g fish_key_bindings my_vi_bindings
 
-# Start Starship prompt
+# ──── Start Starship prompt ───────────────────────────────────────────────────
 function starship_transient_rprompt_func
   starship module time
 end
 starship init fish | source
 
-# Start zoxide
+# ──── Start zoxide ────────────────────────────────────────────────────────────
 enable_transience
 zoxide init fish | source
 alias cd "z"
