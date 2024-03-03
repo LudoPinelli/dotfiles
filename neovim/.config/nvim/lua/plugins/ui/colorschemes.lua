@@ -52,23 +52,16 @@ return {
   },
   {
     "rebelot/kanagawa.nvim",
-    lazy = true,
+    lazy = false,
     config = function()
       require("kanagawa").setup({
         compile = true,
+        functionStyle = { bold = true },
         dimInactive = true,
       })
       vim.cmd("colorscheme kanagawa-wave")
       -- vim.cmd("colorscheme kanagawa-dragon")
       -- vim.cmd("colorscheme kanagawa-lotus")
-
-      require("lualine").setup({
-        options = {
-          theme = "kanagawa-wave",
-          -- theme = "kanagawa-dragon",
-          -- theme = "kanagawa-lotus",
-        },
-      })
     end,
     override = function(colors)
       local theme = colors.theme
@@ -88,7 +81,7 @@ return {
   },
   {
     "EdenEast/nightfox.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require("nightfox").setup({
