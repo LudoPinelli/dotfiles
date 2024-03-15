@@ -77,20 +77,19 @@ verbs: [
         leave_broot: false
     }
 
-    # Here's an example of a shortcut bringing you to your home directory
     {
-        invocation: home
+        invocation: close_panel
         key: ctrl-h
         execution: ":panel_left_no_open"
     }
     {
-        invocation: home
+        invocation: panel_right
         key: ctrl-l
         execution: ":panel_right"
     }
 
     {
-        invocation: home
+        invocation: hidden
         key: alt-.
         execution: ":toggle_hidden"
     }
@@ -101,6 +100,7 @@ verbs: [
         execution: ":focus ~"
     }
 
+    # Movements
     {
         key: ctrl-k
         execution: ":line_up"
@@ -116,6 +116,15 @@ verbs: [
     {
         key: ctrl-d
         execution: ":page_down"
+    }
+
+    # zip
+    {
+        invocation: unzip
+        shortcut: uz
+        apply_to : file
+        external: "unzip {file}"
+        leave_broot: false
     }
 
     # If you develop using git, you might like to often switch
