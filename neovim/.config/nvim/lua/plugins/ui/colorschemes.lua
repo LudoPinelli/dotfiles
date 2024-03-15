@@ -63,7 +63,7 @@ return {
       -- vim.cmd("colorscheme kanagawa-dragon")
       -- vim.cmd("colorscheme kanagawa-lotus")
     end,
-    override = function(colors)
+    overrides = function(colors)
       local theme = colors.theme
       return {
         NormalFloat = { bg = "none" },
