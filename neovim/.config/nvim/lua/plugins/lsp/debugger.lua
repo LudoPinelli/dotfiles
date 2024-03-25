@@ -3,6 +3,7 @@ return {
   dependencies = {
     "rcarriga/nvim-dap-ui",
     "neovim/nvim-lspconfig",
+    "nvim-neotest/nvim-nio",
   },
   config = function()
     require("dapui").setup()
